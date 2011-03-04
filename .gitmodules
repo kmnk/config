@@ -94,3 +94,6 @@
 [submodule "vim/bundle/vim-yankring"]
 	path = vim/bundle/vim-yankring
 	url = git://github.com/chrismetcalf/vim-yankring.git
+[submodule "vim/bundle/vim-unittest"]
+	path = vim/bundle/vim-unittest
+	url = git://github.com/h1mesuke/vim-unittest.git
