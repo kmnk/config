@@ -82,3 +82,18 @@
 [submodule "vim/bundle/unite-mark"]
 	path = vim/bundle/unite-mark
 	url = git://github.com/tacroe/unite-mark.git
+[submodule "vim/bundle/IndentAnything"]
+	path = vim/bundle/IndentAnything
+	url = git://github.com/vim-scripts/IndentAnything.git
+[submodule "vim/bundle/Javascript-Indentation"]
+	path = vim/bundle/Javascript-Indentation
+	url = git://github.com/vim-scripts/Javascript-Indentation.git
+[submodule "vim/bundle/QuickBuf"]
+	path = vim/bundle/QuickBuf
+	url = git://github.com/vim-scripts/QuickBuf.git
+[submodule "vim/bundle/template-file-loader"]
+	path = vim/bundle/template-file-loader
+	url = git://github.com/vim-scripts/template-file-loader.git
+[submodule "vim/bundle/vim-yankring"]
+	path = vim/bundle/vim-yankring
+	url = git://github.com/chrismetcalf/vim-yankring.git
