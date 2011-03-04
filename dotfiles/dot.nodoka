@@ -1,0 +1,47 @@
+include "109.mayu" # 109配列キーボードデフォルト設定を読込
+
+# Insert で設定再読み込み
+key Insert = &LoadSetting
+
+# Ctrl + Alt + hjkl でカーソルキーを動かす
+key C-A-K   = ↑
+key C-A-L   = →
+key C-A-J   = ↓
+key C-A-H   = ←
+
+# Pause で Windowsロック
+key Pause = W-L
+
+# Control + H を BackSpace にする
+key *IC-C-H = BS
+
+# CapsLock 単発だと Esc になり、押しながら何かを押すと Ctrl になる
+mod ctrl += !!英数
+key *英数 = *Esc
+
+# ひらがなキーを Shift にする
+mod shift += !!ひらがな
+
+# SemiColon を Enter に
+key *IC-SemiColon = Enter
+
+# Control を押しながら SemiColon を SemiColon 単発に
+key *IC-C-~S-SemiColon = SemiColon
+
+# 遠いキーを近くへ
+key C-*S-ひらがな   = S-CircumflexAccent    # ~
+key S-ひらがな      = S-YenSign             # |
+
+# C-: を " にする vimの無名レジスタを素早く使うためのバインド
+key *IC-C-Colon = S-_2
+key *IC-C-E = S-_5
+
+# C-, を ^ にする
+key *IC-C-Comma = CircumflexAccent
+# C-. を $ にする
+key *IC-C-FullStop = S-_4
+# C-m を 0 にする
+key *IC-C-M = _0
+
+key C-無変換 = g S-t
+key C-変換 = g t
