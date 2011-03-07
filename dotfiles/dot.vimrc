@@ -69,10 +69,10 @@ nnoremap gc `[v`]
 
 " tags-and-searches
 nnoremap t  <Nop>
-nnoremap tt  <C-]>           「飛ぶ」
-nnoremap tj  :<C-u>tag<CR>   「進む」
-nnoremap tk  :<C-u>pop<CR>   「戻る」
-nnoremap tl  :<C-u>tags<CR>  履歴一覧
+nnoremap tt  <C-]>
+nnoremap tj  :<C-u>tag<CR>
+nnoremap tk  :<C-u>pop<CR>
+nnoremap tl  :<C-u>tags<CR>
 
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
