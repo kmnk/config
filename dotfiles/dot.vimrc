@@ -91,12 +91,12 @@ let g:html_no_pre   = 1
 nnoremap <C-h> :<C-u>h<Space>
 
 " edit vimrc right now
-nnoremap <silent> <C-,>ev  :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <C-,>eg  :<C-u>edit $MYGVIMRC<CR>
+nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
 
 " Load .gvimrc after .vimrc edited at GVim.
-nnoremap <silent> <C-,>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
-nnoremap <silent> <C-,>rg :<C-u>source $MYGVIMRC<CR>
+nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
+nnoremap <silent> <Space>rg :<C-u>source $MYGVIMRC<CR>
 "}}}
 
 " create swp data to only tmp directory
@@ -349,7 +349,7 @@ if globpath(&rtp, 'plugin/unite.vim') != ''
   nnoremap sc :<C-u>Unite -auto-preview colorscheme<Cr>
 endif
 
-autocmd FileType unite call s:unite_my_settings()
+autocmd KmnkAutoCmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
   " Overwrite settings.
 
@@ -386,7 +386,7 @@ else
   call vimshell#set_execute_file('tbz,bz2', 'bzcat')
 endif
 
-autocmd FileType vimshell
+autocmd KmnkAutoCmd FileType vimshell
 \ call vimshell#altercmd#define('g', 'git')
 \| call vimshell#altercmd#define('i', 'iexe')
 \| call vimshell#altercmd#define('l', 'll')
@@ -492,11 +492,11 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd KmnkAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd KmnkAutoCmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd KmnkAutoCmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd KmnkAutoCmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd KmnkAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
@@ -608,7 +608,7 @@ if has('autocmd')
       let &fileencoding=&encoding
     endif
   endfunction
-  autocmd BufReadPost * call AU_ReCheck_FENC()
+  autocmd KmnkAutoCmd BufReadPost * call AU_ReCheck_FENC()
 endif
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
