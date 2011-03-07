@@ -1,9 +1,5 @@
 " kmnk's vimperator settings
-
-" reset my auto command group
-augroup KmnkAutoCmd
-  autocmd!
-augroup END
+" for after vimperator 3.0
 
 " activate only homepage on open tabwindow
 set activate=homepage
@@ -14,9 +10,6 @@ set focuscontent
 " use visualbell on occuring errors or warnigs
 set visualbell
 
-" deprecated
-set wildoptions=auto
-
 " alc
 nnoremap ,e :<C-u>o http://eow.alc.co.jp/
 nnoremap ,E :<C-u>t http://eow.alc.co.jp/
@@ -26,8 +19,8 @@ nnoremap ,cp :<C-u>o http://search.cpan.org/search?mode=all&query=
 nnoremap ,Cp :<C-u>t http://search.cpan.org/search?mode=all&query=
 
 " オートコンプリートの設定
-autocmd KmnkAutoCmd VimperatorEnter .* :set complete=blsfH
-"autocmd KmnkAutoCmd VimperatorEnter .* :set complete=blsfDH
+autocmd AutoCmd VimperatorEnter .* :set complete=blsfH
+"autocmd AutoCmd VimperatorEnter .* :set complete=blsfDH
 
 " 読み込んだことを出力
 echo "_vimperatorrc sourced"
