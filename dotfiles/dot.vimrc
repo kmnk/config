@@ -67,6 +67,13 @@ nnoremap Y y$
 " select latest changes
 nnoremap gc `[v`]
 
+" tags-and-searches
+nnoremap t  <Nop>
+nnoremap tt  <C-]>           「飛ぶ」
+nnoremap tj  :<C-u>tag<CR>   「進む」
+nnoremap tk  :<C-u>pop<CR>   「戻る」
+nnoremap tl  :<C-u>tags<CR>  履歴一覧
+
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
 nmap <Space>sk <SID>(split-to-k)
@@ -627,6 +634,9 @@ set fileformat=unix
 set fileencoding=utf-8
 "ファイルエンコーディングス(set fileencode=xxxで、文字コード変更用･･･？)
 set fileencodings=utf-8,japan,sjis,iso-2022-jp
+
+command! -bang -nargs=? Utf8  edit<bang> ++enc=utf-8  <args>
+command! -bang -nargs=? EucJp edit<bang> ++enc=euc-jp <args>
 "}}}
 
 " perl settings {{{
@@ -634,7 +644,8 @@ set iskeyword+=:
 " Dump
 "   use Data::Dumper;
 "   print {*STDERR} Dumper();
-nmap <Leader>dump ouse Data::Dumper;<CR>print {*STDERR} Dumper(<C-R>");<ESC>h
+nmap <Leader>dump ouse Data::Dumper;<CR>print {*STDERR} Dumper();<ESC>h
+nmap <Leader>Dump ouse Data::Dumper;<CR>print {*STDERR} Dumper(<C-R>");<ESC>h
 
 " open perldoc
 nmap <Leader>pod :! perldoc %<CR>
