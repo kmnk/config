@@ -1,32 +1,37 @@
-" アクティブにするのはホームページのみ
+" kmnk's vimperator settings
+
+" reset my auto command group
+augroup KmnkAutoCmd
+  autocmd!
+augroup END
+
+" activate only homepage on open tabwindow
 set activate=homepage
 
-" 入力欄にフォーカスを当てない
+" no forcus on text form
 set focuscontent
 
-" beepをvisualbellに
+" use visualbell on occuring errors or warnigs
 set visualbell
 
+" deprecated
 set wildoptions=auto
 
-" elc検索
-map ,e :o http://eow.alc.co.jp/
-map ,E :t http://eow.alc.co.jp/
+" alc
+nnoremap ,e :<C-u>o http://eow.alc.co.jp/
+nnoremap ,E :<C-u>t http://eow.alc.co.jp/
 
-" CPAN検索
-map ,cp :o http://search.cpan.org/search?mode=all&query=
-map ,Cp :t http://search.cpan.org/search?mode=all&query=
-
-" direct_sbmの設定
-let g:direct_sbm_use_services_by_tag = 'hdp'  
-let g:direct_sbm_use_services_by_post = 'hdp'  
-let g:direct_sbm_echo_type = 'simple'
+" CPAN
+nnoremap ,cp :<C-u>o http://search.cpan.org/search?mode=all&query=
+nnoremap ,Cp :<C-u>t http://search.cpan.org/search?mode=all&query=
 
 " オートコンプリートの設定
-autocmd VimperatorEnter .* :set complete=blsfH
-"autocmd VimperatorEnter .* :set complete=blsfDH
+autocmd KmnkAutoCmd VimperatorEnter .* :set complete=blsfH
+"autocmd KmnkAutoCmd VimperatorEnter .* :set complete=blsfDH
 
 " 読み込んだことを出力
 echo "_vimperatorrc sourced"
 
 " vim: filetype=vim
+" vim: expandtab softtabstop=2 shiftwidth=2
+" vim: foldmethod=marker

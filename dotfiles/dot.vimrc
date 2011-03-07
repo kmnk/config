@@ -64,6 +64,9 @@ cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
 " Yank like C and D
 nnoremap Y y$
 
+" select latest changes
+nnoremap gc `[v`]
+
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
 nmap <Space>sk <SID>(split-to-k)
@@ -91,12 +94,12 @@ let g:html_no_pre   = 1
 nnoremap <C-h> :<C-u>h<Space>
 
 " edit vimrc right now
-nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
+nnoremap <silent> <Space>ev  :<C-u>tabedit $MYVIMRC<CR>
+nnoremap <silent> <Space>eg  :<C-u>tabedit $MYGVIMRC<CR>
 
 " Load .gvimrc after .vimrc edited at GVim.
-nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
-nnoremap <silent> <Space>rg :<C-u>source $MYGVIMRC<CR>
+nnoremap <silent> <Space>lv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
+nnoremap <silent> <Space>lg :<C-u>source $MYGVIMRC<CR>
 "}}}
 
 " create swp data to only tmp directory
@@ -334,6 +337,7 @@ nnoremap <expr> g...* ':Unite grep:' . expand('%:h:h:h') . "<CR>" . expand('<cwo
 
 nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
 nnoremap <silent> [unite]m :<C-u>Unite mark<CR>
+nnoremap <silent> [unite]r :<C-u>Unite register<CR>
 nnoremap <silent> [unite]hc :<C-u>Unite history/command<CR>
 nnoremap <silent> [unite]hs :<C-u>Unite history/search<CR>
 nnoremap <silent> [unite]<C-h> :<C-u>Unite help<CR>
