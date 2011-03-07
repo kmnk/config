@@ -19,8 +19,8 @@ nnoremap ,cp :<C-u>o http://search.cpan.org/search?mode=all&query=
 nnoremap ,Cp :<C-u>t http://search.cpan.org/search?mode=all&query=
 
 " オートコンプリートの設定
-autocmd AutoCmd VimperatorEnter .* :set complete=blsfH
-"autocmd AutoCmd VimperatorEnter .* :set complete=blsfDH
+autocmd VimperatorEnter .* :set complete=blsfH
+"autocmd VimperatorEnter .* :set complete=blsfDH
 
 " 読み込んだことを出力
 echo "_vimperatorrc sourced"
