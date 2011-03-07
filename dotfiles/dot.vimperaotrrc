@@ -10,6 +10,9 @@ set focuscontent
 " use visualbell on occuring errors or warnigs
 set visualbell
 
+"
+set hintchars=hjklasdf
+
 " alc
 nnoremap ,e :<C-u>o http://eow.alc.co.jp/
 nnoremap ,E :<C-u>t http://eow.alc.co.jp/
