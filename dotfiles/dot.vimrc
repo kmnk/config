@@ -20,7 +20,15 @@ set laststatus=2
 let &statusline = '%<%f %m%r%h%w[%{(&fenc!=""?&fenc:&enc)}][%{&ff}]%=%{cfi#format("[%s()]", "no function")} %l,%c%V%8P'
 
 " default tab settings
-set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" 
+set showcmd
+set showmatch
+set hlsearch
 
 " disp always number of lines
 set nocompatible
@@ -46,6 +54,16 @@ inoremap <C-w> <C-g>u<C-w>
 
 " operator replace
 nnoremap R <Plug>(operator-replace)
+
+" indent
+set autoindent
+set nocindent
+set smartindent
+
+" highlight tail space
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+autocmd KmnkAutoCmd WinEnter * match WhitespaceEOL /\s\+$/ 
 
 " useful key maps {{{
 " redo command by two type
@@ -73,6 +91,9 @@ nnoremap tt  <C-]>
 nnoremap tj  :<C-u>tag<CR>
 nnoremap tk  :<C-u>pop<CR>
 nnoremap tl  :<C-u>tags<CR>
+
+" 
+nnoremap ; :<C-u>w<CR>
 
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
