@@ -97,3 +97,6 @@
 [submodule "vim/bundle/vim-unittest"]
 	path = vim/bundle/vim-unittest
 	url = git://github.com/h1mesuke/vim-unittest.git
+[submodule "vim/bundle/vim-alignta"]
+	path = vim/bundle/vim-alignta
+	url = git://github.com/h1mesuke/vim-alignta.git
