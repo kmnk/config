@@ -60,11 +60,6 @@ set autoindent
 set nocindent
 set smartindent
 
-" highlight tail space
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-autocmd KmnkAutoCmd WinEnter * match WhitespaceEOL /\s\+$/ 
-
 " useful key maps {{{
 " redo command by two type
 nnoremap c. @:
@@ -291,6 +286,17 @@ function! s:CSVH(x)   "{{{
   execute 'match Keyword /^\([^,]*,\)\{'.a:x.'}\zs[^,]*/'
   execute 'normal ^'.a:x.'f,'
 endfunction "}}}
+
+" highlights
+highlight MultiByteSpace ctermbg=7 guibg=7
+match MultiByteSpace /　/
+autocmd KmnkAutoCmd WinEnter * match MultiByteSpace /　/
+highlight TooLongLine ctermbg=yellow guibg=yellow
+match TooLongLine /.\%>77v/
+autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
+highlight EOLWhiteSpace ctermbg=red guibg=red
+match EOLWhiteSpace /\s\+$/
+autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
 
 " 
 command! -complete=file -nargs=+ Grep  call s:grep([<f-args>])
