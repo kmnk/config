@@ -74,6 +74,9 @@ nnoremap tj  :<C-u>tag<CR>
 nnoremap tk  :<C-u>pop<CR>
 nnoremap tl  :<C-u>tags<CR>
 
+" one key write
+nnoremap ; :<C-u>w<CR>
+
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
 nmap <Space>sk <SID>(split-to-k)
@@ -99,6 +102,7 @@ let g:html_no_pre   = 1
 
 " help key map
 nnoremap <C-h> :<C-u>h<Space>
+nnoremap <BS>  :<C-u>h<Space>
 
 " edit vimrc right now
 nnoremap <silent> <Space>ev  :<C-u>tabedit $MYVIMRC<CR>
