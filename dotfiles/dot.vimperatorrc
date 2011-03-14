@@ -13,6 +13,10 @@ set visualbell
 "
 set hintchars=hjklasdf
 
+" move tab
+map <C-j> <SID>(to-next-tab)
+map <C-k> <SID>(to-prev-tab)
+
 " two key help
 map <C-h> <SID>(two-key-help)
 map <BS>  <SID>(two-key-help)
@@ -32,6 +36,8 @@ autocmd VimperatorEnter .* :set complete=blsfH
 echo "_vimperatorrc sourced"
 
 " key mappings
+nnoremap <SID>(to-next-tab)   gt
+nnoremap <SID>(to-prev-tab)   gT
 nnoremap <SID>(two-key-help)  :<C-u>h 
 nnoremap <SID>(alc-open)      :<C-u>o http://eow.alc.co.jp/
 nnoremap <SID>(alc-tab-open)  :<C-u>t http://eow.alc.co.jp/
