@@ -13,20 +13,30 @@ set visualbell
 "
 set hintchars=hjklasdf
 
+" two key help
+map <C-h> <SID>(two-key-help)
+map <BS>  <SID>(two-key-help)
+
 " alc
-nnoremap ,e :<C-u>o http://eow.alc.co.jp/
-nnoremap ,E :<C-u>t http://eow.alc.co.jp/
+map ,e <SID>(alc-open)
+map ,E <SID>(alc-tab-open)
 
 " CPAN
-nnoremap ,cp :<C-u>o http://search.cpan.org/search?mode=all&query=
-nnoremap ,Cp :<C-u>t http://search.cpan.org/search?mode=all&query=
+map ,cp <SID>(cpan-open)
+map ,Cp <SID>(cpan-tab-open)
 
-" オートコンプリートの設定
+" autocompletes
 autocmd VimperatorEnter .* :set complete=blsfH
-"autocmd VimperatorEnter .* :set complete=blsfDH
 
-" 読み込んだことを出力
+" sourced
 echo "_vimperatorrc sourced"
+
+" key mappings
+nnoremap <SID>(two-key-help)  :<C-u>h 
+nnoremap <SID>(alc-open)      :<C-u>o http://eow.alc.co.jp/
+nnoremap <SID>(alc-tab-open)  :<C-u>t http://eow.alc.co.jp/
+nnoremap <SID>(cpan-open)     :<C-u>o http://search.cpan.org/search?mode=all&query=
+nnoremap <SID>(cpan-tab-open) :<C-u>t http://search.cpan.org/search?mode=all&query=
 
 " vim: filetype=vim
 " vim: expandtab softtabstop=2 shiftwidth=2
