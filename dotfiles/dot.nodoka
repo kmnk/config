@@ -19,7 +19,8 @@ key *IC-C-H = BS
 # One Shot modifier settings
 # CapsLk
 mod ctrl    += !!英数
-key *英数   = *Esc
+key *IC-*A-*C-*英数 = *Esc
+key *IC-S-*英数 = C-Space
 key R-*英数 = &Ignore
 
 # 無変換
@@ -28,9 +29,14 @@ key *IC-*A-*S-*C-*無変換    = *無変換
 key R-*無変換   = &Ignore
 
 # 変換 
-mod shift   += !!変換
+mod ctrl    += !!変換
 key *IC-*A-*S-*C-*変換  = *変換
 key R-*変換 = &Ignore
+
+# Space
+mod shift   += !!Space
+key *IC-*A-*S-*C-*Space = *Space
+key R-*Space    = &Ignore
 
 # ひらがな
 mod alt     += !!ひらがな
@@ -42,3 +48,32 @@ key *IC-SemiColon = Enter
 
 # map Control + SemiColon to SemiColon
 key *IC-C-~S-SemiColon = SemiColon
+
+# control window
+key *IC-A-P             = &WindowMaximize
+key *IC-A-SemiColon     = A-Tab
+key *IC-S-A-SemiColon   = S-A-Tab
+
+# like 104
+# SEEALSO: http://ja.wikipedia.org/wiki/キー配列#101.E3.82.AD.E3.83.BC.E3.83.9C.E3.83.BC.E3.83.89
+key *IC-S-SemiColon             = Colon
+key *IC-Colon                   = S-_7
+key *IC-S-Colon                 = S-_2
+key *IC-S-_2                    = CommercialAt
+key *IC-S-_6                    = CircumflexAccent
+key *IC-S-_7                    = S-_6
+key *IC-S-_8                    = S-Colon
+key *IC-S-_9                    = S-_8
+key *IC-S-_0                    = S-_9
+key *IC-S-Minus                 = S-ReverseSolidus
+key *IC-CircumflexAccent        = S-Minus
+key *IC-S-CircumflexAccent      = S-Semicolon
+key *IC-半角/全角               = S-CommercialAt
+key *IC-S-半角/全角             = S-CircumflexAccent
+key *IC-CommercialAt            = LeftSquareBracket
+key *IC-CommercialAt            = LeftSquareBracket
+key *IC-S-CommercialAt          = S-LeftSquareBracket
+key *IC-LeftSquareBracket       = RightSquareBracket
+key *IC-S-LeftSquareBracket     = S-RightSquareBracket
+key *IC-RightSquareBracket      = ReverseSolidus
+key *IC-S-RightSquareBracket    = S-YenSign
