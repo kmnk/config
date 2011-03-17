@@ -33,11 +33,6 @@ mod ctrl    += !!変換
 key *IC-*A-*S-*C-*変換  = *変換
 key R-*変換 = &Ignore
 
-# Space
-mod shift   += !!Space
-key *IC-*A-*S-*C-*Space = *Space
-key R-*Space    = &Ignore
-
 # ひらがな
 mod alt     += !!ひらがな
 key *IC-*A-*S-*C-*ひらがな  = *ひらがな
