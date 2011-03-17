@@ -19,19 +19,8 @@ key *IC-C-H = BS
 # One Shot modifier settings
 # CapsLk
 mod ctrl    += !!英数
-key *IC-*A-*C-*英数 = *Esc
-key *IC-S-*英数 = C-Space
+key *IC-*S-*A-*C-*英数 = *Esc
 key R-*英数 = &Ignore
-
-# 無変換
-mod ctrl    += !!無変換
-key *IC-*A-*S-*C-*無変換    = *無変換
-key R-*無変換   = &Ignore
-
-# 変換 
-mod ctrl    += !!変換
-key *IC-*A-*S-*C-*変換  = *変換
-key R-*変換 = &Ignore
 
 # ひらがな
 mod alt     += !!ひらがな
