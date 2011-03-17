@@ -90,6 +90,12 @@ nnoremap tl  :<C-u>tags<CR>
 " 
 nnoremap ; :<C-u>w<CR>
 
+" move tab
+map <C-j> <SID>(to-next-tab)
+map <C-k> <SID>(to-prev-tab)
+nnoremap <SID>(to-next-tab)   gt
+nnoremap <SID>(to-prev-tab)   gT
+
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
 nmap <Space>sk <SID>(split-to-k)
