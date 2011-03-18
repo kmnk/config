@@ -38,11 +38,6 @@ mod shift   += !!Space
 key *IC-*A-*S-*C-*Space = *Space
 key R-*Space    = &Ignore
 
-# ひらがな
-mod alt     += !!ひらがな
-key *IC-*A-*S-*C-*ひらがな  = *ひらがな
-key R-*ひらがな = &Ignore
-
 # map SemiColon to Enter
 key *IC-SemiColon = Enter
 
