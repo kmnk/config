@@ -20,7 +20,15 @@ set laststatus=2
 let &statusline = '%<%f %m%r%h%w[%{(&fenc!=""?&fenc:&enc)}][%{&ff}]%=%{cfi#format("[%s()]", "no function")} %l,%c%V%8P'
 
 " default tab settings
-set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" 
+set showcmd
+set showmatch
+set hlsearch
 
 " disp always number of lines
 set nocompatible
@@ -46,6 +54,11 @@ inoremap <C-w> <C-g>u<C-w>
 
 " operator replace
 nnoremap R <Plug>(operator-replace)
+
+" indent
+set autoindent
+set nocindent
+set smartindent
 
 " useful key maps {{{
 " redo command by two type
@@ -74,14 +87,14 @@ nnoremap tj  :<C-u>tag<CR>
 nnoremap tk  :<C-u>pop<CR>
 nnoremap tl  :<C-u>tags<CR>
 
-" one key write
+" 
 nnoremap ; :<C-u>w<CR>
 
 " move tab
 map <C-j> <SID>(to-next-tab)
 map <C-k> <SID>(to-prev-tab)
-nnoremap <SID>(to-next-tab) gt
-nnoremap <SID>(to-prev-tab) gT
+nnoremap <SID>(to-next-tab)   gt
+nnoremap <SID>(to-prev-tab)   gT
 
 " split {{{
 nmap <Space>sj <SID>(split-to-j)
@@ -196,6 +209,8 @@ function! s:init_cmdwin()
   inoremap <buffer><expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
   inoremap <buffer><expr><C-h> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
   inoremap <buffer><expr><BS> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
+  inoremap <buffer> qq <Esc>:<C-u>quit<CR>
+  inoremap <buffer> kk <Esc>k
 
   " Completion.
   inoremap <buffer><expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -278,6 +293,17 @@ function! s:CSVH(x)   "{{{
   execute 'match Keyword /^\([^,]*,\)\{'.a:x.'}\zs[^,]*/'
   execute 'normal ^'.a:x.'f,'
 endfunction "}}}
+
+" highlights
+highlight MultiByteSpace ctermbg=7 guibg=7
+match MultiByteSpace /　/
+autocmd KmnkAutoCmd WinEnter * match MultiByteSpace /　/
+highlight TooLongLine ctermbg=yellow guibg=yellow
+match TooLongLine /.\%>77v/
+autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
+highlight EOLWhiteSpace ctermbg=red guibg=red
+match EOLWhiteSpace /\s\+$/
+autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
 
 " 
 command! -complete=file -nargs=+ Grep  call s:grep([<f-args>])
