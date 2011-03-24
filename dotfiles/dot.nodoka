@@ -75,6 +75,3 @@ key *IC-*A-*S-*C-Minus          = BackSpace
 key *IC-*A-*S-*C-YenSign            = &Undefined
 key *IC-*A-*S-*C-CircumflexAccent   = &Undefined
 key *IC-*A-*S-*C-ReverseSolidus     = &Undefined
-key *IC-*A-*S-*C-BackSpace          = &Undefined
-key *IC-*A-*S-*C-Enter              = &Undefined
-key *IC-*A-*S-*C-RightShift         = &Undefined
