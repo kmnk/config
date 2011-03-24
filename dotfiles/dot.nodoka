@@ -68,7 +68,13 @@ key *IC-LeftSquareBracket       = S-Minus
 key *IC-S-LeftSquareBracket     = S-Semicolon
 key *IC-RightSquareBracket      = S-CommercialAt
 key *IC-S-RightSquareBracket    = S-CircumflexAccent
+
+key *IC-*A-*S-*C-Minus          = BackSpace
+
+# no human can use following keys
 key *IC-*A-*S-*C-YenSign            = &Undefined
-key *IC-*A-*S-*C-Minus              = &Undefined
 key *IC-*A-*S-*C-CircumflexAccent   = &Undefined
 key *IC-*A-*S-*C-ReverseSolidus     = &Undefined
+key *IC-*A-*S-*C-BackSpace          = &Undefined
+key *IC-*A-*S-*C-Enter              = &Undefined
+key *IC-*A-*S-*C-RightShift         = &Undefined
