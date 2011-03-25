@@ -69,8 +69,6 @@ key *IC-S-LeftSquareBracket     = S-Semicolon
 key *IC-RightSquareBracket      = S-CommercialAt
 key *IC-S-RightSquareBracket    = S-CircumflexAccent
 
-key *IC-*A-*S-*C-Minus          = BackSpace
-
 # no human can use following keys
 key *IC-*A-*S-*C-YenSign            = &Undefined
 key *IC-*A-*S-*C-CircumflexAccent   = &Undefined
