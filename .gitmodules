@@ -100,3 +100,6 @@
 [submodule "vim/bundle/vim-alignta"]
 	path = vim/bundle/vim-alignta
 	url = git://github.com/h1mesuke/vim-alignta.git
+[submodule "vim/bundle/neco-look"]
+	path = vim/bundle/neco-look
+	url = git://github.com/ujihisa/neco-look.git
