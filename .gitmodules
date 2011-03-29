@@ -103,3 +103,6 @@
 [submodule "vim/bundle/neco-look"]
 	path = vim/bundle/neco-look
 	url = git://github.com/ujihisa/neco-look.git
+[submodule "vim/bundle/unite-outline"]
+	path = vim/bundle/unite-outline
+	url = git://github.com/h1mesuke/unite-outline.git
