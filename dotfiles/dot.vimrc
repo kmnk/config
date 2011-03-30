@@ -378,7 +378,7 @@ nnoremap <expr> g.*   ':Unite grep:' . expand('%:h')     . "<CR>" . expand('<cwo
 nnoremap <expr> g..*  ':Unite grep:' . expand('%:h:h')   . "<CR>" . expand('<cword>') . "<CR>"
 nnoremap <expr> g...* ':Unite grep:' . expand('%:h:h:h') . "<CR>" . expand('<cword>') . "<CR>"
 
-nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
+nnoremap <silent> [unite]o :<C-u>Unite -vertical -direction=topleft -auto-preview outline<CR>
 nnoremap <silent> [unite]m :<C-u>Unite mark<CR>
 nnoremap <silent> [unite]r :<C-u>Unite register<CR>
 nnoremap <silent> [unite]hc :<C-u>Unite history/command<CR>
