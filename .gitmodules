@@ -106,3 +106,6 @@
 [submodule "vim/bundle/unite-outline"]
 	path = vim/bundle/unite-outline
 	url = git://github.com/h1mesuke/unite-outline.git
+[submodule "vim/bundle/visualctrlg.vim"]
+	path = vim/bundle/visualctrlg.vim
+	url = git://github.com/tyru/visualctrlg.vim.git
