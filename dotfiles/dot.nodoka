@@ -46,8 +46,8 @@ key *IC-S-_0                    = S-_9
 key *IC-S-Minus                 = S-ReverseSolidus
 key *IC-CircumflexAccent        = S-Minus
 key *IC-S-CircumflexAccent      = S-Semicolon
-#key *IC-半角/全角               = S-CommercialAt
-#key *IC-S-半角/全角             = S-CircumflexAccent
+key *IC-半角/全角               = S-CommercialAt
+key *IC-S-半角/全角             = S-CircumflexAccent
 key *IC-CommercialAt            = LeftSquareBracket
 key *IC-S-CommercialAt          = S-LeftSquareBracket
 key *IC-LeftSquareBracket       = RightSquareBracket
@@ -56,8 +56,8 @@ key *IC-RightSquareBracket      = ReverseSolidus
 key *IC-S-RightSquareBracket    = S-YenSign
 
 # extend binds
-key *IC-ReverseSolidus      = S-CommercialAt
-key *IC-S-ReverseSolidus    = S-CircumflexAccent
+key *IC-ReverseSolidus      = S-Minus
+key *IC-S-ReverseSolidus    = S-Semicolon
 #key *IC-C-無変換                = LeftSquareBracket
 #key *IC-C-変換                  = RightSquareBracket
 #key *IC-S-無変換                = S-LeftSquareBracket
