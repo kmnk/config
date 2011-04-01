@@ -109,3 +109,6 @@
 [submodule "vim/bundle/visualctrlg.vim"]
 	path = vim/bundle/visualctrlg.vim
 	url = git://github.com/tyru/visualctrlg.vim.git
+[submodule "vim/bundle/vimfiler"]
+	path = vim/bundle/vimfiler
+	url = git://github.com/Shougo/vimfiler.git
