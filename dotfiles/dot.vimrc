@@ -412,6 +412,25 @@ function! s:unite_my_settings()"{{{
 endfunction"}}}
 "}}}
 
+" vimfiler settings {{{
+call vimfiler#set_execute_file('vim', 'vim')
+call vimfiler#set_execute_file('txt', 'notepad')
+"let g:vimfiler_split_command = ''
+
+" Edit file by tabedit.
+let g:vimfiler_edit_command = 'tabedit'
+
+"let g:vimfiler_pedit_command = 'vnew'
+let g:vimfiler_external_copy_directory_command = 'cp -r $src $dest'
+let g:vimfiler_external_copy_file_command = 'cp $src $dest'
+let g:vimfiler_external_delete_command = 'rm -r $srcs'
+let g:vimfiler_external_move_command = 'mv $srcs $dest'
+let g:vimfiler_as_default_explorer = 1
+
+" Enable file operation commands.
+"let g:vimfiler_safe_mode_by_default = 0
+"}}}
+
 " vimshell settings {{{
 nmap <Space>; <SID>(launch-vimshell)
 nnoremap <SID>(launch-vimshell) :<C-u>VimShellPop<CR>
