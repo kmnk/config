@@ -30,7 +30,7 @@ map ,cp <SID>(cpan-open)
 map ,Cp <SID>(cpan-tab-open)
 
 " autocompletes
-autocmd VimperatorEnter .* :set complete=blsfH
+autocmd VimperatorEnter .* :set complete=blsfS
 
 " sourced
 echo "_vimperatorrc sourced"
