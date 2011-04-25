@@ -363,9 +363,9 @@ nnoremap [unite] <Nop>
 nmap <Leader>. [unite]
 
 " maps
-nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files file_rec buffer bookmark<CR>
+nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files bookmark file_rec buffer<CR>
 
-nnoremap <silent> [unite]c :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file buffer bookmark <CR>
+nnoremap <silent> [unite]c :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> bookmark file buffer <CR>
 
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
 
