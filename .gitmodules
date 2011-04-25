@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vimfiler"]
 	path = vim/bundle/vimfiler
 	url = git://github.com/Shougo/vimfiler.git
+[submodule "vim/bundle/echodoc"]
+	path = vim/bundle/echodoc
+	url = git://github.com/Shougo/echodoc.git
