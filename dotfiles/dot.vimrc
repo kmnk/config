@@ -407,8 +407,8 @@ function! s:unite_my_settings()"{{{
   nmap <buffer> h       <Plug>(unite_toggle_mark_current_candidate)
   imap <buffer> qq      <Plug>(unite_exit)
 
-"  " Start insert.
-"  let g:unite_enable_start_insert = 1
+  " Start insert.
+  let g:unite_enable_start_insert = 1
 endfunction"}}}
 "}}}
 
