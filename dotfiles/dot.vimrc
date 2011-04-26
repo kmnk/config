@@ -295,7 +295,7 @@ function! s:CSVH(x)   "{{{
 endfunction "}}}
 
 " highlights
-highlight MultiByteSpace ctermbg=7 guibg=7
+highlight MultiByteSpace ctermbg=LightGray guibg=LightGray
 match MultiByteSpace /　/
 autocmd KmnkAutoCmd WinEnter * match MultiByteSpace /　/
 highlight TooLongLine ctermbg=yellow guibg=yellow
@@ -520,7 +520,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
         \ }
-	
+
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
     let g:neocomplcache_keyword_patterns = {}
@@ -566,7 +566,7 @@ autocmd KmnkAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
-	let g:neocomplcache_omni_patterns = {}
+  let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
@@ -580,8 +580,8 @@ for [key, com] in items({
 \   '<Leader>w' : '>',
 \   '<Leader>q' : '>>',
 \ })
-	execute 'nnoremap <silent>' key ':QuickRun' com '-mode n -split vertical<CR>'
-	execute 'vnoremap <silent>' key ':QuickRun' com '-mode v -split vertical<CR>'
+  execute 'nnoremap <silent>' key ':QuickRun' com '-mode n -split vertical<CR>'
+  execute 'vnoremap <silent>' key ':QuickRun' com '-mode v -split vertical<CR>'
 endfor
 "}}}
 
@@ -719,6 +719,9 @@ endfunction
 command! -bar -bang -nargs=? -complete=file Scouter
 \        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 "}}}
+
+" unnamed clipboard
+set clipboard+=unnamed
 
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
