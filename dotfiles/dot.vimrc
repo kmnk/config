@@ -294,7 +294,7 @@ function! s:CSVH(x)   "{{{
   execute 'normal ^'.a:x.'f,'
 endfunction "}}}
 
-" highlights
+" highlights {{{
 highlight MultiByteSpace ctermbg=LightGray guibg=LightGray
 match MultiByteSpace /　/
 autocmd KmnkAutoCmd WinEnter * match MultiByteSpace /　/
@@ -304,19 +304,22 @@ autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
 highlight EOLWhiteSpace ctermbg=red guibg=red
 match EOLWhiteSpace /\s\+$/
 autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
+"}}}
 
-" 
+" {{{
 command! -complete=file -nargs=+ Grep  call s:grep([<f-args>])
 function! s:grep(args)
   execute 'vimgrep' '/'.a:args[-1].'/' join(a:args[:-2])
 endfunction
+"}}}
 
-" set file type (setf)
+" set file type (setf) {{{
 augroup FileTypeCmd
   autocmd!
 augroup END
 autocmd FileTypeCmd FileType js setlocal ft=javascript
 autocmd FileTypeCmd FileType pl setlocal ft=perl
+"}}}
 
 " align setting
 let g:Align_xstrlen=3
@@ -410,6 +413,11 @@ function! s:unite_my_settings()"{{{
   " Start insert.
   let g:unite_enable_start_insert = 1
 endfunction"}}}
+"}}}
+
+" alignta settings {{{
+vmap <Leader>al <SID>(setup-alignta)
+vnoremap <SID>(setup-alignta) :Align
 "}}}
 
 " vimfiler settings {{{
