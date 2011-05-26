@@ -304,6 +304,9 @@ autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
 highlight EOLWhiteSpace ctermbg=red guibg=red
 match EOLWhiteSpace /\s\+$/
 autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
+highlight TabSpace ctermbg=red guibg=red
+match TabSpace /\t/
+autocmd KmnkAutoCmd WinEnter * match TabSpace /\t/
 "}}}
 
 " {{{
