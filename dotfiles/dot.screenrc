@@ -1,8 +1,18 @@
 escape ^Tt
+
 vbell off
 
-attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-defbce on
+# 
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# access to memcached
+bind ^m screen telnet 11211
+
+# escape bineded key
+bindkey "^Z" mapdefault
+
+# others
+idle 10 blanker
+nethack on
 
 # vim: filetype=screen

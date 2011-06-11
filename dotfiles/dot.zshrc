@@ -2,12 +2,11 @@
 JAVA_HOME=/usr/java/jdk1.6.0_18
 M2_HOME=$HOME/maven
 M2=$M2_HOME/bin
-
 PATH=$HOME/bin:$HOME/local/bin:$JAVA_HOME/bin:$M2:$PATH
+PERL5LIB=$HOME/local/lib/perl5
+LESS=mqeisz-2XR
 
-export PATH JAVA_HOME M2_HOME M2
-
-export LESS=mqeisz-2XR
+export PATH JAVA_HOME M2_HOME M2 PERL5LIB LESS
 
 # 初期設定
 local RED=$'%{\e[1;31m%}'
@@ -94,30 +93,13 @@ setopt nolistbeep   # beep off
 # screen関連
 alias sc="screen"
 alias scl="screen -ls"
-alias sct="screen -r"
+alias sct="screen -D -R"
 alias scn="screen -S"
 
-# telnet
-alias memd="telnet localhost 11211"
 
 # ディレクトリ移動
 alias gh="cd ~"
 alias gw="cd ~/work"
 alias gl="cd ~/log"
-alias gsvn="cd ~/svn"
-alias gw00="cd ~/svn/work_00"
-alias gw01="cd ~/svn/work_01"
-alias gw02="cd ~/svn/work_02"
-alias gw03="cd ~/svn/work_03"
-alias gw04="cd ~/svn/work_04"
-alias gw05="cd ~/svn/work_05"
-alias gw06="cd ~/svn/work_06"
-alias gw07="cd ~/svn/work_07"
-alias gw08="cd ~/svn/work_08"
-alias gw09="cd ~/svn/work_09"
-alias gw10="cd ~/svn/work_10"
-alias gw11="cd ~/svn/work_11"
-alias gw12="cd ~/svn/work_12"
-alias gw13="cd ~/svn/work_13"
 
 # vim: filetype=zsh
