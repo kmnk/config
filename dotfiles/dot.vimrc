@@ -304,6 +304,9 @@ autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
 highlight EOLWhiteSpace ctermbg=red guibg=red
 match EOLWhiteSpace /\s\+$/
 autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
+highlight TabSpace ctermbg=red guibg=red
+match TabSpace /\t/
+autocmd KmnkAutoCmd WinEnter * match TabSpace /\t/
 "}}}
 
 " {{{
@@ -426,7 +429,7 @@ call vimfiler#set_execute_file('txt', 'notepad')
 "let g:vimfiler_split_command = ''
 
 " Edit file by tabedit.
-let g:vimfiler_edit_command = 'tabedit'
+let g:vimfiler_edit_command = 'edit'
 
 "let g:vimfiler_pedit_command = 'vnew'
 let g:vimfiler_external_copy_directory_command = 'cp -r $src $dest'
