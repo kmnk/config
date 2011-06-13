@@ -186,12 +186,20 @@ augroup vimrc-local "{{{
   autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
 augroup END "}}}
 
-function! s:vimrc_local(loc)  "{{{
+function! s:vimrc_local(loc) "{{{
   let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
   for i in reverse(filter(files, 'filereadable(v:val)'))
     source `=i`
   endfor
 endfunction "}}}
+"}}}
+
+" add runtimepath for developing vim script. {{{
+autocmd KmnkAutoCmd BufNewFile,BufReadPost *.vim call s:set_local_runtimepath(getcwd())
+function! s:set_local_runtimepath(loc) "{{{
+  let &runtimepath .= ',' . a:loc
+endfunction
+"}}}
 "}}}
 
 " Command-line window {{{
