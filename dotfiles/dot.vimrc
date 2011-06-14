@@ -133,6 +133,7 @@ nnoremap <silent> <Space>lg :<C-u>source $MYGVIMRC<CR>
 "}}}
 
 " create swp data to only tmp directory
+set directory&
 set directory-=.
 
 " useful commands {{{
@@ -145,7 +146,7 @@ set ignorecase
 set smartcase
 
 " <Leader>ao move current buffer into a new tab.
-nnoremap <silent> <Leader>ao :<C-u>call <SID>move_window_into_tab_page(0)<Cr>
+nnoremap <silent> <Leader>mt :<C-u>call <SID>move_window_into_tab_page(0)<Cr>
 " kana's useful tab function {{{
 function! s:move_window_into_tab_page(target_tabpagenr)
   " Move the current window into a:target_tabpagenr.
@@ -661,6 +662,7 @@ if has('iconv')
     let &fileencodings = &fileencodings .','. s:fileencodings_default
     unlet s:fileencodings_default
   else
+    set fileencodings&
     let &fileencodings = &fileencodings .','. s:enc_jis
     set fileencodings+=utf-8,ucs-2le,ucs-2
     if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
@@ -706,6 +708,7 @@ command! -bang -nargs=? EucJp edit<bang> ++enc=euc-jp <args>
 "}}}
 
 " perl settings {{{
+set iskeyword&
 set iskeyword+=:
 " Dump
 "   use Data::Dumper;
@@ -732,7 +735,11 @@ command! -bar -bang -nargs=? -complete=file Scouter
 "}}}
 
 " unnamed clipboard
+set clipboard&
 set clipboard+=unnamed
+
+"
+set foldmethod=marker
 
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
