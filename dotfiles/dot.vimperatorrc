@@ -33,6 +33,10 @@ map ,Cp <SID>(cpan-tab-open)
 map ,src <SID>(google-srccode-open)
 map ,Src <SID>(google-srccode-tab-open)
 
+" Google image search
+map ,img <SID>(google-img-open)
+map ,Img <SID>(google-img-tab-open)
+
 " autocompletes
 autocmd VimperatorEnter .* :set complete=blsfS
 
@@ -49,6 +53,8 @@ nnoremap <SID>(cpan-open)               :<C-u>o http://search.cpan.org/search?mo
 nnoremap <SID>(cpan-tab-open)           :<C-u>t http://search.cpan.org/search?mode=all&query=
 nnoremap <SID>(google-srccode-open)     :<C-u>o www.google.com/codesearch#search/&q=
 nnoremap <SID>(google-srccode-tab-open) :<C-u>t www.google.com/codesearch#search/&q=
+nnoremap <SID>(google-img-open)         :<C-u>o www.google.co.jp/search?tbm=isch&q=
+nnoremap <SID>(google-img-tab-open)     :<C-u>t www.google.co.jp/search?tbm=isch&q=
 
 " vim: filetype=vim
 " vim: expandtab softtabstop=2 shiftwidth=2
