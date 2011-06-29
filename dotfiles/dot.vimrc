@@ -477,6 +477,7 @@ autocmd KmnkAutoCmd FileType vimshell
 \| call vimshell#altercmd#define('i', 'iexe')
 \| call vimshell#altercmd#define('l', 'll')
 \| call vimshell#altercmd#define('ll', 'ls -l')
+\| call vimshell#altercmd#define('vi', 'vim')
 \| call vimshell#hook#set('chpwd', ['g:my_chpwd'])
 \| call vimshell#hook#set('emptycmd', ['g:my_emptycmd'])
 \| call vimshell#hook#set('preprompt', ['g:my_preprompt'])
