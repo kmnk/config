@@ -310,10 +310,10 @@ autocmd KmnkAutoCmd WinEnter * match MultiByteSpace /　/
 highlight TooLongLine ctermbg=yellow guibg=yellow
 match TooLongLine /.\%>77v/
 autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
-highlight EOLWhiteSpace ctermbg=red guibg=red
+highlight EOLWhiteSpace ctermbg=blue guibg=blue
 match EOLWhiteSpace /\s\+$/
 autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
-highlight TabSpace ctermbg=red guibg=red
+highlight TabSpace ctermbg=blue guibg=blue
 match TabSpace /\t/
 autocmd KmnkAutoCmd WinEnter * match TabSpace /\t/
 "}}}
@@ -378,9 +378,9 @@ nnoremap [unite] <Nop>
 nmap <Leader>. [unite]
 
 " maps
-nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files bookmark file_rec buffer<CR>
+nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files file bookmark file_rec buffer<CR>
 
-nnoremap <silent> [unite]c :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> bookmark file buffer <CR>
+nnoremap <silent> [unite]c :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> bookmark file buffer<CR>
 
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
 
