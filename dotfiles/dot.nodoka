@@ -22,41 +22,45 @@ key *IC-*S-*A-*C-*英数 = *Esc
 key R-*英数 = &Ignore
 
 # map SemiColon to Enter
-key *IC-SemiColon = Enter
-key *IC-A-SemiColon   = A-Enter
+key *IC-SemiColon   = Enter
+key *IC-A-SemiColon = A-Enter
 
 # map Control + SemiColon to SemiColon
 key *IC-C-~S-SemiColon = SemiColon
 
 # control window
-key *IC-A-P           = &WindowMaximize
+key *IC-A-P = &WindowMaximize
 
 # like 104
 # SEEALSO: http://ja.wikipedia.org/wiki/キー配列#101.E3.82.AD.E3.83.BC.E3.83.9C.E3.83.BC.E3.83.89
-key *IC-S-SemiColon          = Colon
-key *IC-Colon                = S-_7
-key *IC-S-Colon              = S-_2
-key *IC-S-_2                 = CommercialAt
-key *IC-S-_6                 = CircumflexAccent
-key *IC-S-_7                 = S-_6
-key *IC-S-_8                 = S-Colon
-key *IC-S-_9                 = S-_8
-key *IC-S-_0                 = S-_9
-key *IC-S-Minus              = S-ReverseSolidus
-key *IC-CircumflexAccent     = S-Minus
-key *IC-S-CircumflexAccent   = S-Semicolon
-key *IC-CommercialAt         = LeftSquareBracket
-key *IC-S-CommercialAt       = S-LeftSquareBracket
-key *IC-LeftSquareBracket    = RightSquareBracket
-key *IC-S-LeftSquareBracket  = S-RightSquareBracket
-key *IC-RightSquareBracket   = ReverseSolidus
-key *IC-S-RightSquareBracket = S-YenSign
+key *IC-S-SemiColon          = Colon                # :
+key *IC-Colon                = S-_7                 # '
+key *IC-S-Colon              = S-_2                 # "
+key *IC-半角/全角            = S-CommercialAt       # `
+key *IC-S-半角/全角          = S-CircumflexAccent   # ~
+key *IC-S-_2                 = CommercialAt         # @
+key *IC-S-_6                 = CircumflexAccent     # ^
+key *IC-S-_7                 = S-_6                 # &
+key *IC-S-_8                 = S-Colon              # *
+key *IC-S-_9                 = S-_8                 # (
+key *IC-S-_0                 = S-_9                 # )
+key *IC-S-Minus              = S-ReverseSolidus     # _
+#key *IC-CircumflexAccent     = S-Minus              # =
+#key *IC-S-CircumflexAccent   = S-Semicolon          # +
+key *IC-CommercialAt         = LeftSquareBracket    # [
+key *IC-S-CommercialAt       = S-LeftSquareBracket  # {
+key *IC-LeftSquareBracket    = RightSquareBracket   # ]
+key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
+key *IC-RightSquareBracket   = ReverseSolidus       # \
+key *IC-S-RightSquareBracket = S-YenSign            # |
 
 # extend binds
-key *IC-ReverseSolidus   = S-Minus
-key *IC-S-ReverseSolidus = S-Semicolon
-key *IC-S-無変換         = S-CommercialAt
-key *IC-S-変換           = S-CircumflexAccent
+key *IC-ReverseSolidus   = S-Minus              # =
+key *IC-S-ReverseSolidus = S-Semicolon          # +
+key *IC-C-Colon          = S-CommercialAt       # `
+key *IC-C-Solidus        = S-CircumflexAccent   # ~
+# key *IC-S-無変換         = &Undefined
+# key *IC-S-変換           = &Undefined
 
 # no human can use following keys
 key *IC-*A-*S-*C-CircumflexAccent = &Undefined
