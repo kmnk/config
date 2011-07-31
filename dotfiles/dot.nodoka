@@ -46,10 +46,10 @@ key *IC-CircumflexAccent     = S-Minus              # =
 key *IC-S-CircumflexAccent   = S-Semicolon          # +
 key *IC-CommercialAt         = LeftSquareBracket    # [
 key *IC-S-CommercialAt       = S-LeftSquareBracket  # {
-    key *IC-LeftSquareBracket    = RightSquareBracket   # ]
-    key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
-    key *IC-RightSquareBracket   = ReverseSolidus       # \
-    key *IC-S-RightSquareBracket = S-YenSign            # |
+key *IC-LeftSquareBracket    = RightSquareBracket   # ]
+key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
+key *IC-RightSquareBracket   = ReverseSolidus       # \
+key *IC-S-RightSquareBracket = S-YenSign            # |
 
 # extend binds
 key *IC-ReverseSolidus     = S-Minus            # =
