@@ -121,7 +121,7 @@ let g:html_no_pre   = 1
 
 " help key map
 nnoremap <C-h> :<C-u>h<Space>
-nnoremap <BS>  :<C-u>h<Space>
+inoremap <C-h> <BS>
 
 " edit vimrc right now
 nnoremap <silent> <Space>ev  :<C-u>tabedit $MYVIMRC<CR>

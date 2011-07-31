@@ -12,9 +12,6 @@ key ScrollLock = W-L
 key Pause      = &LoadSetting("日本語 109 キーボード")
 key Insert     = &LoadSetting
 
-# map Control + H to BackSpace
-key *IC-C-H = BS
-
 # One Shot modifier settings
 # CapsLk
 mod ctrl += !!英数
