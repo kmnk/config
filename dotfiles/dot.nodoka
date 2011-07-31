@@ -1,41 +1,6 @@
 # default
 include "109.mayu"
 
-# map Ctrl + Alt + hjkl to moving cursor
-key C-A-K = ↑
-key C-A-L = →
-key C-A-J = ↓
-key C-A-H = ←
-
-# map Pause to Windows Lock
-key ScrollLock = W-L
-key Pause      = &LoadSetting("日本語 109 キーボード")
-key Insert     = &LoadSetting
-
-# One Shot modifier settings
-# CapsLk
-mod ctrl += !!英数
-key *IC-*S-*A-*C-*英数 = *Esc
-key R-*英数 = &Ignore
-
-# ひらがな
-mod Alt += !!ひらがな
-key *IC-*S-*A-*C-*ひらがな = *ひらがな
-key R-*ひらがな = &Ignore
-
-# map SemiColon to Enter
-key *IC-SemiColon   = Enter
-key *IC-A-SemiColon = A-Enter
-
-# map Control + SemiColon to SemiColon
-key *IC-C-~S-SemiColon = SemiColon
-
-# control window
-key *IC-A-P = &WindowMaximize
-
-# 
-key *IC-C-H = Backspace
-
 # like 104
 # SEEALSO: http://ja.wikipedia.org/wiki/キー配列#101.E3.82.AD.E3.83.BC.E3.83.9C.E3.83.BC.E3.83.89
 key *IC-S-SemiColon          = Colon                # :
@@ -54,23 +19,13 @@ key *IC-CircumflexAccent     = S-Minus              # =
 key *IC-S-CircumflexAccent   = S-Semicolon          # +
 key *IC-CommercialAt         = LeftSquareBracket    # [
 key *IC-S-CommercialAt       = S-LeftSquareBracket  # {
-key *IC-LeftSquareBracket    = RightSquareBracket   # ]
-key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
-key *IC-RightSquareBracket   = ReverseSolidus       # \
-key *IC-S-RightSquareBracket = S-YenSign            # |
+    key *IC-LeftSquareBracket    = RightSquareBracket   # ]
+    key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
+    key *IC-RightSquareBracket   = ReverseSolidus       # \
+    key *IC-S-RightSquareBracket = S-YenSign            # |
 
-# extend binds
-key *IC-ReverseSolidus     = S-Minus            # =
-key *IC-S-ReverseSolidus   = S-Semicolon        # +
-key *IC-C-Colon            = S-CommercialAt     # `
-key *IC-C-Solidus          = S-CircumflexAccent # ~
-key *IC-C-無変換           = _6                 # 6
-key *IC-S-無変換           = CircumflexAccent   # ^
-key *IC-C-変換             = Minus              # -
-key *IC-S-変換             = S-ReverseSolidus   # _
-
-# no human can use following keys
-#key *IC-*A-*S-*C-_6               = &Undefined # but use 6 on numeric input
+## no human can use following keys
+#key *IC-*A-*S-*C-_6               = &Undefined
 #key *IC-*A-*S-*C-Minus            = &Undefined
 #key *IC-*A-*S-*C-CircumflexAccent = &Undefined
 #key *IC-*A-*S-*C-YenSign          = &Undefined
@@ -95,3 +50,45 @@ key *IC-S-変換             = S-ReverseSolidus   # _
 #key *IC-*A-*S-*C-F10 = &Undefined
 #key *IC-*A-*S-*C-F11 = &Undefined
 #key *IC-*A-*S-*C-F12 = &Undefined
+
+# extend binds
+key *IC-ReverseSolidus     = S-Minus            # =
+key *IC-S-ReverseSolidus   = S-Semicolon        # +
+key *IC-C-Colon            = S-CommercialAt     # `
+key *IC-C-Solidus          = S-CircumflexAccent # ~
+
+# One Shot modifier settings
+# CapsLk
+mod ctrl += !!英数
+key *IC-*S-*A-*C-*英数 = *Esc
+key R-*英数 = &Ignore
+
+# 無変換
+key *IC-C-無変換         = _6                 # 6
+key *IC-S-無変換         = CircumflexAccent   # ^
+
+# 変換
+key *IC-C-変換             = Minus              # -
+key *IC-S-変換             = S-ReverseSolidus   # _
+
+# SemiColon
+key *IC-SemiColon      = Enter
+key *IC-A-SemiColon    = A-Enter
+key *IC-C-~S-SemiColon = SemiColon # ;
+
+# map Ctrl + Alt + hjkl to moving cursor
+key C-A-K = ↑
+key C-A-L = →
+key C-A-J = ↓
+key C-A-H = ←
+
+# map Pause to Windows Lock
+key ScrollLock = W-L
+key Pause      = &LoadSetting("日本語 109 キーボード")
+key Insert     = &LoadSetting
+
+# control window
+key *IC-A-P = &WindowMaximize
+
+# 
+key *IC-C-H = Backspace
