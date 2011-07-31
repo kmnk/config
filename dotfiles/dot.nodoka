@@ -28,6 +28,9 @@ key *IC-C-~S-SemiColon = SemiColon
 # control window
 key *IC-A-P = &WindowMaximize
 
+# 
+key *IC-C-H = Backspace
+
 # like 104
 # SEEALSO: http://ja.wikipedia.org/wiki/キー配列#101.E3.82.AD.E3.83.BC.E3.83.9C.E3.83.BC.E3.83.89
 key *IC-S-SemiColon          = Colon                # :
