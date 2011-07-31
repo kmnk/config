@@ -18,6 +18,11 @@ mod ctrl += !!英数
 key *IC-*S-*A-*C-*英数 = *Esc
 key R-*英数 = &Ignore
 
+# ひらがな
+mod Alt += !!ひらがな
+key *IC-*S-*A-*C-*ひらがな = *ひらがな
+key R-*ひらがな = &Ignore
+
 # map SemiColon to Enter
 key *IC-SemiColon   = Enter
 key *IC-A-SemiColon = A-Enter
