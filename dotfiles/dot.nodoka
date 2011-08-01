@@ -19,10 +19,10 @@ key *IC-CircumflexAccent     = S-Minus              # =
 key *IC-S-CircumflexAccent   = S-Semicolon          # +
 key *IC-CommercialAt         = LeftSquareBracket    # [
 key *IC-S-CommercialAt       = S-LeftSquareBracket  # {
-    key *IC-LeftSquareBracket    = RightSquareBracket   # ]
-    key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
-    key *IC-RightSquareBracket   = ReverseSolidus       # \
-    key *IC-S-RightSquareBracket = S-YenSign            # |
+key *IC-LeftSquareBracket    = RightSquareBracket   # ]
+key *IC-S-LeftSquareBracket  = S-RightSquareBracket # }
+key *IC-RightSquareBracket   = ReverseSolidus       # \
+key *IC-S-RightSquareBracket = S-YenSign            # |
 
 ## no human can use following keys
 #key *IC-*A-*S-*C-_6               = &Undefined
@@ -32,9 +32,10 @@ key *IC-S-CommercialAt       = S-LeftSquareBracket  # {
 #key *IC-*A-*S-*C-Backspace        = &Undefined
 #key *IC-*A-*S-*C-Enter            = &Undefined
 #key *IC-*A-*S-*C-RightShift       = &Undefined
+key *IC-*A-*S-*C-ReverseSolidus   = &Undefined
 #key *IC-*A-*S-*C-半角/全角        = &Undefined
-#key *IC-*A-*S-*C-Esc              = &Undefined # for IME's bug(?)
-#key *IC-*S-*C-Esc                 = &Undefined
+#key *IC-*S-*C-半角/全角           = &Undefined
+#key *IC-*A-*S-*C-Esc              = &Undefined
 #key *IC-*A-*S-*C-↑  = &Undefined
 #key *IC-*A-*S-*C-→  = &Undefined
 #key *IC-*A-*S-*C-↓  = &Undefined
@@ -51,11 +52,6 @@ key *IC-S-CommercialAt       = S-LeftSquareBracket  # {
 #key *IC-*A-*S-*C-F11 = &Undefined
 #key *IC-*A-*S-*C-F12 = &Undefined
 
-# extend binds
-key *IC-ReverseSolidus     = S-Minus            # =
-key *IC-S-ReverseSolidus   = S-Semicolon        # +
-key *IC-C-Colon            = S-CommercialAt     # `
-key *IC-C-Solidus          = S-CircumflexAccent # ~
 
 # One Shot modifier settings
 # CapsLk
@@ -63,26 +59,40 @@ mod ctrl += !!英数
 key *IC-*S-*A-*C-*英数 = *Esc
 key R-*英数 = &Ignore
 
+## extend binds
+# 
+key *IC-C-Colon   = S-CommercialAt # `
+key *IC-C-Solidus = ReverseSolidus # \
+key *IC-S-Space   = S-YenSign      # |
+
+# ひらがな
+key *IC-C-ひらがな = S-Minus            # =
+key *IC-S-ひらがな = S-Semicolon        # +
+
 # 無変換
-key *IC-C-無変換         = _6                 # 6
-key *IC-S-無変換         = CircumflexAccent   # ^
+key *IC-C-無変換 = CircumflexAccent   # ^
+key *IC-S-無変換 = S-CircumflexAccent # ~
 
 # 変換
-key *IC-C-変換             = Minus              # -
-key *IC-S-変換             = S-ReverseSolidus   # _
+key *IC-C-変換 = Minus              # -
+key *IC-S-変換 = S-ReverseSolidus   # _
 
 # SemiColon
 key *IC-SemiColon      = Enter
 key *IC-A-SemiColon    = A-Enter
 key *IC-C-~S-SemiColon = SemiColon # ;
 
-# map Ctrl + Alt + hjkl to moving cursor
-key C-A-K = ↑
-key C-A-L = →
-key C-A-J = ↓
-key C-A-H = ←
+# map Ctrl + Alt + hjkl to cursor
+key *IC-C-A-K = ↑
+key *IC-C-A-L = →
+key *IC-C-A-J = ↓
+key *IC-C-A-H = ←
 
-# map Pause to Windows Lock
+# map Ctrl + Alt + ,. to <BS> and <Del>
+key *IC-C-A-Comma    = Backspace
+key *IC-C-A-FullStop = Delete
+
+# map ScrollLock to Windows Lock
 key ScrollLock = W-L
 key Pause      = &LoadSetting("日本語 109 キーボード")
 key Insert     = &LoadSetting
