@@ -59,11 +59,6 @@ mod ctrl += !!英数
 key *IC-*S-*A-*C-*英数 = *Esc
 key R-*英数 = &Ignore
 
-# LeftShift
-mod shift += !!LeftShift
-key *IC-*S-*A-*C-*LeftShift = *Tab
-key R-*LeftShift = &Ignore
-
 ## extend binds
 # 
 key *IC-C-Colon   = S-CommercialAt # `
