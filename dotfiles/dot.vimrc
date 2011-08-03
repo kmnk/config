@@ -53,7 +53,7 @@ inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
 " operator replace
-nnoremap R <Plug>(operator-replace)
+nmap R <Plug>(operator-replace)
 
 " indent
 set autoindent
