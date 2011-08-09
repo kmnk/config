@@ -107,6 +107,13 @@ nnoremap <SID>(split-to-k) :<C-u>execute 'aboveleft'  (v:count == 0 ? '' : v:cou
 nnoremap <SID>(split-to-h) :<C-u>execute 'topleft'    (v:count == 0 ? '' : v:count) 'vsplit'<CR>
 nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:count) 'vsplit'<CR>
 "}}}
+"
+
+" jslint {{{
+nmap <Space>jl <SID>(lint-javascript)
+nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
+" }}}
+
 "}}}
 
 " no guioptions
