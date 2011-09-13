@@ -1,7 +1,14 @@
 # Makefile
-.PHONY: all submodule update-submodules update
+.PHONY: all linux windows submodule update-submodules update
 
-all: submodule
+all: linux submodule
+
+linux:
+	cp dotfiles/dot.vimrc ~/.vimrc
+	cp dotfiles/dot.zshrc ~/.zshrc
+	cp dotfiles/dot.screenrc ~/.screenrc
+
+windows:
 
 submodule:
 	git submodule init
