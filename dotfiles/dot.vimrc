@@ -1,8 +1,16 @@
 " kmnk's vim settings
 
+" source local settings
+let g:path_to_vimrc_profile = '~/.vimrc_profile'
+if filereadable(expand(g:path_to_vimrc_profile))
+  execute printf('source %s', expand(g:path_to_vimrc_profile))
+endif
+
 " load plugins by pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+
+syntax on
 
 " reset my auto command group
 augroup KmnkAutoCmd
@@ -97,10 +105,10 @@ nnoremap <SID>(to-next-tab)   gt
 nnoremap <SID>(to-prev-tab)   gT
 
 " split {{{
-nmap <Space>sj <SID>(split-to-j)
-nmap <Space>sk <SID>(split-to-k)
-nmap <Space>sh <SID>(split-to-h)
-nmap <Space>sl <SID>(split-to-l)
+nmap <Leader>sj <SID>(split-to-j)
+nmap <Leader>sk <SID>(split-to-k)
+nmap <Leader>sh <SID>(split-to-h)
+nmap <Leader>sl <SID>(split-to-l)
 
 nnoremap <SID>(split-to-j) :<C-u>execute 'belowright' (v:count == 0 ? '' : v:count) 'split'<CR>
 nnoremap <SID>(split-to-k) :<C-u>execute 'aboveleft'  (v:count == 0 ? '' : v:count) 'split'<CR>
@@ -110,7 +118,7 @@ nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:cou
 "
 
 " jslint {{{
-nmap <Space>jl <SID>(lint-javascript)
+nmap <Leader>jl <SID>(lint-javascript)
 nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
 " }}}
 
@@ -132,12 +140,12 @@ inoremap <C-h> <BS>
 nnoremap <BS> :<C-u>h<Space>
 
 " edit vimrc right now
-nnoremap <silent> <Space>ev  :<C-u>tabedit $MYVIMRC<CR>
-nnoremap <silent> <Space>eg  :<C-u>tabedit $MYGVIMRC<CR>
+nnoremap <silent> <Leader>ev  :<C-u>tabedit $MYVIMRC<CR>
+nnoremap <silent> <Leader>eg  :<C-u>tabedit $MYGVIMRC<CR>
 
 " Load .gvimrc after .vimrc edited at GVim.
-nnoremap <silent> <Space>lv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
-nnoremap <silent> <Space>lg :<C-u>source $MYGVIMRC<CR>
+nnoremap <silent> <Leader>lv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
+nnoremap <silent> <Leader>lg :<C-u>source $MYGVIMRC<CR>
 "}}}
 
 " create swp data to only tmp directory
@@ -279,6 +287,7 @@ nnoremap <silent> <C-,>cd :<C-u>CD<CR>
 
 " syntax completion settings {{{
 filetype on
+filetype plugin on
 
 " syntax completetion on any language {{{
 autocmd KmnkAutoCmd FileType *
@@ -426,8 +435,6 @@ function! s:unite_my_settings()"{{{
   nmap <buffer> <ESC>   <Plug>(unite_exit)
   imap <buffer> jj      <Plug>(unite_insert_leave)
   imap <buffer> <C-w>   <Plug>(unite_delete_backward_path)
-  nmap <buffer> l       <Plug>(unite_toggle_mark_current_candidate)
-  nmap <buffer> h       <Plug>(unite_toggle_mark_current_candidate)
   imap <buffer> qq      <Plug>(unite_exit)
 
   " Start insert.
@@ -460,7 +467,7 @@ let g:vimfiler_as_default_explorer = 1
 "}}}
 
 " vimshell settings {{{
-nmap <Space>; <SID>(launch-vimshell)
+nmap <Leader>; <SID>(launch-vimshell)
 nnoremap <SID>(launch-vimshell) :<C-u>VimShellPop<CR>
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
@@ -639,7 +646,7 @@ endif
 "}}}
 
 " Open junk file. {{{
-nmap <Space>\ <SID>(open-junk-file)
+nmap <Leader>\ <SID>(open-junk-file)
 nnoremap <SID>(open-junk-file) :<C-u>JunkFile<CR>
 command! -nargs=0 JunkFile call s:open_junk_file()
 function! s:open_junk_file() "{{{
