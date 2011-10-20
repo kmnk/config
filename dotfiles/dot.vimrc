@@ -361,12 +361,6 @@ command!
 
 " textobjs {{{
 " match like hoge::fuga::piyo
-if exists('g:loaded_textobj_dc')
-  finish
-endif
-
-let g:loaded_textobj_dc = 1
-
 call textobj#user#plugin('dc', {
 \   'double_colon': {
 \     '*pattern*': '\w\+\(::\w\+\)\+',
@@ -374,16 +368,10 @@ call textobj#user#plugin('dc', {
 \   }})
 
 " match like $hoge or @fuga or %piyo
-if exists('g:loaded_textobj_sigil')
-  finish
-endif
-
-let g:loaded_textobj_sigil = 1
-
 call textobj#user#plugin('sigil', {
 \   'sigil': {
 \     '*pattern*': '[$@%]\+[_A-Za-z]\+\w*',
-\     'select': ['aw'],
+\     'select': ['ag', 'ig'],
 \   }})
 "}}}
 
