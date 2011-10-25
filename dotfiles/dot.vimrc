@@ -1,27 +1,43 @@
-" kmnk's vim settings
-
 " source local settings
 let g:path_to_vimrc_profile = '~/.vimrc_profile'
 if filereadable(expand(g:path_to_vimrc_profile))
   execute printf('source %s', expand(g:path_to_vimrc_profile))
 endif
 
-" load plugins by pathogen
+" load plugins by pathogen {{{
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+"}}}
 
-syntax on
-
-" reset my auto command group
+" reset my auto command group {{{
 augroup KmnkAutoCmd
   autocmd!
 augroup END
+"}}}
 
 " is windows ?
 let s:is_windows  = (has('win32') || has('win64'))
 
 " my mapleader
 let mapleader = ','
+
+" source my vimrc {{{
+let s:dotfiles_dir_path = expand('<sfile>:h')
+
+let s:my_vimrc_names = ['unite', 'map']
+
+function! s:source_my_vimrc(names)"{{{
+  for l:name in a:names
+    let l:path = printf('%s/dot.vimrc_%s', s:dotfiles_dir_path, l:name)
+    if filereadable(l:path)
+      execute printf('source %s', l:path)
+    endif
+  endfor
+endfunction"}}}
+call s:source_my_vimrc(s:my_vimrc_names)
+"}}}
+
+syntax on
 
 " status line settings
 set laststatus=2
@@ -68,61 +84,6 @@ set autoindent
 set nocindent
 set smartindent
 
-" useful key maps {{{
-" redo command by two type
-nnoremap c. @:
-
-" * on visualmode 
-vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v,'\/'),"\n",'\\n','g')<CR><CR>
-
-" substitute current word
-nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
-
-" in pattern escape
-cnoremap <expr> /  getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
-
-" Yank like C and D
-nnoremap Y y$
-
-" select latest changes
-nnoremap gc `[v`]
-
-" tags-and-searches
-nnoremap t  <Nop>
-nnoremap tt  <C-]>
-nnoremap tj  :<C-u>tag<CR>
-nnoremap tk  :<C-u>pop<CR>
-nnoremap tl  :<C-u>tags<CR>
-
-" 
-nnoremap ; :<C-u>w<CR>
-
-" move tab
-map <C-j> <SID>(to-next-tab)
-map <C-k> <SID>(to-prev-tab)
-nnoremap <SID>(to-next-tab)   gt
-nnoremap <SID>(to-prev-tab)   gT
-
-" split {{{
-nmap <Leader>sj <SID>(split-to-j)
-nmap <Leader>sk <SID>(split-to-k)
-nmap <Leader>sh <SID>(split-to-h)
-nmap <Leader>sl <SID>(split-to-l)
-
-nnoremap <SID>(split-to-j) :<C-u>execute 'belowright' (v:count == 0 ? '' : v:count) 'split'<CR>
-nnoremap <SID>(split-to-k) :<C-u>execute 'aboveleft'  (v:count == 0 ? '' : v:count) 'split'<CR>
-nnoremap <SID>(split-to-h) :<C-u>execute 'topleft'    (v:count == 0 ? '' : v:count) 'vsplit'<CR>
-nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:count) 'vsplit'<CR>
-"}}}
-"
-
-" jslint {{{
-nmap <Leader>jl <SID>(lint-javascript)
-nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
-" }}}
-
-"}}}
 
 " no guioptions
 if has('gui_running')
@@ -324,9 +285,6 @@ endfunction "}}}
 highlight MultiByteSpace ctermbg=LightGray guibg=LightGray
 match MultiByteSpace /　/
 autocmd KmnkAutoCmd WinEnter * match MultiByteSpace /　/
-highlight TooLongLine ctermbg=yellow guibg=yellow
-match TooLongLine /.\%>77v/
-autocmd KmnkAutoCmd WinEnter * match TooLongLine /.\%>77v/
 highlight EOLWhiteSpace ctermbg=blue guibg=blue
 match EOLWhiteSpace /\s\+$/
 autocmd KmnkAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
@@ -375,60 +333,6 @@ call textobj#user#plugin('sigil', {
 \   }})
 "}}}
 
-" unite settings {{{
-let g:unite_split_rule  = 'botright'
-
-" The prefix key.
-nnoremap [unite] <Nop>
-nmap <Leader>. [unite]
-
-" maps
-nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=files file bookmark file_rec buffer<CR>
-
-nnoremap <silent> [unite]c :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> bookmark file buffer<CR>
-
-nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
-
-"nnoremap <silent> [unite]r :<C-u>UniteResume files<CR>
-
-" unite-grep
-let g:unite_source_grep_default_opts = '-iRHn'
-nnoremap <expr> g*    ':Unite grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <expr> g.*   ':Unite grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <expr> g..*  ':Unite grep:' . expand('%:h:h')   . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <expr> g...* ':Unite grep:' . expand('%:h:h:h') . "<CR>" . expand('<cword>') . "<CR>"
-
-nnoremap <silent> [unite]o :<C-u>Unite -vertical -direction=topleft -auto-preview outline<CR>
-nnoremap <silent> [unite]m :<C-u>Unite mark<CR>
-nnoremap <silent> [unite]r :<C-u>Unite register<CR>
-nnoremap <silent> [unite]hc :<C-u>Unite history/command<CR>
-nnoremap <silent> [unite]hs :<C-u>Unite history/search<CR>
-nnoremap <silent> [unite]<C-h> :<C-u>Unite help<CR>
-
-nnoremap <silent> [unite]vst :<C-u>Unite svn/status<CR>
-nnoremap <silent> [unite]vdi :<C-u>Unite -vertical -direction=topleft -auto-preview svn/diff<CR>
-nnoremap <silent> [unite]vbl :<C-u>Unite -vertical -direction=topleft svn/blame:<C-r>%<CR>
-
-nnoremap  [unite]f  :<C-u>Unite source<CR>
-
-" unite colorscheme font
-if globpath(&rtp, 'plugin/unite.vim') != ''
-  nnoremap sc :<C-u>Unite -auto-preview colorscheme<Cr>
-endif
-
-autocmd KmnkAutoCmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()"{{{
-  " Overwrite settings.
-
-  nmap <buffer> <ESC>   <Plug>(unite_exit)
-  imap <buffer> jj      <Plug>(unite_insert_leave)
-  imap <buffer> <C-w>   <Plug>(unite_delete_backward_path)
-  imap <buffer> qq      <Plug>(unite_exit)
-
-  " Start insert.
-  let g:unite_enable_start_insert = 1
-endfunction"}}}
-"}}}
 
 " alignta settings {{{
 vmap <Leader>al <SID>(setup-alignta)
@@ -607,19 +511,6 @@ for [key, com] in items({
   execute 'nnoremap <silent>' key ':QuickRun' com '-mode n -split vertical<CR>'
   execute 'vnoremap <silent>' key ':QuickRun' com '-mode v -split vertical<CR>'
 endfor
-"}}}
-
-" auto updater of dotfiles {{{
-autocmd KmnkAutoCmd BufWritePost */config/dotfiles/dot.vimrc nested
-\ write! $MYVIMRC
-autocmd KmnkAutoCmd BufWritePost */config/dotfiles/dot.gvimrc nested
-\ write! $MYGVIMRC
-if !s:is_windows "{{{
-  autocmd KmnkAutoCmd BufWritePost */config/dotfiles/dot.screenrc
-\   write! $HOME/.screenrc
-  autocmd KmnkAutoCmd BufWritePost */config/dotfiles/dot.zshrc
-\   write! $HOME/.zshrc
-endif "}}}
 "}}}
 
 " autoloader of .vimrc {{{

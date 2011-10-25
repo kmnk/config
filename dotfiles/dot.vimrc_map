@@ -1,0 +1,49 @@
+" useful key maps
+" redo command by two type
+nnoremap c. @:
+
+" * on visualmode 
+vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v,'\/'),"\n",'\\n','g')<CR><CR>
+
+" substitute current word
+nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
+
+" in pattern escape
+cnoremap <expr> /  getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
+
+" Yank like C and D
+nnoremap Y y$
+
+" select latest changes
+nnoremap gc `[v`]
+
+" 
+nnoremap ; :<C-u>w<CR>
+
+" move tab
+map <C-j> <SID>(to-next-tab)
+map <C-k> <SID>(to-prev-tab)
+nnoremap <SID>(to-next-tab)   gt
+nnoremap <SID>(to-prev-tab)   gT
+
+" split {{{
+nmap <Leader>sj <SID>(split-to-j)
+nmap <Leader>sk <SID>(split-to-k)
+nmap <Leader>sh <SID>(split-to-h)
+nmap <Leader>sl <SID>(split-to-l)
+
+nnoremap <SID>(split-to-j) :<C-u>execute 'belowright' (v:count == 0 ? '' : v:count) 'split'<CR>
+nnoremap <SID>(split-to-k) :<C-u>execute 'aboveleft'  (v:count == 0 ? '' : v:count) 'split'<CR>
+nnoremap <SID>(split-to-h) :<C-u>execute 'topleft'    (v:count == 0 ? '' : v:count) 'vsplit'<CR>
+nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:count) 'vsplit'<CR>
+"}}}
+"
+
+" jslint {{{
+nmap <Leader>jl <SID>(lint-javascript)
+nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
+" }}}
+
+" vim: expandtab softtabstop=2 shiftwidth=2
+" vim: foldmethod=marker
