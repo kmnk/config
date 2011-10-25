@@ -61,7 +61,7 @@ NeoBundle 'git://github.com/h1mesuke/vim-unittest.git'
 NeoBundle 'git://github.com/h1mesuke/vim-alignta.git'
 NeoBundle 'git://github.com/h1mesuke/unite-outline.git'
 
-NeoBundle 'git://github.com/kmnk/config.git'
+NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 
 filetype plugin on
 filetype indent on
