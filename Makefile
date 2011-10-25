@@ -9,13 +9,13 @@ linux:
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
 	rm -rf neobundle.vim
 	mkdir ~/.vim
-	ln -s `pwd`/autoload ~/.vim/autoload
-	ln -s `pwd`/colors ~/.vim/colors
-	ln -s `pwd`/ftdetect ~/.vim/ftdetect
-	ln -s `pwd`/ftplugin ~/.vim/ftplugin
-	ln -s `pwd`/templates ~/.vim/templates
-	ln -s `pwd`/dotfiles/dot.zshrc ~/.zshrc
-	ln -s `pwd`/dotfiles/dot.screenrc ~/.screenrc
+	ln -s ./vim/autoload ~/.vim/autoload
+	ln -s ./vim/colors ~/.vim/colors
+	ln -s ./vim/ftdetect ~/.vim/ftdetect
+	ln -s ./vim/ftplugin ~/.vim/ftplugin
+	ln -s ./vim/templates ~/.vim/templates
+	ln -s ./dotfiles/dot.zshrc ~/.zshrc
+	ln -s ./dotfiles/dot.screenrc ~/.screenrc
 
 windows:
 
