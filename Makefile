@@ -8,6 +8,7 @@ linux:
 	git clone git://github.com/Shougo/neobundle.vim.git neobundle.vim
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
 	rm -rf neobundle.vim
+	ln -s ./vim ~/.vim
 	ln -s dotfiles/dot.zshrc ~/.zshrc
 	ln -s dotfiles/dot.screenrc ~/.screenrc
 
