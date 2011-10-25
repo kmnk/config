@@ -1,14 +1,14 @@
 " other plugins
 
 " operator replace setting {{{
-if globpath(&rtp, 'plugin/vim-operator-replace') != ''
+if globpath(&rtp, 'plugin/vim-operator-replace.vim') != ''
   " operator replace
   nmap R <Plug>(operator-replace)
 endif
 "}}}
 
 " textobj settings {{{
-if globpath(&rtp, 'plugin/vim-textobj-user') != ''
+if globpath(&rtp, 'plugin/vim-textobj-user.vim') != ''
   " match like hoge::fuga::piyo
   call textobj#user#plugin('dc', {
 \   'double_colon': {
@@ -26,14 +26,14 @@ endif
 "}}}
 
 " alignta settings {{{
-if globpath(&rtp, 'plugin/Align') != ''
+if globpath(&rtp, 'plugin/Align.vim') != ''
   vmap <Leader>al <SID>(setup-alignta)
   vnoremap <SID>(setup-alignta) :Align
 endif
 "}}}
 
 " vimfiler settings {{{
-if globpath(&rtp, 'plugin/vimfiler') != ''
+if globpath(&rtp, 'plugin/vimfiler.vim') != ''
   call vimfiler#set_execute_file('vim', 'vim')
   call vimfiler#set_execute_file('txt', 'notepad')
   "let g:vimfiler_split_command = ''
@@ -54,7 +54,7 @@ endif
 "}}}
 
 " vimshell settings {{{
-if globpath(&rtp, 'plugin/vimshell') != ''
+if globpath(&rtp, 'plugin/vimshell.vim') != ''
   nmap <Leader>; <SID>(launch-vimshell)
   nnoremap <SID>(launch-vimshell) :<C-u>VimShellPop<CR>
   let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
@@ -110,7 +110,7 @@ endif
 "}}}
 
 " neocomplcache settings {{{
-if globpath(&rtp, 'plugin/neocomplcache') != ''
+if globpath(&rtp, 'plugin/neocomplcache.vim') != ''
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " Use neocomplcache.
@@ -186,7 +186,7 @@ endif
 "}}}
 
 " quickrun settings {{{
-if globpath(&rtp, 'plugin/quickrun') != ''
+if globpath(&rtp, 'plugin/quickrun.vim') != ''
   for [key, com] in items({
 \     '<Leader>x' : '>:',
 \     '<Leader>p' : '>!',

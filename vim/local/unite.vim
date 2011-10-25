@@ -36,6 +36,10 @@ nmap [unite]vbl   <SID>(svn-blame)
 
 nmap [unite]s     <SID>(source)
 
+nmap [unite]nbin  <SID>(neobundle-install)
+nmap [unite]Nbin  <SID>(neobundle-install-indivisually)
+nmap [unite]nbin! <SID>(neobundle-install!)
+
 nmap sc <SID>(color)
 "}}}
 
@@ -74,6 +78,10 @@ nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn
 "}}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
+
+nnoremap <silent> <SID>(neobundle-install)              :<C-u>Unite neobundle/install<CR>
+nnoremap <silent> <SID>(neobundle-install-indivisually) :<C-u>Unite neobundle/install:
+nnoremap <silent> <SID>(neobundle-install!)             :<C-u>Unite neobundle/install:!<CR>
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 "}}}

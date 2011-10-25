@@ -1,13 +1,11 @@
+" source bundle at first
+source <sfile>:h:h/vim/local/bundles.vim
+
 " source local settings
 let g:path_to_vimrc_profile = '~/.vimrc_profile'
 if filereadable(expand(g:path_to_vimrc_profile))
   execute printf('source %s', expand(g:path_to_vimrc_profile))
 endif
-
-" load plugins by pathogen {{{
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-"}}}
 
 " default settings {{{
 " reset my auto command group {{{
@@ -402,16 +400,17 @@ set clipboard+=unnamed
 
 "
 set foldmethod=marker
+
 "}}}
 
 " source my vimrc {{{
-let s:dotfiles_dir_path = expand('<sfile>:h')
+let s:dotfiles_dir_path = expand('<sfile>:h:h') . '/vim/local/'
 
-let s:my_vimrc_names = ['unite', 'map', 'perl', 'plugin']
+let s:my_vimrc_names = ['unite', 'maps', 'plugins']
 
 function! s:source_my_vimrc(names)"{{{
   for l:name in a:names
-    let l:path = printf('%s/dot.vimrc_%s', s:dotfiles_dir_path, l:name)
+    let l:path = printf('%s%s.vim', s:dotfiles_dir_path, l:name)
     if filereadable(l:path)
       execute printf('source %s', l:path)
     endif

@@ -1,29 +1,21 @@
 # Makefile
-.PHONY: all linux windows submodule update-submodules update
+.PHONY: all linux windows update clean
 
-all: linux submodule
+all: linux
 
 linux:
-	cp dotfiles/dot.vimrc ~/.vimrc
-	cp dotfiles/dot.zshrc ~/.zshrc
-	cp dotfiles/dot.screenrc ~/.screenrc
+	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
+	git clone git://github.com/Shougo/neobundle.vim.git neobundle.vim
+	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
+	rm -rf neobundle.vim
+	ln -s dotfiles/dot.zshrc ~/.zshrc
+	ln -s dotfiles/dot.screenrc ~/.screenrc
 
 windows:
 
-submodule:
-	git submodule init
-	git submodule update
-	cd vim/bundle/ && \
-	for dir in `ls` ; do \
-		cd $$dir ; \
-		git checkout master ; \
-		cd .. ; \
-	done
+update:
+	git pull
+	vim -u ./vim/local/bundles.vim +NeoBundleInstall! +q
 
-update-submodules:
-	cd vim/bundle/ && \
-	for dir in `ls` ; do \
-		cd $$dir ; \
-		git pull ; \
-		cd .. ; \
-	done
+clean:
+	vim -u ./vim/local/bundles.vim +NeoBundleClean +q
