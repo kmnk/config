@@ -1,5 +1,5 @@
 # Makefile
-.PHONY: all linux windows update clean
+.PHONY: all update
 
 all: linux
 
@@ -19,9 +19,16 @@ linux:
 
 windows:
 
-update:
-	git pull
+vim-install:
+	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
+
+update: vim-update git-update
+
+vim-update:
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall! +q
 
-clean:
+git-update:
+	git pull
+
+vim-clean:
 	vim -u ./vim/local/bundles.vim +NeoBundleClean +q

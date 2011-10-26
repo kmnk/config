@@ -48,9 +48,9 @@ nmap sc <SID>(color)
 
 " mapped commands {{{
 " files {{{
-nnoremap <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec buffer<CR>
-nnoremap <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> bookmark file buffer file_rec<CR>
-nnoremap <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
+nnoremap <silent> <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec buffer<CR>
+nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file buffer file_rec<CR>
+nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
 "}}}
 
 " search {{{
