@@ -1,5 +1,8 @@
 " other plugins
 
+" align setting
+let g:Align_xstrlen=3
+
 " operator replace setting {{{
 if globpath(&rtp, 'plugin/vim-operator-replace.vim') != ''
   " operator replace
@@ -75,7 +78,7 @@ if globpath(&rtp, 'plugin/vimshell.vim') != ''
     call vimshell#set_execute_file('tbz,bz2', 'bzcat')
   endif
   
-  autocmd KmnkAutoCmd FileType vimshell
+  autocmd VimrcAutoCmd FileType vimshell
 \   call vimshell#altercmd#define('g', 'git')
 \|  call vimshell#altercmd#define('i', 'iexe')
 \|  call vimshell#altercmd#define('l', 'll')
@@ -169,11 +172,11 @@ if globpath(&rtp, 'plugin/neocomplcache.vim') != ''
   "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
   
   " Enable omni completion.
-  autocmd KmnkAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd KmnkAutoCmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd KmnkAutoCmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd KmnkAutoCmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd KmnkAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  autocmd VimrcAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd VimrcAutoCmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd VimrcAutoCmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd VimrcAutoCmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd VimrcAutoCmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   
   " Enable heavy omni completion.
   if !exists('g:neocomplcache_omni_patterns')

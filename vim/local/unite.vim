@@ -16,8 +16,8 @@ nmap [unite]b     <SID>(buffer)
 
 nmap tt           <SID>(tab)
 
-nmap /            <SID>(search)
-nmap *            <SID>(star-search)
+nmap [unite]/     <SID>(search)
+nmap [unite]*     <SID>(star-search)
 
 nmap g*           <SID>(grep)
 nmap g.*          <SID>(grep-.)
@@ -54,8 +54,8 @@ nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffe
 "}}}
 
 " search {{{
-nnoremap <silent> <SID>(search)      :<C-u>Unite -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft line<CR>
-nnoremap <silent> <SID>(star-search) :<C-u>UniteWithCursorWord -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-start-insert line<CR>
+nnoremap <silent> <SID>(search)      :<C-u>Unite -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-quit line<CR>
+nnoremap <silent> <SID>(star-search) :<C-u>UniteWithCursorWord -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-start-insert -no-quit line<CR>
 "}}}
 
 nnoremap <silent> <SID>(tab) :<C-u>Unite -buffer-name=tab -prompt=tab> -immediately -no-start-insert tab:no-current<CR>
@@ -95,7 +95,7 @@ nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 "}}}
 
 " on unite buffer setting
-autocmd KmnkAutoCmd FileType unite call s:unite_settings()
+autocmd VimrcAutoCmd FileType unite call s:unite_settings()
 function! s:unite_settings()"{{{
   nmap <buffer> <ESC> <Plug>(unite_exit)
   imap <buffer> jj    <Plug>(unite_insert_leave)
@@ -103,13 +103,6 @@ function! s:unite_settings()"{{{
   imap <buffer> qq    <Plug>(unite_exit)
 
   let g:unite_enable_start_insert = 1
-endfunction"}}}
-
-" reset search maps on help buffer
-autocmd KmnkAutoCmd FileType help call s:reset_unite_settings()
-function! s:reset_unite_settings()"{{{
-  nmap <buffer> / /
-  nmap <buffer> * *
 endfunction"}}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
