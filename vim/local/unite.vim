@@ -16,6 +16,9 @@ nmap [unite]b     <SID>(buffer)
 
 nmap tt           <SID>(tab)
 
+nmap /            <SID>(search)
+nmap *            <SID>(star-search)
+
 nmap g*           <SID>(grep)
 nmap g.*          <SID>(grep-.)
 nmap g..*         <SID>(grep-..)
@@ -45,19 +48,24 @@ nmap sc <SID>(color)
 
 " mapped commands {{{
 " files {{{
-nnoremap <SID>(normally)   :<C-u>Unite -buffer-name=files file bookmark file_rec buffer<CR>
+nnoremap <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec buffer<CR>
 nnoremap <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> bookmark file buffer file_rec<CR>
 nnoremap <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
 "}}}
 
-nnoremap <silent> <SID>(tab) :<C-u>Unite -buffer-name=tab -prompt=tab> -immediately -no-start-insert tab<CR>
+" search {{{
+nnoremap <silent> <SID>(search)      :<C-u>Unite -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft line<CR>
+nnoremap <silent> <SID>(star-search) :<C-u>UniteWithCursorWord -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-start-insert line<CR>
+"}}}
+
+nnoremap <silent> <SID>(tab) :<C-u>Unite -buffer-name=tab -prompt=tab> -immediately -no-start-insert tab:no-current<CR>
 
 " grep {{{
 let g:unite_source_grep_default_opts = '-iRHn'
-nnoremap <silent> <expr> <SID>(grep)     ':Unite grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <silent> <expr> <SID>(grep-.)   ':Unite grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <silent> <expr> <SID>(grep-..)  ':Unite grep:' . expand('%:h:h')   . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <silent> <expr> <SID>(grep-...) ':Unite grep:' . expand('%:h:h:h') . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep)     ':Unite -no-quit grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-.)   ':Unite -no-quit grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-..)  ':Unite -no-quit grep:' . expand('%:h:h')   . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-...) ':Unite -no-quit grep:' . expand('%:h:h:h') . "<CR>" . expand('<cword>') . "<CR>"
 "}}}
 
 nnoremap <silent> <SID>(outline)  :<C-u>Unite -vertical -direction=topleft -auto-preview outline<CR>
@@ -86,7 +94,7 @@ nnoremap <silent> <SID>(neobundle-install!)             :<C-u>Unite neobundle/in
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 "}}}
 
-
+" on unite buffer setting
 autocmd KmnkAutoCmd FileType unite call s:unite_settings()
 function! s:unite_settings()"{{{
   nmap <buffer> <ESC> <Plug>(unite_exit)
@@ -95,6 +103,13 @@ function! s:unite_settings()"{{{
   imap <buffer> qq    <Plug>(unite_exit)
 
   let g:unite_enable_start_insert = 1
+endfunction"}}}
+
+" reset search maps on help buffer
+autocmd KmnkAutoCmd FileType help call s:reset_unite_settings()
+function! s:reset_unite_settings()"{{{
+  nmap <buffer> / /
+  nmap <buffer> * *
 endfunction"}}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2

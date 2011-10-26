@@ -7,18 +7,15 @@ if filereadable(expand(g:path_to_vimrc_profile))
   execute printf('source %s', expand(g:path_to_vimrc_profile))
 endif
 
-" default settings {{{
-" reset my auto command group {{{
 augroup KmnkAutoCmd
   autocmd!
 augroup END
-"}}}
-
-" is windows ?
-let s:is_windows  = (has('win32') || has('win64'))
 
 " my mapleader
 let mapleader = ','
+
+" is windows ?
+let s:is_windows  = (has('win32') || has('win64'))
 
 syntax on
 
@@ -400,8 +397,6 @@ set clipboard+=unnamed
 
 "
 set foldmethod=marker
-
-"}}}
 
 " source my vimrc {{{
 let s:dotfiles_dir_path = expand('<sfile>:h:h') . '/vim/local/'
