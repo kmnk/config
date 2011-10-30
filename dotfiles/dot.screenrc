@@ -14,5 +14,6 @@ bindkey "^Z" mapdefault
 # others
 idle 30 blanker
 nethack on
+blankerprg top
 
 # vim: filetype=screen
