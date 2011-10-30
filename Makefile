@@ -16,8 +16,7 @@ linux:
 	ln -s `pwd`/vim/templates ~/.vim/templates
 	ln -s ./dotfiles/dot.zshrc ~/.zshrc
 	ln -s ./dotfiles/dot.screenrc ~/.screenrc
-	cd ~/.bundle/vimproc/
-	make -f make_gcc.mak
+	cd ~/.bundle/vimproc/ && make -f make_gcc.mak
 
 windows:
 
