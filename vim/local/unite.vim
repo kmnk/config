@@ -13,6 +13,7 @@ nmap <Leader>. [unite]
 nmap [unite]u     <SID>(normally)
 nmap [unite]c     <SID>(buffer-dir)
 nmap [unite]b     <SID>(buffer)
+nmap [unite]ab    <SID>(all-buffer)
 
 nmap tt           <SID>(tab)
 
@@ -48,9 +49,10 @@ nmap sc <SID>(color)
 
 " mapped commands {{{
 " files {{{
-nnoremap <silent> <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec buffer<CR>
-nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file buffer file_rec<CR>
-nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
+nnoremap <silent> <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec buffer_tab<CR>
+nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file buffer_tab file_rec<CR>
+nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer_tab<CR>
+nnoremap <silent> <SID>(all-buffer) :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
 "}}}
 
 " search {{{
