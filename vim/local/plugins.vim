@@ -205,5 +205,10 @@ if globpath(&rtp, 'plugin/quickrun.vim') != ''
 endif
 "}}}
 
+" visualstar {{{
+map * <Plug>(visualstar-*)N
+map # <Plug>(visualstar-#)N
+"}}}
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker

@@ -129,5 +129,10 @@ set clipboard+=unnamed
 "
 set foldmethod=marker
 
+" search from current word
+nnoremap * *N
+nnoremap # #N
+
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
