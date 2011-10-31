@@ -133,6 +133,5 @@ set foldmethod=marker
 nnoremap * *N
 nnoremap # #N
 
-
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
