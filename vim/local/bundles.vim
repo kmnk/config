@@ -41,6 +41,8 @@ NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
 NeoBundle 'git://github.com/ujihisa/neco-look.git'
 
 NeoBundle 'git://github.com/mattn/jslint.vim.git'
+NeoBundle 'git://github.com/mattn/template-vim.git'
+NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 
 NeoBundle 'git://github.com/Sixeight/unite-grep.git'
 

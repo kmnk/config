@@ -13,6 +13,7 @@ nmap <Leader>. [unite]
 nmap [unite]u     <SID>(normally)
 nmap [unite]c     <SID>(buffer-dir)
 nmap [unite]b     <SID>(buffer)
+nmap [unite]ab    <SID>(all-buffer)
 
 nmap tt           <SID>(tab)
 
@@ -23,6 +24,7 @@ nmap g*           <SID>(grep)
 nmap g.*          <SID>(grep-.)
 nmap g..*         <SID>(grep-..)
 nmap g...*        <SID>(grep-...)
+nmap g....*       <SID>(grep-....)
 
 nmap [unite]o     <SID>(outline)
 nmap [unite]m     <SID>(mark)
@@ -41,16 +43,17 @@ nmap [unite]s     <SID>(source)
 
 nmap [unite]nbin  <SID>(neobundle-install)
 nmap [unite]Nbin  <SID>(neobundle-install-indivisually)
-nmap [unite]nbin! <SID>(neobundle-install!)
+nmap [unite]nbup  <SID>(neobundle-update)
 
 nmap sc <SID>(color)
 "}}}
 
 " mapped commands {{{
 " files {{{
-nnoremap <silent> <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec buffer<CR>
-nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file buffer file_rec<CR>
-nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer<CR>
+nnoremap <silent> <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec file_mru buffer_tab<CR>
+nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file file_rec file_mru buffer_tab<CR>
+nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer_tab file_mru<CR>
+nnoremap <silent> <SID>(all-buffer) :<C-u>Unite -buffer-name=files -prompt=buffer> buffer file_mru<CR>
 "}}}
 
 " search {{{
@@ -62,10 +65,11 @@ nnoremap <silent> <SID>(tab) :<C-u>Unite -buffer-name=tab -prompt=tab> -immediat
 
 " grep {{{
 let g:unite_source_grep_default_opts = '-iRHn'
-nnoremap <silent> <expr> <SID>(grep)     ':Unite -no-quit grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <silent> <expr> <SID>(grep-.)   ':Unite -no-quit grep:' . expand('%:h')     . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <silent> <expr> <SID>(grep-..)  ':Unite -no-quit grep:' . expand('%:h:h')   . "<CR>" . expand('<cword>') . "<CR>"
-nnoremap <silent> <expr> <SID>(grep-...) ':Unite -no-quit grep:' . expand('%:h:h:h') . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep)      ':Unite -no-quit grep:' . expand('%:h')       . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-.)    ':Unite -no-quit grep:' . expand('%:h')       . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-..)   ':Unite -no-quit grep:' . expand('%:h:h')     . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-...)  ':Unite -no-quit grep:' . expand('%:h:h:h')   . "<CR>" . expand('<cword>') . "<CR>"
+nnoremap <silent> <expr> <SID>(grep-....) ':Unite -no-quit grep:' . expand('%:h:h:h:h') . "<CR>" . expand('<cword>') . "<CR>"
 "}}}
 
 nnoremap <silent> <SID>(outline)  :<C-u>Unite -vertical -direction=topleft -auto-preview outline<CR>
@@ -89,7 +93,7 @@ nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
 
 nnoremap <silent> <SID>(neobundle-install)              :<C-u>Unite neobundle/install<CR>
 nnoremap <silent> <SID>(neobundle-install-indivisually) :<C-u>Unite neobundle/install:
-nnoremap <silent> <SID>(neobundle-install!)             :<C-u>Unite neobundle/install:!<CR>
+nnoremap <silent> <SID>(neobundle-update)               :<C-u>Unite neobundle/install:!<CR>
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 "}}}

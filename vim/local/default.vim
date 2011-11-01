@@ -129,5 +129,8 @@ set clipboard+=unnamed
 "
 set foldmethod=marker
 
+" matchit
+runtime macros/matchit.vim
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
