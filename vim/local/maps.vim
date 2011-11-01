@@ -1,3 +1,6 @@
+" maps
+nmap gp <SID>(re-visual-pasted)
+
 " useful key maps
 " redo command by two type
 nnoremap c. @:
@@ -24,8 +27,8 @@ nnoremap ; :<C-u>w<CR>
 " move tab
 map <C-j> <SID>(to-next-tab)
 map <C-k> <SID>(to-prev-tab)
-nnoremap <SID>(to-next-tab)   gt
-nnoremap <SID>(to-prev-tab)   gT
+nnoremap <SID>(to-next-tab) gt
+nnoremap <SID>(to-prev-tab) gT
 
 " split {{{
 nmap <Leader>sj <SID>(split-to-j)
@@ -44,6 +47,9 @@ nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:cou
 nmap <Leader>jl <SID>(lint-javascript)
 nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
 " }}}
+
+"
+nnoremap <expr> <SID>(re-visual-pasted) '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker

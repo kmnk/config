@@ -1,5 +1,8 @@
 " other plugins
 
+" maps
+
+
 " align setting
 let g:Align_xstrlen=3
 
@@ -200,6 +203,11 @@ if globpath(&rtp, 'plugin/quickrun.vim') != ''
     execute 'vnoremap <silent>' key ':QuickRun' com '-mode v -split vertical<CR>'
   endfor
 endif
+"}}}
+
+" visualstar {{{
+map * <Plug>(visualstar-*)N
+map # <Plug>(visualstar-#)N
 "}}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
