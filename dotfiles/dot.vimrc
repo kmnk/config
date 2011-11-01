@@ -13,8 +13,7 @@ let s:my_vimrc_names = [
 \ 'appends',
 \ 'unite',
 \ 'maps',
-\ 'plugins',
-\ 'matchit'
+\ 'plugins'
 \]
 
 " get ready (no need for editing) {{{
