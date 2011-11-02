@@ -1,19 +1,12 @@
 # Makefile
 .PHONY: all update
 
-all: linux
+all: linux vim-install
 
 linux:
-	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
-	git clone git://github.com/Shougo/neobundle.vim.git neobundle.vim
-	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
-	rm -rf neobundle.vim
-	mkdir ~/.vim
-	ln -s `pwd`/vim/autoload ~/.vim/autoload
-	ln -s `pwd`/vim/colors ~/.vim/colors
-	ln -s `pwd`/vim/ftdetect ~/.vim/ftdetect
-	ln -s `pwd`/vim/ftplugin ~/.vim/ftplugin
-	ln -s `pwd`/vim/templates ~/.vim/templates
+	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc 
+	mkdir -p ~/.bundle
+	git clone git://github.com/Shougo/neobundle.vim.git ~/.bundle/neobundle.vim
 	cd ~/.bundle/vimproc/ && make -f make_gcc.mak
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
 	echo 'source '`pwd`'/dotfiles/dot.screenrc' > ~/.screenrc
@@ -30,6 +23,8 @@ vim-update:
 
 git-update:
 	git pull
+
+clean: vim-clean
 
 vim-clean:
 	vim -u ./vim/local/bundles.vim +NeoBundleClean +q

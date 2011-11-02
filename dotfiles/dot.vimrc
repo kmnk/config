@@ -1,3 +1,7 @@
+" set runtimepath to local .vim
+let s:local_dot_vim_dir_path = expand('<sfile>:h:h') . '/vim'
+execute 'set runtimepath+=' . s:local_dot_vim_dir_path
+
 " initial settings "{{{
 " my mapleader
 let mapleader = ','

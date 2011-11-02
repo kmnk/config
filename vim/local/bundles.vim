@@ -5,8 +5,6 @@ filetype off
 if has('vim_starting')
   if isdirectory(expand('~/.bundle/neobundle.vim'))
     set runtimepath+=~/.bundle/neobundle.vim/
-  elseif isdirectory(expand('./neobundle.vim'))
-    set runtimepath+=./neobundle.vim/
   else
     finish
   endif
