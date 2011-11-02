@@ -1,5 +1,5 @@
 " set runtimepath to local .vim
-let s:local_dot_vim_dir_path = expand('<sfile>:h:h') . '/vim'
+let s:local_dot_vim_dir_path = expand('<sfile>:h:h') . '/vim/dot.vim'
 execute 'set runtimepath+=' . s:local_dot_vim_dir_path
 
 " initial settings "{{{
@@ -11,8 +11,8 @@ colorscheme lucius
 "}}}
 
 " local settings
-let s:local_vimrc_dir_path = expand('<sfile>:h:h') . '/vim/local/'
-let s:my_vimrc_names = [
+let s:profiles_dir_path = expand('<sfile>:h:h') . '/vim/profiles/'
+let s:profile_names = [
 \ 'default',
 \ 'appends',
 \ 'unite',
@@ -28,24 +28,24 @@ augroup END
 "}}}
 
 " source bundle at first
-source <sfile>:h:h/vim/local/bundles.vim
+execute printf('source %sbundles.vim', s:profiles_dir_path)
 
 " source local settings
-let g:path_to_vimrc_profile = '~/.vimrc_profile'
-if filereadable(expand(g:path_to_vimrc_profile))
-  execute printf('source %s', expand(g:path_to_vimrc_profile))
+let g:path_to_vim_profile = '~/.vim_profile'
+if filereadable(expand(g:path_to_vim_profile))
+  execute printf('source %s', expand(g:path_to_vim_profile))
 endif
 
-" source my vimrc {{{
-function! s:source_my_vimrc(names)"{{{
+" source profiles {{{
+function! s:source_profiles(names)"{{{
   for l:name in a:names
-    let l:path = printf('%s%s.vim', s:local_vimrc_dir_path, l:name)
+    let l:path = printf('%s%s.vim', s:profiles_dir_path, l:name)
     if filereadable(l:path)
       execute printf('source %s', l:path)
     endif
   endfor
 endfunction"}}}
-call s:source_my_vimrc(s:my_vimrc_names)
+call s:source_profiles(s:profile_names)
 "}}}
 "}}}
 

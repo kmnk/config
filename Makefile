@@ -13,16 +13,16 @@ windows:
 vim-install:
 	mkdir -p ~/.bundle
 	git clone git://github.com/Shougo/neobundle.vim.git ~/.bundle/neobundle.vim
-	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
+	vim -u ./vim/profiles/bundles.vim +NeoBundleInstall +q
 	cd ~/.bundle/vimproc/ && make -f make_gcc.mak
 
 vim-install-plugins:
-	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
+	vim -u ./vim/profiles/bundles.vim +NeoBundleInstall +q
 
 update: vim-update-plugins git-update
 
 vim-update-plugins:
-	vim -u ./vim/local/bundles.vim +NeoBundleInstall! +q
+	vim -u ./vim/profiles/bundles.vim +NeoBundleInstall! +q
 
 git-update:
 	git pull
@@ -30,4 +30,4 @@ git-update:
 clean: vim-clean
 
 vim-clean-plugins:
-	vim -u ./vim/local/bundles.vim +NeoBundleClean +q
+	vim -u ./vim/profiles/bundles.vim +NeoBundleClean +q
