@@ -1,12 +1,12 @@
 # Makefile
 .PHONY: all update
 
-all: linux vim-install
+all: vim-install linux
 
 linux:
-	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc 
-	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
-	echo 'source '`pwd`'/dotfiles/dot.screenrc' > ~/.screenrc
+	echo 'source '`pwd`'/dotfiles/dot.vimrc' >> ~/.vimrc 
+	echo 'source '`pwd`'/dotfiles/dot.zshrc' >> ~/.zshrc
+	echo 'source '`pwd`'/dotfiles/dot.screenrc' >> ~/.screenrc
 
 windows:
 
