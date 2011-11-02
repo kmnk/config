@@ -5,20 +5,23 @@ all: linux vim-install
 
 linux:
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc 
-	mkdir -p ~/.bundle
-	git clone git://github.com/Shougo/neobundle.vim.git ~/.bundle/neobundle.vim
-	cd ~/.bundle/vimproc/ && make -f make_gcc.mak
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
 	echo 'source '`pwd`'/dotfiles/dot.screenrc' > ~/.screenrc
 
 windows:
 
 vim-install:
+	mkdir -p ~/.bundle
+	git clone git://github.com/Shougo/neobundle.vim.git ~/.bundle/neobundle.vim
+	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
+	cd ~/.bundle/vimproc/ && make -f make_gcc.mak
+
+vim-install-plugins:
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
 
 update: vim-update git-update
 
-vim-update:
+vim-update-plugins:
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall! +q
 
 git-update:
@@ -26,5 +29,5 @@ git-update:
 
 clean: vim-clean
 
-vim-clean:
+vim-clean-plugins:
 	vim -u ./vim/local/bundles.vim +NeoBundleClean +q
