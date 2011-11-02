@@ -136,5 +136,9 @@ runtime macros/matchit.vim
 nnoremap * *N
 nnoremap # #N
 
+" revisual after indenting action
+vnoremap > >gv
+vnoremap < <gv
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
