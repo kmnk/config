@@ -150,5 +150,19 @@ function! s:open_junk_file() "{{{
 endfunction "}}}
 "}}}
 
+" matchit
+runtime macros/matchit.vim
+
+" search from current word
+nnoremap * *N
+nnoremap # #N
+
+" revisual after indenting action
+vnoremap > >gv
+vnoremap < <gv
+
+" clear highlightsearch
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker

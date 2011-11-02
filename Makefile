@@ -19,7 +19,7 @@ vim-install:
 vim-install-plugins:
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall +q
 
-update: vim-update git-update
+update: vim-update-plugins git-update
 
 vim-update-plugins:
 	vim -u ./vim/local/bundles.vim +NeoBundleInstall! +q
