@@ -27,7 +27,7 @@ vim-update-plugins:
 git-update:
 	git pull
 
-clean: vim-clean
+clean: vim-clean-plugins
 
 vim-clean-plugins:
 	vim -u ./vim/profiles/bundles.vim +NeoBundleClean +q
