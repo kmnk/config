@@ -1,20 +1,14 @@
 " other plugins
 
-" maps
-
-
-" align setting
-let g:Align_xstrlen=3
-
 " operator replace setting {{{
-if globpath(&rtp, 'plugin/vim-operator-replace.vim') != ''
+if globpath(&rtp, 'plugin/operator/replace.vim') != ''
   " operator replace
   nmap R <Plug>(operator-replace)
 endif
 "}}}
 
 " textobj settings {{{
-if globpath(&rtp, 'plugin/vim-textobj-user.vim') != ''
+if globpath(&rtp, 'autoload/textobj/user.vim') != ''
   " match like hoge::fuga::piyo
   call textobj#user#plugin('dc', {
 \   'double_colon': {
@@ -31,10 +25,11 @@ if globpath(&rtp, 'plugin/vim-textobj-user.vim') != ''
 endif
 "}}}
 
-" alignta settings {{{
-if globpath(&rtp, 'plugin/Align.vim') != ''
-  vmap <Leader>al <SID>(setup-alignta)
-  vnoremap <SID>(setup-alignta) :Align
+" align settings {{{
+if globpath(&rtp, 'plugin/AlignPlugin.vim') != ''
+  let g:Align_xstrlen=3
+  vmap <Leader>al <SID>(setup-align)
+  vnoremap <SID>(setup-align) :Align
 endif
 "}}}
 
@@ -147,22 +142,22 @@ if globpath(&rtp, 'plugin/neocomplcache.vim') != ''
   " Plugin key-mappings.
   imap <C-k> <Plug>(neocomplcache_start_unite_complete)
   smap <C-k> <Plug>(neocomplcache_start_unite_complete)
-  inoremap <expr><C-g>     neocomplcache#undo_completion()
-  inoremap <expr><C-l>     neocomplcache#complete_common_string()
+  inoremap <expr> <C-g> neocomplcache#undo_completion()
+  inoremap <expr> <C-l> neocomplcache#complete_common_string()
   
   " SuperTab like snippets behavior.
   "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
   
   " Recommended key-mappings.
   " <CR>: close popup and save indent.
-  inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+  inoremap <expr> <CR>  neocomplcache#smart_close_popup() . "\<CR>"
   " <TAB>: completion.
   "inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
   " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-y>  neocomplcache#close_popup()
-  inoremap <expr><C-e>  neocomplcache#cancel_popup()
+  inoremap <expr> <C-h> neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr> <BS>  neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr> <C-y> neocomplcache#close_popup()
+  inoremap <expr> <C-e> neocomplcache#cancel_popup()
   
   " AutoComplPop like behavior.
   "let g:neocomplcache_enable_auto_select = 1
@@ -171,8 +166,8 @@ if globpath(&rtp, 'plugin/neocomplcache.vim') != ''
   "set completeopt+=longest
   "let g:neocomplcache_enable_auto_select = 1
   "let g:neocomplcache_disable_auto_complete = 1
-  "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-  "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+  "inoremap <expr> <TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+  "inoremap <expr> <CR>  neocomplcache#smart_close_popup() . "\<CR>"
   
   " Enable omni completion.
   autocmd VimrcAutoCmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
