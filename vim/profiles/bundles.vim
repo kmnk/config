@@ -34,6 +34,7 @@ NeoBundle 'git://github.com/thinca/vim-unite-history.git'
 NeoBundle 'git://github.com/thinca/vim-openbuf.git'
 NeoBundle 'git://github.com/thinca/vim-localrc.git'
 NeoBundle 'git://github.com/thinca/vim-visualstar.git'
+NeoBundle 'git://github.com/thinca/vim-ref.git'
 
 NeoBundle 'git://github.com/ujihisa/quickrun.git'
 NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
