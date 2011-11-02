@@ -140,5 +140,8 @@ nnoremap # #N
 vnoremap > >gv
 vnoremap < <gv
 
+" clear highlightsearch
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
