@@ -3,11 +3,21 @@ if globpath(&rtp, 'plugin/unite.vim') == ''
   finish
 endif
 
-let g:unite_split_rule  = 'botright'
+let g:unite_split_rule = 'botright'
+let g:unite_enable_start_insert = 1
 
 " unite prefix key
 nnoremap [unite] <Nop>
 nmap <Leader>. [unite]
+
+" on unite buffer setting
+autocmd VimrcAutoCmd FileType unite call s:unite_settings()
+function! s:unite_settings()"{{{
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+  imap <buffer> jj    <Plug>(unite_insert_leave)
+  imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+  imap <buffer> qq    <Plug>(unite_exit)
+endfunction"}}}
 
 " maps {{{
 nmap [unite]u     <SID>(normally)
@@ -97,17 +107,6 @@ nnoremap <silent> <SID>(neobundle-update)               :<C-u>Unite neobundle/in
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 "}}}
-
-" on unite buffer setting
-autocmd VimrcAutoCmd FileType unite call s:unite_settings()
-function! s:unite_settings()"{{{
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-  imap <buffer> jj    <Plug>(unite_insert_leave)
-  imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-  imap <buffer> qq    <Plug>(unite_exit)
-
-  let g:unite_enable_start_insert = 1
-endfunction"}}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
