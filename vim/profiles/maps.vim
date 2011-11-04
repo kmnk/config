@@ -1,4 +1,15 @@
 " maps
+
+map <C-j> <SID>(to-next-tab)
+map <C-k> <SID>(to-prev-tab)
+
+nmap <Leader>sj <SID>(split-to-j)
+nmap <Leader>sk <SID>(split-to-k)
+nmap <Leader>sh <SID>(split-to-h)
+nmap <Leader>sl <SID>(split-to-l)
+
+nmap <Leader>jl <SID>(lint-javascript)
+
 nmap gp <SID>(re-visual-pasted)
 
 " useful key maps
@@ -25,17 +36,10 @@ nnoremap gc `[v`]
 nnoremap ; :<C-u>w<CR>
 
 " move tab
-map <C-j> <SID>(to-next-tab)
-map <C-k> <SID>(to-prev-tab)
 nnoremap <SID>(to-next-tab) gt
 nnoremap <SID>(to-prev-tab) gT
 
 " split {{{
-nmap <Leader>sj <SID>(split-to-j)
-nmap <Leader>sk <SID>(split-to-k)
-nmap <Leader>sh <SID>(split-to-h)
-nmap <Leader>sl <SID>(split-to-l)
-
 nnoremap <SID>(split-to-j) :<C-u>execute 'belowright' (v:count == 0 ? '' : v:count) 'split'<CR>
 nnoremap <SID>(split-to-k) :<C-u>execute 'aboveleft'  (v:count == 0 ? '' : v:count) 'split'<CR>
 nnoremap <SID>(split-to-h) :<C-u>execute 'topleft'    (v:count == 0 ? '' : v:count) 'vsplit'<CR>
@@ -44,7 +48,6 @@ nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:cou
 "
 
 " jslint {{{
-nmap <Leader>jl <SID>(lint-javascript)
 nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
 " }}}
 

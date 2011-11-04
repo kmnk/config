@@ -30,9 +30,9 @@ augroup END
 execute printf('source %sbundles.vim', s:profiles_dir_path)
 
 " source local settings {{{
-let g:path_to_vim_profile = '~/.vim_profile'
-if filereadable(expand(g:path_to_vim_profile))
-  execute printf('source %s', expand(g:path_to_vim_profile))
+let g:path_to_vimrc_profile = '~/.vimrc_profile'
+if filereadable(expand(g:path_to_vimrc_profile))
+  execute printf('source %s', expand(g:path_to_vimrc_profile))
 endif
 "}}}
 
