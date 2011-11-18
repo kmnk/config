@@ -16,7 +16,8 @@ let s:profile_names = [
 \ 'appends',
 \ 'unite',
 \ 'maps',
-\ 'plugins'
+\ 'plugins',
+\ 'tmp',
 \]
 
 " get ready (no need for editing) {{{

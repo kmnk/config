@@ -5,6 +5,9 @@ all: vim-install linux
 
 linux:
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' >> ~/.vimrc 
+	echo 'source "'`pwd` >> ~/.vimrc 
+	echo 'source "'`pwd`'/config/vim/profiles' >> ~/.vimrc 
+	echo 'source "'`pwd`'/config/vim/dot.vim' >> ~/.vimrc 
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' >> ~/.zshrc
 	echo 'source '`pwd`'/dotfiles/dot.screenrc' >> ~/.screenrc
 
