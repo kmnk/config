@@ -12,9 +12,9 @@ nmap <Leader>eg <SID>(edit-gvimrc)
 nmap <Leader>mt <SID>(buffer-to-new-tab)
 
 
-" disp always number of lines
-set number
-nnoremap <silent> <SID>(toggle-number) :<C-u>set number!<CR>
+" disp always relativenumber of lines
+set relativenumber
+nnoremap <silent> <SID>(toggle-number) :<C-u>set relativenumber!<CR>
 
 " indent
 set autoindent
