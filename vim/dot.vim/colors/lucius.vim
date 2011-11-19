@@ -23,7 +23,7 @@ if &background == "dark"
 
     " == Normal color ==
     hi Normal           guifg=#e0e0e0           guibg=#202020
-    hi Normal           ctermfg=253             ctermbg=234
+    hi Normal           ctermfg=253             ctermbg=NONE
 
 
     " == Comments ==
@@ -177,17 +177,17 @@ if &background == "dark"
 
     " == Ignore ==
     " left blank, hidden
-    hi Ignore           guifg=bg
-    hi Ignore           ctermfg=bg
+    hi Ignore           guifg=NONE
+    hi Ignore           ctermfg=NONE
 
 
     " == Text Selection ==
     " character under the cursor
-    hi Cursor           guifg=bg                guibg=#a3e3ed
-    hi Cursor           ctermfg=bg              ctermbg=153
+    hi Cursor           guifg=NONE                guibg=#a3e3ed
+    hi Cursor           ctermfg=NONE              ctermbg=153
     " like cursor, but used when in IME mode
-    hi CursorIM         guifg=bg                guibg=#96cdcd
-    hi CursorIM         ctermfg=bg              ctermbg=116
+    hi CursorIM         guifg=NONE                guibg=#96cdcd
+    hi CursorIM         ctermfg=NONE              ctermbg=116
     " cursor column
     hi CursorColumn     guifg=NONE              guibg=#404448           gui=none
     hi CursorColumn     ctermfg=NONE            ctermbg=236             cterm=none
@@ -471,17 +471,17 @@ elseif &background == 'light'
 
     " == Ignore ==
     " left blank, hidden
-    hi Ignore           guifg=bg
-    hi Ignore           ctermfg=bg
+    hi Ignore           guifg=NONE
+    hi Ignore           ctermfg=NONE
 
 
     " == Text Selection ==
     " character under the cursor
-    hi Cursor           guifg=bg                guibg=#406090
-    hi Cursor           ctermfg=bg              ctermbg=25
+    hi Cursor           guifg=NONE                guibg=#406090
+    hi Cursor           ctermfg=NONE              ctermbg=25
     " like cursor, but used when in IME mode
-    hi CursorIM         guifg=bg                guibg=#96cdcd
-    hi CursorIM         ctermfg=bg              ctermbg=116
+    hi CursorIM         guifg=NONE                guibg=#96cdcd
+    hi CursorIM         ctermfg=NONE              ctermbg=116
     " cursor column
     hi CursorColumn     guifg=NONE              guibg=#e0e0e0           gui=none
     hi CursorColumn     ctermfg=NONE            ctermbg=254             cterm=none
