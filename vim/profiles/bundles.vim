@@ -44,6 +44,8 @@ NeoBundle 'git://github.com/mattn/jslint.vim.git'
 NeoBundle 'git://github.com/mattn/sonictemplate-vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/mattn/webapi-vim.git'
+NeoBundle 'git://github.com/mattn/learn-vimscript.git'
+NeoBundle 'git://github.com/mattn/wwwrenderer-vim.git'
 
 NeoBundle 'git://github.com/Sixeight/unite-grep.git'
 
