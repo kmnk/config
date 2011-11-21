@@ -1,26 +1,40 @@
 # Makefile
-.PHONY: all update
+.PHONY: linux mac windows vim-setup install update clean
 
-all: vim-install linux
+linux: setup vim-setup vim-make-vimproc-linux
 
-linux:
-	echo 'source '`pwd`'/dotfiles/dot.vimrc' >> ~/.vimrc 
-	echo 'source "'`pwd` >> ~/.vimrc 
-	echo 'source "'`pwd`'/config/vim/profiles' >> ~/.vimrc 
-	echo 'source "'`pwd`'/config/vim/dot.vim' >> ~/.vimrc 
+mac: setup vim-setup vim-make-vimproc-mac
+
+windows: vim-setup
+
+setup:
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' >> ~/.zshrc
 	echo 'source '`pwd`'/dotfiles/dot.screenrc' >> ~/.screenrc
 
-windows:
+vim-setup: vim-setup-vimrc vim-install-bundle vim-install-plugins
 
-vim-install:
+vim-setup-vimrc:
+	echo 'source '`pwd`'/dotfiles/dot.vimrc' >> ~/.vimrc
+	echo '"root:     '`pwd` >> ~/.vimrc
+	echo '"profiles: '`pwd`'/config/vim/profiles' >> ~/.vimrc
+	echo '".vim:     '`pwd`'/config/vim/dot.vim' >> ~/.vimrc
+
+vim-install-bundle:
 	mkdir -p ~/.bundle
 	git clone git://github.com/Shougo/neobundle.vim.git ~/.bundle/neobundle.vim
-	vim -u ./vim/profiles/bundles.vim +NeoBundleInstall +q
+
+vim-make-vimproc-linux:
 	cd ~/.bundle/vimproc/ && make -f make_gcc.mak
+
+vim-make-vimproc-mac:
+	cd ~/.bundle/vimproc/ && make -f make_mac.mak
+
+
+install: vim-install-plugins
 
 vim-install-plugins:
 	vim -u ./vim/profiles/bundles.vim +NeoBundleInstall +q
+
 
 update: vim-update-plugins git-update
 
@@ -29,6 +43,7 @@ vim-update-plugins:
 
 git-update:
 	git pull
+
 
 clean: vim-clean-plugins
 
