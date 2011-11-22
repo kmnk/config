@@ -1,7 +1,8 @@
 " appends
 
 " maps
-nmap <Leader>1 <SID>(toggle-number)
+nmap <Leader>1 <SID>(toggle-relativenumber)
+nmap <Leader>2 <SID>(toggle-number)
 
 nmap <C-h> <SID>(help-shortcut)
 imap <C-h> <SID>(backspace)
@@ -14,7 +15,8 @@ nmap <Leader>mt <SID>(buffer-to-new-tab)
 
 " disp always relativenumber of lines
 set relativenumber
-nnoremap <silent> <SID>(toggle-number) :<C-u>set relativenumber!<CR>
+nnoremap <silent> <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
+nnoremap <silent> <SID>(toggle-number)         :<C-u>set number!<CR>
 
 " indent
 set autoindent
