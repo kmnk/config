@@ -37,7 +37,7 @@ nmap g...*        <SID>(grep-...)
 nmap g....*       <SID>(grep-....)
 
 nmap [unite]o     <SID>(outline)
-nmap [unite]m     <SID>(mark)
+nmap [unite]<C-m> <SID>(mark)
 nmap [unite]r     <SID>(register)
 
 nmap [unite]hc    <SID>(history-command)

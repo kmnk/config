@@ -20,6 +20,8 @@ let s:profile_names = [
 \ 'plugins',
 \ 'functions',
 \ 'tmp',
+\ 'office-bundles',
+\ 'office-maps',
 \]
 
 " local functions {{{
