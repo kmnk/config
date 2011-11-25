@@ -1,5 +1,15 @@
 " other plugins
 
+" maps {{{
+nmap <Leader>gd <SID>(git-diff)
+nmap <Leader>gs <SID>(git-status)
+nmap <Leader>gl <SID>(git-log)
+nmap <Leader>ga <SID>(git-add)
+nmap <Leader>gc <SID>(git-commit)
+nmap <Leader>gC <SID>(git-commit-amend)
+nmap <Leader>gb <SID>(git-blame)
+"}}}
+
 " operator replace setting {{{
 if globpath(&rtp, 'plugin/operator/replace.vim') != ''
   " operator replace
@@ -204,6 +214,18 @@ endif
 map * <Plug>(visualstar-*)N
 map # <Plug>(visualstar-#)N
 "}}}
+
+" fugitive {{{
+if globpath(&rtp, 'plugin/fugitive.vim') != ''
+  nnoremap <SID>(git-diff)         :<C-u>Gdiff<CR>
+  nnoremap <SID>(git-status)       :<C-u>Gstatus<CR>
+  nnoremap <SID>(git-log)          :<C-u>Glog<CR>
+  nnoremap <SID>(git-add)          :<C-u>Gwrite<CR>
+  nnoremap <SID>(git-commit)       :<C-u>Gcommit<CR>
+  nnoremap <SID>(git-commit-amend) :<C-u>Git commit --amend<CR>
+  nnoremap <SID>(git-blame)        :<C-u>Gblame<CR>
+endif
+" }}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
