@@ -71,6 +71,8 @@ NeoBundle 'git://github.com/h1mesuke/unite-outline.git'
 
 NeoBundle 'git://github.com/choplin/unite-vim_hacks.git'
 
+NeoBundle 'git://github.com/tpope/vim-fugitive.git'
+
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 
 filetype plugin on
