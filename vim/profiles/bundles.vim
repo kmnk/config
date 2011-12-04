@@ -42,12 +42,13 @@ NeoBundle 'git://github.com/ujihisa/quickrun.git'
 NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
 NeoBundle 'git://github.com/ujihisa/neco-look.git'
 
-NeoBundle 'git://github.com/mattn/jslint.vim.git'
 NeoBundle 'git://github.com/mattn/sonictemplate-vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/mattn/webapi-vim.git'
 NeoBundle 'git://github.com/mattn/learn-vimscript.git'
 NeoBundle 'git://github.com/mattn/wwwrenderer-vim.git'
+
+NeoBundle 'git://github.com/basyura/jslint.vim.git'
 
 NeoBundle 'git://github.com/Sixeight/unite-grep.git'
 
@@ -68,11 +69,11 @@ NeoBundle 'git://github.com/tacroe/unite-mark.git'
 NeoBundle 'git://github.com/h1mesuke/vim-unittest.git'
 NeoBundle 'git://github.com/h1mesuke/vim-alignta.git'
 NeoBundle 'git://github.com/h1mesuke/unite-outline.git'
+NeoBundle 'git://github.com/h1mesuke/textobj-wiw.git'
 
 NeoBundle 'git://github.com/choplin/unite-vim_hacks.git'
 
-NeoBundle 'git://github.com/tpope/vim-fugitive.git'
-
+NeoBundle 'git://github.com/kmnk/vim-fugitive.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 
 filetype plugin on
