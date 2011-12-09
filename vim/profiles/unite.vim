@@ -26,6 +26,7 @@ nmap [unite]b     <SID>(buffer)
 nmap [unite]ab    <SID>(all-buffer)
 
 nmap tt           <SID>(tab)
+nmap TT           <SID>(tab!)
 
 nmap [unite]/     <SID>(search)
 nmap [unite]*     <SID>(star-search)
@@ -71,7 +72,8 @@ nnoremap <silent> <SID>(search)      :<C-u>Unite -buffer-name=search -prompt=sea
 nnoremap <silent> <SID>(star-search) :<C-u>UniteWithCursorWord -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-start-insert -no-quit line<CR>
 "}}}
 
-nnoremap <silent> <SID>(tab) :<C-u>Unite -buffer-name=tab -prompt=tab> -immediately -no-start-insert tab:no-current<CR>
+nnoremap <silent> <SID>(tab)  :<C-u>Unite -buffer-name=tab -prompt=tab> -immediately -no-start-insert tab:no-current<CR>
+nnoremap <silent> <SID>(tab!) :<C-u>Unite -buffer-name=tab -prompt=tab> tab<CR>
 
 " grep {{{
 let g:unite_source_grep_default_opts = '-iRHn'

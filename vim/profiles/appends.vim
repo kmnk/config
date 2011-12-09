@@ -14,7 +14,7 @@ nmap <Leader>mt <SID>(buffer-to-new-tab)
 
 
 " disp always relativenumber of lines
-set relativenumber
+set number
 nnoremap <silent> <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
 nnoremap <silent> <SID>(toggle-number)         :<C-u>set number!<CR>
 
