@@ -47,10 +47,6 @@ nnoremap <SID>(split-to-l) :<C-u>execute 'botright'   (v:count == 0 ? '' : v:cou
 "}}}
 "
 
-" jslint {{{
-nnoremap <silent> <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
-" }}}
-
 "
 nnoremap <expr> <SID>(re-visual-pasted) '`[' . strpart(getregtype(), 0, 1) . '`]'
 
