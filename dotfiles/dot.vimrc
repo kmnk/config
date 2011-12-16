@@ -20,6 +20,7 @@ let s:profile_names = [
 \ 'plugins',
 \ 'functions',
 \ 'tmp',
+\ 'office-appends',
 \ 'office-bundles',
 \ 'office-maps',
 \]

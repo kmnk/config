@@ -237,8 +237,15 @@ endif
 " }}}
 
 " jslint {{{
-nnoremap <SID>(lint-javascript) :<C-u>JSLintUpdate<CR>
-nnoremap <SID>(toggle-jslint)   :<C-u>JSLintToggle<CR>
+autocmd VimrcAutoCmd FileType javascript call s:javascript_filetype_settings()
+
+function! s:javascript_filetype_settings()
+  nnoremap <SID>(lint-javascript) :<C-u>JSLint<CR>
+  nnoremap <SID>(toggle-jslint)   :<C-u>JSLintToggle<CR>
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
 "}}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
