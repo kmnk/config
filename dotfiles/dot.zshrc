@@ -55,7 +55,6 @@ esac
 
 # エイリアス
 setopt complete_aliases # aliased ls needs if
-alias vi="vim"
 alias ack="ack -C 5"
 #alias ack=""
 
