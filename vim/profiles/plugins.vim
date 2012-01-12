@@ -105,6 +105,7 @@ if globpath(&rtp, 'plugin/vimshell.vim') != ''
 \|  call vimshell#hook#set('emptycmd', ['g:my_emptycmd'])
 \|  call vimshell#hook#set('preprompt', ['g:my_preprompt'])
 \|  call vimshell#hook#set('preexec', ['g:my_preexec'])
+\|  set nonumber
 
   function! g:my_chpwd(args, context)
     call vimshell#execute('echo "chpwd"')

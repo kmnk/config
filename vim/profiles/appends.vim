@@ -1,8 +1,8 @@
 " appends
 
 " maps
-nmap <Leader>1 <SID>(toggle-relativenumber)
-nmap <Leader>2 <SID>(toggle-number)
+nmap <Leader>1 <SID>(toggle-number)
+nmap <Leader>2 <SID>(toggle-relativenumber)
 
 nmap <C-h> <SID>(help-shortcut)
 imap <C-h> <SID>(backspace)
@@ -15,8 +15,8 @@ nmap <Leader>mt <SID>(buffer-to-new-tab)
 
 " disp always relativenumber of lines
 set number
-nnoremap <silent> <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
 nnoremap <silent> <SID>(toggle-number)         :<C-u>set number!<CR>
+nnoremap <silent> <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
 
 " indent
 set autoindent
@@ -100,6 +100,8 @@ xmap : <SID>(command-line-enter)
 
 autocmd VimrcAutoCmd CmdwinEnter * call s:init_cmdwin()  "{{{
 function! s:init_cmdwin()
+  set nonumber
+
   nnoremap <buffer> q :<C-u>quit<CR>
   nnoremap <buffer> <TAB> :<C-u>quit<CR>
   inoremap <buffer><expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
