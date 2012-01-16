@@ -73,10 +73,14 @@ endif
 
 " vimshell settings {{{
 if globpath(&rtp, 'plugin/vimshell.vim') != ''
-  nmap <Leader>; <SID>(pop-vimshell)
-  nmap <Space>;  <SID>(launch-vimshell)
+  nmap <Leader>;  <SID>(pop-vimshell)
+  nmap <Space>;   <SID>(launch-vimshell)
+  nmap <Leader>c; <SID>(pop-vimshell-on-current-buffer-dir)
+  nmap <Space>c;  <SID>(launch-vimshell-on-current-buffer-dir)
   nnoremap <expr> <SID>(pop-vimshell)    ':<C-u>VimShellPop ' . getcwd() . '<CR>'
   nnoremap <expr> <SID>(launch-vimshell) ':<C-u>VimShell '    . getcwd() . '<CR>'
+  nnoremap <expr> <SID>(pop-vimshell-on-current-buffer-dir)    ':<C-u>VimShellPop ' . expand('%:h') . '<CR>'
+  nnoremap <expr> <SID>(launch-vimshell-on-current-buffer-dir) ':<C-u>VimShell '    . expand('%:h') . '<CR>'
   let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
   let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
   let g:vimshell_enable_smart_case = 1
@@ -97,6 +101,11 @@ if globpath(&rtp, 'plugin/vimshell.vim') != ''
 
   autocmd VimrcAutoCmd FileType vimshell
 \   call vimshell#altercmd#define('g', 'git')
+\|  nnoremap <buffer> : :
+\|  nmap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
+\|  imap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
+\|  smap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
+\|  xmap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
 \|  call vimshell#altercmd#define('i', 'iexe')
 \|  call vimshell#altercmd#define('l', 'll')
 \|  call vimshell#altercmd#define('ll', 'ls -l')
