@@ -73,7 +73,9 @@ NeoBundle 'git://github.com/h1mesuke/textobj-wiw.git'
 
 NeoBundle 'git://github.com/choplin/unite-vim_hacks.git'
 
-NeoBundle 'git://github.com/kmnk/vim-fugitive.git'
+NeoBundle 'git://github.com/motemen/git-vim.git'
+
+"NeoBundle 'git://github.com/kmnk/vim-fugitive.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 
 filetype plugin on

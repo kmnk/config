@@ -102,10 +102,6 @@ if globpath(&rtp, 'plugin/vimshell.vim') != ''
   autocmd VimrcAutoCmd FileType vimshell
 \   call vimshell#altercmd#define('g', 'git')
 \|  nnoremap <buffer> : :
-\|  nmap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
-\|  imap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
-\|  smap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
-\|  xmap <buffer> <C-c> <Plug>(vimshell_int_interrupt?)
 \|  call vimshell#altercmd#define('i', 'iexe')
 \|  call vimshell#altercmd#define('l', 'll')
 \|  call vimshell#altercmd#define('ll', 'ls -l')
