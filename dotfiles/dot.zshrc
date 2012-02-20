@@ -18,8 +18,8 @@ local WHITE=$'%{\e[1;37m%}'
 local DEFAULT=$'%{\e[m%}'
 
 # 文字コード指定
-#export LANG=ja_JP.UTF-8
-export LANG=en_US.UTF-8
+export LANG=ja_JP.UTF-8
+#export LANG=en_US.UTF-8
 
 # プロンプトの設定
 case ${PWD} in
