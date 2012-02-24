@@ -4,13 +4,18 @@
 nmap <Leader>jl <SID>(lint-javascript)
 nmap <Leader>jj <SID>(toggle-jslint)
 
-nmap <Leader>gd <SID>(git-diff)
-nmap <Leader>gs <SID>(git-status)
-nmap <Leader>gl <SID>(git-log)
-nmap <Leader>ga <SID>(git-add)
-nmap <Leader>gc <SID>(git-commit)
-nmap <Leader>gC <SID>(git-commit-amend)
-nmap <Leader>gb <SID>(git-blame)
+" giti
+nmap <Space>gd <SID>(git-diff-cached)
+nmap <Space>gD <SID>(git-diff)
+nmap <Space>gp <SID>(git-push)
+
+" git-vim
+nmap <Space>gs <SID>(git-status)
+nmap <Space>gl <SID>(git-log)
+nmap <Space>ga <SID>(git-add)
+nmap <Space>gc <SID>(git-commit)
+nmap <Space>gC <SID>(git-commit-amend)
+nmap <Space>gb <SID>(git-blame)
 "}}}
 
 " operator replace setting {{{
@@ -230,9 +235,16 @@ map * <Plug>(visualstar-*)N
 map # <Plug>(visualstar-#)N
 "}}}
 
+" giti {{{
+if globpath(&rtp, 'autoload/giti.vim') != ''
+  nnoremap <expr> <silent> <SID>(git-diff) ':<C-u>call giti#diff#run([' . expand('%:p') .  '])<CR>'
+  nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>call giti#diff#cached([' . expand('%:p') .  '])<CR>'
+  nnoremap <expr> <silent> <SID>(git-push) ':<C-u>call giti#push#run()<CR>'
+endif
+" }}}
+
 " fugitive {{{
 if globpath(&rtp, 'plugin/fugitive.vim') != ''
-  nnoremap <SID>(git-diff)         :<C-u>Gdiff<CR>
   nnoremap <SID>(git-status)       :<C-u>Gstatus<CR>
   nnoremap <SID>(git-log)          :<C-u>Glog<CR>
   nnoremap <SID>(git-add)          :<C-u>Gwrite<CR>

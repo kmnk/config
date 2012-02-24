@@ -109,10 +109,6 @@ nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn
 " git {{{
 nnoremap <silent> <SID>(git-status) :<C-u>Unite giti/status<CR>
 nnoremap <silent> <SID>(git-branch) :<C-u>Unite giti/branch<CR>
-
-" not unite commands
-nnoremap <expr> <silent> <SID>(git-diff) ':<C-u>call giti#diff(' . expand('%:p') .  ' )<CR>'
-nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>call giti#diff_cached(' . expand('%:p') .  ' )<CR>'
 " }}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
