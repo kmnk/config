@@ -22,6 +22,7 @@ endfunction"}}}
 " maps {{{
 nmap [unite]u     <SID>(normally)
 nmap [unite]c     <SID>(buffer-dir)
+nmap [unite]C     <SID>(buffer-file)
 nmap [unite]b     <SID>(buffer)
 nmap [unite]ab    <SID>(all-buffer)
 
@@ -61,15 +62,18 @@ nmap [unite]nbin  <SID>(neobundle-install)
 nmap [unite]Nbin  <SID>(neobundle-install-indivisually)
 nmap [unite]nbup  <SID>(neobundle-update)
 
+nmap [unite]frn   <SID>(immediately-rename)
+
 nmap sc <SID>(color)
 "}}}
 
 " mapped commands {{{
 " files {{{
-nnoremap <silent> <SID>(normally)   :<C-u>Unite -buffer-name=files file file_rec file_mru buffer_tab<CR>
-nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file file_rec file_mru buffer_tab<CR>
-nnoremap <silent> <SID>(buffer)     :<C-u>Unite -buffer-name=files -prompt=buffer> buffer_tab file_mru<CR>
-nnoremap <silent> <SID>(all-buffer) :<C-u>Unite -buffer-name=files -prompt=buffer> buffer file_mru<CR>
+nnoremap <silent>        <SID>(normally)     :<C-u>Unite -buffer-name=files file file_rec file_mru buffer_tab<CR>
+nnoremap <silent>        <SID>(buffer-dir)   :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file file_rec file_mru buffer_tab<CR>
+nnoremap <silent> <expr> <SID>(buffer-file) ':<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> -input=' . expand('%:p') . ' file file_rec file_mru buffer_tab<CR>'
+nnoremap <silent>        <SID>(buffer)       :<C-u>Unite -buffer-name=files -prompt=buffer> buffer_tab file_mru<CR>
+nnoremap <silent>        <SID>(all-buffer)   :<C-u>Unite -buffer-name=files -prompt=buffer> buffer file_mru<CR>
 "}}}
 
 " search {{{
@@ -118,6 +122,10 @@ nnoremap <silent> <SID>(neobundle-install-indivisually) :<C-u>Unite neobundle/in
 nnoremap <silent> <SID>(neobundle-update)               :<C-u>Unite neobundle/install:!<CR>
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
+
+" immediately actions {{{
+nnoremap <silent> <expr> <SID>(immediately-rename) ':<C-u>Unite file -input=' . expand('%:p') . ' -default-action=rename -immediately<CR>'
+"}}}
 "}}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2

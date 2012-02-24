@@ -18,8 +18,8 @@ local WHITE=$'%{\e[1;37m%}'
 local DEFAULT=$'%{\e[m%}'
 
 # 文字コード指定
-#export LANG=ja_JP.UTF-8
-export LANG=en_US.UTF-8
+export LANG=ja_JP.UTF-8
+#export LANG=en_US.UTF-8
 
 # プロンプトの設定
 case ${PWD} in
@@ -69,8 +69,8 @@ export GIT_EDITOR=vim
 
 # コマンド履歴
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
