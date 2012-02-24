@@ -32,8 +32,10 @@ nnoremap Y y$
 " select latest changes
 nnoremap gc `[v`]
 
-" 
+" quick write
 nnoremap ; :<C-u>w<CR>
+" quick quit
+nnoremap \ :<C-u>q<CR>
 
 " move tab
 nnoremap <SID>(to-next-tab) gt

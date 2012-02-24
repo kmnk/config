@@ -75,8 +75,8 @@ NeoBundle 'git://github.com/choplin/unite-vim_hacks.git'
 
 NeoBundle 'git://github.com/motemen/git-vim.git'
 
-"NeoBundle 'git://github.com/kmnk/vim-fugitive.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
+NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
 
 filetype plugin on
 filetype indent on

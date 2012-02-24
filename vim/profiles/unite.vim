@@ -50,6 +50,11 @@ nmap [unite]vst   <SID>(svn-status)
 nmap [unite]vdi   <SID>(svn-diff)
 nmap [unite]vbl   <SID>(svn-blame)
 
+nmap [unite]gst   <SID>(git-status)
+nmap [unite]gbr   <SID>(git-branch)
+nmap [unite]gdi   <SID>(git-diff)
+nmap [unite]gdc   <SID>(git-diff-cached)
+
 nmap [unite]s     <SID>(source)
 
 nmap [unite]nbin  <SID>(neobundle-install)
@@ -99,7 +104,16 @@ nnoremap <silent> <SID>(help) :<C-u>Unite help<CR>
 nnoremap <silent> <SID>(svn-status) :<C-u>Unite svn/status<CR>
 nnoremap <silent> <SID>(svn-diff)   :<C-u>Unite -vertical -direction=topleft -auto-preview svn/diff<CR>
 nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn/blame:<C-r>%<CR>
-"}}}
+" }}}
+
+" git {{{
+nnoremap <silent> <SID>(git-status) :<C-u>Unite giti/status<CR>
+nnoremap <silent> <SID>(git-branch) :<C-u>Unite giti/branch<CR>
+
+" not unite commands
+nnoremap <expr> <silent> <SID>(git-diff) ':<C-u>call giti#diff(' . expand('%:p') .  ' )<CR>'
+nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>call giti#diff_cached(' . expand('%:p') .  ' )<CR>'
+" }}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
 
