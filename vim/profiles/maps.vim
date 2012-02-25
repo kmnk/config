@@ -34,8 +34,8 @@ nnoremap gc `[v`]
 
 " quick write
 nnoremap ; :<C-u>w<CR>
-" quick quit
-nnoremap \ :<C-u>q<CR>
+" quick ZZ
+nnoremap \ ZZ
 
 " move tab
 nnoremap <SID>(to-next-tab) gt
