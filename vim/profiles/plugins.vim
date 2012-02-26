@@ -7,7 +7,8 @@ nmap <Leader>jj <SID>(toggle-jslint)
 " giti
 nmap <Space>gd <SID>(git-diff-cached)
 nmap <Space>gD <SID>(git-diff)
-nmap <Space>gp <SID>(git-push)
+nmap <Space>gp <SID>(git-push-now)
+nmap <Space>gP <SID>(git-push)
 
 " git-vim
 nmap <Space>gs <SID>(git-status)
@@ -237,9 +238,10 @@ map # <Plug>(visualstar-#)N
 
 " giti {{{
 if globpath(&rtp, 'autoload/giti.vim') != ''
-  nnoremap <expr> <silent> <SID>(git-diff) ':<C-u>call giti#diff#run([' . expand('%:p') .  '])<CR>'
-  nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>call giti#diff#cached([' . expand('%:p') .  '])<CR>'
-  nnoremap <expr> <silent> <SID>(git-push) ':<C-u>call giti#push#run()<CR>'
+  nnoremap <expr> <silent> <SID>(git-diff)        ':<C-u>GitiDiff ' . expand('%:p') . '<CR>'
+  nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
+  nnoremap        <silent> <SID>(git-push-now)     :<C-u>GitiPush<CR>
+  nnoremap        <silent> <SID>(git-push)         :<C-u>GitiPush
 endif
 " }}}
 
