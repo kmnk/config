@@ -112,7 +112,7 @@ nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn
 " git {{{
 nnoremap <silent> <SID>(git-status) :<C-u>Unite giti/status<CR>
 nnoremap <silent> <SID>(git-branch) :<C-u>Unite giti/branch<CR>
-nnoremap <silent> <SID>(git-branch) :<C-u>Unite giti/config<CR>
+nnoremap <silent> <SID>(git-config) :<C-u>Unite giti/config<CR>
 " }}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
