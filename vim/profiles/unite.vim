@@ -51,8 +51,9 @@ nmap [unite]vst   <SID>(svn-status)
 nmap [unite]vdi   <SID>(svn-diff)
 nmap [unite]vbl   <SID>(svn-blame)
 
+nmap [unite]gg    <SID>(giti-sources)
 nmap [unite]gst   <SID>(git-status)
-nmap [unite]gbr   <SID>(git-branch)
+nmap [unite]gb    <SID>(git-branch)
 nmap [unite]gc    <SID>(git-config)
 
 nmap [unite]s     <SID>(source)
@@ -110,9 +111,10 @@ nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn
 " }}}
 
 " git {{{
-nnoremap <silent> <SID>(git-status) :<C-u>Unite giti/status<CR>
-nnoremap <silent> <SID>(git-branch) :<C-u>Unite giti/branch<CR>
-nnoremap <silent> <SID>(git-config) :<C-u>Unite giti/config<CR>
+nnoremap <silent> <SID>(giti-sources) :<C-u>Unite giti<CR>
+nnoremap <silent> <SID>(git-status)   :<C-u>Unite giti/status<CR>
+nnoremap <silent> <SID>(git-branch)   :<C-u>Unite giti/branch<CR>
+nnoremap <silent> <SID>(git-config)   :<C-u>Unite giti/config<CR>
 " }}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
