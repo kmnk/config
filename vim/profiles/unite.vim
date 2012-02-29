@@ -55,6 +55,7 @@ nmap [unite]gg    <SID>(giti-sources)
 nmap [unite]gst   <SID>(git-status)
 nmap [unite]gb    <SID>(git-branch)
 nmap [unite]gc    <SID>(git-config)
+nmap [unite]gl    <SID>(git-log)
 
 nmap [unite]s     <SID>(source)
 
@@ -115,6 +116,7 @@ nnoremap <silent> <SID>(giti-sources) :<C-u>Unite giti<CR>
 nnoremap <silent> <SID>(git-status)   :<C-u>Unite giti/status<CR>
 nnoremap <silent> <SID>(git-branch)   :<C-u>Unite giti/branch<CR>
 nnoremap <silent> <SID>(git-config)   :<C-u>Unite giti/config<CR>
+nnoremap <silent> <SID>(git-log)      :<C-u>Unite giti/log<CR>
 " }}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
