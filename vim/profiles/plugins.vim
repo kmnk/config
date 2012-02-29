@@ -13,9 +13,6 @@ nmap <Space>gl <SID>(git-log-line)
 nmap <Space>gL <SID>(git-log)
 
 " git-vim
-nmap <Space>gs <SID>(git-status)
-nmap <Space>ga <SID>(git-add)
-nmap <Space>gc <SID>(git-commit)
 nmap <Space>gC <SID>(git-commit-amend)
 nmap <Space>gb <SID>(git-blame)
 "}}}
@@ -250,10 +247,6 @@ endif
 
 " fugitive {{{
 if globpath(&rtp, 'plugin/fugitive.vim') != ''
-  nnoremap <SID>(git-status)       :<C-u>Gstatus<CR>
-  nnoremap <SID>(git-log)          :<C-u>Glog<CR>
-  nnoremap <SID>(git-add)          :<C-u>Gwrite<CR>
-  nnoremap <SID>(git-commit)       :<C-u>Gcommit<CR>
   nnoremap <SID>(git-commit-amend) :<C-u>Git commit --amend<CR>
   nnoremap <SID>(git-blame)        :<C-u>Gblame<CR>
 endif
