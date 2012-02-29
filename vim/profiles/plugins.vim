@@ -9,10 +9,11 @@ nmap <Space>gd <SID>(git-diff-cached)
 nmap <Space>gD <SID>(git-diff)
 nmap <Space>gp <SID>(git-push-now)
 nmap <Space>gP <SID>(git-push)
+nmap <Space>gl <SID>(git-log-line)
+nmap <Space>gL <SID>(git-log)
 
 " git-vim
 nmap <Space>gs <SID>(git-status)
-nmap <Space>gl <SID>(git-log)
 nmap <Space>ga <SID>(git-add)
 nmap <Space>gc <SID>(git-commit)
 nmap <Space>gC <SID>(git-commit-amend)
@@ -242,6 +243,8 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
   nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
   nnoremap        <silent> <SID>(git-push-now)     :<C-u>GitiPush<CR>
   nnoremap        <silent> <SID>(git-push)         :<C-u>GitiPush 
+  nnoremap        <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
+  nnoremap        <silent> <SID>(git-log)          :<C-u>GitiLog ' . expand('%:p') . '<CR>'
 endif
 " }}}
 
