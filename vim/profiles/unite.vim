@@ -65,6 +65,8 @@ nmap [unite]Nb  <SID>(neobundle-update)
 
 nmap [unite]frn   <SID>(immediately-rename)
 
+nmap [unite]t <SID>(sonictemplate)
+
 nmap sc <SID>(color)
 "}}}
 
@@ -123,8 +125,14 @@ nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Unite giti/log:' . expan
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
 
+" neobundle {{{
 nnoremap <silent> <SID>(neobundle)        :<C-u>Unite neobundle<CR>
 nnoremap <silent> <SID>(neobundle-update) :<C-u>Unite neobundle/install:!<CR>
+" }}}
+
+" sonictemplate {{{
+nnoremap <silent> <SID>(sonictemplate) :<C-u>Unite -immediately sonictemplate<CR>
+" }}}
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 
