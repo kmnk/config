@@ -60,9 +60,8 @@ nmap [unite]gL    <SID>(git-log-this-file)
 
 nmap [unite]s     <SID>(source)
 
-nmap [unite]nbin  <SID>(neobundle-install)
-nmap [unite]Nbin  <SID>(neobundle-install-indivisually)
-nmap [unite]nbup  <SID>(neobundle-update)
+nmap [unite]nb  <SID>(neobundle)
+nmap [unite]Nb  <SID>(neobundle-update)
 
 nmap [unite]frn   <SID>(immediately-rename)
 
@@ -124,9 +123,8 @@ nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Unite giti/log:' . expan
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
 
-nnoremap <silent> <SID>(neobundle-install)              :<C-u>Unite neobundle/install<CR>
-nnoremap <silent> <SID>(neobundle-install-indivisually) :<C-u>Unite neobundle/install:
-nnoremap <silent> <SID>(neobundle-update)               :<C-u>Unite neobundle/install:!<CR>
+nnoremap <silent> <SID>(neobundle)        :<C-u>Unite neobundle<CR>
+nnoremap <silent> <SID>(neobundle-update) :<C-u>Unite neobundle/install:!<CR>
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
 
