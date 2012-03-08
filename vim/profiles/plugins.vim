@@ -18,8 +18,10 @@ nmap <Space>gb <SID>(git-blame)
 "}}}
 
 " sonictemplate {{{
-let g:sonictemplate_vim_template_dirs
-\ = [printf('%s/dot.vim/templates/', expand('<sfile>:h:h'))]
+let g:sonictemplate_vim_template_dirs = extend(
+\ [printf('%s/dot.vim/templates/', expand('<sfile>:h:h'))],
+\ split(globpath(&rtp, '/template/'), '\n')
+\)
 " }}}
 
 " operator replace setting {{{
