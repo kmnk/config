@@ -42,7 +42,6 @@ NeoBundle 'git://github.com/ujihisa/quickrun.git'
 NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
 NeoBundle 'git://github.com/ujihisa/neco-look.git'
 
-NeoBundle 'git://github.com/mattn/sonictemplate-vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/mattn/webapi-vim.git'
 NeoBundle 'git://github.com/mattn/learn-vimscript.git'
@@ -77,6 +76,10 @@ NeoBundle 'git://github.com/motemen/git-vim.git'
 
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
+
+" forked plugins {{{
+NeoBundle 'git://github.com/kmnk/sonictemplate-vim.git'
+" }}}
 
 filetype plugin on
 filetype indent on

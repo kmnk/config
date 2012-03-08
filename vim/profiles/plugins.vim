@@ -17,6 +17,11 @@ nmap <Space>gC <SID>(git-commit-amend)
 nmap <Space>gb <SID>(git-blame)
 "}}}
 
+" sonictemplate {{{
+let g:sonictemplate_vim_template_dirs
+\ = [printf('%s/dot.vim/templates/', expand('<sfile>:h:h'))]
+" }}}
+
 " operator replace setting {{{
 if globpath(&rtp, 'plugin/operator/replace.vim') != ''
   " operator replace
