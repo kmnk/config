@@ -75,6 +75,8 @@ NeoBundle 'git://github.com/motemen/git-vim.git'
 
 NeoBundle 'git://github.com/vim-scripts/VimClojure.git'
 
+NeoBundle 'git://github.com/fuenor/qfixhowm.git'
+
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
 
