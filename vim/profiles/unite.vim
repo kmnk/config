@@ -82,7 +82,7 @@ nnoremap <silent>        <SID>(all-buffer)   :<C-u>Unite -buffer-name=files -pro
 "}}}
 "
 
-nnoremap <silent> <SID>(bookmark) :<C-u>Unite bookmark<CR>
+nnoremap <silent> <SID>(bookmark) :<C-u>Unite -default-action=lcd bookmark<CR>
 
 " search {{{
 nnoremap <silent> <SID>(search)      :<C-u>Unite -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-quit line<CR>
