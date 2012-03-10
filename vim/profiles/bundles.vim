@@ -58,7 +58,6 @@ NeoBundle 'git://github.com/vim-scripts/QuickBuf.git'
 
 NeoBundle 'git://github.com/tyru/simpletap.vim.git'
 NeoBundle 'git://github.com/tyru/vim-altercmd.git'
-NeoBundle 'git://github.com/tyru/current-func-info.vim.git'
 NeoBundle 'git://github.com/tyru/visualctrlg.vim.git'
 
 NeoBundle 'git://github.com/tsukkee/unite-help.git'
