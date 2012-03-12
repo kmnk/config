@@ -1,3 +1,8 @@
+"
+if has('win32') || has('win64')
+  set shellslash
+endif
+
 " add local .vim directory to runtimepath
 let s:local_dot_vim_dir_path = expand('<sfile>:h:h') . '/vim/dot.vim'
 execute 'set runtimepath+=' . s:local_dot_vim_dir_path

@@ -13,12 +13,6 @@ nmap <Leader>eg <SID>(edit-gvimrc)
 
 nmap <Leader>mt <SID>(buffer-to-new-tab)
 
-"
-if has('win32') || has('win64')
-  set shellslash
-endif
-
-
 " disp always relativenumber of lines
 set number
 nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
