@@ -24,7 +24,9 @@ nmap [unite]u     <SID>(normally)
 nmap [unite]c     <SID>(buffer-dir)
 nmap [unite]C     <SID>(buffer-file)
 nmap [unite]b     <SID>(buffer)
-nmap [unite]ab    <SID>(all-buffer)
+nmap [unite]B     <SID>(all-buffer)
+
+nmap [unite]d     <SID>(bookmark)
 
 nmap tt           <SID>(tab)
 nmap TT           <SID>(tab!)
@@ -78,6 +80,9 @@ nnoremap <silent> <expr> <SID>(buffer-file) ':<C-u>UniteWithBufferDir -buffer-na
 nnoremap <silent>        <SID>(buffer)       :<C-u>Unite -buffer-name=files -prompt=buffer> buffer_tab file_mru file/new<CR>
 nnoremap <silent>        <SID>(all-buffer)   :<C-u>Unite -buffer-name=files -prompt=buffer> buffer file_mru file/new<CR>
 "}}}
+"
+
+nnoremap <silent> <SID>(bookmark) :<C-u>Unite -default-action=lcd bookmark<CR>
 
 " search {{{
 nnoremap <silent> <SID>(search)      :<C-u>Unite -buffer-name=search -prompt=search> -auto-preview -vertical -direction=topleft -no-quit line<CR>
