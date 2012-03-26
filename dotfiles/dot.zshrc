@@ -3,10 +3,9 @@ JAVA_HOME=/usr/java/jdk1.6.0_18
 M2_HOME=$HOME/maven
 M2=$M2_HOME/bin
 PATH=$HOME/bin:$HOME/local/bin:$JAVA_HOME/bin:$M2:$PATH
-PERL5LIB=$HOME/local/lib/perl5
 LESS=mqeisz-2XR
 
-export PATH JAVA_HOME M2_HOME M2 PERL5LIB LESS
+export PATH JAVA_HOME M2_HOME M2 LESS
 
 # 初期設定
 local RED=$'%{\e[1;31m%}'
