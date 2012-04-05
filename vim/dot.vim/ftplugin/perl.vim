@@ -16,5 +16,6 @@ nnoremap <SID>(insert-dumper-with-register) ouse Data::Dumper;<CR>print {*STDERR
 nnoremap <SID>(open-perldoc)  :! perldoc %<CR>
 nnoremap <SID>(set-file-type) :set filetype=perl<CR>
 
-" vim: expandtab softtabstop=2 shiftwidth=2
-" vim: foldmethod=marker :
+setlocal expandtab
+setlocal softtabstop=4
+setlocal shiftwidth=4
