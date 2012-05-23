@@ -6,7 +6,7 @@ set t_Co=256
 
 " status line settings
 set laststatus=2
-let &statusline = '%<%f %m%r%h%w[%{(&fenc!=""?&fenc:&enc)}][%{&ff}]%= %l,%c%V%8P'
+let &statusline = '%<%f %m%r%h%w[%{(&fenc!=""?&fenc:&enc)}][%{&ff}]%= %{g:U_nya_()} %l,%c%V%8P'
 
 " default tab space settings
 set expandtab
@@ -117,7 +117,7 @@ autocmd FileTypeCmd FileType pl setlocal ft=perl
 
 " encoding settings {{{
 set encoding=utf-8
-set fileencodings=iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,utf-8,ucs-bom,euc-jp,eucjp-ms,cp932
+set fileencodings=utf-8,iso-2022-jp-3,iso-2022-jp,euc-jisx0213,euc-jp,ucs-bom,euc-jp,eucjp-ms,cp932
 set fileencoding=utf-8
 set fileformat=unix
 "}}}

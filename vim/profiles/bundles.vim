@@ -79,6 +79,8 @@ NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-svn.git'
 NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
 
+NeoBundle 'git://github.com/kmnk/u-nya-vim.git'
+
 " forked plugins {{{
 NeoBundle 'git://github.com/kmnk/sonictemplate-vim.git'
 " }}}
