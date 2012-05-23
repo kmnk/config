@@ -5,6 +5,7 @@ endif
 
 let g:unite_split_rule = 'botright'
 let g:unite_enable_start_insert = 1
+let g:unite_kind_openable_lcd_command = 'lcd'
 
 " unite prefix key
 nnoremap [unite] <Nop>
