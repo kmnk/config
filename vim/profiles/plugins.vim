@@ -7,6 +7,8 @@ nmap <Leader>jj <SID>(toggle-jslint)
 " giti
 nmap <Space>gd <SID>(git-diff-cached)
 nmap <Space>gD <SID>(git-diff)
+nmap <Space>gf <SID>(git-fetch-now)
+nmap <Space>gF <SID>(git-fetch)
 nmap <Space>gp <SID>(git-push-now)
 nmap <Space>gP <SID>(git-push)
 nmap <Space>gl <SID>(git-log-line)
@@ -243,6 +245,8 @@ map # <Plug>(visualstar-#)N
 if globpath(&rtp, 'plugin/giti.vim') != ''
   nnoremap <expr> <silent> <SID>(git-diff)        ':<C-u>GitiDiff ' . expand('%:p') . '<CR>'
   nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
+  nnoremap        <silent> <SID>(git-fetch-now)    :<C-u>GitiFetch<CR>
+  nnoremap        <silent> <SID>(git-fetch)        :<C-u>GitiFetct 
   nnoremap        <silent> <SID>(git-push-now)     :<C-u>GitiPush<CR>
   nnoremap        <silent> <SID>(git-push)         :<C-u>GitiPush 
   nnoremap        <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
