@@ -10,7 +10,7 @@ nmap <Space>gD <SID>(git-diff)
 nmap <Space>gf <SID>(git-fetch-now)
 nmap <Space>gF <SID>(git-fetch)
 nmap <Space>gp <SID>(git-push-now)
-nmap <Space>gP <SID>(git-push)
+nmap <Space>gP <SID>(git-pull-now)
 nmap <Space>gl <SID>(git-log-line)
 nmap <Space>gL <SID>(git-log)
 
@@ -249,6 +249,8 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
   nnoremap        <silent> <SID>(git-fetch)        :<C-u>GitiFetct 
   nnoremap        <silent> <SID>(git-push-now)     :<C-u>GitiPush<CR>
   nnoremap        <silent> <SID>(git-push)         :<C-u>GitiPush 
+  nnoremap        <silent> <SID>(git-pull-now)     :<C-u>GitiPull<CR>
+  nnoremap        <silent> <SID>(git-pull)         :<C-u>GitiPull 
   nnoremap        <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
   nnoremap        <silent> <SID>(git-log)          :<C-u>GitiLog ' . expand('%:p') . '<CR>'
 endif
