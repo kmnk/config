@@ -246,7 +246,7 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
   nnoremap <expr> <silent> <SID>(git-diff)        ':<C-u>GitiDiff ' . expand('%:p') . '<CR>'
   nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
   nnoremap        <silent> <SID>(git-fetch-now)    :<C-u>GitiFetch<CR>
-  nnoremap        <silent> <SID>(git-fetch)        :<C-u>GitiFetct 
+  nnoremap        <silent> <SID>(git-fetch)        :<C-u>GitiFetch 
   nnoremap        <silent> <SID>(git-push-now)     :<C-u>GitiPush<CR>
   nnoremap        <silent> <SID>(git-push)         :<C-u>GitiPush 
   nnoremap        <silent> <SID>(git-pull-now)     :<C-u>GitiPull<CR>
