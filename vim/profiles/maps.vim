@@ -16,7 +16,7 @@ nmap gp <SID>(re-visual-pasted)
 " redo command by two type
 nnoremap c. @:
 
-" * on visualmode 
+" * on visualmode
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v,'\/'),"\n",'\\n','g')<CR><CR>
 
 " substitute current word
