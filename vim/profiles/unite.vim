@@ -14,10 +14,18 @@ nmap <Leader>. [unite]
 " on unite buffer setting
 autocmd VimrcAutoCmd FileType unite call s:unite_settings()
 function! s:unite_settings()"{{{
-  nmap <buffer> <ESC> <Plug>(unite_exit)
-  imap <buffer> jj    <Plug>(unite_insert_leave)
-  imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-  imap <buffer> qq    <Plug>(unite_exit)
+  nmap <silent><buffer> : :
+  nmap <silent><buffer> : :
+  nmap <silent><buffer> <ESC> <Plug>(unite_exit)
+  imap <silent><buffer> jj    <Plug>(unite_insert_leave)
+  imap <silent><buffer> <C-w> <Plug>(unite_delete_backward_path)
+  imap <silent><buffer> qq    <Plug>(unite_exit)
+  nmap <silent><buffer><expr> a unite#smart_map('a', unite#do_action('add'))
+  vmap <silent><buffer><expr> a unite#smart_map('a', unite#do_action('add'))
+  nmap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('add'))
+  vmap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('add'))
+  nmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('reset'))
+  vmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('reset'))
 endfunction"}}}
 
 " maps {{{
