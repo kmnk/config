@@ -24,8 +24,8 @@ function! s:unite_settings()"{{{
   vmap <silent><buffer><expr> a unite#smart_map('a', unite#do_action('add'))
   nmap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('add'))
   vmap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('add'))
-  nmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('reset'))
-  vmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('reset'))
+  nmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('undo'))
+  vmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('undo'))
   nmap <silent><buffer><expr> c unite#smart_map('c', unite#do_action('commit'))
   vmap <silent><buffer><expr> c unite#smart_map('c', unite#do_action('commit'))
 endfunction"}}}
