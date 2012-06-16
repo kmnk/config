@@ -38,7 +38,8 @@ map ,img <SID>(google-img-open)
 map ,Img <SID>(google-img-tab-open)
 
 " autocompletes
-autocmd VimperatorEnter .* :set complete=lhsSb
+
+autocmd VimperatorEnter .* :set complete=Sb
 
 " sourced
 echo "_vimperatorrc sourced"
