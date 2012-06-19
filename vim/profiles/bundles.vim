@@ -1,5 +1,4 @@
 " neobundle
-set nocompatible
 filetype off
 
 if has('vim_starting')
