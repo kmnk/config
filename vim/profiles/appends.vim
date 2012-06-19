@@ -170,5 +170,8 @@ vnoremap < <gv
 " clear highlightsearch
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
+" 
+set history=10000
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
