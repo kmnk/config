@@ -67,6 +67,7 @@ nmap [unite]vbl   <SID>(svn-blame)
 nmap [unite]gg    <SID>(giti-sources)
 nmap [unite]gst   <SID>(git-status)
 nmap [unite]gb    <SID>(git-branch)
+nmap [unite]gB    <SID>(git-branch_all)
 nmap [unite]gc    <SID>(git-config)
 nmap [unite]gl    <SID>(git-log)
 nmap [unite]gL    <SID>(git-log-this-file)
@@ -130,11 +131,12 @@ nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn
 " }}}
 
 " git {{{
-nnoremap <silent> <SID>(giti-sources) :<C-u>Unite giti<CR>
-nnoremap <silent> <SID>(git-status)   :<C-u>Unite giti/status<CR>
-nnoremap <silent> <SID>(git-branch)   :<C-u>Unite giti/branch<CR>
-nnoremap <silent> <SID>(git-config)   :<C-u>Unite giti/config<CR>
-nnoremap <silent> <SID>(git-log)      :<C-u>Unite giti/log<CR>
+nnoremap <silent> <SID>(giti-sources)   :<C-u>Unite giti<CR>
+nnoremap <silent> <SID>(git-status)     :<C-u>Unite giti/status<CR>
+nnoremap <silent> <SID>(git-branch)     :<C-u>Unite giti/branch<CR>
+nnoremap <silent> <SID>(git-branch_all) :<C-u>Unite giti/branch_all<CR>
+nnoremap <silent> <SID>(git-config)     :<C-u>Unite giti/config<CR>
+nnoremap <silent> <SID>(git-log)        :<C-u>Unite giti/log<CR>
 
 nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Unite giti/log:' . expand('%:p') . '<CR>'
 " }}}
