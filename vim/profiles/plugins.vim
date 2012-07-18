@@ -243,16 +243,17 @@ map # <Plug>(visualstar-#)N
 
 " giti {{{
 if globpath(&rtp, 'plugin/giti.vim') != ''
-  nnoremap <expr> <silent> <SID>(git-diff)        ':<C-u>GitiDiff ' . expand('%:p') . '<CR>'
-  nnoremap <expr> <silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
-  nnoremap        <silent> <SID>(git-fetch-now)    :<C-u>GitiFetch<CR>
-  nnoremap        <silent> <SID>(git-fetch)        :<C-u>GitiFetch 
-  nnoremap        <silent> <SID>(git-push-now)     :<C-u>GitiPush<CR>
-  nnoremap        <silent> <SID>(git-push)         :<C-u>GitiPush 
-  nnoremap        <silent> <SID>(git-pull-now)     :<C-u>GitiPull<CR>
-  nnoremap        <silent> <SID>(git-pull)         :<C-u>GitiPull 
-  nnoremap        <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
-  nnoremap        <silent> <SID>(git-log)          :<C-u>GitiLog ' . expand('%:p') . '<CR>'
+  let g:giti_log_default_line_count = 100
+  nnoremap <expr><silent> <SID>(git-diff)        ':<C-u>GitiDiff ' . expand('%:p') . '<CR>'
+  nnoremap <expr><silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
+  nnoremap       <silent> <SID>(git-fetch-now)    :<C-u>GitiFetch<CR>
+  nnoremap       <silent> <SID>(git-fetch)        :<C-u>GitiFetch 
+  nnoremap <expr><silent> <SID>(git-push-now)    ':<C-u>GitiPushWithSettingUpstream origin ' . giti#branch#current_name() . '<CR>'
+  nnoremap       <silent> <SID>(git-push)         :<C-u>GitiPush 
+  nnoremap       <silent> <SID>(git-pull-now)     :<C-u>GitiPull<CR>
+  nnoremap       <silent> <SID>(git-pull)         :<C-u>GitiPull 
+  nnoremap       <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
+  nnoremap       <silent> <SID>(git-log)          :<C-u>GitiLog ' . expand('%:p') . '<CR>'
 endif
 " }}}
 
