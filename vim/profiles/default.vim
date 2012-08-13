@@ -9,7 +9,7 @@ set t_Co=256
 
 " status line settings
 set laststatus=2
-let &statusline = '%<%f %m%r%h%w[%{(&fenc!=""?&fenc:&enc)}][%{&ff}]%= %{g:U_nya_()} %l,%c%V%8P'
+let &statusline = '%<%f %m%r%h%w[%{(&fenc!=""?&fenc:&enc)}][%{&ff}]%= %l,%c%V%8P'
 
 " default tab space settings
 set expandtab
