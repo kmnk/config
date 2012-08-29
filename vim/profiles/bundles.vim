@@ -45,7 +45,6 @@ NeoBundle 'git://github.com/mattn/webapi-vim.git'
 NeoBundle 'git://github.com/mattn/learn-vimscript.git'
 NeoBundle 'git://github.com/mattn/wwwrenderer-vim.git'
 
-NeoBundle 'git://github.com/basyura/jslint.vim.git'
 
 NeoBundle 'git://github.com/Sixeight/unite-grep.git'
 
@@ -79,6 +78,7 @@ NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
 
 " forked plugins {{{
 NeoBundle 'git://github.com/kmnk/sonictemplate-vim.git'
+NeoBundle 'git://github.com/kmnk/jslint.vim.git'
 " }}}
 
 filetype plugin on
