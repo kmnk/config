@@ -20,7 +20,6 @@ local DEFAULT=$'%{\e[m%}'
 export LANG=ja_JP.UTF-8
 #export LANG=en_US.UTF-8
 
-# プロンプトの設定
 case ${PWD} in
 0)
     PROMPT="%B%$GREEN#$DEFAULT%b "
