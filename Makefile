@@ -16,8 +16,8 @@ vim-setup: vim-setup-vimrc vim-install-bundle vim-install-plugins
 vim-setup-vimrc:
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' >> ~/.vimrc
 	echo '"root:     '`pwd` >> ~/.vimrc
-	echo '"profiles: '`pwd`'/config/vim/profiles' >> ~/.vimrc
-	echo '".vim:     '`pwd`'/config/vim/dot.vim' >> ~/.vimrc
+	echo '"profiles: '`pwd`'/vim/profiles' >> ~/.vimrc
+	echo '".vim:     '`pwd`'/vim/dot.vim' >> ~/.vimrc
 
 vim-install-bundle:
 	mkdir -p ~/.bundle
