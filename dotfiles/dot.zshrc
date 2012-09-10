@@ -1,11 +1,7 @@
 # 環境変数
-JAVA_HOME=/usr/java/jdk1.6.0_18
-M2_HOME=$HOME/maven
-M2=$M2_HOME/bin
-PATH=$HOME/bin:$HOME/local/bin:$JAVA_HOME/bin:$M2:$PATH
-LESS=mqeisz-2XR
+PATH=$HOME/bin:$HOME/local/bin:$PATH
 
-export PATH JAVA_HOME M2_HOME M2 LESS
+export PATH JAVA_HOME
 
 # 初期設定
 local RED=$'%{\e[1;31m%}'
