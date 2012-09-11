@@ -11,7 +11,7 @@ execute 'set runtimepath+=' . s:local_dot_vim_dir_path
 " my mapleader (default '\')
 let mapleader = ','
 
-" color scheme setting
+" color scheme setting {{{
 set t_Co=256
 syntax enable
 let g:solarized_termcolors= 256
@@ -28,6 +28,7 @@ else
     set background=dark
 endif
 colorscheme solarized
+"}}}
 "}}}
 
 " local settings
