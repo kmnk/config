@@ -1,11 +1,5 @@
-" default
-syntax on
-
 " nocompatible
 set nocompatible
-
-" color
-set t_Co=256
 
 " status line settings
 set laststatus=2
