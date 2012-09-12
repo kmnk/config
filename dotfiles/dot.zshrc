@@ -1,7 +1,7 @@
 # 環境変数
-PATH=$HOME/bin:$HOME/local/bin:$PATH
+PATH=$HOME/local/bin:$PATH
 
-export PATH JAVA_HOME
+export PATH
 
 # 初期設定
 local RED=$'%{\e[1;31m%}'
