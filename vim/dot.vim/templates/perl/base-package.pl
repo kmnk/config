@@ -1,4 +1,4 @@
-package {{_expr_:substitute(substitute(expand('%:r'), '.*lib[\\/]', '', 'g'), '[\\/]', '::', 'g')}};
+package {{_expr_:substitute(substitute(expand('%:r'), '.*lib[/]', '', 'g'), '[/]', '::', 'g')}};
 
 use strict;
 use warnings;
@@ -11,19 +11,19 @@ __END__
 
 =head1 NAME
 
-{{_expr_:substitute(substitute(expand('%:r'), '.*lib[\\/]', '', 'g'), '[\\/]', '::', 'g')}} - 
+{{_expr_:substitute(substitute(expand('%:r'), '.*lib[/]', '', 'g'), '[/]', '::', 'g')}} - 
 
 
 =head1 VERSION
 
 最初のテンプレートには、通常は以下が含まれる：
 
-This documentation refers to {{_expr_:substitute(substitute(expand('%:r'), '.*lib[\\/]', '', 'g'), '[\\/]', '::', 'g')}} version 0.0.1
+This documentation refers to {{_expr_:substitute(substitute(expand('%:r'), '.*lib[/]', '', 'g'), '[/]', '::', 'g')}} version 0.0.1
 
 
 =head1 SYNOPSIS
 
-    use {{_expr_:substitute(substitute(expand('%:r'), '.*lib[\\/]', '', 'g'), '[\\/]', '::', 'g')}};
+    use {{_expr_:substitute(substitute(expand('%:r'), '.*lib[/]', '', 'g'), '[/]', '::', 'g')}};
 
     # 最も一般的な使用法を示すため、簡単なサンプルコードを示す
 
