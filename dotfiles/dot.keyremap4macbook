@@ -71,6 +71,7 @@
         <!-- right command -->
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::SHIFT_L, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::CONTROL_L, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::X, ModifierFlag::OPTION_L</autogen>
       </item>
       <item>
         <name>SemiColon</name>
