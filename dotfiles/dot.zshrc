@@ -51,10 +51,6 @@ esac
 
 # エイリアス
 setopt complete_aliases # aliased ls needs if
-alias ack="ack -C 5"
-#alias ack=""
-
-alias -s txt=vim
 
 # vim！
 bindkey -v
@@ -69,12 +65,10 @@ SAVEHIST=100000
 setopt hist_ignore_dups
 setopt share_history
 setopt append_history
-setopt hist_ignore_dups
 
 # 自動コマンド補完をいい感じにする
-autoload -U compinit
-compinit
-zstyle ':completion:*' list-colors ''
+autoload -Uz compinit; compinit -u
+zstyle ':completion:*:default' menu select=1 list-colors '' matcher-list 'm:{a-z}={A-Z}'
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
@@ -82,6 +76,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
+
 # 履歴関連オプション
 setopt auto_cd      # 自動cd
 setopt auto_pushd   # ディレクトリ移動履歴
@@ -93,11 +88,5 @@ alias sc="screen"
 alias scl="screen -ls"
 alias sct="screen -D -R"
 alias scn="screen -S"
-
-
-# ディレクトリ移動
-alias gh="cd ~"
-alias gw="cd ~/work"
-alias gl="cd ~/log"
 
 # vim: filetype=zsh
