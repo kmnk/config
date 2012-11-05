@@ -18,7 +18,12 @@ NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
 NeoBundle 'git://github.com/Shougo/vimshell.git'
 NeoBundle 'git://github.com/Shougo/vinarise.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git'
+NeoBundle 'git://github.com/Shougo/vimproc.git' {
+\ 'build' : {
+\   'mac'  : 'make -f make_mac.mak',
+\   'unix' : 'make -f make_unix.mak',
+\ }
+\}
 
 NeoBundle 'git://github.com/kana/vim-operator-replace.git'
 NeoBundle 'git://github.com/kana/vim-operator-user.git'
@@ -37,10 +42,10 @@ NeoBundle 'git://github.com/thinca/vim-ref.git'
 NeoBundle 'git://github.com/thinca/vim-prettyprint.git'
 
 NeoBundle 'git://github.com/ujihisa/quickrun.git'
-NeoBundle 'git://github.com/ujihisa/unite-colorscheme.git'
+NeoBundleLazy 'git://github.com/ujihisa/unite-colorscheme.git'
 NeoBundle 'git://github.com/ujihisa/neco-look.git'
 
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+NeoBundleLazy 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/mattn/webapi-vim.git'
 NeoBundle 'git://github.com/mattn/learn-vimscript.git'
 NeoBundle 'git://github.com/mattn/wwwrenderer-vim.git'
