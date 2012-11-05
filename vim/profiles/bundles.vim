@@ -18,7 +18,7 @@ NeoBundle 'git://github.com/Shougo/vim-vcs.git'
 NeoBundle 'git://github.com/Shougo/vimfiler.git'
 NeoBundle 'git://github.com/Shougo/vimshell.git'
 NeoBundle 'git://github.com/Shougo/vinarise.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git' {
+NeoBundle 'git://github.com/Shougo/vimproc.git', {
 \ 'build' : {
 \   'mac'  : 'make -f make_mac.mak',
 \   'unix' : 'make -f make_unix.mak',
