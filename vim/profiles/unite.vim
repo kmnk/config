@@ -73,6 +73,8 @@ nmap [unite]gl    <SID>(git-log)
 nmap [unite]gr    <SID>(git-remote)
 nmap [unite]gL    <SID>(git-log-this-file)
 
+nmap [unite]pp    <SID>(pipe-command)
+
 nmap [unite]s     <SID>(source)
 
 nmap [unite]nb    <SID>(neobundle)
@@ -141,6 +143,10 @@ nnoremap <silent> <SID>(git-log)        :<C-u>Unite giti/log<CR>
 nnoremap <silent> <SID>(git-remote)     :<C-u>Unite giti/remote<CR>
 
 nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Unite giti/log:' . expand('%:p') . '<CR>'
+" }}}
+
+" pipe-command {{{
+nnoremap <silent> <SID>(pipe-command) :<C-u>Unite pipecommand<CR>
 " }}}
 
 nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
