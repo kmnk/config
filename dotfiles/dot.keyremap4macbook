@@ -56,11 +56,11 @@
         <!-- eisuu -->
         <autogen>--KeyToKey-- KeyCode::JIS_EISUU, ModifierFlag::SHIFT_L, KeyCode::JIS_HAT, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::JIS_EISUU, ModifierFlag::CONTROL_L, KeyCode::JIS_HAT</autogen>
-        <autogen>--KeyToKey-- KeyCode::JIS_EISUU, ModifierFlag::COMMAND_L, KeyCode::A, ModifierFlag::OPTION_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::JIS_EISUU, ModifierFlag::OPTION_L, KeyCode::A, ModifierFlag::OPTION_L</autogen>
         <!-- kana -->
         <autogen>--KeyToKey-- KeyCode::JIS_KANA, ModifierFlag::SHIFT_L, KeyCode::JIS_UNDERSCORE</autogen>
         <autogen>--KeyToKey-- KeyCode::JIS_KANA, ModifierFlag::CONTROL_L, KeyCode::MINUS</autogen>
-        <autogen>--KeyToKey-- KeyCode::JIS_KANA, ModifierFlag::COMMAND_L, KeyCode::C, ModifierFlag::OPTION_L</autogen>
+        <autogen>--KeyToKey-- KeyCode::JIS_KANA, ModifierFlag::OPTION_L, KeyCode::C, ModifierFlag::OPTION_L</autogen>
         <!-- right command -->
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::SHIFT_L, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::CONTROL_L, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
@@ -108,8 +108,8 @@
         <name>EISUU and KANA</name>
         <appendix>OneShot EISUU and KANA send Command</appendix>
         <identifier>remap.kmnk_oneshotmodifier_eisuu_and_kana</identifier>
-        <autogen>--KeyOverlaidModifier-- KeyCode::JIS_EISUU, KeyCode::COMMAND_L, KeyCode::JIS_EISUU</autogen>
-        <autogen>--KeyOverlaidModifier-- KeyCode::JIS_KANA, KeyCode::COMMAND_L, KeyCode::JIS_KANA</autogen>
+        <autogen>--KeyOverlaidModifier-- KeyCode::JIS_EISUU, KeyCode::OPTION_L, KeyCode::JIS_EISUU</autogen>
+        <autogen>--KeyOverlaidModifier-- KeyCode::JIS_KANA, KeyCode::OPTION_L, KeyCode::JIS_KANA</autogen>
       </item>
     </item>
   </item>
