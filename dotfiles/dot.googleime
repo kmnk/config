@@ -9,8 +9,6 @@ Precomposition	Space	InsertSpace
 Composition	Right	MoveCursorRight
 Conversion	Right	SegmentWidthExpand
 Composition	Muhenkan	ConvertToHalfWidth
-DirectInput	Muhenkan	IMEOff
-Precomposition	Muhenkan	IMEOff
 Composition	Left	MoveCursorLeft
 Conversion	Left	SegmentWidthShrink
 Composition	Kana	ToggleAlphanumericMode
@@ -18,14 +16,10 @@ Precomposition	Kana	ToggleAlphanumericMode
 Conversion	Insert	Cancel
 Composition	Hiragana	ConvertToFullKatakana
 Conversion	Hiragana	ConvertToFullKatakana
+Composition	Option x	ConvertToFullKatakana
+Conversion	Option x	ConvertToFullKatakana
 Composition	Henkan	ConvertToFullAlphanumeric
 Conversion	Henkan	ConvertToFullAlphanumeric
-DirectInput	Henkan	IMEOn
-Precomposition	Henkan	IMEOn
-Composition	Hankaku/Zenkaku	IMEOff
-Conversion	Hankaku/Zenkaku	IMEOff
-DirectInput	Hankaku/Zenkaku	IMEOn
-Precomposition	Hankaku/Zenkaku	IMEOff
 Composition	F9	ConvertToFullAlphanumeric
 Conversion	F9	ConvertToFullAlphanumeric
 Composition	F8	ConvertToHalfWidth
@@ -61,6 +55,23 @@ Conversion	Ctrl d	SegmentFocusRight
 Conversion	Ctrl s	SegmentFocusLeft
 Conversion	Ctrl k	SegmentWidthShrink
 Conversion	Ctrl l	SegmentWidthExpand
+DirectInput	Ctrl h	Backspace
+Composition	Ctrl h	Backspace
+Conversion	Ctrl h	Backspace
+Composition	Option c	ConvertToFullAlphanumeric
+Conversion	Option c	ConvertToFullAlphanumeric
+Composition	Option a	ConvertToHalfWidth
+Conversion	Option a	ConvertToHalfWidth
+Composition	Eisuu	ConvertToHalfWidth
+Conversion	Eisuu	ConvertToHalfWidth
+DirectInput	Muhenkan	IMEOff
+Precomposition	Muhenkan	IMEOff
+DirectInput	Henkan	IMEOn
+Precomposition	Henkan	IMEOn
+Composition	Hankaku/Zenkaku	IMEOff
+Conversion	Hankaku/Zenkaku	IMEOff
+DirectInput	Hankaku/Zenkaku	IMEOn
+Precomposition	Hankaku/Zenkaku	IMEOff
 Composition	Kanji	IMEOff
 Composition	OFF	IMEOff
 Composition	ON	IMEOn
