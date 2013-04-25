@@ -36,6 +36,7 @@ nmap [unite]c     <SID>(buffer-dir)
 nmap [unite]C     <SID>(buffer-file)
 nmap [unite]b     <SID>(buffer)
 nmap [unite]B     <SID>(all-buffer)
+nmap <CR>         <SID>(all-buffer)
 
 nmap [unite]d     <SID>(bookmark)
 

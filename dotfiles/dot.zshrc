@@ -67,7 +67,7 @@ setopt share_history
 setopt append_history
 
 # 自動コマンド補完をいい感じにする
-autoload -Uz compinit; compinit -u
+autoload -Uz compinit
 zstyle ':completion:*:default' menu select=1 list-colors '' matcher-list 'm:{a-z}={A-Z}'
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -88,5 +88,10 @@ alias sc="screen"
 alias scl="screen -ls"
 alias sct="screen -D -R"
 alias scn="screen -S"
+
+# cd関連
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
 
 # vim: filetype=zsh

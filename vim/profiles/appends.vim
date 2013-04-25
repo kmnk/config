@@ -111,6 +111,7 @@ function! s:init_cmdwin()
   inoremap <buffer><expr><BS> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
   inoremap <buffer> qq <Esc>:<C-u>quit<CR>
   inoremap <buffer> kk <Esc>k
+  inoremap <buffer> <CR> <CR>
 
   " Completion.
   inoremap <buffer><expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
