@@ -45,7 +45,7 @@ let s:profile_names = [
 \ 'office-appends',
 \ 'office-bundles',
 \ 'office-maps',
-\ 'office-extends',
+\ 'office-extensions',
 \]
 
 " local functions {{{
