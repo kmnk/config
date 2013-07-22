@@ -28,6 +28,7 @@ else
     set background=dark
 endif
 colorscheme solarized
+hi ColorColumn ctermbg=DarkRed
 "}}}
 "}}}
 

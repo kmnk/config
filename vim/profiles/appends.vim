@@ -25,6 +25,9 @@ set autoindent
 set nocindent
 set smartindent
 
+" color column
+set colorcolumn=76
+
 " TOhtml options
 let g:use_xhtml     = 1
 let g:html_use_css  = 1
