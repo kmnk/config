@@ -93,6 +93,8 @@ NeoBundle 'garbas/vim-snipmate.git', {
 \   ]
 \}
 
+NeoBundle 'haruyama/vim-matchopen.git'
+
 " forked plugins {{{
 NeoBundle 'kmnk/sonictemplate-vim.git'
 NeoBundle 'kmnk/jslint.vim.git'

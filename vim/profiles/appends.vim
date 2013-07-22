@@ -6,6 +6,7 @@ nmap <Leader>2 <SID>(toggle-relativenumber)
 nmap <Leader>3 <SID>(toggle-paste)
 
 nmap <C-h> <SID>(help-shortcut)
+nmap <BS> <SID>(help-shortcut)
 imap <C-h> <SID>(backspace)
 
 nmap <Leader>ev <SID>(edit-vimrc)
