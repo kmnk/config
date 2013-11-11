@@ -42,10 +42,10 @@ let s:profile_names = [
 \ 'plugins',
 \ 'functions',
 \ 'tmp',
-\ 'office-appends',
-\ 'office-bundles',
-\ 'office-maps',
-\ 'office-extensions',
+\ 'local-appends',
+\ 'local-bundles',
+\ 'local-maps',
+\ 'local-extensions',
 \]
 
 " local functions {{{
