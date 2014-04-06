@@ -13,9 +13,8 @@ endif
 NeoBundle 'Shougo/neobundle.vim.git'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/echodoc.git'
-NeoBundle 'Shougo/unite.vim.git', {
-\ 'rev ' : '86d752af096120e67c1996e5da8534333b2b486d'
-\}
+NeoBundle 'Shougo/unite.vim.git'
+NeoBundle 'Shougo/neomru.vim.git'
 NeoBundle 'Shougo/vim-vcs.git'
 NeoBundle 'Shougo/vimfiler.git'
 NeoBundle 'Shougo/vimshell.git'
