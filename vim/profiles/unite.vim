@@ -38,7 +38,7 @@ nmap [unite]b     <SID>(buffer)
 nmap [unite]B     <SID>(all-buffer)
 nmap <CR>         <SID>(all-buffer)
 
-nmap [unite]d     <SID>(bookmark)
+nmap [unite]dd    <SID>(bookmark)
 
 nmap tt           <SID>(tab)
 nmap TT           <SID>(tab!)
@@ -56,10 +56,11 @@ nmap [unite]o     <SID>(outline)
 nmap [unite]<C-m> <SID>(mark)
 nmap [unite]r     <SID>(register)
 
-nmap [unite]hc    <SID>(history-command)
-nmap [unite]hs    <SID>(history-search)
+nmap [unite]:     <SID>(history-command)
+nmap [unite]/     <SID>(history-search)
 
-nmap [unite]<C-h> <SID>(help)
+nmap <C-h> <SID>(help)
+nmap <BS> <SID>(help)
 
 nmap [unite]vst   <SID>(svn-status)
 nmap [unite]vdi   <SID>(svn-diff)

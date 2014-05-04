@@ -10,93 +10,107 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.bundle'))
 endif
 
-NeoBundle 'Shougo/neobundle.vim.git'
-NeoBundle 'Shougo/neocomplcache.git'
-NeoBundle 'Shougo/echodoc.git'
-NeoBundle 'Shougo/unite.vim.git'
-NeoBundle 'Shougo/neomru.vim.git'
-NeoBundle 'Shougo/vim-vcs.git'
-NeoBundle 'Shougo/vimfiler.git'
-NeoBundle 'Shougo/vimshell.git'
-NeoBundle 'Shougo/vinarise.git'
-NeoBundle 'Shougo/vimproc.git', {
+" Shougo's plugins (https://github.com/Shougo) {{{
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/echodoc'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \   'mac'  : 'make -f make_mac.mak',
 \   'unix' : 'make -f make_unix.mak',
 \ }
 \}
+" }}}
 
-NeoBundle 'kana/vim-operator-replace.git'
-NeoBundle 'kana/vim-operator-user.git'
-NeoBundle 'kana/vim-surround.git'
-NeoBundle 'kana/vim-grex.git'
-NeoBundle 'kana/vim-smartchr.git'
-NeoBundle 'kana/vim-textobj-indent.git'
-NeoBundle 'kana/vim-textobj-user.git'
-NeoBundle 'kana/vim-submode.git'
+" kana's plugins (https://github.com/kana) {{{
+NeoBundle 'kana/vim-operator-replace'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'kana/vim-surround'
+NeoBundle 'kana/vim-grex'
+NeoBundle 'kana/vim-smartchr'
+NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-submode'
+" }}}
 
-NeoBundle 'thinca/vim-unite-history.git'
-NeoBundle 'thinca/vim-openbuf.git'
-NeoBundle 'thinca/vim-localrc.git'
-NeoBundle 'thinca/vim-visualstar.git'
-NeoBundle 'thinca/vim-ref.git'
-NeoBundle 'thinca/vim-prettyprint.git'
+" thinca's plugins (https://github.com/thinca) {{{
+NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'thinca/vim-localrc'
+NeoBundle 'thinca/vim-visualstar'
+NeoBundleLazy 'thinca/vim-prettyprint'
+" }}}
 
-NeoBundle 'ujihisa/quickrun.git'
-NeoBundleLazy 'ujihisa/unite-colorscheme.git'
-NeoBundle 'ujihisa/neco-look.git'
+" ujihisa's plugins (https://github.com/ujihisa) {{{
+NeoBundle 'ujihisa/quickrun'
+NeoBundleLazy 'ujihisa/unite-colorscheme'
+" }}}
 
-NeoBundleLazy 'mattn/zencoding-vim.git'
-NeoBundle 'mattn/webapi-vim.git'
-NeoBundle 'mattn/learn-vimscript.git'
-NeoBundle 'mattn/wwwrenderer-vim.git'
+" mattn's plugins (https://github.com/mattn) {{{
+NeoBundle 'mattn/learn-vimscript'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/wwwrenderer-vim'
+NeoBundleLazy 'mattn/zencoding-vim'
+" }}}
 
+" tyru's plugins (https://github.com/tyru) {{{
+NeoBundle 'tyru/vim-altercmd'
+" }}}
 
-NeoBundle 'Sixeight/unite-grep.git'
-
-NeoBundle 'vim-scripts/Align.git'
-NeoBundle 'vim-scripts/IndentAnything.git'
-NeoBundle 'vim-scripts/Javascript-Indentation.git'
-NeoBundle 'vim-scripts/QuickBuf.git'
-
-NeoBundle 'tyru/simpletap.vim.git'
-NeoBundle 'tyru/vim-altercmd.git'
-NeoBundle 'tyru/visualctrlg.vim.git'
-
-NeoBundle 'tsukkee/unite-help.git'
-
-NeoBundle 'tacroe/unite-mark.git'
-
-NeoBundle 'h1mesuke/vim-unittest.git'
-NeoBundle 'h1mesuke/vim-alignta.git'
-NeoBundle 'h1mesuke/unite-outline.git'
-NeoBundle 'h1mesuke/textobj-wiw.git'
-
-NeoBundle 'choplin/unite-vim_hacks.git'
-
-NeoBundle 'motemen/git-vim.git'
-
-NeoBundle 'vim-scripts/VimClojure.git'
-NeoBundle 'kchmck/vim-coffee-script.git'
-
-NeoBundle 'kmnk/vim-unite-svn.git'
-NeoBundle 'kmnk/vim-unite-giti.git'
-NeoBundle 'kmnk/unite-pipe-command.git'
-
-NeoBundle 'msanders/cocoa.vim.git'
-NeoBundle 'garbas/vim-snipmate.git', {
+" h1mesuke's plugins (https://github.com/h1mesuke) {{{
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'h1mesuke/textobj-wiw', {
 \   'depends' : [
-\       'MarcWeber/vim-addon-mw-utils',
-\       'tomtom/tlib_vim',
-\       'honza/vim-snippets',
+\       'kana/vim-textobj-user',
 \   ]
 \}
+NeoBundleLazy 'h1mesuke/vim-unittest'
+" }}}
 
-NeoBundle 'haruyama/vim-matchopen.git'
+" tsukkee's plugins (https://github.com/tsukkee) {{{
+NeoBundle 'tsukkee/unite-help'
+" }}}
 
-" forked plugins {{{
-NeoBundle 'kmnk/sonictemplate-vim.git'
-NeoBundle 'kmnk/jslint.vim.git'
+" vim-scripts repositories (https://github.com/vim-scripts) {{{
+NeoBundle 'vim-scripts/Javascript-Indentation', {
+\   'depends' : [
+\       'vim-scripts/IndentAnything',
+\   ]
+\}
+NeoBundleLazy 'vim-scripts/VimClojure'
+" }}}
+
+" others {{{
+NeoBundle 'tacroe/unite-mark'
+NeoBundle 'Sixeight/unite-grep'
+NeoBundle 'haruyama/vim-matchopen'
+NeoBundleLazy 'kchmck/vim-coffee-script'
+NeoBundleLazy 'basyura/TweetVim', {
+\   'depends' : [
+\       'tyru/open-browser.vim',
+\       'basyura/twibill.vim',
+\       'mattn/webapi-vim',
+\       'h1mesuke/unite-outline',
+\       'basyura/bitly.vim',
+\       'basyura/bitly.vim',
+\       'Shougo/unite.vim',
+\       'mattn/favstar-vim',
+\   ]
+\}
+" }}}
+
+" my plugins {{{
+NeoBundle 'kmnk/vim-unite-svn'
+NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'kmnk/unite-pipe-command'
+" }}}
+
+" my forked plugins {{{
+NeoBundle 'kmnk/sonictemplate-vim' " TODO not fork should extends
 " }}}
 
 filetype plugin on

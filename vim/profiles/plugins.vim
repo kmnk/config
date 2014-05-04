@@ -51,10 +51,10 @@ endif
 "}}}
 
 " align settings {{{
-if globpath(&rtp, 'plugin/AlignPlugin.vim') != ''
+if globpath(&rtp, 'plugin/alignta.vim') != ''
   let g:Align_xstrlen=3
   vmap <Leader>al <SID>(setup-align)
-  vnoremap <SID>(setup-align) :Align
+  vnoremap <SID>(setup-align) :Alignta
 endif
 "}}}
 
@@ -266,13 +266,6 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
 endif
 " }}}
 
-" fugitive {{{
-if globpath(&rtp, 'plugin/fugitive.vim') != ''
-  nnoremap <SID>(git-commit-amend) :<C-u>Git commit --amend<CR>
-  nnoremap <SID>(git-blame)        :<C-u>Gblame<CR>
-endif
-" }}}
-
 " jslint {{{
 autocmd VimrcAutoCmd FileType javascript call s:javascript_filetype_settings()
 
@@ -294,6 +287,24 @@ nnoremap <Space>ga :<C-u>GitAdd<Enter>
 nnoremap <Space>gA :<C-u>GitAdd <cfile><Enter>
 nnoremap <Space>gc :<C-u>GitCommit<Enter>
 nnoremap <Space>gC :<C-u>GitCommit --amend<Enter>
+" }}}
+
+" vim-submode {{{
+" winsize
+call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
+call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>-')
+call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>+')
+call submode#map('winsize', 'n', '', '>', '<C-w>>')
+call submode#map('winsize', 'n', '', '<', '<C-w><')
+call submode#map('winsize', 'n', '', '+', '<C-w>-')
+call submode#map('winsize', 'n', '', '-', '<C-w>+')
+
+" undo/redo
+call submode#enter_with('undo/redo', 'n', '', 'g-', 'g-')
+call submode#enter_with('undo/redo', 'n', '', 'g+', 'g+')
+call submode#map('undo/redo', 'n', '', '-', 'g-')
+call submode#map('undo/redo', 'n', '', '+', 'g+')
 " }}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
