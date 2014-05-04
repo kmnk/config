@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.tmpl set filetype=html
+autocmd BufRead,BufNewFile *.tmpl setlocal filetype=html

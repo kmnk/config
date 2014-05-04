@@ -33,17 +33,11 @@ let g:html_use_css  = 1
 let g:html_no_pre   = 1
 
 " help key map
-nnoremap <SID>(help-shortcut) :<C-u>h<Space>
-inoremap <SID>(backspace)     <BS>
+inoremap <SID>(backspace) <BS>
 
 " edit vimrc right now
 nnoremap <silent> <SID>(edit-vimrc)  :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <silent> <SID>(edit-gvimrc) :<C-u>tabedit $MYGVIMRC<CR>
-
-" useful commands {{{
-" rename by one command
-command! -nargs=1 -complete=file Rename f <args>|call delete(expand('#'))
-"}}}
 
 " no guioptions
 if has('gui_running')
@@ -95,28 +89,28 @@ endfunction
 "}}}
 
 " Command-line window {{{
-nmap <SID>(command-line-enter) q:
-xmap <SID>(command-line-enter) q:
-nmap <SID>(command-line-norange) q:<C-u>
-
 nmap : <SID>(command-line-enter)
 xmap : <SID>(command-line-enter)
+
+nmap <SID>(command-line-enter) q:
+xmap <SID>(command-line-enter) q:
 
 autocmd VimrcAutoCmd CmdwinEnter * call s:init_cmdwin()  "{{{
 function! s:init_cmdwin()
   set nonumber
+  set norelativenumber
 
   nnoremap <buffer> q :<C-u>quit<CR>
   nnoremap <buffer> <TAB> :<C-u>quit<CR>
   nnoremap <buffer> <CR> <CR>
-  inoremap <buffer><expr><CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
-  inoremap <buffer><expr><C-h> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
-  inoremap <buffer><expr><BS> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
+  inoremap <buffer><expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
+  inoremap <buffer><expr> <C-h> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
+  inoremap <buffer><expr> <BS> pumvisible() ? "\<C-y>\<C-h>" : "\<C-h>"
   inoremap <buffer> qq <Esc>:<C-u>quit<CR>
   inoremap <buffer> kk <Esc>k
 
   " Completion.
-  inoremap <buffer><expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <buffer><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
   call altercmd#define('b', 'gr[ep]', 'Grep', 'i')
 
@@ -131,44 +125,12 @@ function! s:CSVH(x)   "{{{
   execute 'normal ^'.a:x.'f,'
 endfunction "}}}
 
-" autoloader of .vimrc {{{
-if !has('gui_running') && !(has('win32') || has('win64'))
-  autocmd VimrcAutoCmd BufWritePost $MYVIMRC nested source $MYVIMRC
-else
-  autocmd VimrcAutoCmd BufWritePost $MYVIMRC source $MYVIMRC | 
-\   if has('gui_running') | source $MYGVIMRC  
-  autocmd VimrcAutoCmd BufWritePost $MYGVIMRC
-\   if has('gui_running') | source $MYGVIMRC
-endif
-"}}}
-
-" Open junk file. {{{
-nmap <Leader>\ <SID>(open-junk-file)
-nnoremap <SID>(open-junk-file) :<C-u>JunkFile<CR>
-command! -nargs=0 JunkFile call s:open_junk_file()
-function! s:open_junk_file() "{{{
-  let l:junk_dir = $HOME . '/.vim_junk'. strftime('/%Y/%m')
-  if !isdirectory(l:junk_dir)
-    call mkdir(l:junk_dir, 'p')
-  endif
-
-  let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
-  if l:filename != ''
-    execute 'edit ' . l:filename
-  endif
-endfunction "}}}
-"}}}
-
 " matchit
 runtime macros/matchit.vim
 
 " search from current word
 nnoremap * *N
 nnoremap # #N
-
-" revisual after indenting action
-vnoremap > >gv
-vnoremap < <gv
 
 " clear highlightsearch
 nnoremap <C-l> :nohlsearch<CR><C-l>

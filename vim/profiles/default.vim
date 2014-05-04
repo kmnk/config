@@ -33,10 +33,6 @@ set virtualedit+=block
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
-" Load .gvimrc after .vimrc edited at GVim.
-nnoremap <silent> <Leader>lv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
-nnoremap <silent> <Leader>lg :<C-u>source $MYGVIMRC<CR>
-
 " create swp data to only tmp directory
 set directory&
 set directory-=.
@@ -103,14 +99,6 @@ set omnifunc+=
 set completeopt=menuone,preview
 " completion targets
 set complete=.,w,b,u,t,i
-
-" set file type (setf) {{{
-augroup FileTypeCmd
-  autocmd!
-augroup END
-autocmd FileTypeCmd FileType js setlocal ft=javascript
-autocmd FileTypeCmd FileType pl setlocal ft=perl
-"}}}
 
 " encoding settings {{{
 set encoding=utf-8

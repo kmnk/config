@@ -40,8 +40,6 @@ let s:profile_names = [
 \ 'unite',
 \ 'maps',
 \ 'plugins',
-\ 'functions',
-\ 'tmp',
 \ 'local-appends',
 \ 'local-bundles',
 \ 'local-maps',

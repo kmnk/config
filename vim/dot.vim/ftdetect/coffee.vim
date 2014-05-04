@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.coffee set filetype=coffee
+autocmd BufRead,BufNewFile *.coffee setlocal filetype=coffee
