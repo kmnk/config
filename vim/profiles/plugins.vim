@@ -13,10 +13,6 @@ nmap <Space>gp <SID>(git-push-now)
 nmap <Space>gP <SID>(git-pull-now)
 nmap <Space>gl <SID>(git-log-line)
 nmap <Space>gL <SID>(git-log)
-
-" git-vim
-nmap <Space>gC <SID>(git-commit-amend)
-nmap <Space>gb <SID>(git-blame)
 "}}}
 
 " sonictemplate {{{
@@ -62,26 +58,23 @@ endif
 if globpath(&rtp, 'plugin/vimfiler.vim') != ''
   nmap <Leader>: <SID>(pop-vimfiler)
   nmap <Space>:  <SID>(launch-vimfiler)
+  nmap <Leader>c: <SID>(pop-vimfiler-on-current-buffer-dir)
+  nmap <Space>c:  <SID>(launch-vimfiler-on-current-buffer-dir)
   nnoremap <expr> <SID>(pop-vimfiler)    ':<C-u>VimFilerSimple ' . getcwd() . '<CR>'
   nnoremap <expr> <SID>(launch-vimfiler) ':<C-u>VimFiler '       . getcwd() . '<CR>'
+  nnoremap <expr> <SID>(pop-vimfiler-on-current-buffer-dir)    ':<C-u>VimFilerSimple ' . expand('%:h') . '<CR>'
+  nnoremap <expr> <SID>(launch-vimfiler-on-current-buffer-dir) ':<C-u>VimFiler '    . expand('%:h') . '<CR>'
   call vimfiler#set_execute_file('vim', 'vim')
-  call vimfiler#set_execute_file('txt', 'notepad')
-  call vimfiler#set_execute_file('c', ['vim', 'notepad'])
-  "let g:vimfiler_split_command = ''
-  "
-  " Edit file by tabedit.
-  let g:vimfiler_edit_command = 'edit'
+  call vimfiler#set_execute_file('txt', 'vim')
+  call vimfiler#set_execute_file('c', 'vim')
 
+  let g:vimfiler_edit_command = 'edit'
   let g:vimfiler_as_default_explorer = 1
 
-  "let g:vimfiler_pedit_command = 'vnew'
   let g:vimfiler_external_copy_directory_command = 'cp -r $src $dest'
   let g:vimfiler_external_copy_file_command = 'cp $src $dest'
   let g:vimfiler_external_delete_command = 'rm -r $srcs'
   let g:vimfiler_external_move_command = 'mv $srcs $dest'
-
-  " Enable file operation commands.
-  "let g:vimfiler_safe_mode_by_default = 0
 
   " Like Textmate icons.
   let g:vimfiler_tree_leaf_icon = ' '
@@ -190,9 +183,6 @@ if globpath(&rtp, 'plugin/neocomplcache.vim') != ''
   inoremap <expr> <C-g> neocomplcache#undo_completion()
   inoremap <expr> <C-l> neocomplcache#complete_common_string()
 
-  " SuperTab like snippets behavior.
-  "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
   " Recommended key-mappings.
   " <CR>: close popup and save indent.
   inoremap <expr> <CR>  neocomplcache#smart_close_popup() . "\<CR>"
@@ -256,11 +246,11 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
   nnoremap <expr><silent> <SID>(git-diff)        ':<C-u>GitiDiff ' . expand('%:p') . '<CR>'
   nnoremap <expr><silent> <SID>(git-diff-cached) ':<C-u>GitiDiffCached ' . expand('%:p') .  '<CR>'
   nnoremap       <silent> <SID>(git-fetch-now)    :<C-u>GitiFetch<CR>
-  nnoremap       <silent> <SID>(git-fetch)        :<C-u>GitiFetch 
+  nnoremap                <SID>(git-fetch)        :<C-u>GitiFetch 
   nnoremap <expr><silent> <SID>(git-push-now)    ':<C-u>GitiPushWithSettingUpstream origin ' . giti#branch#current_name() . '<CR>'
-  nnoremap       <silent> <SID>(git-push)         :<C-u>GitiPush 
+  nnoremap                <SID>(git-push)         :<C-u>GitiPush 
   nnoremap       <silent> <SID>(git-pull-now)     :<C-u>GitiPull<CR>
-  nnoremap       <silent> <SID>(git-pull)         :<C-u>GitiPull 
+  nnoremap                <SID>(git-pull)         :<C-u>GitiPull 
   nnoremap       <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
   nnoremap       <silent> <SID>(git-log)          :<C-u>GitiLog ' . expand('%:p') . '<CR>'
 endif
@@ -278,17 +268,6 @@ function! s:javascript_filetype_settings()
 endfunction
 "}}}
 
-" git-vim {{{
-let g:git_no_map_default = 1
-nnoremap <Space>gs :<C-u>GitStatus<Enter>
-nnoremap <Space>gl :<C-u>GitLog<Enter>
-nnoremap <Space>gL :<C-u>GitLog -u \| head -10000<Enter>
-nnoremap <Space>ga :<C-u>GitAdd<Enter>
-nnoremap <Space>gA :<C-u>GitAdd <cfile><Enter>
-nnoremap <Space>gc :<C-u>GitCommit<Enter>
-nnoremap <Space>gC :<C-u>GitCommit --amend<Enter>
-" }}}
-
 " vim-submode {{{
 " winsize
 call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
@@ -305,6 +284,12 @@ call submode#enter_with('undo/redo', 'n', '', 'g-', 'g-')
 call submode#enter_with('undo/redo', 'n', '', 'g+', 'g+')
 call submode#map('undo/redo', 'n', '', '-', 'g-')
 call submode#map('undo/redo', 'n', '', '+', 'g+')
+
+" tab
+call submode#enter_with('tab', 'n', '', 'gt', 'gt')
+call submode#enter_with('tab', 'n', '', 'gT', 'gT')
+call submode#map('tab', 'n', '', 't', 'gt')
+call submode#map('tab', 'n', '', 'T', 'gT')
 " }}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2

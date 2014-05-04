@@ -15,7 +15,6 @@ nmap <Leader>. [unite]
 autocmd VimrcAutoCmd FileType unite call s:unite_settings()
 function! s:unite_settings()"{{{
   nmap <silent><buffer> : :
-  nmap <silent><buffer> : :
   nmap <silent><buffer> <ESC> <Plug>(unite_exit)
   imap <silent><buffer> jj    <Plug>(unite_insert_leave)
   imap <silent><buffer> <C-w> <Plug>(unite_delete_backward_path)
@@ -36,7 +35,6 @@ nmap [unite]c     <SID>(buffer-dir)
 nmap [unite]C     <SID>(buffer-file)
 nmap [unite]b     <SID>(buffer)
 nmap [unite]B     <SID>(all-buffer)
-nmap <CR>         <SID>(all-buffer)
 
 nmap [unite]dd    <SID>(bookmark)
 
@@ -56,15 +54,11 @@ nmap [unite]o     <SID>(outline)
 nmap [unite]<C-m> <SID>(mark)
 nmap [unite]r     <SID>(register)
 
-nmap [unite]:     <SID>(history-command)
-nmap [unite]/     <SID>(history-search)
+nmap [unite]h:    <SID>(history-command)
+nmap [unite]h/    <SID>(history-search)
 
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
-
-nmap [unite]vst   <SID>(svn-status)
-nmap [unite]vdi   <SID>(svn-diff)
-nmap [unite]vbl   <SID>(svn-blame)
 
 nmap [unite]gg    <SID>(giti-sources)
 nmap [unite]gst   <SID>(git-status)
