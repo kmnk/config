@@ -2,7 +2,6 @@
 
 " maps {{{
 nmap <Leader>jl <SID>(lint-javascript)
-nmap <Leader>jj <SID>(toggle-jslint)
 
 " giti
 nmap <Space>gd <SID>(git-diff-cached)
@@ -256,19 +255,8 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
 endif
 " }}}
 
-" jslint {{{
-autocmd VimrcAutoCmd FileType javascript call s:javascript_filetype_settings()
-
-function! s:javascript_filetype_settings()
-  nnoremap <SID>(lint-javascript) :<C-u>JSLint<CR>
-  nnoremap <SID>(toggle-jslint)   :<C-u>JSLintToggle<CR>
-  autocmd BufLeave     <buffer> call jslint#clear()
-  autocmd BufWritePost <buffer> call jslint#check()
-  autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
-"}}}
-
 " vim-submode {{{
+let g:submode_keep_leaving_key = 1
 " winsize
 call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
