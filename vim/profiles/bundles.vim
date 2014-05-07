@@ -82,6 +82,7 @@ NeoBundle 'vim-scripts/Javascript-Indentation', {
 \   ]
 \}
 NeoBundleLazy 'vim-scripts/VimClojure'
+NeoBundleLazy 'vim-scripts/confluencewiki.vim'
 " }}}
 
 " others {{{
