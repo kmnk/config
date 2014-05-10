@@ -10,6 +10,7 @@ execute 'set runtimepath+=' . s:local_dot_vim_dir_path
 " initial settings (edit for yourself){{{
 " my mapleader (default '\')
 let mapleader = ','
+noremap \ ,
 
 " color scheme setting {{{
 set t_Co=256

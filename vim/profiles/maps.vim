@@ -1,5 +1,12 @@
 " maps
 
+" move buffer
+nmap [b <SID>(move-buffer-prev)
+nmap ]b <SID>(move-buffer-next)
+nmap [B <SID>(move-buffer-first)
+nmap ]B <SID>(move-buffer-last)
+
+" split
 nmap <Leader>sj <SID>(split-to-j)
 nmap <Leader>sk <SID>(split-to-k)
 nmap <Leader>sh <SID>(split-to-h)
@@ -27,7 +34,14 @@ nnoremap gc `[v`]
 " quick write
 nnoremap <CR> :<C-u>w<CR>
 " quick ZZ
-nnoremap \ ZZ
+nnoremap <Leader><CR> ZZ
+
+" move buffer {{{
+nnoremap <silent> <SID>(move-buffer-prev)  :bprevious<CR>
+nnoremap <silent> <SID>(move-buffer-next)  :bnext<CR>
+nnoremap <silent> <SID>(move-buffer-first) :bfirst<CR>
+nnoremap <silent> <SID>(move-buffer-last)  :blast<CR>
+" }}}
 
 " split {{{
 nnoremap <SID>(split-to-j) :<C-u>execute 'belowright' (v:count == 0 ? '' : v:count) 'split'<CR>
