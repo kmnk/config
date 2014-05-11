@@ -1,5 +1,5 @@
 # 環境変数
-PATH=$HOME/local/bin:$PATH
+PATH=$HOME/local/bin:/usr/local/bin:$PATH
 
 export PATH
 
