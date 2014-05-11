@@ -86,6 +86,7 @@ NeoBundleLazy 'vim-scripts/confluencewiki.vim'
 " }}}
 
 " others {{{
+NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle 'haruyama/vim-matchopen'
