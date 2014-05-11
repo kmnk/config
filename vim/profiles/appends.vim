@@ -19,6 +19,8 @@ xmap & <SID>(repeat-substitute)
 " command line
 nmap : <SID>(command-line-enter)
 xmap : <SID>(command-line-enter)
+nmap q: <SID>(default-command-line-enter)
+xmap q: <SID>(default-command-line-enter)
 nmap / <SID>(search-line-enter)
 xmap / <SID>(search-line-enter)
 
@@ -104,6 +106,8 @@ endfunction
 " Command-line window {{{
 nnoremap <SID>(command-line-enter) q:
 xnoremap <SID>(command-line-enter) q:
+nnoremap <SID>(default-command-line-enter) :
+xnoremap <SID>(default-command-line-enter) :
 nnoremap <SID>(search-line-enter) /\v
 xnoremap <SID>(search-line-enter) /\v
 
