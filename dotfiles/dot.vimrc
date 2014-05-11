@@ -39,6 +39,7 @@ let s:profile_names = [
 \ 'default',
 \ 'appends',
 \ 'unite',
+\ 'neocomplcache',
 \ 'maps',
 \ 'plugins',
 \ 'local-appends',
