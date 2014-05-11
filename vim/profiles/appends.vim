@@ -12,11 +12,22 @@ nmap <Leader>eg <SID>(edit-gvimrc)
 
 nmap <Leader>mt <SID>(buffer-to-new-tab)
 
+" feel good repeat-substitute
+nmap & <SID>(repeat-substitute)
+xmap & <SID>(repeat-substitute)
+
+" command line
+nmap : <SID>(command-line-enter)
+xmap : <SID>(command-line-enter)
+nmap / <SID>(search-line-enter)
+xmap / <SID>(search-line-enter)
+
 " disp always relativenumber of lines
 set number
 nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
 nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
 
+" paste mode
 nnoremap <SID>(toggle-paste)          :<C-u>set paste!<CR>
 
 " indent
@@ -89,11 +100,10 @@ endfunction
 "}}}
 
 " Command-line window {{{
-nmap : <SID>(command-line-enter)
-xmap : <SID>(command-line-enter)
-
-nmap <SID>(command-line-enter) q:
-xmap <SID>(command-line-enter) q:
+nnoremap <SID>(command-line-enter) q:
+xnoremap <SID>(command-line-enter) q:
+nnoremap <SID>(search-line-enter) /\v
+xnoremap <SID>(search-line-enter) /\v
 
 autocmd VimrcAutoCmd CmdwinEnter * call s:init_cmdwin()  "{{{
 function! s:init_cmdwin()
@@ -117,6 +127,10 @@ function! s:init_cmdwin()
   startinsert!
 endfunction "}}}
 "}}}
+
+" feeling good repeat substitute
+nnoremap <SID>(repeat-substitute) :&&<CR>
+xnoremap <SID>(repeat-substitute) :&&<CR>
 
 " CSV high light
 command! -nargs=1 Csvhl :call s:CSVH(<args>)
