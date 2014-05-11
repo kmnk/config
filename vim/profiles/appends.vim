@@ -2,7 +2,7 @@
 
 " maps
 nmap <Leader>1 <SID>(toggle-number)
-nmap <Leader>2 <SID>(toggle-relativenumber)
+nmap <Leader>2 <SID>(toggle-spell)
 nmap <Leader>3 <SID>(toggle-paste)
 
 imap <C-h> <SID>(backspace)
@@ -24,11 +24,13 @@ xmap / <SID>(search-line-enter)
 
 " disp always relativenumber of lines
 set number
-nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
-nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
+nnoremap <SID>(toggle-number) :<C-u>set number!<CR>
+
+" spell mode
+nnoremap <SID>(toggle-spell) :<C-u>set spell!<CR>
 
 " paste mode
-nnoremap <SID>(toggle-paste)          :<C-u>set paste!<CR>
+nnoremap <SID>(toggle-paste) :<C-u>set paste!<CR>
 
 " indent
 set autoindent
@@ -148,6 +150,9 @@ nnoremap # #N
 
 " clear highlightsearch
 nnoremap <C-l> :nohlsearch<CR><C-l>
+
+" activate incsearch
+set incsearch
 
 " 
 set history=10000
