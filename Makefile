@@ -3,9 +3,9 @@
 
 linux: setup vim-setup vim-make-vimproc-linux
 
-mac: setup vim-setup vim-make-vimproc-mac
+mac: setup vim-setup vim-make-vimproc-mac setup-vimperatorrc
 
-windows: vim-setup
+windows: vim-setup setup-vimperatorrc
 
 setup:
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' >> ~/.zshrc
@@ -28,6 +28,9 @@ vim-make-vimproc-linux:
 
 vim-make-vimproc-mac:
 	cd ~/.bundle/vimproc/ && make -f make_mac.mak
+
+setup-vimperatorrc:
+	echo 'source '`pwd`'/dotfiles/dot.vimperatorrc' >> ~/.vimperatorrc
 
 
 install: vim-install-plugins
