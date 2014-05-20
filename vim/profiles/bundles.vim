@@ -90,6 +90,7 @@ NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle 'haruyama/vim-matchopen'
+NeoBundleLazy 'chrisbra/csv.vim'
 NeoBundleLazy 'kchmck/vim-coffee-script'
 NeoBundleLazy 'basyura/TweetVim', {
 \   'depends' : [
@@ -103,6 +104,7 @@ NeoBundleLazy 'basyura/TweetVim', {
 \       'mattn/favstar-vim',
 \   ]
 \}
+
 " }}}
 
 " my plugins {{{
