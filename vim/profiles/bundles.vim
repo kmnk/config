@@ -41,11 +41,11 @@ NeoBundle 'kana/vim-submode'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundleLazy 'thinca/vim-prettyprint'
 " }}}
 
 " ujihisa's plugins (https://github.com/ujihisa) {{{
-NeoBundle 'ujihisa/quickrun'
 NeoBundleLazy 'ujihisa/unite-colorscheme'
 " }}}
 
