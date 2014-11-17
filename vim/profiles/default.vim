@@ -69,13 +69,15 @@ augroup END  "}}}
 " highlights {{{
 highlight MultiByteSpace ctermbg=LightGray guibg=LightGray
 match MultiByteSpace /　/
-autocmd VimrcAutoCmd WinEnter * match MultiByteSpace /　/
 highlight EOLWhiteSpace ctermbg=blue guibg=blue
 match EOLWhiteSpace /\s\+$/
-autocmd VimrcAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
 highlight TabSpace ctermbg=blue guibg=blue
 match TabSpace /\t/
-autocmd VimrcAutoCmd WinEnter * match TabSpace /\t/
+function! g:Extra_highlights()
+  autocmd VimrcAutoCmd WinEnter * match MultiByteSpace /　/
+  autocmd VimrcAutoCmd WinEnter * match EOLWhiteSpace /\s\+$/
+  autocmd VimrcAutoCmd WinEnter * match TabSpace /\t/
+endfunction
 "}}}
 
 " syntax completion settings {{{

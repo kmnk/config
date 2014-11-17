@@ -2,6 +2,8 @@ escape ^Tt
 
 vbell off
 
+defscrollback 1000
+
 # 
 defbce on
 attrcolor b '.I'

@@ -13,7 +13,7 @@ nmap <Leader>setp <SID>(set-filetype-perl)
 nnoremap <SID>(insert-dumper)               ouse Data::Dumper;<CR>print {*STDERR} Dumper();<ESC>h
 nnoremap <SID>(insert-dumper-with-register) ouse Data::Dumper;<CR>print {*STDERR} Dumper(<C-R>");<ESC>h
 
-nnoremap <SID>(open-perldoc)  :! perldoc %<CR>
+nnoremap <SID>(open-perldoc)  :! perldoc -t %<CR>
 nnoremap <SID>(set-file-type) :set filetype=perl<CR>
 
 setlocal expandtab

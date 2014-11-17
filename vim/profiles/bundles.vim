@@ -58,6 +58,7 @@ NeoBundleLazy 'mattn/zencoding-vim'
 
 " tyru's plugins (https://github.com/tyru) {{{
 NeoBundle 'tyru/vim-altercmd'
+NeoBundle 'tyru/open-browser.vim'
 " }}}
 
 " h1mesuke's plugins (https://github.com/h1mesuke) {{{

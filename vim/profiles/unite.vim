@@ -17,6 +17,7 @@ function! s:unite_settings()"{{{
   nmap <silent><buffer> : :
   nmap <silent><buffer> <ESC> <Plug>(unite_exit)
   imap <silent><buffer> jj    <Plug>(unite_insert_leave)
+  imap <silent><buffer> kk    <Plug>(unite_insert_leave)
   imap <silent><buffer> <C-w> <Plug>(unite_delete_backward_path)
   imap <silent><buffer> qq    <Plug>(unite_exit)
   nmap <silent><buffer><expr> a unite#smart_map('a', unite#do_action('add'))
@@ -25,6 +26,8 @@ function! s:unite_settings()"{{{
   vmap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('add'))
   nmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('undo'))
   vmap <silent><buffer><expr> u unite#smart_map('u', unite#do_action('undo'))
+  nmap <silent><buffer><expr> U unite#smart_map('U', unite#do_action('checkout'))
+  vmap <silent><buffer><expr> U unite#smart_map('U', unite#do_action('checkout'))
   nmap <silent><buffer><expr> c unite#smart_map('c', unite#do_action('commit'))
   vmap <silent><buffer><expr> c unite#smart_map('c', unite#do_action('commit'))
 endfunction"}}}
