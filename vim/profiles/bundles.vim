@@ -7,8 +7,9 @@ if has('vim_starting')
   else
     finish
   endif
-  call neobundle#rc(expand('~/.bundle'))
 endif
+
+call neobundle#begin(expand('~/.bundle'))
 
 " Shougo's plugins (https://github.com/Shougo) {{{
 NeoBundle 'Shougo/neobundle.vim'
@@ -117,6 +118,8 @@ NeoBundle 'kmnk/unite-pipe-command'
 " my forked plugins {{{
 NeoBundle 'kmnk/sonictemplate-vim' " TODO not fork should extends
 " }}}
+
+call neobundle#end()
 
 filetype plugin on
 filetype indent on
