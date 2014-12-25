@@ -2,7 +2,7 @@ escape ^Tt
 
 vbell off
 
-defscrollback 1000
+defscrollback 10000
 
 # 
 defbce on

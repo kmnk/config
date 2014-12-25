@@ -118,23 +118,23 @@ if globpath(&rtp, 'plugin/vimshell.vim') != ''
 \|  call vimshell#altercmd#define('l', 'll')
 \|  call vimshell#altercmd#define('ll', 'ls -l')
 \|  call vimshell#altercmd#define('vi', 'vim')
-\|  call vimshell#hook#set('chpwd', ['s:my_chpwd'])
-\|  call vimshell#hook#set('emptycmd', ['s:my_emptycmd'])
-\|  call vimshell#hook#set('preprompt', ['s:my_preprompt'])
-\|  call vimshell#hook#set('preexec', ['s:my_preexec'])
+\|  call vimshell#hook#set('chpwd', ['My_chpwd'])
+\|  call vimshell#hook#set('emptycmd', ['My_emptycmd'])
+\|  call vimshell#hook#set('preprompt', ['My_preprompt'])
+\|  call vimshell#hook#set('preexec', ['My_preexec'])
 \|  set nonumber
 
-  function! s:my_chpwd(args, context)
+  function! My_chpwd(args, context)
     call vimshell#execute('echo "chpwd"')
   endfunction
-  function! s:my_emptycmd(cmdline, context)
+  function! My_emptycmd(cmdline, context)
     call vimshell#execute('echo "emptycmd"')
     return a:cmdline
   endfunction
-  function! s:my_preprompt(args, context)
+  function! My_preprompt(args, context)
     call vimshell#execute('echo "preprompt"')
   endfunction
-  function! s:my_preexec(cmdline, context)
+  function! My_preexec(cmdline, context)
     call vimshell#execute('echo "preexec"')
 
     let l:args = vimproc#parser#split_args(a:cmdline)
