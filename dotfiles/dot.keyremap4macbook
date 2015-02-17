@@ -2,6 +2,17 @@
 <root>
   <item>
     <name>Useful Keybind Settings for kmnk</name>
+
+    <devicevendordef>
+      <vendorname>Lenovo</vendorname>
+      <vendorid>0x17ef</vendorid>
+    </devicevendordef>
+
+    <deviceproductdef>
+      <productname>THINKPAD_KEYBOARD_BLUETOOTH</productname>
+      <productid>0x6048</productid>
+    </deviceproductdef>
+
     <item>
       <name>Like 104</name>
       <appendix>Use 109 keyboard as 104</appendix>
@@ -113,6 +124,25 @@
         <autogen>--KeyOverlaidModifier-- KeyCode::JIS_KANA, KeyCode::OPTION_L, KeyCode::JIS_KANA</autogen>
       </item>
     </item>
+
+    <item>
+      <name>Disable MiddleClick on Thinkpad Keyboard</name>
+      <appendix></appendix>
+      <device_only>DeviceVendor::Lenovo, DeviceProduct::THINKPAD_KEYBOARD_BLUETOOTH</device_only>
+      <identifier>thinkpad.disable.middle.click</identifier>
+      <autogen>__PointingButtonToKey__ PointingButton::MIDDLE, KeyCode::VK_NONE</autogen>
+    </item>
+
+    <item>
+      <name>Disable PageUp/PageDown on Thinkpad Keyboard</name>
+      <appendix></appendix>
+      <device_only>DeviceVendor::Lenovo, DeviceProduct::THINKPAD_KEYBOARD_BLUETOOTH</device_only>
+      <identifier>thinkpad.disable.pageup.pagedown</identifier>
+      <autogen>__KeyToKey__ KeyCode::PAGEUP, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::PAGEDOWN, KeyCode::VK_NONE</autogen>
+    </item>
+
   </item>
+
 </root>
 <!-- vim: set expandtab tabstop=2 softtabstop=2 shiftwidth=2 : -->
