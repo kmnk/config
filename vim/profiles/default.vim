@@ -69,9 +69,9 @@ augroup END  "}}}
 " highlights {{{
 highlight MultiByteSpace ctermbg=LightGray guibg=LightGray
 match MultiByteSpace /　/
-highlight EOLWhiteSpace ctermbg=blue guibg=blue
+highlight EOLWhiteSpace ctermbg=DarkBlue guibg=DarkBlue
 match EOLWhiteSpace /\s\+$/
-highlight TabSpace ctermbg=blue guibg=blue
+highlight TabSpace ctermbg=DarkBlue guibg=DarkBlue
 match TabSpace /\t/
 function! g:Extra_highlights()
   autocmd VimrcAutoCmd WinEnter * match MultiByteSpace /　/
