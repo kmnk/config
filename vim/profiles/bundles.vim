@@ -26,6 +26,7 @@ NeoBundle 'Shougo/vimproc', {
 \ }
 \}
 NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/unite-outline'
 " }}}
 
 " kana's plugins (https://github.com/kana) {{{
@@ -65,7 +66,6 @@ NeoBundle 'tyru/open-browser.vim'
 
 " h1mesuke's plugins (https://github.com/h1mesuke) {{{
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'h1mesuke/textobj-wiw', {
 \   'depends' : [
 \       'kana/vim-textobj-user',
@@ -97,7 +97,7 @@ NeoBundleLazy 'basyura/TweetVim', {
 \       'tyru/open-browser.vim',
 \       'basyura/twibill.vim',
 \       'mattn/webapi-vim',
-\       'h1mesuke/unite-outline',
+\       'Shougo/unite-outline',
 \       'basyura/bitly.vim',
 \       'basyura/bitly.vim',
 \       'Shougo/unite.vim',
