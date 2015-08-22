@@ -54,7 +54,7 @@ NeoBundleLazy 'ujihisa/unite-colorscheme'
 NeoBundle 'mattn/learn-vimscript'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/wwwrenderer-vim'
-NeoBundleLazy 'mattn/zencoding-vim'
+NeoBundleLazy 'mattn/emmet-vim'
 " }}}
 
 " tyru's plugins (https://github.com/tyru) {{{
