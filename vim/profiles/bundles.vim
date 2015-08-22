@@ -25,6 +25,7 @@ NeoBundle 'Shougo/vimproc', {
 \   'unix' : 'make -f make_unix.mak',
 \ }
 \}
+NeoBundle 'Shougo/unite-help'
 " }}}
 
 " kana's plugins (https://github.com/kana) {{{
@@ -71,10 +72,6 @@ NeoBundle 'h1mesuke/textobj-wiw', {
 \   ]
 \}
 NeoBundleLazy 'h1mesuke/vim-unittest'
-" }}}
-
-" tsukkee's plugins (https://github.com/tsukkee) {{{
-NeoBundle 'tsukkee/unite-help'
 " }}}
 
 " vim-scripts repositories (https://github.com/vim-scripts) {{{
