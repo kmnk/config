@@ -63,6 +63,7 @@ nmap [unite]h/    <SID>(history-search)
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
 
+" giti maps {{{
 nmap [unite]gg    <SID>(giti-sources)
 nmap [unite]gst   <SID>(git-status)
 nmap [unite]gb    <SID>(git-branch)
@@ -72,6 +73,7 @@ nmap [unite]gc    <SID>(git-config)
 nmap [unite]gl    <SID>(git-log)
 nmap [unite]gr    <SID>(git-remote)
 nmap [unite]gL    <SID>(git-log-this-file)
+" }}}
 
 nmap [unite]pp    <SID>(pipe-command)
 
