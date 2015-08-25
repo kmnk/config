@@ -10,6 +10,7 @@ nmap <Space>gf <SID>(git-fetch-now)
 nmap <Space>gF <SID>(git-fetch)
 nmap <Space>gp <SID>(git-push-now)
 nmap <Space>gP <SID>(git-pull-now)
+nmap <Space>gr <SID>(git-pull-rebase)
 nmap <Space>gl <SID>(git-log-line)
 nmap <Space>gL <SID>(git-log)
 "}}}
@@ -176,6 +177,7 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
   nnoremap <expr><silent> <SID>(git-push-now)    ':<C-u>GitiPushWithSettingUpstream origin ' . giti#branch#current_name() . '<CR>'
   nnoremap                <SID>(git-push)         :<C-u>GitiPush 
   nnoremap       <silent> <SID>(git-pull-now)     :<C-u>GitiPull<CR>
+  nnoremap       <silent> <SID>(git-pull-rebase)  :<C-u>GitiPullRebase<CR>
   nnoremap                <SID>(git-pull)         :<C-u>GitiPull 
   nnoremap       <silent> <SID>(git-log-line)     :<C-u>GitiLogLine ' . expand('%:p') . '<CR>'
   nnoremap       <silent> <SID>(git-log)          :<C-u>GitiLog ' . expand('%:p') . '<CR>'
@@ -205,6 +207,20 @@ call submode#enter_with('tab', 'n', '', 'gt', 'gt')
 call submode#enter_with('tab', 'n', '', 'gT', 'gT')
 call submode#map('tab', 'n', '', 't', 'gt')
 call submode#map('tab', 'n', '', 'T', 'gT')
+" }}}
+
+" Omnisharp {{{
+nnoremap <silent> <buffer> ma :OmniSharpAddToProject<CR>
+nnoremap <silent> <buffer> mb :OmniSharpBuild<CR>
+nnoremap <silent> <buffer> mc :OmniSharpFindSyntaxErrors<CR>
+nnoremap <silent> <buffer> mf :OmniSharpCodeFormat<CR>
+nnoremap <silent> <buffer> mj :OmniSharpGotoDefinition<CR>
+nnoremap <silent> <buffer> <C-w>mj <C-w>s:OmniSharpGotoDefinition<CR>
+nnoremap <silent> <buffer> mi :OmniSharpFindImplementations<CR>
+nnoremap <silent> <buffer> mr :OmniSharpRename<CR>
+nnoremap <silent> <buffer> mt :OmniSharpTypeLookup<CR>
+nnoremap <silent> <buffer> mu :OmniSharpFindUsages<CR>
+nnoremap <silent> <buffer> mx :OmniSharpGetCodeActions<CR>
 " }}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2

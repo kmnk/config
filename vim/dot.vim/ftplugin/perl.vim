@@ -2,8 +2,8 @@ set iskeyword&
 set iskeyword+=:
 
 " maps
-nmap <Leader>dump <SID>(insert-dumper)
-nmap <Leader>Dump <SID>(insert-dumper-with-register)
+nmap <Leader><Leader>d <SID>(insert-dumper)
+nmap <Leader><Leader>D <SID>(insert-dumper-with-register)
 nmap <Leader>pod  <SID>(open-perldoc)
 nmap <Leader>setp <SID>(set-filetype-perl)
 

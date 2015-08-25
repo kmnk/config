@@ -32,6 +32,16 @@ map ,E <SID>(alc-tab-open)
 map ,img <SID>(google-img-open)
 map ,Img <SID>(google-img-tab-open)
 
+" Unity manual search
+map ,um <SID>(unity-manual-search)
+map ,Um <SID>(unity-manual-tab-search)
+map ,UM <SID>(unity-manual-tab-search)
+
+" Unity reference search
+map ,ur <SID>(unity-reference-search)
+map ,Ur <SID>(unity-reference-tab-search)
+map ,UR <SID>(unity-reference-tab-search)
+
 " autocompletes
 autocmd VimperatorEnter .* :set complete=bls
 
@@ -43,3 +53,7 @@ nnoremap <SID>(alc-open)                :o http://eow.alc.co.jp/
 nnoremap <SID>(alc-tab-open)            :t http://eow.alc.co.jp/
 nnoremap <SID>(google-img-open)         :o www.google.co.jp/search?tbm=isch&q=
 nnoremap <SID>(google-img-tab-open)     :t www.google.co.jp/search?tbm=isch&q=
+nnoremap <SID>(unity-manual-search)        :o http://docs.unity3d.com/ja/current/Manual/30_search.html?q=
+nnoremap <SID>(unity-manual-tab-search)    :t http://docs.unity3d.com/ja/current/Manual/30_search.html?q=
+nnoremap <SID>(unity-reference-search)     :o http://docs.unity3d.com/ja/current/ScriptReference/30_search.html?q=
+nnoremap <SID>(unity-reference-tab-search) :t http://docs.unity3d.com/ja/current/ScriptReference/30_search.html?q=

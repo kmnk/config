@@ -19,6 +19,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \   'mac'  : 'make -f make_mac.mak',
@@ -104,7 +105,18 @@ NeoBundleLazy 'basyura/TweetVim', {
 \       'mattn/favstar-vim',
 \   ]
 \}
-
+NeoBundleLazy 'nosami/Omnisharp', {
+\   'autoload': {'filetypes': ['cs']},
+\   'build': {
+\     'mac': 'xbuild server/OmniSharp.sln',
+\     'unix': 'xbuild server/OmniSharp.sln',
+\   }
+\ }
+NeoBundleLazy 'OrangeT/vim-csharp', {
+\   'autoload': {'filetypes': ['cs']}
+\ }
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-dispatch'
 " }}}
 
 " my plugins {{{
