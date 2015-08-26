@@ -114,13 +114,12 @@ NeoBundleLazy 'basyura/TweetVim', {
 \       'mattn/favstar-vim',
 \   ]
 \}
-NeoBundleLazy 'nosami/Omnisharp', {
-\   'autoload': {'filetypes': ['cs']},
-\   'build': {
-\     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln',
-\   }
+NeoBundle 'OmniSharp/omnisharp-vim', {
+\ 'build' : {
+\   'mac'  : 'git submodule update --init --recursive && cd server && xbuild',
+\   'unix' : 'git submodule update --init --recursive && cd server && xbuild',
 \ }
+\}
 NeoBundleLazy 'OrangeT/vim-csharp', {
 \   'autoload': {'filetypes': ['cs']}
 \ }
