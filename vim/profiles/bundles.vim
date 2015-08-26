@@ -75,6 +75,15 @@ NeoBundle 'h1mesuke/textobj-wiw', {
 NeoBundleLazy 'h1mesuke/vim-unittest'
 " }}}
 
+" haya14busa's plugins (https://github.com/haya14busa) {{{
+NeoBundleLazy 'haya14busa/vital-power-assert', {
+\ 'depends' : [
+\   'haya14busa/vital-vimlcompiler',
+\   'vim-jp/vital.vim'
+\ ]
+\}
+" }}}
+
 " vim-scripts repositories (https://github.com/vim-scripts) {{{
 NeoBundle 'vim-scripts/Javascript-Indentation', {
 \   'depends' : [
