@@ -1,7 +1,11 @@
 # 環境変数
 PATH=$HOME/local/bin:/usr/local/bin:$PATH
 
+GOPATH=$HOME/local/go
+PATH=$GOPATH/bin:$PATH
+
 export PATH
+export GOPATH
 
 # 初期設定
 local RED=$'%{\e[1;31m%}'
