@@ -15,3 +15,6 @@ else
 endif
 colorscheme solarized
 hi ColorColumn ctermbg=DarkRed
+let g:lightline = {
+\ 'colorscheme': 'jellybeans'
+\}

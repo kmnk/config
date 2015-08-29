@@ -149,8 +149,8 @@ endfunction "}}}
 runtime macros/matchit.vim
 
 " search from current word
-nnoremap * *N
-nnoremap # #N
+nnoremap * *Nzz
+nnoremap # #Nzz
 
 " clear highlightsearch
 nnoremap <C-l> :nohlsearch<CR><C-l>
