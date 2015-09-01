@@ -81,6 +81,7 @@ nmap [unite]s     <SID>(source)
 
 nmap [unite]nb    <SID>(neobundle)
 nmap [unite]Nb    <SID>(neobundle-update)
+nmap [unite]nB    <SID>(neobundle-search)
 
 nmap [unite]frn   <SID>(immediately-rename)
 
@@ -157,6 +158,7 @@ nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
 " neobundle {{{
 nnoremap <silent> <SID>(neobundle)        :<C-u>Unite neobundle<CR>
 nnoremap <silent> <SID>(neobundle-update) :<C-u>Unite neobundle/install:!<CR>
+nnoremap <silent> <SID>(neobundle-search) :<C-u>Unite neobundle/search<CR>
 " }}}
 
 " sonictemplate {{{
