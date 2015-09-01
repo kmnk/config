@@ -9,7 +9,7 @@ windows: vim-setup setup-vimperatorrc
 
 setup:
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' >> ~/.zshrc
-	echo 'source '`pwd`'/dotfiles/dot.screenrc' >> ~/.screenrc
+	echo 'source '`pwd`'/dotfiles/dot.tmux.conf' >> ~/.tmux.conf
 
 vim-setup: vim-setup-vimrc vim-install-bundle vim-install-plugins
 

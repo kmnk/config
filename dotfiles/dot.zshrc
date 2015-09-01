@@ -87,11 +87,10 @@ setopt auto_pushd   # ディレクトリ移動履歴
 setopt list_packed  # 詰めて表示
 setopt nolistbeep   # beep off
 
-# screen関連
-alias sc="screen"
-alias scl="screen -ls"
-alias sct="screen -D -R"
-alias scn="screen -S"
+# tmux関連
+alias tml="tmux ls"
+alias tmt="tmux attach-session -t"
+alias tmn="tmux new-session -s"
 
 # cd関連
 alias ..="cd ../"
