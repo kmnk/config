@@ -184,6 +184,17 @@ if globpath(&rtp, 'plugin/giti.vim') != ''
 endif
 " }}}
 
+" yankround {{{
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+" }}}
+
 " vim-submode {{{
 let g:submode_keep_leaving_key = 1
 " winsize

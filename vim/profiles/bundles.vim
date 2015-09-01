@@ -126,6 +126,7 @@ NeoBundleLazy 'OrangeT/vim-csharp', {
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'LeafCage/yankround.vim'
 " }}}
 
 " my plugins {{{
