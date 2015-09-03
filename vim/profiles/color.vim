@@ -14,9 +14,6 @@ else
     set background=dark
 endif
 colorscheme solarized
-let g:lightline = {
-\ 'colorscheme': 'solarized_dark'
-\}
 
 hi ColorColumn ctermbg=DarkRed
 
