@@ -35,7 +35,7 @@ let g:lightline = {
 function! LightLineFileName()
   return &ft == 'vimfiler'   ? 'VimFiler'
 \      : &ft == 'vimshell'   ? 'VimShell'
-\      : '' != expand('%:t') ? ( winwidth(0) > 60 ? expand('%') : expand('%:t') )
+\      : '' != expand('%:t') ? ( winwidth(0) > 80 ? expand('%') : expand('%:t') )
 \      :                       '[No Name]'
 endfunction
 
