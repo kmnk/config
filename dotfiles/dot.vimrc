@@ -23,6 +23,7 @@ let s:profile_names = [
 \ 'appends',
 \ 'unite',
 \ 'neocomplcache',
+\ 'easymotion',
 \ 'maps',
 \ 'plugins',
 \ 'local-appends',

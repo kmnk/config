@@ -86,8 +86,6 @@ nmap [unite]nB    <SID>(neobundle-search)
 nmap [unite]frn   <SID>(immediately-rename)
 
 nmap [unite]t <SID>(sonictemplate)
-
-nmap sc <SID>(color)
 "}}}
 
 " mapped commands {{{

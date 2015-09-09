@@ -221,6 +221,7 @@ call submode#map('tab', 'n', '', 'T', 'gT')
 " }}}
 
 " Omnisharp {{{
+let g:OmniSharp_selector_ui = 'unite'
 nnoremap <silent> <buffer> ma :OmniSharpAddToProject<CR>
 nnoremap <silent> <buffer> mb :OmniSharpBuild<CR>
 nnoremap <silent> <buffer> mc :OmniSharpFindSyntaxErrors<CR>
