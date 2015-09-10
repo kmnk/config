@@ -64,7 +64,7 @@ nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
 
 " giti maps {{{
-nmap [unite]gg    <SID>(giti-sources)
+nmap [unite]gg    <SID>(giti-grep)
 nmap [unite]gst   <SID>(git-status)
 nmap [unite]gb    <SID>(git-branch)
 nmap [unite]gBa   <SID>(git-branch_all)
@@ -135,7 +135,7 @@ nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn
 " }}}
 
 " git {{{
-nnoremap <silent> <SID>(giti-sources)      :<C-u>Unite giti<CR>
+nnoremap <silent> <SID>(giti-grep)         :<C-u>Unite giti/grep<CR>
 nnoremap <silent> <SID>(git-status)        :<C-u>Unite giti/status<CR>
 nnoremap <silent> <SID>(git-branch)        :<C-u>Unite giti/branch<CR>
 nnoremap <silent> <SID>(git-branch_recent) :<C-u>Unite giti/branch_recent<CR>
