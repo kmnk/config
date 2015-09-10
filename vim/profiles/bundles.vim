@@ -133,7 +133,11 @@ NeoBundle 'easymotion/vim-easymotion'
 
 " my plugins {{{
 NeoBundle 'kmnk/vim-unite-svn'
-NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'kmnk/vim-unite-giti', {
+\ 'depends' : [
+\   'thinca/vim-themis'
+\ ]
+\}
 NeoBundle 'kmnk/unite-pipe-command'
 " }}}
 

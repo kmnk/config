@@ -1,6 +1,7 @@
-setlocal expandtab
-setlocal softtabstop=2
-setlocal shiftwidth=2
 setlocal foldmethod=marker
+
+let b:undo_indent = 'setlocal '. join([
+\   'foldmethod<',
+\ ])
 
 NeoBundleSource vim-prettyprint
