@@ -18,7 +18,7 @@ autocmd VimrcAutoCmd FileType unite call s:unite_settings()
 function! s:unite_settings()"{{{
   nmap <silent><buffer> : :
   nmap <silent><buffer> <ESC> <Plug>(unite_exit)
-  nmap <silent><buffer> i     G<Plug>(unite_insert_enter)
+  nmap <silent><buffer> i     <Plug>(unite_insert_enter)
   nmap <silent><buffer> I     G<Plug>(unite_insert_head)
   nmap <silent><buffer> A     G<Plug>(unite_insert_head)
   imap <silent><buffer> jj    <Plug>(unite_insert_leave)
