@@ -82,7 +82,7 @@
         <appendix>Control+SemiColon to SemiColon</appendix>
         <identifier>remap.kmnk_extendbinds_semicolon</identifier>
         <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::CONTROL_L, KeyCode::SEMICOLON</autogen>
-        <autogen>--KeyToKey-- KeyCode::SEMICOLON, KeyCode::ENTER</autogen>
+        <autogen>--KeyToKey-- KeyCode::SEMICOLON, KeyCode::RETURN</autogen>
       </item>
       <item>
         <name>Cursor</name>
