@@ -80,8 +80,6 @@ nmap [unite]gr    <SID>(git-remote)
 nmap [unite]gL    <SID>(git-log-this-file)
 " }}}
 
-nmap [unite]pp    <SID>(pipe-command)
-
 nmap [unite]s     <SID>(source)
 
 nmap [unite]nb    <SID>(neobundle)
@@ -132,12 +130,6 @@ nnoremap <silent> <SID>(history-search)  :<C-u>Unite history/search<CR>
 "}}}
 
 nnoremap <silent> <SID>(help) :<C-u>Unite help<CR>
-
-" svn {{{
-nnoremap <silent> <SID>(svn-status) :<C-u>Unite svn/status<CR>
-nnoremap <silent> <SID>(svn-diff)   :<C-u>Unite -vertical -direction=topleft -auto-preview svn/diff<CR>
-nnoremap <silent> <SID>(svn-blame)  :<C-u>Unite -vertical -direction=topleft svn/blame:<C-r>%<CR>
-" }}}
 
 " git {{{
 nnoremap <silent> <SID>(giti-grep)         :<C-u>Unite giti/grep<CR>
