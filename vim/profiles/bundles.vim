@@ -141,7 +141,7 @@ NeoBundle 'kmnk/vim-unite-giti', {
 " }}}
 
 " my forked plugins {{{
-NeoBundle 'kmnk/sonictemplate-vim' " TODO not fork should extends
+NeoBundle 'kmnk/sonictemplate-vim' " TODO not fork should extends http://mattn.kaoriya.net/software/vim/20110728094347.htm
 " }}}
 
 call neobundle#end()

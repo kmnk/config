@@ -10,6 +10,7 @@ imap <C-h> <SID>(backspace)
 nmap <Leader>ev <SID>(edit-vimrc)
 nmap <Leader>eg <SID>(edit-gvimrc)
 
+nmap <Leader>nt <SID>(create-new-tab)
 nmap <Leader>mt <SID>(buffer-to-new-tab)
 
 " feel good repeat-substitute
@@ -59,6 +60,7 @@ if has('gui_running')
   set go=
 endif
 
+nnoremap <silent> <SID>(create-new-tab) :<C-u>tabnew<CR>
 " <Leader>mt move current buffer into a new tab.
 nnoremap <silent> <SID>(buffer-to-new-tab) :<C-u>call <SID>move_window_into_tab_page(0)<CR>
 " kana's useful tab function {{{
