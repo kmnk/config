@@ -121,6 +121,9 @@ NeoBundle 'OmniSharp/omnisharp-vim', {
 \   'unix' : 'git submodule update --init --recursive && cd server && xbuild',
 \ }
 \}
+NeoBundleLazy 'beyondmarc/hlsl.vim', {
+\   'autoload': {'filetypes': ['shader']}
+\ }
 NeoBundleLazy 'OrangeT/vim-csharp', {
 \   'autoload': {'filetypes': ['cs']}
 \ }
@@ -143,6 +146,9 @@ NeoBundle 'kmnk/vim-unite-giti', {
 " my forked plugins {{{
 NeoBundle 'kmnk/sonictemplate-vim' " TODO not fork should extends http://mattn.kaoriya.net/software/vim/20110728094347.htm
 " }}}
+
+" syntax {{{
+" }
 
 call neobundle#end()
 

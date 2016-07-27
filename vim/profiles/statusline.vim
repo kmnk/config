@@ -21,6 +21,11 @@ let g:lightline = {
 \   'active': ['tabnum', 'filename', 'modified'],
 \   'inactive': ['tabnum', 'filename', 'modified']
 \ },
+\ 'separator': { 'left': '⮀', 'right': '⮂' },
+\ 'subseparator': { 'left': '⮁', 'right': '⮃' },
+\ 'component': {
+\   'readonly': '%{&readonly?"⭤":""}',
+\ },
 \ 'component_function': {
 \   'filename': 'LightLineFileName'
 \ },

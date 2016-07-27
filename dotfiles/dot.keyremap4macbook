@@ -75,6 +75,9 @@
         <!-- right command -->
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::SHIFT_L, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, ModifierFlag::CONTROL_L, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
+        <!-- brackets as ergodox -->
+        <autogen>--KeyToKey-- KeyCode::CONTROL_R, KeyCode::JIS_BRACKET_RIGHT</autogen>
+        <autogen>--KeyToKey-- KeyCode::F13, KeyCode::JIS_BRACKET_LEFT</autogen>
       </item>
       <item>
         <name>SemiColon</name>
