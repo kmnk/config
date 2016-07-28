@@ -122,7 +122,7 @@ NeoBundle 'OmniSharp/omnisharp-vim', {
 \ }
 \}
 NeoBundleLazy 'beyondmarc/hlsl.vim', {
-\   'autoload': {'filetypes': ['shader']}
+\   'autoload': {'filetypes': ['hlsl']}
 \ }
 NeoBundleLazy 'OrangeT/vim-csharp', {
 \   'autoload': {'filetypes': ['cs']}
