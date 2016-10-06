@@ -142,7 +142,7 @@ repo = 'tacroe/unite-mark'
 repo = 'haruyama/vim-matchopen'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
+repo = 'altercation/nvim-colors-solarized'
 
 [[plugins]]
 repo = 'chrisbra/csv.vim'
