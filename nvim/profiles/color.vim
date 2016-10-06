@@ -1,5 +1,7 @@
 set t_Co=256
 syntax enable
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:solarized_termcolors= 256
 let g:solarized_termtrans = 1
 let g:solarized_degrade   = 0
