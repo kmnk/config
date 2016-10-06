@@ -3,9 +3,11 @@ PATH=$HOME/local/bin:/usr/local/bin:$PATH
 
 GOPATH=$HOME/local/go
 PATH=$GOPATH/bin:$PATH
+XDG_CONFIG_HOME=$HOME/.config
 
 export PATH
 export GOPATH
+export XDG_CONFIG_HOME
 
 # 初期設定
 local RED=$'%{\e[1;31m%}'

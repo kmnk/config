@@ -1,0 +1,183 @@
+# Shougo's plugins (https://github.com/Shougo) {{{
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Shougo/vimshell'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+repo = 'Shougo/unite-help'
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+# }}}
+
+# kana's plugins (https://github.com/kana) {{{
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-surround'
+
+[[plugins]]
+repo = 'kana/vim-grex'
+
+[[plugins]]
+repo = 'kana/vim-smartchr'
+
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'kana/vim-submode'
+# }}}
+
+# thinca's plugins (https://github.com/thinca) {{{
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+
+[[plugins]]
+repo = 'thinca/vim-localrc'
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+# }}}
+
+# mattn's plugins (https://github.com/mattn) {{{
+[[plugins]]
+repo = 'mattn/learn-vimscript'
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'mattn/wwwrenderer-vim'
+# }}}
+
+# tyru's plugins (https://github.com/tyru) {{{
+[[plugins]]
+repo = 'tyru/vim-altercmd'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+# }}}
+
+# h1mesuke's plugins (https://github.com/h1mesuke) {{{
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'h1mesuke/vim-alignta'
+
+[[plugins]]
+repo = 'h1mesuke/textobj-wiw'
+depends = ['kana/vim-textobj-user']
+# }}}
+
+# vim-scripts repositories (https://github.com/vim-scripts) {{{
+[[plugins]]
+repo = 'vim-scripts/Javascript-Indentation'
+depends = ['vim-scripts/IndentAnything']
+
+[[plugins]]
+repo = 'vim-scripts/VimClojure'
+
+[[plugins]]
+repo = 'vim-scripts/confluencewiki.vim'
+# }}}
+
+# others {{{
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vital-VCS-Git'
+
+[[plugins]]
+repo = 'tpope/vim-abolish'
+
+[[plugins]]
+repo = 'tacroe/unite-mark'
+
+[[plugins]]
+repo = 'haruyama/vim-matchopen'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'chrisbra/csv.vim'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'OmniSharp/omnisharp-vim'
+build = 'git submodule update --init --recursive && cd server && xbuild'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+# }}}
+
+# my plugins {{{
+repo = 'kmnk/vim-unite-giti'
+# }}}
+
+# my forked plugins {{{
+[[plugins]]
+repo = 'kmnk/sonictemplate-vim' # TODO not fork should extends http://mattn.kaoriya.net/software/vim/20110728094347.htm
+# }}}

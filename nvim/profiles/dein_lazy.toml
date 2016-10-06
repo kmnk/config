@@ -1,0 +1,11 @@
+[[plugins]]
+repo = 'beyondmarc/hlsl.vim'
+on_ft = ['hlsl']
+
+[[plugins]]
+repo = 'OrangeT/vim-csharp'
+on_ft = ['cs']
+
+[[plugins]]
+repo      = 'thinca/vim-prettyprint'
+on_cmd    = ['PP', 'PrettyPrint']

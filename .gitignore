@@ -2,5 +2,7 @@ doc/tags
 doc/tags-ja
 vim/profiles/tmp.vim
 vim/profiles/local*
+nvim/profiles/tmp.vim
+nvim/profiles/local*
 *~
 tags
