@@ -85,69 +85,6 @@ if globpath(&rtp, 'plugin/vimfiler.vim') != ''
 endif
 "}}}
 
-" vimshell settings {{{
-if globpath(&rtp, 'plugin/vimshell.vim') != ''
-  nmap <Leader>;  <SID>(pop-vimshell)
-  nmap <Space>;   <SID>(launch-vimshell)
-  nmap <Leader>c; <SID>(pop-vimshell-on-current-buffer-dir)
-  nmap <Space>c;  <SID>(launch-vimshell-on-current-buffer-dir)
-  nnoremap <expr> <SID>(pop-vimshell)    ':<C-u>VimShellPop ' . getcwd() . '<CR>'
-  nnoremap <expr> <SID>(launch-vimshell) ':<C-u>VimShell '    . getcwd() . '<CR>'
-  nnoremap <expr> <SID>(pop-vimshell-on-current-buffer-dir)    ':<C-u>VimShellPop ' . expand('%:h') . '<CR>'
-  nnoremap <expr> <SID>(launch-vimshell-on-current-buffer-dir) ':<C-u>VimShell '    . expand('%:h') . '<CR>'
-  let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-  let g:vimshell_enable_smart_case = 1
-
-  if has('win32') || has('win64') 
-    " Display user name on Windows.
-    let g:vimshell_prompt = $USERNAME."% "
-  else
-    " Display user name on Linux.
-    let g:vimshell_prompt = $USER."% "
-
-    call vimshell#set_execute_file('bmp,jpg,png,gif', 'gexe eog')
-    call vimshell#set_execute_file('mp3,m4a,ogg', 'gexe amarok')
-    let g:vimshell_execute_file_list['zip'] = 'zipinfo'
-    call vimshell#set_execute_file('tgz,gz', 'gzcat')
-    call vimshell#set_execute_file('tbz,bz2', 'bzcat')
-  endif
-
-  autocmd VimrcAutoCmd FileType vimshell
-\   call vimshell#altercmd#define('g', 'git')
-\|  nnoremap <buffer> : :
-\|  call vimshell#altercmd#define('i', 'iexe')
-\|  call vimshell#altercmd#define('l', 'll')
-\|  call vimshell#altercmd#define('ll', 'ls -l')
-\|  call vimshell#altercmd#define('vi', 'vim')
-\|  call vimshell#hook#set('chpwd', ['My_chpwd'])
-\|  call vimshell#hook#set('emptycmd', ['My_emptycmd'])
-\|  call vimshell#hook#set('preprompt', ['My_preprompt'])
-\|  call vimshell#hook#set('preexec', ['My_preexec'])
-\|  set nonumber
-
-  function! My_chpwd(args, context)
-    call vimshell#execute('echo "chpwd"')
-  endfunction
-  function! My_emptycmd(cmdline, context)
-    call vimshell#execute('echo "emptycmd"')
-    return a:cmdline
-  endfunction
-  function! My_preprompt(args, context)
-    call vimshell#execute('echo "preprompt"')
-  endfunction
-  function! My_preexec(cmdline, context)
-    call vimshell#execute('echo "preexec"')
-
-    let l:args = vimproc#parser#split_args(a:cmdline)
-    if len(l:args) > 0 && l:args[0] ==# 'diff'
-      call vimshell#set_syntax('diff')
-    endif
-
-    return a:cmdline
-  endfunction
-endif
-"}}}
-
 " quickrun settings {{{
 if globpath(&rtp, 'plugin/quickrun.vim') != ''
   for [key, com] in items({

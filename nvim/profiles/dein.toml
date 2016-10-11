@@ -18,9 +18,6 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
-repo = 'Shougo/vimshell'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_post_update = '''
   if dein#util#_is_windows()

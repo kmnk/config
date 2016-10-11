@@ -1,5 +1,16 @@
 " maps
 
+" terminal
+tnoremap <silent> <C-t><C-t> <C-\><C-n>
+nmap <Leader>;  <SID>(pop-terminal)
+nmap <Space>;   <SID>(launch-terminal)
+nmap <Leader>c; <SID>(pop-terminal-on-current-buffer-dir)
+nmap <Space>c;  <SID>(launch-terminal-on-current-buffer-dir)
+nnoremap <expr> <SID>(pop-terminal)                          ':<C-u>new<CR>:set winheight=10<CR>:<C-u>terminal<CR>cd ' . getcwd() .      '<CR><C-l>'
+nnoremap <expr> <SID>(launch-terminal)                                                         ':<C-u>terminal<CR>cd ' . getcwd() .      '<CR><C-l>'
+nnoremap <expr> <SID>(pop-terminal-on-current-buffer-dir)    ':<C-u>new<CR>:set winheight=10<CR>:<C-u>terminal<CR>cd ' . expnad('%:h') . '<CR><C-l>'
+nnoremap <expr> <SID>(launch-terminal-on-current-buffer-dir)                                   ':<C-u>terminal<CR>cd ' . expnad('%:h') . '<CR><C-l>'
+
 " move buffer
 nmap [b <SID>(move-buffer-prev)
 nmap ]b <SID>(move-buffer-next)
