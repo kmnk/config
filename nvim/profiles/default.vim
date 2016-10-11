@@ -98,7 +98,7 @@ set omnifunc+=
 "}}}
 
 " open popup in always
-set completeopt=menuone,preview
+set completeopt=menuone
 " completion targets
 set complete=.,w,b,u,t,i
 

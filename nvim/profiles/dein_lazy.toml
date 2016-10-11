@@ -3,7 +3,7 @@ repo = 'beyondmarc/hlsl.vim'
 on_ft = ['hlsl']
 
 [[plugins]]
-repo = 'OrangeT/vim-csharp'
+repo = 'kmnk/vim-csharp'
 on_ft = ['cs']
 
 [[plugins]]
