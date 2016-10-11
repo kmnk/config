@@ -2,6 +2,7 @@
 
 " terminal
 tnoremap <silent> <C-t><C-t> <C-\><C-n>
+tnoremap <silent> qq <C-\><C-n>:q<CR>
 nmap <Leader>;  <SID>(pop-terminal)
 nmap <Space>;   <SID>(launch-terminal)
 nmap <Leader>c; <SID>(pop-terminal-on-current-buffer-dir)
