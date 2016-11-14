@@ -59,7 +59,6 @@ esac
 setopt complete_aliases # aliased ls needs if
 
 # vim！
-bindkey -v
 alias -s txt=vim
 export SVN_EDITOR=vim
 export GIT_EDITOR=vim
