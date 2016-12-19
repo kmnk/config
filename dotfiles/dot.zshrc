@@ -59,9 +59,9 @@ esac
 setopt complete_aliases # aliased ls needs if
 
 # vim！
-alias -s txt=vim
-export SVN_EDITOR=vim
-export GIT_EDITOR=vim
+alias -s txt=nvim
+export SVN_EDITOR=nvim
+export GIT_EDITOR=nvim
 
 # コマンド履歴
 HISTFILE=~/.zsh_history

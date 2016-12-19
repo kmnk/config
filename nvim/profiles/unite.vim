@@ -65,9 +65,6 @@ nmap [unite]r     <SID>(register)
 nmap [unite]h:    <SID>(history-command)
 nmap [unite]h/    <SID>(history-search)
 
-nmap <C-h> <SID>(help)
-nmap <BS> <SID>(help)
-
 " giti maps {{{
 nmap [unite]gg    <SID>(giti-grep)
 nmap [unite]gst   <SID>(git-status)
@@ -128,8 +125,6 @@ nnoremap <silent> <SID>(register) :<C-u>Unite register<CR>
 nnoremap <silent> <SID>(history-command) :<C-u>Unite history/command<CR>
 nnoremap <silent> <SID>(history-search)  :<C-u>Unite history/search<CR>
 "}}}
-
-nnoremap <silent> <SID>(help) :<C-u>Unite help<CR>
 
 " git {{{
 nnoremap <silent> <SID>(giti-grep)         :<C-u>Unite giti/grep<CR>
