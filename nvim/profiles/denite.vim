@@ -31,7 +31,7 @@ call denite#custom#map(
 \)
 call denite#custom#map(
 \ 'normal',
-\ 'a',
+\ 'u',
 \ '<denite:do_action:undo>',
 \ 'noremap'
 \)
