@@ -22,3 +22,22 @@ call denite#custom#map(
 \ '<denite:move_to_previous_line>',
 \ 'noremap'
 \)
+
+call denite#custom#map(
+\ 'normal',
+\ 'a',
+\ '<denite:do_action:add>',
+\ 'noremap'
+\)
+call denite#custom#map(
+\ 'normal',
+\ 'a',
+\ '<denite:do_action:undo>',
+\ 'noremap'
+\)
+call denite#custom#map(
+\ 'normal',
+\ 'd',
+\ '<denite:do_action:delete>',
+\ 'noremap'
+\)
