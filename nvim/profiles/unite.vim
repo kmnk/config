@@ -67,7 +67,7 @@ nmap [unite]h/    <SID>(history-search)
 
 " giti maps {{{
 nmap [unite]gg    <SID>(giti-grep)
-nmap [unite]gst   <SID>(git-status)
+"nmap [unite]gst   <SID>(git-status)
 nmap [unite]gb    <SID>(git-branch)
 nmap [unite]gBa   <SID>(git-branch_all)
 nmap [unite]gBr   <SID>(git-branch_recent)
