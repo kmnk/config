@@ -7,6 +7,7 @@ call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'nor
 call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>', 'noremap')
 call denite#custom#map('insert', 'kk', '<denite:enter_mode:normal>', 'noremap')
+call denite#custom#map('insert', 'qq', '<denite:quit>', 'noremap')
 
 call denite#custom#map('normal', 'a', '<denite:do_action:add>', 'noremap')
 call denite#custom#map('normal', 'u', '<denite:do_action:unstage>', 'noremap')
