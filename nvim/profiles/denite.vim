@@ -11,6 +11,7 @@ call denite#custom#map('insert', 'qq', '<denite:quit>', 'noremap')
 
 call denite#custom#map('normal', 'a', '<denite:do_action:add>', 'noremap')
 call denite#custom#map('normal', 'u', '<denite:do_action:unstage>', 'noremap')
+call denite#custom#map('normal', 'y', '<denite:do_action:yank>', 'noremap')
 
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)

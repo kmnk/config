@@ -176,7 +176,6 @@ repo = 'kmnk/vim-unite-giti'
 
 [[plugins]]
 repo = 'kmnk/gitn'
-rev = 'feature/add-sample-source/devel'
 # }}}
 
 # my forked plugins {{{
