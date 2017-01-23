@@ -72,9 +72,9 @@ nmap [unite]gb    <SID>(git-branch)
 nmap [unite]gBa   <SID>(git-branch_all)
 nmap [unite]gBr   <SID>(git-branch_recent)
 nmap [unite]gc    <SID>(git-config)
-nmap [unite]gl    <SID>(git-log)
+"nmap [unite]gl    <SID>(git-log)
 nmap [unite]gr    <SID>(git-remote)
-nmap [unite]gL    <SID>(git-log-this-file)
+"nmap [unite]gL    <SID>(git-log-this-file)
 " }}}
 
 nmap [unite]s     <SID>(source)
