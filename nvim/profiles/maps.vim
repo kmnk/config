@@ -1,7 +1,7 @@
 " maps
 
 " terminal
-tnoremap <silent> <C-t><C-t> <C-\><C-n>
+tnoremap <silent> <C-q><C-q> <C-\><C-n>
 nmap <Leader>;  <SID>(pop-terminal)
 nmap <Space>;   <SID>(launch-terminal)
 nmap <Leader>c; <SID>(pop-terminal-on-current-buffer-dir)
