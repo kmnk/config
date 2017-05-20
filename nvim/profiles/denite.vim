@@ -20,6 +20,6 @@ nmap [unite]gl   <SID>(git-log)
 nmap [unite]gL   <SID>(git-log-this-file)
 
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
-nnoremap <silent> <SID>(git-status) :<C-u>Denite gitn:status<CR>
-nnoremap <silent> <SID>(git-log) :<C-u>Denite gitn:log<CR>
-nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Denite gitn:log:' . expand('%:p') . '<CR>'
+nnoremap <silent> <SID>(git-status) :<C-u>Denite gitn_status<CR>
+nnoremap <silent> <SID>(git-log) :<C-u>Denite gitn_log<CR>
+nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'

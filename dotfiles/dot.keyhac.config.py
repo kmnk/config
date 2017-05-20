@@ -54,3 +54,6 @@ def configure(keymap):
     g["LCtrl-LCmd-j"] = "Down"
     g["LCtrl-LCmd-k"] = "Up"
     g["LCtrl-LCmd-l"] = "Right"
+    g["LCtrl-LCmd-Comma"] = "Back"
+    g["LCtrl-LCmd-Back"] = "Delete"
+    g["LCtrl-h"] = "Back"
