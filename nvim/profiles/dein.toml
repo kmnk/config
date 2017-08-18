@@ -37,6 +37,9 @@ repo = 'Shougo/unite-help'
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
+
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
 # }}}
 
 # kana's plugins (https://github.com/kana) {{{
