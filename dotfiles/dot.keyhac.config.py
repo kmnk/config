@@ -46,6 +46,8 @@ def configure(keymap):
     g["Shift-104"] = "Shift-94"         # S-Kana -> _
     g["Ctrl-RCmd"] = "Shift-Minus"      # S-RCmd -> =
     g["Shift-RCmd"] = "Shift-Semicolon" # S-RCmd -> +
+    g["Ctrl-RAlt"] = "Shift-Minus"      # S-RCmd -> =
+    g["Shift-RAlt"] = "Shift-Semicolon" # S-RCmd -> +
 
     # for me
     g["Semicolon"] = "Enter"
