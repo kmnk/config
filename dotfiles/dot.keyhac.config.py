@@ -40,10 +40,10 @@ def configure(keymap):
     # for human
     g["Ctrl-Slash"] = "93"              # C-/ -> \
     g["Shift-Space"] = "Shift-93"       # C-Space -> |
-    g["Ctrl-102"] = "Plus"              # S-Eisuu -> ^
-    g["Shift-102"] = "Shift-Plus"       # S-Eisuu -> ~
-    g["Ctrl-104"] = "Minus"             # S-Kana -> -
-    g["Shift-104"] = "Shift-94"         # S-Kana -> _
+    g["Ctrl-(102)"] = "Plus"              # S-Eisuu -> ^
+    g["Shift-(102)"] = "Shift-Plus"       # S-Eisuu -> ~
+    g["Ctrl-(104)"] = "Minus"             # S-Kana -> -
+    g["Shift-(104)"] = "Shift-94"         # S-Kana -> _
     g["Ctrl-RCmd"] = "Shift-Minus"      # S-RCmd -> =
     g["Shift-RCmd"] = "Shift-Semicolon" # S-RCmd -> +
     g["Ctrl-RAlt"] = "Shift-Minus"      # S-RCmd -> =
@@ -52,10 +52,11 @@ def configure(keymap):
     # for me
     g["Semicolon"] = "Enter"
     g["O-LCtrl"] = "Escape"
-    g["LCtrl-LCmd-h"] = "Left"
-    g["LCtrl-LCmd-j"] = "Down"
-    g["LCtrl-LCmd-k"] = "Up"
-    g["LCtrl-LCmd-l"] = "Right"
+    g["LCtrl-LCmd-H"] = "Left"
+    g["LCtrl-LCmd-J"] = "Down"
+    g["LCtrl-LCmd-K"] = "Up"
+    g["LCtrl-LCmd-L"] = "Right"
     g["LCtrl-LCmd-Comma"] = "Back"
     g["LCtrl-LCmd-Back"] = "Delete"
-    g["LCtrl-h"] = "Back"
+    g["LCtrl-LCmd-Period"] = "Delete"
+    g["LCtrl-H"] = "Back"
