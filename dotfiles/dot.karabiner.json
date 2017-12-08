@@ -290,7 +290,7 @@
             ]
         },
         {
-            "description": "Left Control to Enter",
+            "description": "Left Control to Escape",
             "manipulators": [
                 {
                     "type": "basic",
