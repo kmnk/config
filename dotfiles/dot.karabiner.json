@@ -352,6 +352,27 @@
                     "to": [ { "key_code": "delete_or_backspace" } ]
                 }
             ]
+        },
+        {
+            "description": "Left Control+Command + ,&. to Back&Delete",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "comma",
+                        "modifiers": { "mandatory": [ "left_control", "left_command" ] }
+                    },
+                    "to": [ { "key_code": "delete_or_backspace" } ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "period",
+                        "modifiers": { "mandatory": [ "left_control", "left_command" ] }
+                    },
+                    "to": [ { "key_code": "delete_or_backspace" } ]
+                }
+            ]
         }
     ]
 }
