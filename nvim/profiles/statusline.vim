@@ -37,6 +37,20 @@ let g:lightline = {
 \ },
 \}
 
+let g:lightline.mode_map = {
+\ 'n' : 'N',
+\ 'i' : 'I',
+\ 'R' : 'R',
+\ 'v' : 'V',
+\ 'V' : 'V-L',
+\ "\<C-v>": 'V-B',
+\ 'c' : 'C',
+\ 's' : 'S',
+\ 'S' : 'S-L',
+\ "\<C-s>": 'S-B',
+\ 't': 'T',
+\ }
+
 function! LightLineFileName()
   return &ft == 'vimfiler'   ? 'VimFiler'
 \      : &ft == 'vimshell'   ? 'VimShell'
