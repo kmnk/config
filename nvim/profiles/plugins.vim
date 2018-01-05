@@ -208,6 +208,12 @@ map <C-k> [ale]
 " エラー行にジャンプ
 nmap <silent> [ale]<C-P> <Plug>(ale_previous)
 nmap <silent> [ale]<C-N> <Plug>(ale_next)
+
+" Compile C# programs with the Unity engine DLL file on Mac.
+let g:ale_cs_mcsc_assemblies = [
+\ '/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll',
+\ '/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll',
+\]
 " }}}
 
 " gen_tags {{{

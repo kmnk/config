@@ -152,7 +152,8 @@ repo = 'kchmck/vim-coffee-script'
 
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
-build = 'git submodule update --init --recursive && cd server && xbuild'
+on_ft = ['cs']
+build = 'git submodule update --init --recursive && xbuild server/OmniSharp.sln'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
