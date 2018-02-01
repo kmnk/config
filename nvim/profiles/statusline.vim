@@ -52,9 +52,8 @@ let g:lightline.mode_map = {
 \ }
 
 function! LightLineFileName()
-  return &ft == 'vimfiler'   ? 'VimFiler'
-\      : &ft == 'vimshell'   ? 'VimShell'
-\      : '' != expand('%:t') ? ( winwidth(0) > 90 ? expand('%') : expand('%:t') )
+  return &ft == 'vimfiler'   ? 'Filer'
+\      : '' != expand('%:t') ? ( winwidth(0) > 80 ? expand('%') : expand('%:t') )
 \      :                       '[No Name]'
 endfunction
 

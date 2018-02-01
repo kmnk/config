@@ -178,6 +178,9 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
 # }}}
 
 # my plugins {{{
