@@ -40,6 +40,9 @@ repo = 'Shougo/unite-outline'
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
+
+[[plugins]]
+repo = 'Shougo/tabpagebuffer.vim'
 # }}}
 
 # kana's plugins (https://github.com/kana) {{{
@@ -91,6 +94,9 @@ repo = 'mattn/webapi-vim'
 
 [[plugins]]
 repo = 'mattn/wwwrenderer-vim'
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
 # }}}
 
 # tyru's plugins (https://github.com/tyru) {{{
@@ -192,6 +198,4 @@ repo = 'kmnk/gitn'
 # }}}
 
 # my forked plugins {{{
-[[plugins]]
-repo = 'kmnk/sonictemplate-vim' # TODO not fork should extends http://mattn.kaoriya.net/software/vim/20110728094347.htm
 # }}}
