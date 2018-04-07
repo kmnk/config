@@ -91,6 +91,9 @@ repo = 'mattn/webapi-vim'
 
 [[plugins]]
 repo = 'mattn/wwwrenderer-vim'
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
 # }}}
 
 # tyru's plugins (https://github.com/tyru) {{{
@@ -189,9 +192,4 @@ repo = 'kmnk/vim-unite-giti'
 
 [[plugins]]
 repo = 'kmnk/gitn'
-# }}}
-
-# my forked plugins {{{
-[[plugins]]
-repo = 'kmnk/sonictemplate-vim' # TODO not fork should extends http://mattn.kaoriya.net/software/vim/20110728094347.htm
 # }}}
