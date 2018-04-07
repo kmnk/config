@@ -195,4 +195,5 @@ repo = 'kmnk/gitn'
 
 [[plugins]]
 repo = 'kmnk/sonictemplate-vim-denite-extension'
+depends = ['mattn/sonictemplate-vim']
 # }}}
