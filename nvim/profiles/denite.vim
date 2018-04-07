@@ -15,11 +15,13 @@ call denite#custom#map('normal', 'yy', '<denite:do_action:yank>', 'noremap')
 
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
-nmap [unite]gst   <SID>(git-status)
-nmap [unite]gl   <SID>(git-log)
-nmap [unite]gL   <SID>(git-log-this-file)
+nmap [unite]gst <SID>(git-status)
+nmap [unite]gl  <SID>(git-log)
+nmap [unite]gL  <SID>(git-log-this-file)
+nmap [unite]t   <SID>(sonictemplate)
 
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 nnoremap <silent> <SID>(git-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(git-log) :<C-u>Denite gitn_log<CR>
 nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
+nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
