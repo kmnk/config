@@ -84,8 +84,6 @@ nmap [unite]Nb    <SID>(neobundle-update)
 nmap [unite]nB    <SID>(neobundle-search)
 
 nmap [unite]frn   <SID>(immediately-rename)
-
-nmap [unite]t <SID>(sonictemplate)
 "}}}
 
 " mapped commands {{{
@@ -149,10 +147,6 @@ nnoremap <silent> <SID>(source) :<C-u>Unite source<CR>
 nnoremap <silent> <SID>(neobundle)        :<C-u>Unite neobundle<CR>
 nnoremap <silent> <SID>(neobundle-update) :<C-u>Unite neobundle/install:!<CR>
 nnoremap <silent> <SID>(neobundle-search) :<C-u>Unite neobundle/search<CR>
-" }}}
-
-" sonictemplate {{{
-nnoremap <silent> <SID>(sonictemplate) :<C-u>Unite sonictemplate<CR>
 " }}}
 
 nnoremap <silent> <SID>(color) :<C-u>Unite -auto-preview colorscheme<CR>
