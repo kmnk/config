@@ -195,5 +195,8 @@ repo = 'kmnk/vim-unite-giti'
 
 [[plugins]]
 repo = 'kmnk/gitn'
+
+[[plugins]]
+repo = 'kmnk/sonictemplate-vim-denite-extension'
 # }}}
 
