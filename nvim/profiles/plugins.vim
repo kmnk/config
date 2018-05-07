@@ -158,7 +158,13 @@ call submode#map('tab', 'n', '', 'T', 'gT')
 " }}}
 
 " Omnisharp {{{
+filetype plugin on
 let g:OmniSharp_selector_ui = 'unite'
+let g:OmniSharp_server_path = '/Users/CJ0061/local/omnisharp/omnisharp/OmniSharp.exe'
+let g:OmniSharp_server_use_mono = 1
+let g:OmniSharp_start_server = 1
+let g:OmniSharp_stop_server = 2
+let g:OmniSharp_host = "http://localhost:2000"
 nnoremap <silent> <buffer> ma :OmniSharpAddToProject<CR>
 nnoremap <silent> <buffer> mb :OmniSharpBuild<CR>
 nnoremap <silent> <buffer> mc :OmniSharpFindSyntaxErrors<CR>
