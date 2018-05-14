@@ -1,9 +1,9 @@
 # Makefile
-.PHONY: linux mac windows vim-setup install update clean
+.PHONY: linux mac windows install update clean
 
-linux: setup vim-setup vim-make-vimproc-linux
+linux: setup
 
-mac: setup vim-setup vim-make-vimproc-mac setup-vimperatorrc
+mac: setup
 
 windows: vim-setup setup-vimperatorrc
 
