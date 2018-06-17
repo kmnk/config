@@ -157,27 +157,6 @@ call submode#map('tab', 'n', '', 't', 'gt')
 call submode#map('tab', 'n', '', 'T', 'gT')
 " }}}
 
-" Omnisharp {{{
-filetype plugin on
-let g:OmniSharp_selector_ui = 'unite'
-let g:OmniSharp_server_path = '/Users/CJ0061/local/omnisharp/omnisharp/OmniSharp.exe'
-let g:OmniSharp_server_use_mono = 1
-let g:OmniSharp_start_server = 1
-let g:OmniSharp_stop_server = 2
-let g:OmniSharp_host = "http://localhost:2000"
-nnoremap <silent> <buffer> ma :OmniSharpAddToProject<CR>
-nnoremap <silent> <buffer> mb :OmniSharpBuild<CR>
-nnoremap <silent> <buffer> mc :OmniSharpFindSyntaxErrors<CR>
-nnoremap <silent> <buffer> mf :OmniSharpCodeFormat<CR>
-nnoremap <silent> <buffer> mj :OmniSharpGotoDefinition<CR>
-nnoremap <silent> <buffer> <C-w>mj <C-w>s:OmniSharpGotoDefinition<CR>
-nnoremap <silent> <buffer> mi :OmniSharpFindImplementations<CR>
-nnoremap <silent> <buffer> mr :OmniSharpRename<CR>
-nnoremap <silent> <buffer> mt :OmniSharpTypeLookup<CR>
-nnoremap <silent> <buffer> mu :OmniSharpFindUsages<CR>
-nnoremap <silent> <buffer> mx :OmniSharpGetCodeActions<CR>
-" }}}
-
 " ALE {{{
 " エラー行に表示するマーク
 let g:ale_sign_error = '⨉'
@@ -235,6 +214,10 @@ let g:jedi#smart_auto_mappings = 0
 let g:jedi#completions_enabled = 0
 " コード参照のキーバインドを登録
 let g:jedi#goto_command = "<Leader>d"
+" }}}
+
+" fakeclip {{{
+let g:fakeclip_terminal_multiplexer_type = "tmux"
 " }}}
 
 " vim: expandtab softtabstop=2 shiftwidth=2
