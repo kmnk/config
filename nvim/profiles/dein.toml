@@ -19,6 +19,7 @@ repo = 'Shougo/vimfiler'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
+build = 'make'
 hook_post_update = '''
   if dein#util#_is_windows()
     let cmd = 'tools\\update-dll-mingw'

@@ -31,8 +31,8 @@ nmap [unite]t   <SID>(sonictemplate)
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
 nnoremap <silent> <SID>(buffer) :<C-u>Denite buffer<CR>
-nnoremap <silent><expr> <SID>(current_dir_file) ':<C-u>Denite -input=' . expand('%:p:h') . ' file file/rec file:new<CR>'
-nnoremap <silent><expr> <SID>(directory_rec) ':<C-u>Denite -input=' . expand('%:p:h') . ' directory_rec<CR>'
+nnoremap <silent><expr> <SID>(current_dir_file) ':<C-u>Denite file::"' . expand('%:p:h') . '" file/rec:"' . expand('%:p:h') . '" file:new:"' . expand('%:p:h') . '"<CR>'
+nnoremap <silent><expr> <SID>(directory_rec) ':<C-u>Denite directory_rec:"' . expand('%:p:h') . '"<CR>'
 nnoremap <silent> <SID>(file) :<C-u>Denite file/old file file_mru file/rec<CR>
 nnoremap <silent> <SID>(grep) :<C-u>Denite grep<CR>
 nnoremap <silent> <SID>(register) :<C-u>Denite register<CR>
