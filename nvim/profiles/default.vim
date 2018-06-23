@@ -111,7 +111,7 @@ set fileformat=unix
 
 " unnamed clipboard
 set clipboard&
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 "
 set foldmethod=marker
