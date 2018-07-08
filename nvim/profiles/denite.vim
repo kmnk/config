@@ -17,7 +17,8 @@ nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
 
 nmap [unite]b <SID>(buffer)
-nmap [unite]c <SID>(current_dir_file)
+nmap [unite]c <SID>(current_buffer_dir_file)
+nmap [unite]C <SID>(current_dir_file)
 nmap [unite]d <SID>(directory_rec)
 nmap [unite]f <SID>(file)
 nmap [unite]g <SID>(grep)
@@ -31,7 +32,8 @@ nmap [unite]t   <SID>(sonictemplate)
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
 nnoremap <silent> <SID>(buffer) :<C-u>Denite buffer<CR>
-nnoremap <silent><expr> <SID>(current_dir_file) ':<C-u>Denite file::"' . expand('%:p:h') . '" file/rec:"' . expand('%:p:h') . '" file:new:"' . expand('%:p:h') . '"<CR>'
+nnoremap <silent><expr> <SID>(current_dir_file) ':<C-u>Denite file file/rec file:new<CR>'
+nnoremap <silent><expr> <SID>(current_buffer_dir_file) ':<C-u>Denite file::"' . expand('%:p:h') . '" file::"' . expand('%:p:h:h') . '" file/rec:"' . expand('%:p:h') . '" file:new:"' . expand('%:p:h') . '"<CR>'
 nnoremap <silent><expr> <SID>(directory_rec) ':<C-u>Denite directory_rec:"' . expand('%:p:h') . '"<CR>'
 nnoremap <silent> <SID>(file) :<C-u>Denite file/old file file_mru file/rec<CR>
 nnoremap <silent> <SID>(grep) :<C-u>Denite grep<CR>

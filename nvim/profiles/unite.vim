@@ -38,7 +38,7 @@ function! s:unite_settings()"{{{
 endfunction"}}}
 
 " old
-nmap [unite]C <SID>(buffer-dir)
+nmap [unite]B <SID>(buffer-dir)
 nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files -prompt=buffer_dir> file file_mru buffer_tab file/new<CR>
 
 " maps {{{
