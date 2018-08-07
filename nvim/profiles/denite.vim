@@ -29,6 +29,9 @@ nmap [unite]gl  <SID>(git-log)
 nmap [unite]gL  <SID>(git-log-this-file)
 nmap [unite]t   <SID>(sonictemplate)
 
+nmap [unite]dd    <SID>(bookmark)
+nmap [unite]da    <SID>(bookmark-add)
+
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
 nnoremap <silent> <SID>(buffer) :<C-u>Denite buffer<CR>
@@ -43,3 +46,6 @@ nnoremap <silent> <SID>(git-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(git-log) :<C-u>Denite gitn_log<CR>
 nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
 nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
+
+nnoremap <silent> <SID>(bookmark) :<C-u>Denite -default-action=cd dirmark<CR>
+nnoremap <silent><expr> <SID>(bookmark-add) ':<C-u>Denite dirmark/add:"' . expand('%:p:h') . '"<CR>'

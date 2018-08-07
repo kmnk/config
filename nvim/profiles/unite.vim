@@ -43,7 +43,7 @@ nnoremap <silent> <SID>(buffer-dir) :<C-u>UniteWithBufferDir -buffer-name=files 
 
 " maps {{{
 
-nmap [unite]dd    <SID>(bookmark)
+nmap [unite]DD    <SID>(bookmark)
 
 nmap tt           <SID>(tab)
 nmap TT           <SID>(tab!)
