@@ -60,6 +60,7 @@
     "default": "google",
     "engines": {
       "google": "https://google.com/search?q={}",
+      "duck": "https://duckduckgo.com/?q={}",
       "tw": "https://twitter.com/search?q={}",
       "wikipedia": "https://en.wikipedia.org/w/index.php?search={}",
       "alc": "https://eow.alc.co.jp/search?q={}",
