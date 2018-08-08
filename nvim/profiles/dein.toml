@@ -197,5 +197,8 @@ repo = 'kmnk/gitn'
 
 [[plugins]]
 repo = 'kmnk/sonictemplate-vim-denite-extension'
+
+[[plugins]]
+repo = 'kmnk/denite-dirmark'
 # }}}
 
