@@ -18,6 +18,10 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['roxma/nvim-yarp', 'roxma/vim-hug-neovim-rpc']
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 hook_post_update = '''
