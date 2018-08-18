@@ -55,34 +55,34 @@ endif
 "}}}
 
 " vimfiler settings {{{
-if globpath(&rtp, 'plugin/vimfiler.vim') != ''
-  nmap <Leader>: <SID>(pop-vimfiler)
-  nmap <Space>:  <SID>(launch-vimfiler)
-  nmap <Leader>c: <SID>(pop-vimfiler-on-current-buffer-dir)
-  nmap <Space>c:  <SID>(launch-vimfiler-on-current-buffer-dir)
-  nnoremap <expr> <SID>(pop-vimfiler)    ':<C-u>VimFilerSimple ' . getcwd() . '<CR>'
-  nnoremap <expr> <SID>(launch-vimfiler) ':<C-u>VimFiler '       . getcwd() . '<CR>'
-  nnoremap <expr> <SID>(pop-vimfiler-on-current-buffer-dir)    ':<C-u>VimFilerSimple ' . expand('%:h') . '<CR>'
-  nnoremap <expr> <SID>(launch-vimfiler-on-current-buffer-dir) ':<C-u>VimFiler '    . expand('%:h') . '<CR>'
-  call vimfiler#set_execute_file('vim', 'vim')
-  call vimfiler#set_execute_file('txt', 'vim')
-  call vimfiler#set_execute_file('c', 'vim')
-
-  let g:vimfiler_edit_command = 'edit'
-  let g:vimfiler_as_default_explorer = 1
-
-  let g:vimfiler_external_copy_directory_command = 'cp -r $src $dest'
-  let g:vimfiler_external_copy_file_command = 'cp $src $dest'
-  let g:vimfiler_external_delete_command = 'rm -r $srcs'
-  let g:vimfiler_external_move_command = 'mv $srcs $dest'
-
-  " Like Textmate icons.
-  let g:vimfiler_tree_leaf_icon = ' '
-  let g:vimfiler_tree_opened_icon = '▾'
-  let g:vimfiler_tree_closed_icon = '▸'
-  let g:vimfiler_file_icon = '-'
-  let g:vimfiler_marked_file_icon = '*'
-endif
+"if globpath(&rtp, 'plugin/vimfiler.vim') != ''
+"  nmap <Leader>: <SID>(pop-vimfiler)
+"  nmap <Space>:  <SID>(launch-vimfiler)
+"  nmap <Leader>c: <SID>(pop-vimfiler-on-current-buffer-dir)
+"  nmap <Space>c:  <SID>(launch-vimfiler-on-current-buffer-dir)
+"  nnoremap <expr> <SID>(pop-vimfiler)    ':<C-u>VimFilerSimple ' . getcwd() . '<CR>'
+"  nnoremap <expr> <SID>(launch-vimfiler) ':<C-u>VimFiler '       . getcwd() . '<CR>'
+"  nnoremap <expr> <SID>(pop-vimfiler-on-current-buffer-dir)    ':<C-u>VimFilerSimple ' . expand('%:h') . '<CR>'
+"  nnoremap <expr> <SID>(launch-vimfiler-on-current-buffer-dir) ':<C-u>VimFiler '    . expand('%:h') . '<CR>'
+"  call vimfiler#set_execute_file('vim', 'vim')
+"  call vimfiler#set_execute_file('txt', 'vim')
+"  call vimfiler#set_execute_file('c', 'vim')
+"
+"  let g:vimfiler_edit_command = 'edit'
+"  let g:vimfiler_as_default_explorer = 1
+"
+"  let g:vimfiler_external_copy_directory_command = 'cp -r $src $dest'
+"  let g:vimfiler_external_copy_file_command = 'cp $src $dest'
+"  let g:vimfiler_external_delete_command = 'rm -r $srcs'
+"  let g:vimfiler_external_move_command = 'mv $srcs $dest'
+"
+"  " Like Textmate icons.
+"  let g:vimfiler_tree_leaf_icon = ' '
+"  let g:vimfiler_tree_opened_icon = '▾'
+"  let g:vimfiler_tree_closed_icon = '▸'
+"  let g:vimfiler_file_icon = '-'
+"  let g:vimfiler_marked_file_icon = '*'
+"endif
 "}}}
 
 " quickrun settings {{{

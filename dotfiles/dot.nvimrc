@@ -24,6 +24,7 @@ let s:profile_names = [
 \ 'deoplete',
 \ 'easymotion',
 \ 'maps',
+\ 'defx',
 \ 'plugins',
 \ 'local-appends',
 \ 'local-bundles',
