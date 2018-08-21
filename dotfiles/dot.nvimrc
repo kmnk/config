@@ -23,6 +23,7 @@ let s:profile_names = [
 \ 'denite',
 \ 'deoplete',
 \ 'easymotion',
+\ 'defx',
 \ 'maps',
 \ 'plugins',
 \ 'local-appends',
