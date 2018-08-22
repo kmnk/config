@@ -48,4 +48,4 @@ nnoremap <silent><expr> <SID>(git-log-this-file) ':<C-u>Denite gitn_log:' . expa
 nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
 
 nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=cd dirmark<CR>
-nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add:"' . expand('%:p:h') .  '"<CR>'
+nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add::"' . expand('%:p:h') .  '"<CR>'
