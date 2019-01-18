@@ -56,9 +56,6 @@ repo = 'kana/vim-operator-replace'
 repo = 'kana/vim-operator-user'
 
 [[plugins]]
-repo = 'kana/vim-surround'
-
-[[plugins]]
 repo = 'kana/vim-grex'
 
 [[plugins]]
@@ -170,6 +167,9 @@ repo = 'tpope/vim-dispatch'
 
 [[plugins]]
 repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
