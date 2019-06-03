@@ -13,6 +13,24 @@ call denite#custom#map('normal', 'a', '<denite:do_action:add>', 'noremap')
 call denite#custom#map('normal', 'u', '<denite:do_action:unstage>', 'noremap')
 call denite#custom#map('normal', 'yy', '<denite:do_action:yank>', 'noremap')
 
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+
+  nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
+
+  nnoremap <silent><buffer><expr> dd denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> pp denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> qq denite#do_map('quit')
+  nnoremap <silent><buffer><expr> a denite#do_map('do_action', 'add')
+  nnoremap <silent><buffer><expr> u denite#do_map('do_action', 'unstage')
+  nnoremap <silent><buffer><expr> yy denite#do_map('do_action', 'yank')
+
+  nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+
+  nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+endfunction
+
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
 
@@ -38,7 +56,7 @@ nnoremap <silent> <SID>(buffer) :<C-u>Denite buffer<CR>
 nnoremap <silent><expr> <SID>(current_dir_file) ':<C-u>Denite file file/rec file:new<CR>'
 nnoremap <silent><expr> <SID>(current_buffer_dir_file) ':<C-u>Denite file::"' . expand('%:p:h') . '" file::"' . expand('%:p:h:h') . '" file/rec:"' . expand('%:p:h') . '" file:new:"' . expand('%:p:h') . '"<CR>'
 nnoremap <silent><expr> <SID>(directory_rec) ':<C-u>Denite directory_rec:"' . expand('%:p:h') . '"<CR>'
-nnoremap <silent> <SID>(file) :<C-u>Denite file/old file file_mru file/rec<CR>
+nnoremap <silent> <SID>(file) :<C-u>Denite file file/old file_mru file/rec<CR>
 nnoremap <silent> <SID>(grep) :<C-u>Denite grep<CR>
 nnoremap <silent> <SID>(register) :<C-u>Denite register<CR>
 
