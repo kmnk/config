@@ -148,7 +148,7 @@ repo = 'tpope/vim-abolish'
 repo = 'tacroe/unite-mark'
 
 [[plugins]]
-repo = 'haruyama/vim-matchopen'
+repo = 'arnar/vim-matchopen'
 
 [[plugins]]
 repo = 'arakashic/nvim-colors-solarized'
