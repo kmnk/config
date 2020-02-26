@@ -99,7 +99,8 @@ repo = 'mattn/webapi-vim'
 repo = 'mattn/wwwrenderer-vim'
 
 [[plugins]]
-repo = 'mattn/sonictemplate-vim'
+#repo = 'mattn/vim-sonictemplate'
+repo = 'kmnk/vim-sonictemplate' # use local repository for using `-` as filename
 # }}}
 
 # tyru's plugins (https://github.com/tyru) {{{
