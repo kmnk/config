@@ -23,3 +23,7 @@ on_ft = ['python']
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'udalov/kotlin-vim'
+on_ft = ['kotlin']
