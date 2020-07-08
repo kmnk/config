@@ -189,6 +189,11 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo  = 'phpactor/phpactor'
+on_ft = ['php']
+build = 'composer install'
 # }}}
 
 # my plugins {{{
