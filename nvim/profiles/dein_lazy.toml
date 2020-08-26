@@ -27,3 +27,7 @@ on_ft = ['markdown']
 [[plugins]]
 repo = 'udalov/kotlin-vim'
 on_ft = ['kotlin']
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = ['scss']
