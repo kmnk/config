@@ -163,5 +163,12 @@ set incsearch
 " 
 set history=10000
 
+autocmd VimrcAutoCmd TermOpen * call s:init_term() "{{{
+function! s:init_term()
+  set nonumber
+  set norelativenumber
+endfunction
+"}}}
+
 " vim: expandtab softtabstop=2 shiftwidth=2
 " vim: foldmethod=marker
