@@ -31,6 +31,18 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
 endfunction
 
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  inoremap <silent><buffer><expr> <C-j>
+      \ denite#increment_parent_cursor(1)
+  inoremap <silent><buffer><expr> <C-k>
+      \ denite#increment_parent_cursor(-1)
+  nnoremap <silent><buffer><expr> <C-j>
+      \ denite#increment_parent_cursor(1)
+  nnoremap <silent><buffer><expr> <C-k>
+      \ denite#increment_parent_cursor(-1)
+endfunction
+
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
 
