@@ -17,7 +17,7 @@ autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
 
-  nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
+  nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action', '') . denite#do_map('open_filter_buffer')
 
   nnoremap <silent><buffer><expr> dd denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> pp denite#do_map('do_action', 'preview')
