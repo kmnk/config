@@ -1,9 +1,6 @@
-doc/tags
-doc/tags-ja
-vim/profiles/tmp.vim
-vim/profiles/local*
 nvim/dot.vim/templates/*/*-local-*
 nvim/profiles/tmp.vim
 nvim/profiles/local*
-*~
-tags
+
+.cache
+dein-installer.sh
