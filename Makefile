@@ -1,12 +1,22 @@
 all:
 	echo 'nothing to do'
 
-.vimrc: dein-installer.sh .cache
+.vimrc: install-dein
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
 
-dein-installer.sh:
+install-dein: dein-installer.sh .cache;
+
+clean-dein-cache:
+	rm -rf ./.cache/dein
+	rm ./dein-installer.sh
+
+dein-installer.sh: install-deno
 	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
 	sh ./dein-installer.sh ./.cache/dein
 
-.cache:
-	mkdir ./.cache
+.cache/dein:
+	mkdir -p ./.cache/dein
+
+install-deno:
+	curl -fsSL https://deno.land/x/install/install.sh | sh
+
