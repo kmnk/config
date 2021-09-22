@@ -1,7 +1,7 @@
 none:
 	@echo nothing to do
 
-mac: vimrc tmux-conf zshrc .install-tmux .install-zsh; ## Initialize mac config
+mac: vimrc tmux-conf zshrc .install-tmux .install-zsh; ## Initialize Mac config
 
 vimrc: .install-dein
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
