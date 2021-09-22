@@ -1,12 +1,26 @@
 none:
 	@echo nothing to do
 
-mac: vimrc ## Initialize mac config
+mac: vimrc tmux-conf zshrc .install-tmux; ## Initialize mac config
 
-vimrc: .install-dein ## Generate first vimrc
+vimrc: .install-dein
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
 
-clean: .clean-dein; ## Clean config
+tmux-conf:
+	echo 'source-file '`pwd`'/dotfiles/dot.tmux.conf' > ~/.tmux.conf
+
+zshrc:
+	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
+
+clean: .clean-touched .clean-dein; ## Clean config
+
+.install-tmux: .install-homebrew
+	brew install tmux
+	touch .install-tmux
+
+.install-homebrew:
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	touch .install-homebrew
 
 .install-dein: .install-deno
 	curl -fLsS https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
@@ -16,12 +30,17 @@ clean: .clean-dein; ## Clean config
 
 .clean-dein:
 	rm -rf ./.cache/dein
-	rm -f .install-dein
-	rm -f .install-deno
 
 .install-deno:
 	curl -fLsS https://deno.land/x/install/install.sh | sh
 	touch .install-deno
+
+# cannot maintenance :(
+.clean-touched:
+	rm -f .install-dein
+	rm -f .install-deno
+	rm -f .install-homebrew
+	rm -f .install-tmux
 
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'

@@ -101,4 +101,6 @@ alias ....="cd ../../../"
 export DENO_INSTALL=$HOME/.deno
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+source ~/.zshrc_profile
+
 # vim: filetype=zsh
