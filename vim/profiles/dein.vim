@@ -1,5 +1,6 @@
 let s:dein_cache_dir = './.cache/dein'
 let s:dein_repository_dir = s:dein_cache_dir . '/repos/github.com/Shougo/dein.vim'
+let s:dein_plugins_toml = expand('<sfile>:h:h') . '/toml/plugins.toml'
 
 execute 'set runtimepath+=' . s:dein_repository_dir
 
@@ -13,15 +14,7 @@ if dein#load_state(s:dein_repository_dir)
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-  " plugins to add {{{
-  call dein#add('Shougo/defx.nvim')
-  call dein#add('Shougo/ddu.vim')
-  call dein#add('Shougo/ddc.vim')
-
-  call dein#add('vim-denops/denops.vim')
-
-  call dein#add('altercation/vim-colors-solarized')
-  " plugins to add }}}
+  call dein#load_toml(s:dein_plugins_toml)
 
   call dein#end()
   call dein#save_state()
