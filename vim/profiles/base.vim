@@ -52,7 +52,7 @@ function! s:init_cmdwin()
   set nonumber
   set norelativenumber
 
-  nnoremap <buffer> q :<C-u>quit<CR>
+  nnoremap <buffer> qq :<C-u>quit<CR>
   nnoremap <buffer> <TAB> :<C-u>quit<CR>
   nnoremap <buffer> <CR> <CR>
   inoremap <buffer><expr> <CR> pumvisible() ? "\<C-y>\<CR>" : "\<CR>"
