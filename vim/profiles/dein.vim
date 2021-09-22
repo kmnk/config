@@ -1,4 +1,4 @@
-let s:dein_cache_dir = './.cache/dein'
+let s:dein_cache_dir = expand('~/.cache/dein')
 let s:dein_repository_dir = s:dein_cache_dir . '/repos/github.com/Shougo/dein.vim'
 
 execute 'set runtimepath+=' . s:dein_repository_dir
