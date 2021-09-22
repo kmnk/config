@@ -11,6 +11,7 @@ tmux-conf:
 
 zshrc:
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
+	touch ~/.zshrc_profile
 
 clean: .clean-touched .clean-dein; ## Clean config
 
