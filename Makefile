@@ -3,7 +3,7 @@ none:
 
 mac: vimrc tmux-conf zshrc .install-tmux .install-zsh; ## Initialize Mac config
 
-vimrc: .install-dein
+vimrc: .install-dein .install-deno
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
 
 tmux-conf:
@@ -27,7 +27,7 @@ clean: .clean-touched .clean-dein; ## Clean config
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	touch .install-homebrew
 
-.install-dein: .install-deno
+.install-dein:
 	curl -fLsS https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
 	sh ./dein-installer.sh ./.cache/dein
 	rm ./dein-installer.sh
