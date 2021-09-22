@@ -1,64 +1,37 @@
-" default tab and space settings
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+let s:profiles_dir_path = expand('<sfile>:h:h') . '/vim/profiles/'
+let s:profile_names = [
+\ 'base',
+\ 'color',
+\]
 
-" highlight current cursor line
-set cursorline
-
-" display line number
-set number
-
-" use unnamed clipboard
-set clipboard=unnamed
-
-" use marker as foldmethod
-set foldmethod=marker
-
-" dein settings {{{
-let s:dein_cache_dir = './.cache/dein'
-let s:dein_repository_dir = s:dein_cache_dir . '/repos/github.com/Shougo/dein.vim'
-
-execute 'set runtimepath+=' . s:dein_repository_dir
-
-if dein#load_state(s:dein_repository_dir)
-  call dein#begin(s:dein_cache_dir)
-
-  call dein#add('Shougo/dein.vim')
-
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
+" source profile functions {{{
+function! s:source_profile(name)
+  let l:path = printf('%s%s.vim', s:profiles_dir_path, a:name)
+  if filereadable(l:path)
+    execute printf('source %s', l:path)
   endif
+endfunction
 
-  " plugins to add {{{
-  call dein#add('Shougo/defx.nvim')
-  call dein#add('Shougo/ddu.vim')
-  call dein#add('Shougo/ddc.vim')
+function! s:source_profiles(names)
+  for l:name in a:names
+    call s:source_profile(l:name)
+  endfor
+endfunction
 
-  call dein#add('vim-denops/denops.vim')
+function! s:call_source_profiles(args)
+  call s:source_profiles(split(a:args, '[, :]'))
+endfunction
+command! -nargs=+ ResourceProfile call s:call_source_profiles(<q-args>)
+" source profile functions }}}
 
-  call dein#add('altercation/vim-colors-solarized')
-  " plugins to add }}}
+" source plugin manager profile at first
+call s:source_profile('dein')
 
-  call dein#end()
-  call dein#save_state()
+" source other profiles
+call s:source_profiles(s:profile_names)
+
+" source local profile at last
+let s:path_to_local_vimrc = '~/.vimrc_profile'
+if filereadable(expand(s:path_to_local_vimrc))
+  execute printf('source %s', expand(s:path_to_local_vimrc))
 endif
-
-filetype plugin indent on
-syntax enable
-
-if dein#check_install()
-  call dein#install()
-endif
-" dein setings }}}
-
-" color settings {{{
-syntax enable
-let g:solarized_termcolors= 256
-set background=dark
-colorscheme solarized
-" color settings }}}
-
-" vim: expandtab softtabstop=2 shiftwidth=2
