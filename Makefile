@@ -1,7 +1,7 @@
 none:
 	@echo nothing to do
 
-mac: vimrc tmux-conf zshrc .install-tmux; ## Initialize mac config
+mac: vimrc tmux-conf zshrc .install-tmux .install-zsh; ## Initialize mac config
 
 vimrc: .install-dein
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
@@ -17,6 +17,10 @@ clean: .clean-touched .clean-dein; ## Clean config
 .install-tmux: .install-homebrew
 	brew install tmux
 	touch .install-tmux
+
+.install-zsh: .install-homebrew
+	brew install zsh
+	touch .install-zsh
 
 .install-homebrew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -37,10 +41,7 @@ clean: .clean-touched .clean-dein; ## Clean config
 
 # cannot maintenance :(
 .clean-touched:
-	rm -f .install-dein
-	rm -f .install-deno
-	rm -f .install-homebrew
-	rm -f .install-tmux
+	rm -f .install-*
 
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
