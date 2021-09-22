@@ -1,6 +1,5 @@
 let s:dein_cache_dir = './.cache/dein'
 let s:dein_repository_dir = s:dein_cache_dir . '/repos/github.com/Shougo/dein.vim'
-let s:dein_plugins_toml = expand('<sfile>:h:h') . '/toml/plugins.toml'
 
 execute 'set runtimepath+=' . s:dein_repository_dir
 
@@ -14,7 +13,7 @@ if dein#load_state(s:dein_repository_dir)
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-  call dein#load_toml(s:dein_plugins_toml)
+  execute 'source ' . expand('<sfile>:h') . '/dein-plugins.vim'
 
   call dein#end()
   call dein#save_state()
