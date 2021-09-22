@@ -3,4 +3,4 @@ nvim/profiles/tmp.vim
 nvim/profiles/local*
 
 .cache
-dein-installer.sh
+.install-*

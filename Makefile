@@ -1,21 +1,28 @@
-all: .vimrc; ## Initialize config
+none:
+	@echo nothing to do
 
-.vimrc: install-dein ## Generate first vimrc
+mac: vimrc ## Initialize mac config
+
+vimrc: .install-dein ## Generate first vimrc
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
 
-install-dein: dein-installer.sh; ## Install dein
+clean: .clean-dein; ## Clean config
 
-clean-dein-cache: ## Clean dein cache
-	rm -rf ./.cache/dein
-	rm ./dein-installer.sh
-
-dein-installer.sh: install-deno
-	curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
+.install-dein: .install-deno
+	curl -fLsS https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
 	sh ./dein-installer.sh ./.cache/dein
+	rm ./dein-installer.sh
+	touch .install-dein
 
-install-deno:
-	curl -fsSL https://deno.land/x/install/install.sh | sh
+.clean-dein:
+	rm -rf ./.cache/dein
+	rm -f .install-dein
+	rm -f .install-deno
+
+.install-deno:
+	curl -fLsS https://deno.land/x/install/install.sh | sh
+	touch .install-deno
 
 help: ## Display this help screen
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[.a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
