@@ -1,12 +1,11 @@
-all:
-	echo 'nothing to do'
+all: .vimrc; ## Initialize config
 
-.vimrc: install-dein
+.vimrc: install-dein ## Generate first vimrc
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
 
-install-dein: dein-installer.sh .cache;
+install-dein: dein-installer.sh .cache; ## Install dein
 
-clean-dein-cache:
+clean-dein-cache: ## Clean dein cache
 	rm -rf ./.cache/dein
 	rm ./dein-installer.sh
 
@@ -19,4 +18,7 @@ dein-installer.sh: install-deno
 
 install-deno:
 	curl -fsSL https://deno.land/x/install/install.sh | sh
+
+help: ## Display this help screen
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
