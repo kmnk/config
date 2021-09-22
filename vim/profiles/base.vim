@@ -43,3 +43,9 @@ set directory-=.
 " ignore and smartcase
 set ignorecase
 set smartcase
+
+" backspace
+set backspace=indent,eol,start
+
+" highlight search
+set hlsearch

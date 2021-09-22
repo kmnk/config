@@ -4,6 +4,7 @@ let s:profile_names = [
 \ 'cmdwin',
 \ 'color',
 \ 'defx',
+\ 'denite',
 \ 'git',
 \ 'maps',
 \ 'term',
