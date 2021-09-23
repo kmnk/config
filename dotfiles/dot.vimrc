@@ -28,7 +28,7 @@ endfunction
 function! s:call_source_profiles(args)
   call s:source_profiles(split(a:args, '[, :]'))
 endfunction
-command! -nargs=+ ResourceProfile call s:call_source_profiles(<q-args>)
+command! -nargs=+ ReSourceProfile call s:call_source_profiles(<q-args>)
 " source profile functions }}}
 
 " source plugin manager profile at first
