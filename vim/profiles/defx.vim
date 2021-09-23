@@ -1,3 +1,5 @@
+" defx
+
 if globpath(&rtp, 'plugin/defx.vim') == ''
   finish
 endif

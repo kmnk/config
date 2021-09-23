@@ -1,3 +1,5 @@
+" dein
+
 let s:dein_cache_dir = expand('<sfile>:h:h:h') . '/.cache/dein'
 let s:dein_repository_dir = s:dein_cache_dir . '/repos/github.com/Shougo/dein.vim'
 

@@ -1,4 +1,5 @@
-" base.vim
+" base
+
 if &compatible
   set nocompatible
 endif

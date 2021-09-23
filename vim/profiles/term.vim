@@ -1,4 +1,5 @@
 " term
+
 tnoremap <silent> <C-q><C-q> <C-\><C-n>
 nmap <Leader>;  <SID>(pop-term)
 nmap <Leader>c; <SID>(pop-term-on-current-buffer-dir)

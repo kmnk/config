@@ -12,8 +12,7 @@ nmap <Leader>eg <SID>(edit-gvimrc)
 nmap <Leader>nt <SID>(create-new-tab)
 nmap <Leader>mt <SID>(buffer-to-new-tab)
 
-" definition {{{
-
+" {{{
 nnoremap <SID>(toggle-number) :<C-u>set number!<CR>
 nnoremap <SID>(toggle-spell) :<C-u>set spell!<CR>
 nnoremap <SID>(toggle-paste) :<C-u>set paste!<CR>
@@ -58,5 +57,4 @@ function! s:move_window_into_tab_page(target_tabpagenr)
 
   execute target_tabpagenr 'tabnext'
 endfunction " }}}
-
 " }}}
