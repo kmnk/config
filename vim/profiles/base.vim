@@ -1,3 +1,8 @@
+" base.vim
+if &compatible
+  set nocompatible
+endif
+
 " my mapleader (default '\')
 let mapleader = ','
 noremap \ ,
@@ -47,5 +52,58 @@ set smartcase
 " backspace
 set backspace=indent,eol,start
 
-" highlight search
+" highlight searching strings
 set hlsearch
+
+" show last line of command
+set showcmd
+
+" show maached bracket
+set showmatch
+
+" allow virtual edit on visual block mode
+set virtualedit&
+set virtualedit+=block
+
+" show listed character as
+set list
+set listchars=trail:_,tab:>-,nbsp:%
+
+" keep min 3 line below the cursor
+set scrolloff=3
+
+" indent
+set autoindent
+set nocindent
+set smartindent
+
+" color 80 column
+set colorcolumn=80
+
+" activate incremental search
+set incsearch
+
+" remember 10000 history
+set history=10000
+
+" base maps {{{
+" quick write
+nnoremap <CR> :<C-u>w<CR>
+
+" quick ZZ
+nnoremap <Leader><CR> ZZ
+
+" Yank like C and D
+nnoremap Y y$
+
+" search from current word
+nnoremap * *Nzz
+nnoremap # #Nzz
+
+" clear highlightsearch
+nnoremap <C-l> :nohlsearch<CR><C-l>
+
+" in pattern escape
+cnoremap <expr> /  getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
+" base maps }}}

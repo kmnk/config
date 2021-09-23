@@ -6,15 +6,22 @@ nmap <BS> <SID>(help)
 
 nmap [denite]f <SID>(file)
 nmap [denite]c <SID>(current_buffer_dir_file)
+
 nmap [denite]dd <SID>(dirmark)
 nmap [denite]da <SID>(dirmark-add)
 
-nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old file/rec<CR>
+nmap [denite]t   <SID>(sonictemplate)
+
+" {{{
+nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old<CR>
 
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
 nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=cd dirmark<CR>
 nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add::"' . expand('%:p:h') .  '"<CR>'
+
+nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
+" }}}
 
 call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>', 'noremap')
 call denite#custom#map('insert', 'kk', '<denite:enter_mode:normal>', 'noremap')
@@ -30,10 +37,14 @@ function! s:denite_my_setting() abort
   nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action', '') . denite#do_map('open_filter_buffer')
 
   nnoremap <silent><buffer><expr> dd denite#do_map('do_action', 'delete')
-
   nnoremap <silent><buffer><expr> qq denite#do_map('quit')
+  nnoremap <silent><buffer><expr> a denite#do_map('do_action', 'add')
+  nnoremap <silent><buffer><expr> u denite#do_map('do_action', 'unstage')
+  nnoremap <silent><buffer><expr> yy denite#do_map('do_action', 'yank')
 
   nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+
+  nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
 endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()

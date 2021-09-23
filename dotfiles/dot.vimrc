@@ -7,6 +7,7 @@ let s:profile_names = [
 \ 'denite',
 \ 'git',
 \ 'maps',
+\ 'plugin-settings',
 \ 'term',
 \]
 

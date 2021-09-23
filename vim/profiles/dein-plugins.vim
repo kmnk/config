@@ -15,6 +15,10 @@ call dein#add('altercation/vim-colors-solarized')
 
 call dein#add('thinca/vim-visualstar')
 
+call dein#add('mattn/vim-sonictemplate')
+
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
+call dein#add('kmnk/gitn')
+call dein#add('kmnk/sonictemplate-vim-denite-extension')
 " my plugins }}}
