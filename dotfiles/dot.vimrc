@@ -5,6 +5,7 @@ let s:profile_names = [
 \ 'color',
 \ 'defx',
 \ 'denite',
+\ 'develop-plugin',
 \ 'git',
 \ 'maps',
 \ 'plugin-settings',
