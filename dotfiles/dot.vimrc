@@ -9,6 +9,7 @@ let s:profile_names = [
 \ 'git',
 \ 'maps',
 \ 'plugin-settings',
+\ 'submode',
 \ 'term',
 \]
 

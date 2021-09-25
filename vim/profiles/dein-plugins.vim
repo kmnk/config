@@ -17,6 +17,8 @@ call dein#add('thinca/vim-visualstar')
 
 call dein#add('mattn/vim-sonictemplate')
 
+call dein#add('kana/vim-submode')
+
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn')
