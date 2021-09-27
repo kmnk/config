@@ -4,7 +4,7 @@
 
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
+call ddc#custom#patch_global('sources', ['around', 'nvim-lsp', 'file'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
@@ -19,6 +19,11 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'mark': 'lsp',
 \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
 \ },
+\ 'file': {
+\   'mark': 'F',
+\   'isVolatile': v:true,
+\   'forceCompletionPattern': '\S/\S*',
+\ }
 \})
 
 " Change source options

@@ -4,10 +4,13 @@
 call dein#add('Shougo/ddu.vim')
 
 call dein#add('Shougo/ddc.vim')
+" ddc sources {{{
+call dein#add('LumaKernel/ddc-file', {'on_source': 'ddc.vim'})
 call dein#add('Shougo/ddc-around', {'on_source': 'ddc.vim'})
 call dein#add('Shougo/ddc-matcher_head', {'on_source': 'ddc.vim'})
-call dein#add('Shougo/ddc-sorter_rank', {'on_source': 'ddc.vim'})
 call dein#add('Shougo/ddc-nvim-lsp', {'on_source': 'ddc.vim'})
+call dein#add('Shougo/ddc-sorter_rank', {'on_source': 'ddc.vim'})
+" ddc sources }}}
 
 call dein#add('Shougo/defx.nvim')
 

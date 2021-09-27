@@ -89,6 +89,11 @@ set incsearch
 " remember 10000 history
 set history=10000
 
+" open completion popup in always
+set completeopt=menuone
+" completion targets
+set complete=.,w,b,u,t,i
+
 " base maps {{{
 " quick write
 nnoremap <CR> :<C-u>w<CR>
