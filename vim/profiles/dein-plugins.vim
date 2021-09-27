@@ -13,12 +13,13 @@ call dein#add('Shougo/defx.nvim')
 
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/neomru.vim')
-
 " Shougo's plugins }}}
 
 call dein#add('vim-denops/denops.vim')
 
 call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-repeat')
 
 call dein#add('altercation/vim-colors-solarized')
 
@@ -27,6 +28,8 @@ call dein#add('thinca/vim-visualstar')
 call dein#add('mattn/vim-sonictemplate')
 
 call dein#add('kana/vim-submode')
+call dein#add('kana/vim-operator-replace')
+call dein#add('kana/vim-operator-user')
 
 call dein#add('phpactor/phpactor', {
       \ 'on_ft': ['php'],
@@ -38,14 +41,9 @@ call dein#add('vim-airline/vim-airline-themes')
 
 call dein#add('ryanoasis/vim-devicons')
 
-"call dein#add('neoclide/coc.nvim', {
-"\ 'build': 'sh -c "'
-"\   . 'brew install nodenv '
-"\   . '& nodenv install 15.8.0 '
-"\   . '& nodenv local 15.8.0 '
-"\   . '& yarn install --frozen-lockfile'
-"\   . '"'
-"\})
+call dein#add('airblade/vim-gitgutter')
+
+call dein#add('junegunn/vim-easy-align')
 
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
