@@ -3,14 +3,17 @@ let s:profile_names = [
 \ 'base',
 \ 'cmdwin',
 \ 'color',
+\ 'ddc',
 \ 'defx',
 \ 'denite',
 \ 'develop-plugin',
 \ 'git',
 \ 'maps',
+\ 'phpactor',
 \ 'plugin-settings',
 \ 'submode',
 \ 'term',
+\ 'local',
 \]
 
 " source profile functions {{{
