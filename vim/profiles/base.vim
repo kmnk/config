@@ -89,6 +89,21 @@ set incsearch
 " remember 10000 history
 set history=10000
 
+filetype on
+filetype plugin on
+
+" syntax completetion on any language {{{
+autocmd VimrcAutoCmd FileType *
+\   if &l:omnifunc == ''
+\ |   setlocal omnifunc=syntaxcomplete#Complete
+\ | endif
+"}}}
+
+set pumheight=20
+set completefunc=
+set omnifunc&
+set omnifunc+=
+
 " open completion popup in always
 set completeopt=menuone
 " completion targets
