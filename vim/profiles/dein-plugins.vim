@@ -1,3 +1,5 @@
+" dein-plugins
+
 " Shougo's plugins {{{
 call dein#add('Shougo/ddu.vim')
 
@@ -27,9 +29,14 @@ call dein#add('mattn/vim-sonictemplate')
 call dein#add('kana/vim-submode')
 
 call dein#add('phpactor/phpactor', {
-\ 'on_ft': ['php'],
-\ 'build': 'composer install',
-\})
+      \ 'on_ft': ['php'],
+      \ 'build': 'composer install',
+      \})
+
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+
+call dein#add('ryanoasis/vim-devicons')
 
 "call dein#add('neoclide/coc.nvim', {
 "\ 'build': 'sh -c "'
@@ -45,3 +52,4 @@ call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn')
 call dein#add('kmnk/sonictemplate-vim-denite-extension')
 " my plugins }}}
+

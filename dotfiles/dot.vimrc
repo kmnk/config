@@ -1,5 +1,6 @@
 let s:profiles_dir_path = expand('<sfile>:h:h') . '/vim/profiles/'
 let s:profile_names = [
+\ 'airline',
 \ 'base',
 \ 'cmdwin',
 \ 'color',

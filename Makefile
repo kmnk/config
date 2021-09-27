@@ -1,7 +1,7 @@
 none:
 	@echo nothing to do
 
-mac: vimrc tmux-conf zshrc .install-tmux .install-zsh; ## Initialize Mac config
+mac: vimrc tmux-conf zshrc .install-tmux .install-zsh .install-fonts; ## Initialize Mac config
 
 vimrc: .install-dein .install-deno
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
@@ -22,6 +22,17 @@ clean: .clean-touched .clean-dein; ## Clean config
 .install-zsh: .install-homebrew
 	brew install zsh
 	touch .install-zsh
+
+.install-fonts: .install-homebrew
+	brew tap homebrew/cask-fonts
+	brew install --cask font-hack-nerd-font
+	git clone git@github.com:powerline/fonts.git
+	sh -c "cd fonts && ./install.sh && cd .. && rm -rf fonts"
+	brew tap sanemat/font
+	brew install ricty --with-powerline
+	cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+	fc-cache -vf
+	touch .install-fonts
 
 .install-homebrew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

@@ -4,6 +4,8 @@ if &compatible
   set nocompatible
 endif
 
+set encoding=UTF-8
+
 " my mapleader (default '\')
 let mapleader = ','
 noremap \ ,
