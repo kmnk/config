@@ -33,6 +33,7 @@ call dein#add('mattn/vim-sonictemplate')
 call dein#add('kana/vim-submode')
 call dein#add('kana/vim-operator-replace')
 call dein#add('kana/vim-operator-user')
+call dein#add('kana/vim-textobj-user')
 
 call dein#add('phpactor/phpactor', {
       \ 'on_ft': ['php'],
@@ -47,6 +48,8 @@ call dein#add('ryanoasis/vim-devicons')
 call dein#add('airblade/vim-gitgutter')
 
 call dein#add('junegunn/vim-easy-align')
+
+call dein#add('h1mesuke/textobj-wiw', {'depends': ['kana/vim-textobj-user']})
 
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
