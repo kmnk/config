@@ -51,6 +51,8 @@ call dein#add('junegunn/vim-easy-align')
 
 call dein#add('h1mesuke/textobj-wiw', {'depends': ['kana/vim-textobj-user']})
 
+call dein#add('cespare/vim-toml')
+
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn')
