@@ -53,6 +53,8 @@ call dein#add('h1mesuke/textobj-wiw', {'depends': ['kana/vim-textobj-user']})
 
 call dein#add('cespare/vim-toml')
 
+call dein#add('plasticboy/vim-markdown')
+
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn')
