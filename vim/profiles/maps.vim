@@ -9,6 +9,8 @@ imap <C-h> <SID>(backspace)
 nmap <Leader>ev <SID>(edit-vimrc)
 nmap <Leader>eg <SID>(edit-gvimrc)
 
+nmap <Leader>yp <SID>(yank-file-path)
+
 nmap <Leader>nt <SID>(create-new-tab)
 nmap <Leader>mt <SID>(buffer-to-new-tab)
 
@@ -21,6 +23,8 @@ inoremap <SID>(backspace) <BS>
 
 nnoremap <silent> <SID>(edit-vimrc) :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <silent> <SID>(edit-gvimrc) :<C-u>tabedit $MYGVIMRC<CR>
+
+nnoremap <silent> <SID>(yank-file-path) :<C-u>let @* = expand('%')<CR>
 
 nnoremap <silent> <SID>(create-new-tab) :<C-u>tabnew<CR>
 nnoremap <silent> <SID>(buffer-to-new-tab) :<C-u>call <SID>move_window_into_tab_page(0)<CR>
