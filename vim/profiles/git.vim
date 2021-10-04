@@ -6,6 +6,7 @@ nmap <Leader>gc <SID>(fugitive-commit)
 nmap <Leader>gg <SID>(fugitive-grep)
 nmap <Leader>gl <SID>(fugitive-log)
 nmap <Leader>gb <SID>(fugitive-branch)
+nmap <Leader>gf <SID>(fugitive-fetch)
 
 nmap <Space>gp <SID>(fugitive-push)
 nmap <Space>gP <SID>(fugitive-pull)
@@ -23,6 +24,7 @@ nnoremap <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <SID>(fugitive-push) :<C-u>Git push<CR>
 nnoremap <SID>(fugitive-status) :<C-u>G<CR>
 nnoremap <SID>(fugitive-branch) :<C-u>Git branch<CR>
+nnoremap <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
 
 nnoremap <silent> <SID>(gitn-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>

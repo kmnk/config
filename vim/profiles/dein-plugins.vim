@@ -55,7 +55,9 @@ call dein#add('cespare/vim-toml')
 
 " my plugins {{{
 call dein#add('kmnk/denite-dirmark')
-call dein#add('kmnk/gitn', {'depends': ['tpope/vim-fugitive']})
+call dein#add('kmnk/gitn', {
+      \  'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
+      \})
 call dein#add('kmnk/sonictemplate-vim-denite-extension')
 " my plugins }}}
 
