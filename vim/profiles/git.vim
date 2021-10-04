@@ -14,6 +14,8 @@ nmap <Space>gP <SID>(fugitive-pull)
 nmap [denite]gst <SID>(gitn-status)
 nmap [denite]gl  <SID>(gitn-log)
 nmap [denite]gL  <SID>(gitn-log-this-file)
+nmap [denite]gb  <SID>(gitn-branch)
+nmap [denite]gB  <SID>(gitn-branch-all)
 
 " {{{
 nnoremap <SID>(fugitive-blame) :<C-u>Git blame<CR>
@@ -29,4 +31,6 @@ nnoremap <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
 nnoremap <silent> <SID>(gitn-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>
 nnoremap <silent><expr> <SID>(gitn-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
+nnoremap <silent> <SID>(gitn-branch) :<C-u>Denite gitn_branch<CR>
+nnoremap <silent> <SID>(gitn-branch-all) :<C-u>Denite gitn_branch:all<CR>
 " }}}
