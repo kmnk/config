@@ -12,3 +12,10 @@ if globpath(&rtp, 'plugin/operator/replace.vim') != ''
   nmap R <Plug>(operator-replace)
 endif
 " operator replace }}}
+
+" vim-easy-align {{{
+nmap <Leader>al <Plug>(EasyAlign)
+xmap <Leader>al <Plug>(EasyAlign)
+" }}}
+
+

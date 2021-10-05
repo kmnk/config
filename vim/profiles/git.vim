@@ -20,7 +20,7 @@ nmap [denite]gB  <SID>(gitn-branch-all)
 " {{{
 nnoremap <silent> <SID>(fugitive-blame) :<C-u>Git blame<CR>
 nnoremap <silent> <SID>(fugitive-commit) :<C-u>Git commit<CR>
-nnoremap <silent> <SID>(fugitive-grep) :<C-u>Git grep 
+nnoremap <SID>(fugitive-grep) :<C-u>Git grep 
 nnoremap <silent> <SID>(fugitive-log) :<C-u>Git log<CR>
 nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . gitn#current_branch() . '<CR>'
