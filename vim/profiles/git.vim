@@ -6,10 +6,10 @@ nmap <Leader>gc <SID>(fugitive-commit)
 nmap <Leader>gg <SID>(fugitive-grep)
 nmap <Leader>gl <SID>(fugitive-log)
 nmap <Leader>gb <SID>(fugitive-branch)
-nmap <Leader>gf <SID>(fugitive-fetch)
 
 nmap <Space>gp <SID>(fugitive-push)
 nmap <Space>gP <SID>(fugitive-pull)
+nmap <Space>gF <SID>(fugitive-fetch)
 
 nmap [denite]gst <SID>(gitn-status)
 nmap [denite]gl  <SID>(gitn-log)
