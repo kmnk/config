@@ -8,8 +8,9 @@ nmap <Leader>gl <SID>(fugitive-log)
 nmap <Leader>gb <SID>(fugitive-branch)
 
 nmap <Space>gp <SID>(fugitive-push)
+nmap <Space>gFp <SID>(fugitive-push-force)
 nmap <Space>gP <SID>(fugitive-pull)
-nmap <Space>gF <SID>(fugitive-fetch)
+nmap <Space>gf <SID>(fugitive-fetch)
 
 nmap [denite]gst <SID>(gitn-status)
 nmap [denite]gl  <SID>(gitn-log)
@@ -24,6 +25,7 @@ nnoremap <SID>(fugitive-grep) :<C-u>Git grep
 nnoremap <silent> <SID>(fugitive-log) :<C-u>Git log<CR>
 nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . gitn#current_branch() . '<CR>'
+nnoremap <silent><expr> <SID>(fugitive-push-force) ':<C-u>Git push -f origin ' . gitn#current_branch() . '<CR>'
 nnoremap <silent> <SID>(fugitive-status) :<C-u>G<CR>
 nnoremap <silent> <SID>(fugitive-branch) :<C-u>Git branch<CR>
 nnoremap <silent> <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
