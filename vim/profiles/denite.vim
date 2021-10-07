@@ -17,7 +17,7 @@ nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old<CR>
 
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
-nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=cd dirmark<CR>
+nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=lcd dirmark<CR>
 nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add::"' . expand('%:p:h') .  '"<CR>'
 
 nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
