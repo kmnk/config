@@ -4,7 +4,7 @@
 
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around', 'nvim-lsp', 'file'])
+call ddc#custom#patch_global('sources', ['around', 'omni', 'file'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
@@ -15,10 +15,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'sorters': ['sorter_rank']
 \ },
 \ 'around': {'mark': 'A'},
-\ 'nvim-lsp': {
-\   'mark': 'lsp',
-\   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-\ },
+\ 'omni': {'mark': 'O'},
 \ 'file': {
 \   'mark': 'F',
 \   'isVolatile': v:true,
@@ -26,18 +23,32 @@ call ddc#custom#patch_global('sourceOptions', {
 \ }
 \})
 
+call ddc#custom#patch_filetype(
+    \ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
+    \ 'sourceOptions': {
+    \   'file': {
+    \     'forceCompletionPattern': '\S\\\S*',
+    \   },
+    \ },
+    \ 'sourceParams': {
+    \   'file': {
+    \     'mode': 'win32',
+    \   },
+    \ }})
+
 " Change source options
 call ddc#custom#patch_global('sourceParams', {
 \ 'around': {'maxSize': 500},
+\ 'file': {'smartCase': v:true},
 \})
 
 " Mappings
 
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#manual_complete()
+      \ pumvisible() ? '<C-n>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
 
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
