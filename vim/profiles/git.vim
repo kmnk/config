@@ -12,6 +12,7 @@ nmap <Space>gFp <SID>(fugitive-push-force)
 nmap <Space>gP <SID>(fugitive-pull)
 nmap <Space>gf <SID>(fugitive-fetch)
 nmap <Space>ggh <SID>(go-github)
+nmap <Space>ggH <SID>(go-github-on-master)
 
 nmap [denite]gst <SID>(gitn-status)
 nmap [denite]gl  <SID>(gitn-log)
@@ -31,6 +32,7 @@ nnoremap <silent> <SID>(fugitive-status) :<C-u>G<CR>
 nnoremap <silent> <SID>(fugitive-branch) :<C-u>Git branch<CR>
 nnoremap <silent> <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
 nnoremap <silent><expr> <SID>(go-github) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/' . gitn#get_head_hash() . '/' . expand("%") . '"<CR>'
+nnoremap <silent><expr> <SID>(go-github-on-master) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/master/' . expand("%") . '"<CR>'
 
 nnoremap <silent> <SID>(gitn-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>
