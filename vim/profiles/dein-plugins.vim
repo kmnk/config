@@ -36,6 +36,7 @@ call dein#add('kana/vim-operator-user')
 call dein#add('kana/vim-textobj-user')
 
 call dein#add('phpactor/phpactor', {
+      \ 'lazy': 1,
       \ 'on_ft': ['php'],
       \ 'build': 'composer install',
       \})
@@ -54,7 +55,13 @@ call dein#add('h1mesuke/textobj-wiw', {'depends': ['kana/vim-textobj-user']})
 call dein#add('cespare/vim-toml')
 
 call dein#add('rust-lang/rust.vim', {
+      \  'lazy': 1,
       \  'on_ft': ['rust'],
+      \})
+
+call dein#add('fatih/vim-go', {
+      \  'lazy': 1,
+      \  'on_ft': ['go'],
       \})
 
 " my plugins {{{
