@@ -8,6 +8,7 @@ nmap [denite]f <SID>(file)
 nmap [denite]c <SID>(current_buffer_dir_file)
 
 nmap [denite]dd <SID>(dirmark)
+nmap [denite]dg <SID>(dirmark-groups)
 nmap [denite]da <SID>(dirmark-add)
 
 nmap [denite]t   <SID>(sonictemplate)
@@ -18,6 +19,7 @@ nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old<CR>
 nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
 nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=cd dirmark<CR>
+nnoremap <silent> <SID>(dirmark-groups) :<C-u>Denite dirmark/groups<CR>
 nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add::"' . expand('%:p:h') .  '"<CR>'
 
 nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
