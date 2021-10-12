@@ -12,3 +12,5 @@ nnoremap <SID>(transform) :<C-u>PhpactorTransform<CR>
 nnoremap <SID>(context-menu) :<C-u>PhpactorContextMenu<CR>
 " }}}
 
+autocmd FileType php setlocal omnifunc=phpactor#Complete
+

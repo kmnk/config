@@ -2,6 +2,8 @@ nvim/dot.vim/templates/*/*-local-*
 nvim/profiles/tmp.vim
 nvim/profiles/local*
 
+vim/dot.vim/templates/*/*-local-*
+
 local*
 
 .cache
