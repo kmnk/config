@@ -35,12 +35,6 @@ call dein#add('kana/vim-operator-replace')
 call dein#add('kana/vim-operator-user')
 call dein#add('kana/vim-textobj-user')
 
-call dein#add('phpactor/phpactor', {
-      \ 'lazy': 1,
-      \ 'on_ft': ['php'],
-      \ 'build': 'composer install',
-      \})
-
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 
@@ -54,6 +48,20 @@ call dein#add('h1mesuke/textobj-wiw', {'depends': ['kana/vim-textobj-user']})
 
 call dein#add('cespare/vim-toml')
 
+" my plugins {{{
+call dein#add('kmnk/denite-dirmark')
+call dein#add('kmnk/gitn', {
+      \  'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
+      \})
+call dein#add('kmnk/sonictemplate-vim-denite-extension')
+" my plugins }}}
+
+call dein#add('phpactor/phpactor', {
+      \ 'lazy': 1,
+      \ 'on_ft': ['php'],
+      \ 'build': 'composer install',
+      \})
+
 call dein#add('rust-lang/rust.vim', {
       \  'lazy': 1,
       \  'on_ft': ['rust'],
@@ -63,12 +71,3 @@ call dein#add('fatih/vim-go', {
       \  'lazy': 1,
       \  'on_ft': ['go'],
       \})
-
-" my plugins {{{
-call dein#add('kmnk/denite-dirmark')
-call dein#add('kmnk/gitn', {
-      \  'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
-      \})
-call dein#add('kmnk/sonictemplate-vim-denite-extension')
-" my plugins }}}
-
