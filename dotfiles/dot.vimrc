@@ -3,6 +3,7 @@ let s:profile_names = [
 \ 'airline',
 \ 'base',
 \ 'cmdwin',
+\ 'cmdl',
 \ 'color',
 \ 'ddc',
 \ 'defx',

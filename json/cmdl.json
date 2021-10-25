@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "cmdls": [
+    {
+      "name": "update plugins",
+      "to_execute": "call dein#update()"
+    },
+    {
+      "name": "recache runtimepath",
+      "to_execute": "call dein#recache_runtimepath()"
+    }
+  ]
+}
