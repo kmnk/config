@@ -8,6 +8,10 @@
     {
       "name": "recache runtimepath",
       "to_execute": "call dein#recache_runtimepath()"
+    },
+    {
+      "name": "show messages",
+      "to_execute": "messages"
     }
   ]
 }
