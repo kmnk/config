@@ -72,3 +72,8 @@ call dein#add('fatih/vim-go', {
       \  'lazy': 1,
       \  'on_ft': ['go'],
       \})
+
+call dein#add('kchmck/vim-coffee-script', {
+      \  'lazy': 1,
+      \  'on_ft': ['coffee'],
+      \})
