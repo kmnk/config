@@ -54,6 +54,7 @@ call dein#add('kmnk/gitn', {
       \  'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
       \})
 call dein#add('kmnk/sonictemplate-vim-denite-extension')
+call dein#add('kmnk/denite-cmdl')
 " my plugins }}}
 
 call dein#add('phpactor/phpactor', {

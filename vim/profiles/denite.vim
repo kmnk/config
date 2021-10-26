@@ -11,6 +11,8 @@ nmap [denite]dd <SID>(dirmark)
 nmap [denite]dg <SID>(dirmark-groups)
 nmap [denite]da <SID>(dirmark-add)
 
+nmap [denite]l <SID>(cmdl)
+
 nmap [denite]t   <SID>(sonictemplate)
 
 " {{{
@@ -21,6 +23,8 @@ nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=cd dirmark<CR>
 nnoremap <silent> <SID>(dirmark-groups) :<C-u>Denite dirmark/groups:cd<CR>
 nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add::"' . expand('%:p:h') .  '"<CR>'
+
+nnoremap <silent> <SID>(cmdl) :<C-u>Denite cmdl<CR>
 
 nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
 " }}}
