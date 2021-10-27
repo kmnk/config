@@ -77,3 +77,12 @@ call dein#add('kchmck/vim-coffee-script', {
       \  'lazy': 1,
       \  'on_ft': ['coffee'],
       \})
+
+call dein#add('leafgarland/typescript-vim', {
+      \  'lazy': 1,
+      \  'on_ft': ['typescript'],
+      \})
+call dein#add('Quramy/tsuquyomi', {
+      \  'lazy': 1,
+      \  'on_ft': ['typescript'],
+      \})
