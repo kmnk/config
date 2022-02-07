@@ -13,7 +13,7 @@ zshrc:
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
 	touch ~/.zshrc_profile
 
-clean: .clean-touched .clean-dein; ## Clean config
+clean: .clean-touched .clean-dein .clean-deno; ## Clean config
 
 .install-tmux: .install-homebrew
 	brew install tmux
@@ -50,6 +50,9 @@ clean: .clean-touched .clean-dein; ## Clean config
 .install-deno:
 	curl -fLsS https://deno.land/x/install/install.sh | sh
 	touch .install-deno
+
+.clean-deno:
+	rm -rf .install-deno
 
 # cannot maintenance :(
 .clean-touched:

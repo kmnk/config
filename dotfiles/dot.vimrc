@@ -6,6 +6,7 @@ let s:profile_names = [
 \ 'cmdl',
 \ 'color',
 \ 'ddc',
+\ 'ddu',
 \ 'defx',
 \ 'denite',
 \ 'develop-plugin',
