@@ -4,7 +4,8 @@
 
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around', 'omni', 'file'])
+"call ddc#custom#patch_global('sources', ['around', 'omni', 'file'])
+call ddc#custom#patch_global('sources', ['around', 'file'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
@@ -15,7 +16,7 @@ call ddc#custom#patch_global('sourceOptions', {
 \   'sorters': ['sorter_rank']
 \ },
 \ 'around': {'mark': 'A'},
-\ 'omni': {'mark': 'O'},
+"\ 'omni': {'mark': 'O'},
 \ 'file': {
 \   'mark': 'F',
 \   'isVolatile': v:true,
