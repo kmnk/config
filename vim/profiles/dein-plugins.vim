@@ -2,6 +2,27 @@
 
 " Shougo's plugins {{{
 call dein#add('Shougo/ddu.vim')
+call dein#add('Shougo/ddu-commands.vim')
+" ddu UIs {{{
+call dein#add('Shougo/ddu-ui-ff')
+" }}}
+" ddu sources {{{
+call dein#add('Shougo/ddu-source-file')
+call dein#add('Shougo/ddu-source-file_old')
+call dein#add('Shougo/ddu-source-file_rec')
+call dein#add('Shougo/ddu-source-line')
+call dein#add('Shougo/ddu-source-register')
+call dein#add('4513ECHO/ddu-source-colorscheme')
+call dein#add('matsui54/ddu-source-help')
+" }}}
+" ddu kinds {{{
+call dein#add('Shougo/ddu-kind-file')
+call dein#add('Shougo/ddu-kind-word')
+" }}}
+" ddu filters {{{
+call dein#add('Shougo/ddu-filter-matcher_substring')
+call dein#add('Shougo/ddu-filter-matcher_relative')
+" }}}
 
 call dein#add('Shougo/ddc.vim')
 " ddc sources {{{
