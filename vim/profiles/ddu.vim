@@ -84,4 +84,6 @@ function! s:ddu_filter_my_settings() abort
         \ <Esc><Cmd>close<CR>
   nnoremap <buffer><silent> <CR>
         \ <Cmd>close<CR>
+  nnoremap <buffer><silent> q
+        \ <Cmd>close<CR>
 endfunction
