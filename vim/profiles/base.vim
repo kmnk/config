@@ -130,3 +130,5 @@ nnoremap <C-l> :nohlsearch<CR><C-l>
 cnoremap <expr> /  getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
 " base maps }}}
+
+let g:denops#debug = 1

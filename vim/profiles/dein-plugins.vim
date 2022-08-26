@@ -5,8 +5,12 @@ call dein#add('Shougo/ddu.vim')
 call dein#add('Shougo/ddu-commands.vim')
 " ddu UIs {{{
 call dein#add('Shougo/ddu-ui-ff')
+call dein#add('Shougo/ddu-ui-filer')
+
+call dein#add('Shougo/ddu-column-filename')
 " }}}
 " ddu sources {{{
+call dein#add('Shougo/ddu-source-action')
 call dein#add('Shougo/ddu-source-file')
 call dein#add('Shougo/ddu-source-file_old')
 call dein#add('Shougo/ddu-source-file_rec')
@@ -14,6 +18,7 @@ call dein#add('Shougo/ddu-source-line')
 call dein#add('Shougo/ddu-source-register')
 call dein#add('4513ECHO/ddu-source-colorscheme')
 call dein#add('matsui54/ddu-source-help')
+call dein#add('matsui54/ddu-source-man')
 " }}}
 " ddu kinds {{{
 call dein#add('Shougo/ddu-kind-file')
@@ -22,6 +27,7 @@ call dein#add('Shougo/ddu-kind-word')
 " ddu filters {{{
 call dein#add('Shougo/ddu-filter-matcher_substring')
 call dein#add('Shougo/ddu-filter-matcher_relative')
+call dein#add('Shougo/ddu-filter-matcher_hidden')
 " }}}
 
 call dein#add('Shougo/ddc.vim')
@@ -69,13 +75,19 @@ call dein#add('h1mesuke/textobj-wiw', {'depends': ['kana/vim-textobj-user']})
 
 call dein#add('cespare/vim-toml')
 
+call dein#add('rhysd/vim-healthcheck')
+
 " my plugins {{{
+call dein#add('kmnk/study-denops')
 call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn', {
       \  'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
       \})
 call dein#add('kmnk/sonictemplate-vim-denite-extension')
 call dein#add('kmnk/denite-cmdl')
+call dein#add('kmnk/ddu-source-git', {
+      \ 'rev': 'feature/make-core/devel'
+      \})
 " my plugins }}}
 
 call dein#add('phpactor/phpactor', {
@@ -100,10 +112,6 @@ call dein#add('kchmck/vim-coffee-script', {
       \})
 
 call dein#add('leafgarland/typescript-vim', {
-      \  'lazy': 1,
-      \  'on_ft': ['typescript'],
-      \})
-call dein#add('Quramy/tsuquyomi', {
       \  'lazy': 1,
       \  'on_ft': ['typescript'],
       \})

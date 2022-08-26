@@ -7,6 +7,7 @@ let s:profile_names = [
 \ 'color',
 \ 'ddc',
 \ 'ddu',
+\ 'ddu-filer',
 \ 'defx',
 \ 'denite',
 \ 'develop-plugin',

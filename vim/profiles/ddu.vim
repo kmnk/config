@@ -2,9 +2,22 @@
 " Note: ff ui
 " https://github.com/Shougo/ddu-ui-ff
 call ddu#custom#patch_global({
-      \
       \ 'ui': 'ff',
       \})
+call ddu#custom#patch_global({
+      \   'ui': 'filer',
+      \   'sources': [{'name': 'file', 'params': {}}],
+      \   'sourceOptions': {
+      \     '_': {
+      \       'columns': ['filename'],
+      \     },
+      \   },
+      \   'kindOptions': {
+      \     'file': {
+      \       'defaultAction': 'open',
+      \     },
+      \   }
+      \ })
 
 " You must set the default action.
 " Note: file kind
@@ -39,7 +52,7 @@ call ddu#custom#patch_global({
       \ })
 
 " Call default sources
-"call ddu#start({})
+"call ddu#startource{})
 
 " Set name specific configuration
 call ddu#custom#patch_local('files', {
@@ -62,14 +75,24 @@ call ddu#custom#patch_local('files', {
 " Set kind default action.
 call ddu#custom#patch_global({
       \ 'kindOptions': {
+      \   'action': {
+      \     'defaultAction': 'do',
+      \   },
       \   'colorscheme': {
       \     'defaultAction': 'set',
-      \ }}})
+      \   },
+      \   'git-log': {
+      \     'defaultAction': 'yank',
+      \   },
+      \ },
+      \})
 
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
   nnoremap <buffer><silent> <CR>
         \ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
+  nnoremap <buffer><silent> <Tab>
+        \ <Cmd>call ddu#ui#ff#do_action('chooseAction')<CR>
   nnoremap <buffer><silent> <Space>
         \ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
   nnoremap <buffer><silent> i
