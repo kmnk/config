@@ -1,3 +1,25 @@
+" ddu-filer
+
+nmap <Leader>c: <SID>(start-ddu-file-vertical)
+nmap <Leader>f: <SID>(start-ddu-file_rec-vertical)
+
+nnoremap <expr> <SID>(start-ddu-file-vertical) ':<C-u> call
+      \ ddu#start(
+      \   {
+      \     "sources":[{"name":"file"}],
+      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
+      \   }
+      \ )
+      \ <CR>'
+nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
+      \ ddu#start(
+      \   {
+      \     "sources":[{"name":"file_rec"}, {"name":"file_old"}],
+      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
+      \   }
+      \ )
+      \ <CR>'
+
 autocmd FileType ddu-filer call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
   nnoremap <buffer><expr> <CR>
