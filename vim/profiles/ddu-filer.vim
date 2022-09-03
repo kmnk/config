@@ -1,12 +1,22 @@
 " ddu-filer
 
-nmap <Leader>c: <SID>(start-ddu-file-vertical)
-nmap <Leader>f: <SID>(start-ddu-file_rec-vertical)
+nmap <Leader><Leader>: <SID>(start-ddu-file-vertical)
+nmap <Leader><Leader>c: <SID>(start-ddu-file-current-vertical)
+nmap <Leader><Leader>f: <SID>(start-ddu-file_rec-vertical)
 
 nnoremap <expr> <SID>(start-ddu-file-vertical) ':<C-u> call
       \ ddu#start(
       \   {
       \     "sources":[{"name":"file"}],
+      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
+      \   }
+      \ )
+      \ <CR>'
+nnoremap <expr> <SID>(start-ddu-file-current-vertical) ':<C-u> call
+      \ ddu#start(
+      \   {
+      \     "sources":[{"name":"file"}],
+      \     "sourceOptions":{"file":{"path":expand("%:p:h")}},
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
       \   }
       \ )
