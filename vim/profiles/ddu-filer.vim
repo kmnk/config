@@ -36,6 +36,24 @@ function! s:ddu_my_settings() abort
         \ ddu#ui#filer#is_directory()
         \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
         \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
+  nnoremap <buffer><expr> l
+        \ ddu#ui#filer#is_directory()
+        \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
+        \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
+  nnoremap <buffer> h
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow', 'path: '..'})<CR>
+  nnoremap <buffer> cc
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'cd'})<CR>
+  nnoremap <buffer> dd
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'delete'})<CR>
+  nnoremap <buffer> yy
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'yank'})<CR>
+  nnoremap <buffer> p
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'paste'})<CR>
+  nnoremap <buffer> rr
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'rename'})<CR>
+  nnoremap <buffer> K
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newDirectory'})<CR>
   nnoremap <buffer><silent> c
         \ <Cmd>call ddu#ui#filer#multi_actions([
         \   ['itemAction', {'name': 'copy'}],
