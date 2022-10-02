@@ -1,8 +1,8 @@
 " ddu-filer
 
-nmap <Leader><Leader>: <SID>(start-ddu-file-vertical)
-nmap <Leader><Leader>c: <SID>(start-ddu-file-current-vertical)
-nmap <Leader><Leader>f: <SID>(start-ddu-file_rec-vertical)
+nmap <Leader>: <SID>(start-ddu-file-vertical)
+nmap <Leader>c: <SID>(start-ddu-file-current-vertical)
+nmap <Leader>f: <SID>(start-ddu-file_rec-vertical)
 
 nnoremap <expr> <SID>(start-ddu-file-vertical) ':<C-u> call
       \ ddu#start(

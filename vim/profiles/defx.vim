@@ -4,10 +4,10 @@ if globpath(&rtp, 'plugin/defx.vim') == ''
   finish
 endif
 
-nmap <Leader>: <SID>(pop-defx)
-nmap <Space>:  <SID>(launch-defx)
-nmap <Leader>c: <SID>(pop-defx-on-current-buffer-dir)
-nmap <Space>c:  <SID>(launch-defx-on-current-buffer-dir)
+"nmap <Leader>: <SID>(pop-defx)
+"nmap <Space>:  <SID>(launch-defx)
+"nmap <Leader>c: <SID>(pop-defx-on-current-buffer-dir)
+"nmap <Space>c:  <SID>(launch-defx-on-current-buffer-dir)
 
 nnoremap <expr> <SID>(pop-defx)    ':<C-u>vnew<CR>:Defx ' . getcwd() . '<CR>'
 nnoremap <expr> <SID>(launch-defx) ':<C-u>Defx '       . getcwd() . '<CR>'
