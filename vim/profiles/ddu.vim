@@ -1,3 +1,6 @@
+"nnoremap [ddu] <Nop>
+"nmap <Leader>. [ddu]
+
 " You must set the default ui.
 " Note: ff ui
 " https://github.com/Shougo/ddu-ui-ff

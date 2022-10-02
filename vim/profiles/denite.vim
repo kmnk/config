@@ -4,7 +4,7 @@ nmap <Leader>. [denite]
 nmap <C-h> <SID>(help)
 nmap <BS> <SID>(help)
 
-nmap [denite]f <SID>(file)
+"nmap [denite]f <SID>(file)
 nmap [denite]c <SID>(current_buffer_dir_file)
 
 nmap [denite]dd <SID>(dirmark)

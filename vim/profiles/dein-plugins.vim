@@ -77,6 +77,9 @@ call dein#add('cespare/vim-toml')
 
 call dein#add('rhysd/vim-healthcheck')
 
+call dein#add('kuuote/ddu-source-mr')
+call dein#add('lambdalisue/mr.vim')
+
 " my plugins {{{
 call dein#add('kmnk/study-denops')
 call dein#add('kmnk/denite-dirmark')
