@@ -41,7 +41,7 @@ function! s:ddu_my_settings() abort
         \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
         \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
   nnoremap <buffer> h
-        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow', 'path: '..'})<CR>
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow', 'params': {'path': '..'}})<CR>
   nnoremap <buffer> cc
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'cd'})<CR>
   nnoremap <buffer> dd
