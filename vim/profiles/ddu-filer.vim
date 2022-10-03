@@ -53,7 +53,7 @@ function! s:ddu_my_settings() abort
   nnoremap <buffer> rr
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'rename'})<CR>
   nnoremap <buffer> tt
-        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'tabopen'}})<CR>
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'tabedit'}})<CR>
   nnoremap <buffer> vv
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
   nnoremap <buffer> nn
