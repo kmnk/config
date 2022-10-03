@@ -52,6 +52,10 @@ function! s:ddu_my_settings() abort
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'paste'})<CR>
   nnoremap <buffer> rr
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'rename'})<CR>
+  nnoremap <buffer> vv
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
+  nnoremap <buffer> nn
+        \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>
   nnoremap <buffer> N
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newFile'})<CR>
   nnoremap <buffer> K
