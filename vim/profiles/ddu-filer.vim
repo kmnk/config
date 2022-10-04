@@ -56,7 +56,7 @@ function! s:ddu_my_settings() abort
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'tabedit'}})<CR>
   nnoremap <buffer> vv
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
-  nnoremap <buffer> nn
+  nnoremap <buffer> ss
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>
   nnoremap <buffer> N
         \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'newFile'})<CR>
