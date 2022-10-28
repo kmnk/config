@@ -38,11 +38,15 @@ call dein#add('Shougo/ddc-sorter_rank')
 call dein#add('Shougo/ddc-omni')
 call dein#add('LumaKernel/ddc-file')
 " ddc sources }}}
+" ddc uis {{{
+call dein#add('Shougo/ddc-ui-pum')
+" ddc uis }}}
 
 call dein#add('Shougo/defx.nvim')
 
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/pum.vim')
 " Shougo's plugins }}}
 
 call dein#add('vim-denops/denops.vim')

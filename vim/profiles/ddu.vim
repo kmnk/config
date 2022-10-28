@@ -46,6 +46,13 @@ call ddu#custom#patch_global({
       \     },
       \   }
       \ })
+call ddu#custom#patch_global({
+      \   'filterParams': {
+      \     'matcher_substring': {
+      \       'highlightMatched': 'Search',
+      \     },
+      \   }
+      \ })
 
 " Set default sources
 " Note: file source
