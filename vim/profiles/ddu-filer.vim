@@ -8,7 +8,7 @@ nnoremap <expr> <SID>(start-ddu-file-vertical) ':<C-u> call
       \ ddu#start(
       \   {
       \     "sources":[{"name":"file"}],
-      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
+      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
       \ )
       \ <CR>'
@@ -17,7 +17,7 @@ nnoremap <expr> <SID>(start-ddu-file-current-vertical) ':<C-u> call
       \   {
       \     "sources":[{"name":"file"}],
       \     "sourceOptions":{"file":{"path":expand("%:p:h")}},
-      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
+      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
       \ )
       \ <CR>'
@@ -25,7 +25,7 @@ nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
       \ ddu#start(
       \   {
       \     "sources":[{"name":"file_rec"}, {"name":"file_old"}],
-      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft"}},
+      \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
       \ )
       \ <CR>'
@@ -33,11 +33,11 @@ nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
 autocmd FileType ddu-filer call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
   nnoremap <buffer><expr> <CR>
-        \ ddu#ui#filer#is_directory()
+        \ ddu#ui#filer#is_tree()
         \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
         \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
   nnoremap <buffer><expr> l
-        \ ddu#ui#filer#is_directory()
+        \ ddu#ui#filer#is_tree()
         \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
         \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
   nnoremap <buffer> h
