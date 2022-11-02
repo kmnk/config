@@ -46,7 +46,7 @@ call ddc#custom#patch_global('sourceParams', {
 call ddc#custom#patch_global('ui', 'pum')
 call ddc#custom#patch_global('autoCompleteEvents', [
 \ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
-nnoremap :       <Cmd>call CommandlinePre()<CR>:
+nnoremap :       <Cmd>call CommandlinePre()<CR>q:
 
 function! CommandlinePre() abort
   cnoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
