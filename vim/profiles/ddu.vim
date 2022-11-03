@@ -5,7 +5,7 @@
 " Note: ff ui
 " https://github.com/Shougo/ddu-ui-ff
 call ddu#custom#patch_global({
-      \ 'ui': 'ff',
+      \   'ui': 'ff',
       \})
 call ddu#custom#patch_global({
       \   'ui': 'filer',
@@ -13,6 +13,9 @@ call ddu#custom#patch_global({
       \   'sourceOptions': {
       \     '_': {
       \       'columns': ['filename'],
+      \     },
+      \     'mr': {
+      \       'columns': [],
       \     },
       \   },
       \   'kindOptions': {
