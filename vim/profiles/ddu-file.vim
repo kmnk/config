@@ -1,13 +1,15 @@
-" ddu-filer
+" ddu-file
 
 nmap <Leader>: <SID>(start-ddu-file-vertical)
 nmap <Leader>c: <SID>(start-ddu-file-current-vertical)
 nmap <Leader>f: <SID>(start-ddu-file_rec-vertical)
 
+" {{{
 nnoremap <expr> <SID>(start-ddu-file-vertical) ':<C-u> call
       \ ddu#start(
       \   {
       \     "sources":[{"name":"file"}],
+      \     "ui":"filer",
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
       \ )
@@ -17,6 +19,7 @@ nnoremap <expr> <SID>(start-ddu-file-current-vertical) ':<C-u> call
       \   {
       \     "sources":[{"name":"file"}],
       \     "sourceOptions":{"file":{"path":expand("%:p:h")}},
+      \     "ui":"filer",
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
       \ )
@@ -25,10 +28,12 @@ nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
       \ ddu#start(
       \   {
       \     "sources":[{"name":"file_rec"}, {"name":"file_old"}],
+      \     "ui":"filer",
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
       \ )
       \ <CR>'
+" }}}
 
 autocmd FileType ddu-filer call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
@@ -94,3 +99,21 @@ function! ToggleHidden()
   let matchers = get(source_options_all, 'matchers', [])
   return empty(matchers) ? ['matcher_hidden'] : []
 endfunction
+
+call ddu#custom#patch_global({
+      \   'sources': [
+      \     {'name': 'file', 'params': {}},
+      \     {'name': 'file_old', 'params': {}},
+      \   ],
+      \   'sourceOptions': {
+      \     'file': {
+      \       'matchers': ['matcher_substring'],
+      \       'columns': ['filename'],
+      \     },
+      \   },
+      \   'kindOptions': {
+      \     'file': {
+      \       'defaultAction': 'open',
+      \     },
+      \   },
+      \})

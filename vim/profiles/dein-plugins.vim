@@ -42,8 +42,6 @@ call dein#add('LumaKernel/ddc-file')
 call dein#add('Shougo/ddc-ui-pum')
 " ddc uis }}}
 
-call dein#add('Shougo/defx.nvim')
-
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/pum.vim')
@@ -88,37 +86,38 @@ call dein#add('lambdalisue/mr.vim')
 call dein#add('kmnk/study-denops')
 call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn', {
-      \  'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
+      \   'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
       \})
 call dein#add('kmnk/sonictemplate-vim-denite-extension')
 call dein#add('kmnk/denite-cmdl')
 call dein#add('kmnk/ddu-source-git', {
-      \ 'rev': 'feature/make-core/devel'
+      \   'rev': 'feature/make-core/devel'
       \})
+call dein#add('kmnk/ddu-dirmark', {'rev': 'feature/feature/read-and-write-dirmark-json/devel'})
 " my plugins }}}
 
 call dein#add('phpactor/phpactor', {
-      \ 'lazy': 1,
-      \ 'on_ft': ['php'],
-      \ 'build': 'composer install',
+      \   'lazy': 1,
+      \   'on_ft': ['php'],
+      \   'build': 'composer install',
       \})
 
 call dein#add('rust-lang/rust.vim', {
-      \  'lazy': 1,
-      \  'on_ft': ['rust'],
+      \   'lazy': 1,
+      \   'on_ft': ['rust'],
       \})
 
 call dein#add('fatih/vim-go', {
-      \  'lazy': 1,
-      \  'on_ft': ['go'],
+      \   'lazy': 1,
+      \   'on_ft': ['go'],
       \})
 
 call dein#add('kchmck/vim-coffee-script', {
-      \  'lazy': 1,
-      \  'on_ft': ['coffee'],
+      \   'lazy': 1,
+      \   'on_ft': ['coffee'],
       \})
 
 call dein#add('leafgarland/typescript-vim', {
-      \  'lazy': 1,
-      \  'on_ft': ['typescript'],
+      \   'lazy': 1,
+      \   'on_ft': ['typescript'],
       \})

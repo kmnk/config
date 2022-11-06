@@ -1,9 +1,6 @@
 nnoremap [denite] <Nop>
 nmap <Leader>. [denite]
 
-nmap <C-h> <SID>(help)
-nmap <BS> <SID>(help)
-
 "nmap [denite]f <SID>(file)
 nmap [denite]c <SID>(current_buffer_dir_file)
 
@@ -17,8 +14,6 @@ nmap [denite]t   <SID>(sonictemplate)
 
 " {{{
 nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old<CR>
-
-nnoremap <silent> <SID>(help) :<C-u>Denite help<CR>
 
 nnoremap <silent> <SID>(dirmark) :<C-u>Denite -default-action=cd dirmark<CR>
 nnoremap <silent> <SID>(dirmark-groups) :<C-u>Denite dirmark/groups:cd<CR>

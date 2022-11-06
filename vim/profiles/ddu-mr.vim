@@ -3,9 +3,22 @@
 nmap [denite]f <SID>(ddu-mr)
 
 nnoremap <expr> <SID>(ddu-mr) ':<C-u> call
-      \ ddu#start(
-      \   {
-      \     "sources":[{"name":"mr"}],
-      \     "uiParams":{"filer":{"split":"horizontal", "splitDirection":"botright", "sort":"time", "sortTreesFirst":0}},
-      \   }
-      \ )<CR>'
+      \ ddu#start({
+      \   "sources": [{"name": "mr"}],
+      \   "uiParams": {
+      \     "filer": {
+      \       "split": "horizontal",
+      \       "splitDirection": "botright",
+      \       "sort": "time",
+      \       "sortTreesFirst": 0,
+      \     },
+      \   },
+      \ })<CR>'
+
+call ddu#custom#patch_global({
+      \   "sourceOptions": {
+      \     "mr": {
+      \       "columns": [],
+      \     },
+      \   },
+      \})
