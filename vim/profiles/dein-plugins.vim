@@ -3,6 +3,7 @@
 " Shougo's plugins {{{
 call dein#add('Shougo/ddu.vim')
 call dein#add('Shougo/ddu-commands.vim')
+
 " ddu UIs {{{
 call dein#add('Shougo/ddu-ui-ff')
 call dein#add('Shougo/ddu-ui-filer')
@@ -93,7 +94,7 @@ call dein#add('kmnk/denite-cmdl')
 call dein#add('kmnk/ddu-source-git', {
       \   'rev': 'feature/make-core/devel'
       \})
-call dein#add('kmnk/ddu-dirmark', {'rev': 'feature/feature/read-and-write-dirmark-json/devel'})
+call dein#add('kmnk/ddu-dirmark', {'rev': 'feature/read-and-write-dirmark-json/devel'})
 " my plugins }}}
 
 call dein#add('phpactor/phpactor', {
