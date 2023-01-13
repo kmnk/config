@@ -30,7 +30,7 @@ clean: .clean-touched .clean-dein .clean-deno; ## Clean config
 	sh -c "cd fonts && ./install.sh && cd .. && rm -rf fonts"
 	brew tap sanemat/font
 	brew install ricty --with-powerline
-	cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+	cp -f /opt/homebrew/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
 	fc-cache -vf
 	touch .install-fonts
 
