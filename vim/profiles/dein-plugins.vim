@@ -1,7 +1,8 @@
 " dein-plugins
 
 " Shougo's plugins {{{
-call dein#add('Shougo/ddu.vim')
+"call dein#add('Shougo/ddu.vim')
+call dein#add('Shougo/ddu.vim', {'rev': 'c31fdf09a845c00beb94092faed626899b2515cb'})
 call dein#add('Shougo/ddu-commands.vim')
 
 " ddu UIs {{{
@@ -48,8 +49,8 @@ call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/pum.vim')
 " Shougo's plugins }}}
 
-# temorary specify fix commit
-# TODO: resolve v4.0.0 retry loop error
+" temorary specify fix commit
+" TODO: resolve v4.0.0 retry loop error
 call dein#add('vim-denops/denops.vim', { 'rev': '4839ef4e283f8551286c826e44366ac6174cfc71' })
 
 call dein#add('tpope/vim-fugitive')
