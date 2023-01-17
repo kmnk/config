@@ -2,7 +2,7 @@
 
 " Shougo's plugins {{{
 "call dein#add('Shougo/ddu.vim')
-call dein#add('Shougo/ddu.vim', {'rev': 'c31fdf09a845c00beb94092faed626899b2515cb'})
+call dein#add('Shougo/ddu.vim')
 call dein#add('Shougo/ddu-commands.vim')
 
 " ddu UIs {{{
