@@ -7,7 +7,7 @@ call dein#add('Shougo/ddu-commands.vim')
 
 " ddu UIs {{{
 call dein#add('Shougo/ddu-ui-ff')
-call dein#add('Shougo/ddu-ui-filer')
+call dein#add('Shougo/ddu-ui-filer', {'rev':'1234d4542456f97b64872a444eec0da31952a4ed'})
 
 call dein#add('Shougo/ddu-column-filename')
 " }}}
@@ -38,6 +38,7 @@ call dein#add('Shougo/ddc-around')
 call dein#add('Shougo/ddc-matcher_head')
 call dein#add('Shougo/ddc-sorter_rank')
 call dein#add('Shougo/ddc-omni')
+call dein#add('Shougo/ddc-source-nvim-lsp')
 call dein#add('LumaKernel/ddc-file')
 " ddc sources }}}
 " ddc uis {{{
@@ -51,7 +52,8 @@ call dein#add('Shougo/pum.vim')
 
 " temorary specify fix commit
 " TODO: resolve v4.0.0 retry loop error
-call dein#add('vim-denops/denops.vim', { 'rev': '4839ef4e283f8551286c826e44366ac6174cfc71' })
+"call dein#add('vim-denops/denops.vim', { 'rev': '4839ef4e283f8551286c826e44366ac6174cfc71' })
+call dein#add('vim-denops/denops.vim')
 
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-surround')
