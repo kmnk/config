@@ -85,17 +85,17 @@ function! CommandlinePost() abort
   endif
 endfunction
 
-call ddc#custom#patch_global('sources', ['nvim-lsp'])
-call ddc#custom#patch_global('sourceOptions', #{
-      \   nvim-lsp: #{
-      \     mark: 'lsp',
-      \     forceCompletionPattern: '\.\w*|:\w*|->\w*' },
-      \ })
-
-" Use Customized labels
-call ddc#custom#patch_global('sourceParams', #{
-      \   nvim-lsp: #{ kindLabels: #{ Class: 'c' } },
-      \ })
+"call ddc#custom#patch_global('sources', ['nvim-lsp'])
+"call ddc#custom#patch_global('sourceOptions', #{
+"      \   nvim-lsp: #{
+"      \     mark: 'lsp',
+"      \     forceCompletionPattern: '\.\w*|:\w*|->\w*' },
+"      \ })
+"
+"" Use Customized labels
+"call ddc#custom#patch_global('sourceParams', #{
+"      \   nvim-lsp: #{ kindLabels: #{ Class: 'c' } },
+"      \ })
 
 " Mappings
 

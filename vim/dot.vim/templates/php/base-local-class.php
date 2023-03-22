@@ -5,12 +5,10 @@ namespace {{_expr_:substitute(substitute(expand('%:hr'), '.*src[/]', '', 'g'), '
 
 class {{_expr_:expand('%:t:r')}}
 {
-
     /**
      * {{_expr_:expand('%:t:r')}} constructor.
      */
     public function __construct()
     {
     }
-
 }
