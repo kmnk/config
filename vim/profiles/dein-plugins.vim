@@ -7,7 +7,7 @@ call dein#add('Shougo/ddu-commands.vim')
 
 " ddu UIs {{{
 call dein#add('Shougo/ddu-ui-ff')
-call dein#add('Shougo/ddu-ui-filer', {'rev':'1234d4542456f97b64872a444eec0da31952a4ed'})
+call dein#add('Shougo/ddu-ui-filer')
 
 call dein#add('Shougo/ddu-column-filename')
 " }}}

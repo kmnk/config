@@ -38,11 +38,11 @@ nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
 autocmd FileType ddu-filer call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
   nnoremap <buffer><expr> <CR>
-        \ ddu#ui#filer#is_tree()
+        \ ddu#ui#filer#get_item()->get('isTree', v:false)
         \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
         \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
   nnoremap <buffer><expr> l
-        \ ddu#ui#filer#is_tree()
+        \ ddu#ui#filer#get_item()->get('isTree', v:false)
         \   ? "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>"
         \   : "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
   nnoremap <buffer> h
