@@ -1,7 +1,6 @@
 " dein-plugins
 
 " Shougo's plugins {{{
-"call dein#add('Shougo/ddu.vim')
 call dein#add('Shougo/ddu.vim')
 call dein#add('Shougo/ddu-commands.vim')
 
