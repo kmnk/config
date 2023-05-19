@@ -12,8 +12,7 @@ nnoremap <expr> <SID>(start-ddu-file-vertical) ':<C-u> call
       \     "ui":"filer",
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
-      \ )
-      \ <CR>'
+      \ )<CR><CR>'
 nnoremap <expr> <SID>(start-ddu-file-current-vertical) ':<C-u> call
       \ ddu#start(
       \   {
@@ -22,8 +21,7 @@ nnoremap <expr> <SID>(start-ddu-file-current-vertical) ':<C-u> call
       \     "ui":"filer",
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
-      \ )
-      \ <CR>'
+      \ )<CR><CR>'
 nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
       \ ddu#start(
       \   {
@@ -31,8 +29,7 @@ nnoremap <expr> <SID>(start-ddu-file_rec-vertical) ':<C-u> call
       \     "ui":"filer",
       \     "uiParams":{"filer":{"split":"vertical", "splitDirection":"topleft", "sort":"filename", "sortTreesFirst":1}},
       \   }
-      \ )
-      \ <CR>'
+      \ )<CR><CR>'
 " }}}
 
 autocmd FileType ddu-filer call s:ddu_my_settings()
