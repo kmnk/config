@@ -1,8 +1,6 @@
 nnoremap [denite] <Nop>
 nmap <Leader>. [denite]
 
-"nmap [denite]f <SID>(file)
-
 nmap [denite]dd <SID>(dirmark)
 nmap [denite]dg <SID>(dirmark-groups)
 nmap [denite]da <SID>(dirmark-add)
