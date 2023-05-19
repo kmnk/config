@@ -9,8 +9,6 @@ nmap [denite]da <SID>(dirmark-add)
 
 nmap [denite]l <SID>(cmdl)
 
-nmap [denite]t   <SID>(sonictemplate)
-
 " {{{
 nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old<CR>
 
@@ -19,8 +17,6 @@ nnoremap <silent> <SID>(dirmark-groups) :<C-u>Denite dirmark/groups:cd<CR>
 nnoremap <silent><expr> <SID>(dirmark-add) ':<C-u>Denite dirmark/add::"' . expand('%:p:h') .  '"<CR>'
 
 nnoremap <silent> <SID>(cmdl) :<C-u>Denite cmdl<CR>
-
-nnoremap <silent> <SID>(sonictemplate) :<C-u>Denite sonictemplate<CR>
 " }}}
 
 call denite#custom#map('insert', 'jj', '<denite:enter_mode:normal>', 'noremap')

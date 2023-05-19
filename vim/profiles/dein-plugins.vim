@@ -20,6 +20,7 @@ call dein#add('Shougo/ddu-source-register')
 call dein#add('4513ECHO/ddu-source-colorscheme')
 call dein#add('matsui54/ddu-source-help')
 call dein#add('matsui54/ddu-source-man')
+call dein#add('liquidz/ddu-source-custom-list')
 " }}}
 " ddu kinds {{{
 call dein#add('Shougo/ddu-kind-file')
@@ -49,9 +50,6 @@ call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/pum.vim')
 " Shougo's plugins }}}
 
-" temorary specify fix commit
-" TODO: resolve v4.0.0 retry loop error
-"call dein#add('vim-denops/denops.vim', { 'rev': '4839ef4e283f8551286c826e44366ac6174cfc71' })
 call dein#add('vim-denops/denops.vim')
 
 call dein#add('tpope/vim-fugitive')
@@ -93,7 +91,6 @@ call dein#add('kmnk/denite-dirmark')
 call dein#add('kmnk/gitn', {
       \   'depends': ['Shougo/denite.nvim', 'tpope/vim-fugitive']
       \})
-call dein#add('kmnk/sonictemplate-vim-denite-extension')
 call dein#add('kmnk/denite-cmdl')
 call dein#add('kmnk/ddu-source-git', {
       \   'rev': 'feature/make-core/devel'
