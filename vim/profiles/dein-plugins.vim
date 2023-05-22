@@ -87,6 +87,8 @@ call dein#add('rhysd/vim-healthcheck')
 call dein#add('kuuote/ddu-source-mr')
 call dein#add('lambdalisue/mr.vim')
 
+call dein#add('nelsyeung/twig.vim')
+
 " my plugins {{{
 call dein#add('kmnk/study-denops')
 call dein#add('kmnk/denite-dirmark')
