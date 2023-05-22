@@ -15,7 +15,7 @@ nnoremap <expr> <SID>(ddu-mr) ':<C-u> call
       \       "sortTreesFirst": 0,
       \     },
       \   },
-      \ })<CR>'
+      \ })<CR><CR>'
 
 nnoremap <expr> <SID>(ddu-mr-cd) ':<C-u> call
       \ ddu#start({
@@ -29,7 +29,7 @@ nnoremap <expr> <SID>(ddu-mr-cd) ':<C-u> call
       \       "sortTreesFirst": 0,
       \     },
       \   },
-      \ })<CR>'
+      \ })<CR><CR>'
 
 call ddu#custom#patch_global({
       \   "sourceOptions": {

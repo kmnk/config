@@ -16,6 +16,7 @@ let s:profile_names = [
 \ 'maps',
 \ 'phpactor',
 \ 'plugin-settings',
+\ 'snippets',
 \ 'submode',
 \ 'term',
 \ 'local',

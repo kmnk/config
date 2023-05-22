@@ -27,6 +27,9 @@ call ddu#custom#patch_global({
       \     'git-log': {
       \       'defaultAction': 'yank',
       \     },
+      \     'custom-list': {
+      \       'defaultAction': 'callback',
+      \     },
       \   },
       \})
 call ddu#custom#patch_global({
