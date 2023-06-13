@@ -56,6 +56,8 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 
+call dein#add('github/copilot.vim')
+
 call dein#add('altercation/vim-colors-solarized')
 
 call dein#add('thinca/vim-visualstar')
