@@ -12,8 +12,10 @@ else
   nnoremap <expr> <SID>(pop-term-on-current-buffer-dir) ':<C-u>term<CR>cd "' . expand('%:h') . '"<CR><C-l>'
 endif
 
-autocmd TermOpen * call s:term_my_settings()
-function! s:term_my_settings() abort
-  startinsert
-  set nonumber
-endfunction
+if has('nvim')
+  autocmd TermOpen * call s:term_my_settings()
+  function! s:term_my_settings() abort
+    startinsert
+    set nonumber
+  endfunction
+endif

@@ -12,6 +12,10 @@
     {
       "name": "show messages",
       "to_execute": "messages"
+    },
+    {
+      "name": "enable copilot",
+      "to_execute": "Copilot enable"
     }
   ]
 }
