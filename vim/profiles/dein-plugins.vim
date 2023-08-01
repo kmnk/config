@@ -89,6 +89,8 @@ call dein#add('lambdalisue/mr.vim')
 
 call dein#add('nelsyeung/twig.vim')
 
+call dein#add('phaazon/hop.nvim')
+
 " my plugins {{{
 call dein#add('kmnk/study-denops')
 call dein#add('kmnk/denite-dirmark')
@@ -127,3 +129,4 @@ call dein#add('leafgarland/typescript-vim', {
       \   'lazy': 1,
       \   'on_ft': ['typescript'],
       \})
+

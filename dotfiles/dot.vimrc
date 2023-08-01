@@ -21,6 +21,9 @@ let s:profile_names = [
 \ 'term',
 \ 'local',
 \]
+let s:nvim_profile_names = [
+\ 'hop',
+\ ]
 
 " source profile functions {{{
 function! s:source_profile(name)
@@ -47,6 +50,11 @@ call s:source_profile('dein')
 
 " source other profiles
 call s:source_profiles(s:profile_names)
+
+" source other nvim profiles
+if has('nvim')
+  call s:source_profiles(s:nvim_profile_names)
+endif
 
 " source local profile at last
 let s:path_to_local_vimrc = '~/.vimrc_profile'
