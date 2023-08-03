@@ -84,7 +84,7 @@ call dein#add('cespare/vim-toml')
 
 call dein#add('rhysd/vim-healthcheck')
 
-call dein#add('kuuote/ddu-source-mr')
+call dein#add('kuuote/ddu-source-mr', #{rev: 'd1e90a38d0ba5ad34adcd132f98a9399baea3aa2'})
 call dein#add('lambdalisue/mr.vim')
 
 call dein#add('nelsyeung/twig.vim')
