@@ -19,7 +19,7 @@ nnoremap <expr> <SID>(ddu-mr) ':<C-u> call
 
 nnoremap <expr> <SID>(ddu-mr-cd) ':<C-u> call
       \ ddu#start({
-      \   "sources": [{"name": "mr"}],
+      \   "sources": [{"name": "mr", "params": {"current": v:true}}],
       \   "ui": "filer",
       \   "uiParams": {
       \     "filer": {
@@ -27,11 +27,6 @@ nnoremap <expr> <SID>(ddu-mr-cd) ':<C-u> call
       \       "splitDirection": "botright",
       \       "sort": "time",
       \       "sortTreesFirst": 0,
-      \     },
-      \   },
-      \   "sourceOptions": #{
-      \     _: #{
-      \       matchers: ["matcher_relative"],
       \     },
       \   },
       \ })<CR><CR>'
