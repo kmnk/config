@@ -91,6 +91,8 @@ call dein#add('nelsyeung/twig.vim')
 
 call dein#add('phaazon/hop.nvim')
 
+call dein#add('mxw/vim-jsx')
+
 " my plugins {{{
 call dein#add('kmnk/study-denops')
 call dein#add('kmnk/denite-dirmark')
