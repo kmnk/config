@@ -6,7 +6,8 @@ call dein#add('Shougo/ddu-commands.vim')
 
 " ddu UIs {{{
 call dein#add('Shougo/ddu-ui-ff')
-call dein#add('Shougo/ddu-ui-filer')
+# https://github.com/Shougo/ddu-ui-filer/commit/9238fa2d3d851238f8a1ec86f89e7ad98119d6b5 で narrow の挙動が壊れているので一旦一つ前に固定
+call dein#add('Shougo/ddu-ui-filer', #{rev: 'a6168cb24b50d67f946bf63c527d92f39cd660a2'})
 
 call dein#add('Shougo/ddu-column-filename')
 " }}}

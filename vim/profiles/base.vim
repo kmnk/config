@@ -104,6 +104,9 @@ set completefunc=
 set omnifunc&
 set omnifunc+=
 
+set nobinary
+set eol
+
 " open completion popup in always
 set completeopt=menuone
 " completion targets
