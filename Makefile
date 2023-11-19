@@ -3,7 +3,7 @@ none:
 
 mac: vimrc tmux-conf zshrc .install-tmux .install-zsh .install-fonts; ## Initialize Mac config
 
-vimrc: .install-dein .install-deno
+vimrc: .install-dpp .install-dein .install-deno
 	echo 'source '`pwd`'/dotfiles/dot.vimrc' > ~/.vimrc
 
 tmux-conf:
@@ -13,7 +13,7 @@ zshrc:
 	echo 'source '`pwd`'/dotfiles/dot.zshrc' > ~/.zshrc
 	touch ~/.zshrc_profile
 
-clean: .clean-touched .clean-dein .clean-deno; ## Clean config
+clean: .clean-touched .clean-dpp .clean-dein .clean-deno; ## Clean config
 
 .install-tmux: .install-homebrew
 	brew install tmux
@@ -46,6 +46,21 @@ clean: .clean-touched .clean-dein .clean-deno; ## Clean config
 
 .clean-dein:
 	rm -rf ./.cache/dein
+
+.install-dpp:
+	mkdir -p ./.cache/dpp/repos
+	mkdir -p ./.cache/dpp/repos/github.com/Shougo ./.cache/dpp/repos/github.com/vim-denops
+	git clone git@github.com:Shougo/dpp.vim.git ./.cache/dpp/repos/github.com/Shougo/dpp.vim
+	git clone git@github.com:vim-denops/denops.vim.git ./.cache/dpp/repos/github.com/vim-denops/denops.vim
+	git clone git@github.com:Shougo/dpp-ext-installer.git ./.cache/dpp/repos/github.com/Shougo/dpp-ext-installer
+	git clone git@github.com:Shougo/dpp-ext-lazy.git ./.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy
+	git clone git@github.com:Shougo/dpp-ext-toml.git ./.cache/dpp/repos/github.com/Shougo/dpp-ext-toml
+	git clone git@github.com:Shougo/dpp-protocol-git.git ./.cache/dpp/repos/github.com/Shougo/dpp-protocol-git
+	touch .install-dpp
+
+.clean-dpp:
+	rm -rf ./.cache/dpp
+	rm .install-dpp
 
 .install-deno:
 	curl -fLsS https://deno.land/x/install/install.sh | sh
