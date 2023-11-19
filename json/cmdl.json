@@ -2,10 +2,6 @@
   "version": "0.1.0",
   "cmdls": [
     {
-      "name": "update plugins on dein",
-      "to_execute": "call dein#update()"
-    },
-    {
       "name": "update plugins on dpp",
       "to_execute": "call dpp#async_ext_action('installer', 'update')"
     },
@@ -14,12 +10,8 @@
       "to_execute": "call dpp#async_ext_action('installer', 'install')"
     },
     {
-      "name": "remake state",
+      "name": "remake dpp state",
       "to_execute": "call dpp#make_state('~/local/config/.cache/dpp/', '~/local/config/vim/configs/dpp.ts')"
-    },
-    {
-      "name": "recache runtimepath",
-      "to_execute": "call dein#recache_runtimepath()"
     },
     {
       "name": "show messages",
