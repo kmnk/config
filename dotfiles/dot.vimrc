@@ -23,7 +23,7 @@ let s:profile_names = [
 \]
 let s:nvim_profile_names = [
 \ 'hop',
-\ ]
+\]
 
 " source profile functions {{{
 function! s:source_profile(name)
@@ -46,7 +46,7 @@ command! -nargs=+ ReSourceProfile call s:call_source_profiles(<q-args>)
 " source profile functions }}}
 
 " source plugin manager profile at first
-call s:source_profile('dein')
+call s:source_profile('dpp')
 
 " source other profiles
 call s:source_profiles(s:profile_names)
