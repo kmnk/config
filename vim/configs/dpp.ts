@@ -12,6 +12,11 @@ type Toml = {
   plugins: Plugin[];
 };
 
+type LazyMakeStateResult = {
+  plugins: Plugin[];
+  stateLines: string[];
+};
+
 export class Config extends BaseConfig {
   override async config(args: {
     denops: Denops;
