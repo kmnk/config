@@ -104,7 +104,6 @@ call dein#add('kmnk/denite-cmdl')
 call dein#add('kmnk/ddu-source-git', {
       \   'rev': 'feature/make-core/devel'
       \})
-call dein#add('kmnk/ddu-dirm', {'rev': 'feature/read-and-write-dirmark-json/devel'})
 " my plugins }}}
 
 call dein#add('phpactor/phpactor', {
