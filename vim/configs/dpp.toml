@@ -16,6 +16,7 @@ repo = 'Shougo/dpp-protocol-git'
 # ddu {{{
 [[plugins]]
 repo = 'Shougo/ddu.vim'
+rev = '9911b66db1a7be9e5ff08a955d4a842851fe0c47'
 [[plugins]]
 repo = 'Shougo/ddu-commands.vim'
 
