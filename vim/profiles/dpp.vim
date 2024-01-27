@@ -21,11 +21,12 @@ execute 'set runtimepath^=' .. s:dpp_protocol_git_src
 
 if dpp#min#load_state(s:dpp_base)
   execute 'set runtimepath^=' .. s:denops_src
-  autocmd User DenopsReady call dpp#make_state(s:dpp_base, s:dpp_config)
 endif
 command! DppCheckLoadState echo dpp#min#load_state(s:dpp_base)
 command! DppMakeState call dpp#make_state(s:dpp_base, s:dpp_config)
 command! DppInstallPlugins call dpp#sync_ext_action('installer', 'install')
+
+const g:dpp_plugins_has_installed = len(split(glob(s:dpp_repos_github . '*'), "\n")) > 2
 
 filetype indent plugin on
 
