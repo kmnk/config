@@ -58,7 +58,6 @@ endfunction
 " source plugin manager profile at first
 call s:source_profile('dpp')
 
-" Shougo scripts and vim-denops only ? or not
 if g:dpp_plugins_has_installed
   call s:init_profiles()
 endif
