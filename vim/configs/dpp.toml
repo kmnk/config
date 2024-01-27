@@ -16,7 +16,6 @@ repo = 'Shougo/dpp-protocol-git'
 # ddu {{{
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-rev = '9911b66db1a7be9e5ff08a955d4a842851fe0c47'
 [[plugins]]
 repo = 'Shougo/ddu-commands.vim'
 
@@ -25,7 +24,6 @@ repo = 'Shougo/ddu-commands.vim'
 repo = 'Shougo/ddu-ui-ff'
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
-rev = 'a6168cb24b50d67f946bf63c527d92f39cd660a2'
 [[plugins]]
 repo = 'Shougo/ddu-column-filename'
 # }}}
@@ -53,7 +51,6 @@ repo = 'matsui54/ddu-source-man'
 repo = 'liquidz/ddu-source-custom-list'
 [[plugins]]
 repo = 'kuuote/ddu-source-mr'
-rev = 'd1e90a38d0ba5ad34adcd132f98a9399baea3aa2'
 # }}}
 
 # ddu kind {{{
