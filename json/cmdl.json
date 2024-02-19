@@ -20,6 +20,10 @@
     {
       "name": "enable copilot",
       "to_execute": "Copilot enable"
+    },
+    {
+      "name": "disable copilot",
+      "to_execute": "Copilot disable"
     }
   ]
 }
