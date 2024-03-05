@@ -18,4 +18,8 @@ nmap <Leader>al <Plug>(EasyAlign)
 xmap <Leader>al <Plug>(EasyAlign)
 " }}}
 
-
+" copilot {{{
+let g:copilot_filetypes = {
+      \ 'markdown': v:false,
+      \ }
+" }}}
