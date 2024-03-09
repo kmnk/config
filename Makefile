@@ -39,7 +39,7 @@ clean: .clean-touched .clean-dpp .clean-dein .clean-deno; ## Clean config
 	touch .install-homebrew
 
 .install-dein:
-	curl -fLsS https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
+	curl -fLsS https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh > dein-installer.sh
 	sh ./dein-installer.sh ./.cache/dein
 	rm ./dein-installer.sh
 	touch .install-dein
