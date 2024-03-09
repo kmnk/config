@@ -159,6 +159,10 @@ repo = 'phaazon/hop.nvim'
 repo = 'nelsyeung/twig.vim'
 [[plugins]]
 repo = 'mxw/vim-jsx'
+[[plugins]]
+repo = 'godlygeek/tabular'
+[[plugins]]
+repo = 'preservim/vim-markdown'
 # }}}
 
 # kmnk {{{
