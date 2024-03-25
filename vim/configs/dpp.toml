@@ -3,6 +3,7 @@
 repo = 'vim-denops/denops.vim'
 [[plugins]]
 repo = 'Shougo/dpp.vim'
+rev = 'f9ba3e38e5a6c7b2bbe5e122de80483607435380'
 [[plugins]]
 repo = 'Shougo/dpp-ext-installer'
 [[plugins]]
