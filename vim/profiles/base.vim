@@ -137,3 +137,5 @@ cnoremap <expr> ?  getcmdtype() == '?' ? '\?' : '?'
 let g:denops#debug = 1
 
 let g:python3_host_prog = '~/local/venv/bin/python3'
+
+set notermguicolors
