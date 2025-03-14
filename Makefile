@@ -63,9 +63,8 @@ clean: .clean-touched .clean-dpp .clean-dein .clean-deno; ## Clean config
 	rm .install-dpp
 
 .install-deno:
-	curl -fLsS https://deno.land/x/install/install.sh | sh
+	curl -fsSL https://deno.land/install.sh | sh
 	touch .install-deno
-
 .clean-deno:
 	rm -rf .install-deno
 

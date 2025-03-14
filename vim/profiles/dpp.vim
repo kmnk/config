@@ -19,9 +19,22 @@ execute 'set runtimepath^=' .. s:dpp_ext_lazy_src
 execute 'set runtimepath^=' .. s:dpp_ext_toml_src
 execute 'set runtimepath^=' .. s:dpp_protocol_git_src
 
-if dpp#min#load_state(s:dpp_base)
+if s:dpp_base->dpp#min#load_state(s:dpp_base)
   execute 'set runtimepath^=' .. s:denops_src
+  execute 'set runtimepath^=' .. s:denops_installer_src
+
+  autocmd User DenopsReady
+    \ : echohl WarningMsg
+    \ | echomsg 'dpp load_state() is failed'
+    \ | echohl NONE
+    \ | call dpp#make_state(s:dpp_base, s:dpp_config)
 endif
+
+autocmd User Dpp:makeStatePost
+      \ : echohl WarningMsg
+      \ | echomsg 'dpp make_state() is done'
+      \ | echohl NONE
+
 command! DppCheckLoadState echo dpp#min#load_state(s:dpp_base)
 command! DppMakeState call dpp#make_state(s:dpp_base, s:dpp_config)
 command! DppInstallPlugins call dpp#sync_ext_action('installer', 'install')

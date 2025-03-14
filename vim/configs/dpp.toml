@@ -2,8 +2,9 @@
 [[plugins]]
 repo = 'vim-denops/denops.vim'
 [[plugins]]
+repo = 'vim-denops/denops-helloworld.vim'
+[[plugins]]
 repo = 'Shougo/dpp.vim'
-rev = 'f9ba3e38e5a6c7b2bbe5e122de80483607435380'
 [[plugins]]
 repo = 'Shougo/dpp-ext-installer'
 [[plugins]]
@@ -17,7 +18,6 @@ repo = 'Shougo/dpp-protocol-git'
 # ddu {{{
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-rev = '30481cb2183a8d08c677d3c0e6eac16a00dd9638'
 
 [[plugins]]
 repo = 'Shougo/ddu-commands.vim'
@@ -54,7 +54,6 @@ repo = 'matsui54/ddu-source-man'
 repo = 'liquidz/ddu-source-custom-list'
 [[plugins]]
 repo = 'kuuote/ddu-source-mr'
-rev = 'd1e90a38d0ba5ad34adcd132f98a9399baea3aa2'
 # }}}
 
 # ddu kind {{{
