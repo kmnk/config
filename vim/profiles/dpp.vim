@@ -21,7 +21,6 @@ execute 'set runtimepath^=' .. s:dpp_protocol_git_src
 
 if s:dpp_base->dpp#min#load_state(s:dpp_base)
   execute 'set runtimepath^=' .. s:denops_src
-  execute 'set runtimepath^=' .. s:denops_installer_src
 
   autocmd User DenopsReady
     \ : echohl WarningMsg
