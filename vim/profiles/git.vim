@@ -14,8 +14,8 @@ nmap <Space>gf <SID>(fugitive-fetch)
 nmap <Space>ggh <SID>(go-github)
 nmap <Space>ggH <SID>(go-github-on-master)
 
-nmap [denite]gst <SID>(gitn-status)
-nmap [denite]gl  <SID>(gitn-log)
+nmap [denite]gst <SID>(ddu-git_status)
+nmap [denite]gl  <SID>(ddu-git_log)
 nmap [denite]gL  <SID>(gitn-log-this-file)
 nmap [denite]gb  <SID>(gitn-branch)
 nmap [denite]gB  <SID>(gitn-branch-all)
@@ -39,4 +39,18 @@ nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>
 nnoremap <silent><expr> <SID>(gitn-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
 nnoremap <silent> <SID>(gitn-branch) :<C-u>Denite gitn_branch<CR>
 nnoremap <silent> <SID>(gitn-branch-all) :<C-u>Denite gitn_branch:all<CR>
+
+nnoremap <expr> <SID>(ddu-git_status) ':<C-u> call
+\ ddu#start(
+\   {
+\     "sources":[{"name":"git_status"}],
+\   }
+\ )<CR><CR>'
+nnoremap <expr> <SID>(ddu-git_log) ':<C-u> call
+\ ddu#start(
+\   {
+\     "sources":[{"name":"git_log"}],
+\   }
+\ )<CR><CR>'
+
 " }}}

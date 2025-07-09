@@ -102,8 +102,8 @@ repo = 'Shougo/pum.vim'
 # }}}
 # }}}
 
-[[plugins]]
-repo = 'Shougo/denite.nvim'
+#[[plugins]]
+#repo = 'Shougo/denite.nvim'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
@@ -136,9 +136,9 @@ repo = 'kana/vim-operator-user'
 repo = 'kana/vim-textobj-user'
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'nvim-lualine/lualine.nvim'
 [[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+repo = 'nvim-tree/nvim-web-devicons'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -158,7 +158,14 @@ repo = 'lambdalisue/mr.vim'
 [[plugins]]
 repo = 'phaazon/hop.nvim'
 
-# schema {{
+# git {{{
+[[plugins]]
+repo = 'kuuote/ddu-source-git_status'
+[[plugins]]
+repo = 'kyoh86/ddu-source-git_log'
+# }}}
+
+# schema {{{
 [[plugins]]
 repo = 'nelsyeung/twig.vim'
 [[plugins]]

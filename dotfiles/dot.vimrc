@@ -1,9 +1,8 @@
 let s:profiles_dir_path = expand('<sfile>:h:h') . '/vim/profiles/'
 let s:profile_names = [
-\ 'airline',
 \ 'base',
 \ 'cmdwin',
-\ 'cmdl',
+"\ 'cmdl',
 \ 'color',
 \ 'denite',
 \ 'ddc',
@@ -22,7 +21,8 @@ let s:profile_names = [
 \ 'local',
 \]
 let s:nvim_profile_names = [
-\ 'hop',
+\ 'lualine',
+"\ 'hop',
 \]
 
 " source profile functions {{{
