@@ -49,7 +49,7 @@ require('lualine').setup {
           end
 
           if win_width > 100 then
-            return ' ' .. branch_name
+            return ' ' .. string.match(branch_name, "[/]?([^/]+)$")
           else
             return ''
           end
@@ -59,8 +59,7 @@ require('lualine').setup {
       },
       {
         'diff',
-        --symbols = { added = ' ', modified = ' ', removed = ' ' },
-        symbols = { added = '➕ ', modified = '✏️ ', removed = '❌ ' },
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
         padding = { left = 0, right = 1 },
         fmt = function(str)
           if win_width > 90 then
