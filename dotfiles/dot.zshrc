@@ -100,6 +100,25 @@ alias ....="cd ../../../"
 
 export DENO_INSTALL=$HOME/.deno
 export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+cdr() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: cdr <command> [args...]" >&2
+        return 1
+    fi
+    local dir
+    dir=$("$@") || return 1
+    [[ -n "$dir" ]] || return 1
+    cd "$dir"
+}
+
+alias tls="task select"
+alias tsel="cdr task select && nvim log.md"
+alias tnew="cdr task new && nvim log.md"
+alias tres="cdr task resume && nvim log.md"
+alias tdone="task done"
+alias tpend="task pend"
 
 source ~/.zshrc_profile
 
