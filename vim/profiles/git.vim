@@ -17,8 +17,8 @@ nmap <Space>ggH <SID>(go-github-on-master)
 nmap [denite]gst <SID>(ddu-git_status)
 nmap [denite]gl  <SID>(ddu-git_log)
 nmap [denite]gL  <SID>(gitn-log-this-file)
-nmap [denite]gb  <SID>(gitn-branch)
-nmap [denite]gB  <SID>(gitn-branch-all)
+nmap [denite]gb  <SID>(ddu-git_branch)
+nmap [denite]gB  <SID>(ddu-git_branch-all)
 
 " {{{
 nnoremap <silent> <SID>(fugitive-blame) :<C-u>Git blame<CR>
@@ -37,8 +37,6 @@ nnoremap <silent><expr> <SID>(go-github-on-master) ':<C-u>!open "https://github.
 nnoremap <silent> <SID>(gitn-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>
 nnoremap <silent><expr> <SID>(gitn-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
-nnoremap <silent> <SID>(gitn-branch) :<C-u>Denite gitn_branch<CR>
-nnoremap <silent> <SID>(gitn-branch-all) :<C-u>Denite gitn_branch:all<CR>
 
 nnoremap <expr> <SID>(ddu-git_status) ':<C-u> call
 \ ddu#start(
@@ -52,5 +50,9 @@ nnoremap <expr> <SID>(ddu-git_log) ':<C-u> call
 \     "sources":[{"name":"git_log"}],
 \   }
 \ )<CR><CR>'
+
+call ddu#custom#patch_global(#{ kindOptions: #{ git_branch: #{defaultAction: 'switch'} } })
+nnoremap <expr> <SID>(ddu-git_branch)     ':<C-u> call ddu#start(#{sources: [#{name: "git_branch"}]})<CR><CR>'
+nnoremap <expr> <SID>(ddu-git_branch-all) ':<C-u> call ddu#start(#{sources: [#{name: "git_branch", params: #{args: ["--all"]}}]})<CR><CR>'
 
 " }}}
