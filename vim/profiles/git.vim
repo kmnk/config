@@ -1,35 +1,34 @@
 " git
 
-nmap <Leader>gst <SID>(fugitive-status)
 nmap <Leader>gbl <SID>(fugitive-blame)
 nmap <Leader>gc <SID>(fugitive-commit)
 nmap <Leader>gg <SID>(fugitive-grep)
-nmap <Leader>gl <SID>(fugitive-log)
 nmap <Leader>gb <SID>(fugitive-branch)
 
 nmap <Space>gp <SID>(fugitive-push)
-nmap <Space>gFp <SID>(fugitive-push-force)
 nmap <Space>gP <SID>(fugitive-pull)
 nmap <Space>gf <SID>(fugitive-fetch)
+
 nmap <Space>ggh <SID>(go-github)
 nmap <Space>ggH <SID>(go-github-on-master)
 
-nmap [denite]gst <SID>(ddu-git_status)
-nmap [denite]gl  <SID>(ddu-git_log)
-nmap [denite]gL  <SID>(ddu-git_log-this-file)
-nmap [denite]gb  <SID>(ddu-git_branch)
-nmap [denite]gB  <SID>(ddu-git_branch-all)
+nmap [ddu]gst <SID>(ddu-git_status)
+nmap [ddu]gssh <SID>(ddu-git_stash)
+nmap [ddu]gl <SID>(ddu-git_log)
+nmap [ddu]gL <SID>(ddu-git_log-this-file)
+nmap [ddu]gb <SID>(ddu-git_branch)
+nmap [ddu]gB <SID>(ddu-git_branch-all)
+nmap [ddu]gref <SID>(ddu-git_reflog)
+nmap [ddu]gremo <SID>(ddu-git_remote)
+nmap [ddu]gconf <SID>(ddu-git_config)
 
 nnoremap <silent> <SID>(fugitive-blame) :<C-u>Git blame<CR>
 nnoremap <silent> <SID>(fugitive-commit) :<C-u>Git commit<CR>
 nnoremap <SID>(fugitive-grep) :<C-u>Git grep
-nnoremap <silent> <SID>(fugitive-log) :<C-u>Git log<CR>
 nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . gitn#current_branch() . '<CR>'
-nnoremap <silent><expr> <SID>(fugitive-push-force) ':<C-u>Git push -f origin ' . gitn#current_branch() . '<CR>'
-nnoremap <silent> <SID>(fugitive-status) :<C-u>G<CR>
-nnoremap <silent> <SID>(fugitive-branch) :<C-u>Git branch<CR>
 nnoremap <silent> <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
+
 nnoremap <silent><expr> <SID>(go-github) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/' . gitn#get_head_hash() . '/' . substitute(expand("%"), gitn#get_toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
 nnoremap <silent><expr> <SID>(go-github-on-master) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/master/' . substitute(expand("%"), gitn#get_toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
 
@@ -42,6 +41,14 @@ nnoremap <silent><expr> <SID>(ddu-git_status) ':<C-u>
       \   name: "git_status",
       \   sources: [#{
       \     name: "git_status",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_stash) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_stash",
+      \   sources: [#{
+      \     name: "git_stash",
       \   }],
       \ })
       \ <CR><CR>'
@@ -79,6 +86,30 @@ nnoremap <silent><expr> <SID>(ddu-git_log-this-file) ':<C-u>
       \       args: ["--", expand("%:p")],
       \       cwd: expand("%:p:h"),
       \     },
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_remote) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_remote",
+      \   sources: [#{
+      \     name: "git_remote",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_reflog) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_reflog",
+      \   sources: [#{
+      \     name: "git_reflog",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_config) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_config",
+      \   sources: [#{
+      \     name: "git_config",
       \   }],
       \ })
       \ <CR><CR>'

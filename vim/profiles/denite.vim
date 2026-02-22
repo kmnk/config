@@ -1,11 +1,11 @@
-nnoremap [denite] <Nop>
-nmap <Leader>. [denite]
+nnoremap [ddu] <Nop>
+nmap <Leader>. [ddu]
 
-"nmap [denite]dd <SID>(dirmark)
-"nmap [denite]dg <SID>(dirmark-groups)
-"nmap [denite]da <SID>(dirmark-add)
+"nmap [ddu]dd <SID>(dirmark)
+"nmap [ddu]dg <SID>(dirmark-groups)
+"nmap [ddu]da <SID>(dirmark-add)
 "
-"nmap [denite]l <SID>(cmdl)
+"nmap [ddu]l <SID>(cmdl)
 "
 "" {{{
 "nnoremap <silent> <SID>(file) :<C-u>Denite file_mru file/old<CR>

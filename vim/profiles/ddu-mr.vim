@@ -1,6 +1,6 @@
-" dddu-mr
+" ddu-mr
 
-nmap [denite]c <SID>(ddu-mr-cd)
+nmap [ddu]c <SID>(ddu-mr-cd)
 
 nnoremap <expr> <SID>(ddu-mr-cd) ':<C-u> call
       \ ddu#start({

@@ -1,6 +1,6 @@
 " snippets
 
-nmap [denite]t <SID>(sonictemplate)
+nmap [ddu]t <SID>(sonictemplate)
 
 nnoremap <silent> <SID>(sonictemplate) :<C-u>call <SID>ddu_sonictemplate()<CR>
 
