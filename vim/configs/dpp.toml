@@ -158,13 +158,6 @@ repo = 'lambdalisue/mr.vim'
 [[plugins]]
 repo = 'phaazon/hop.nvim'
 
-# git {{{
-[[plugins]]
-repo = 'kuuote/ddu-source-git_status'
-[[plugins]]
-repo = 'kyoh86/ddu-source-git_log'
-# }}}
-
 # schema {{{
 [[plugins]]
 repo = 'nelsyeung/twig.vim'
@@ -181,7 +174,6 @@ repo = 'kmnk/gitn'
 repo = 'kmnk/denite-cmdl'
 [[plugins]]
 repo = 'kmnk/ddu-source-git'
-rev = 'feature/make-core/devel'
 # }}}
 
 # on_ft {{{

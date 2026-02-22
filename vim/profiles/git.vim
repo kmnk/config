@@ -16,14 +16,13 @@ nmap <Space>ggH <SID>(go-github-on-master)
 
 nmap [denite]gst <SID>(ddu-git_status)
 nmap [denite]gl  <SID>(ddu-git_log)
-nmap [denite]gL  <SID>(gitn-log-this-file)
+nmap [denite]gL  <SID>(ddu-git_log-this-file)
 nmap [denite]gb  <SID>(ddu-git_branch)
 nmap [denite]gB  <SID>(ddu-git_branch-all)
 
-" {{{
 nnoremap <silent> <SID>(fugitive-blame) :<C-u>Git blame<CR>
 nnoremap <silent> <SID>(fugitive-commit) :<C-u>Git commit<CR>
-nnoremap <SID>(fugitive-grep) :<C-u>Git grep 
+nnoremap <SID>(fugitive-grep) :<C-u>Git grep
 nnoremap <silent> <SID>(fugitive-log) :<C-u>Git log<CR>
 nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . gitn#current_branch() . '<CR>'
@@ -38,21 +37,77 @@ nnoremap <silent> <SID>(gitn-status) :<C-u>Denite gitn_status<CR>
 nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>
 nnoremap <silent><expr> <SID>(gitn-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
 
-nnoremap <expr> <SID>(ddu-git_status) ':<C-u> call
-\ ddu#start(
-\   {
-\     "sources":[{"name":"git_status"}],
-\   }
-\ )<CR><CR>'
-nnoremap <expr> <SID>(ddu-git_log) ':<C-u> call
-\ ddu#start(
-\   {
-\     "sources":[{"name":"git_log"}],
-\   }
-\ )<CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_status) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_status",
+      \   sources: [#{
+      \     name: "git_status",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_branch) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_branch",
+      \   sources: [#{
+      \     name: "git_branch",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_branch-all) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_branch",
+      \   sources: [#{
+      \     name: "git_branch",
+      \     params: #{args: ["--all"]},
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_log) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_log",
+      \   sources: [#{
+      \     name: "git_log",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_log-this-file) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_log",
+      \   sources: [#{
+      \     name: "git_log",
+      \     params: #{
+      \       args: ["--", expand("%:p")],
+      \       cwd: expand("%:p:h"),
+      \     },
+      \   }],
+      \ })
+      \ <CR><CR>'
 
-call ddu#custom#patch_global(#{ kindOptions: #{ git_branch: #{defaultAction: 'switch'} } })
-nnoremap <expr> <SID>(ddu-git_branch)     ':<C-u> call ddu#start(#{sources: [#{name: "git_branch"}]})<CR><CR>'
-nnoremap <expr> <SID>(ddu-git_branch-all) ':<C-u> call ddu#start(#{sources: [#{name: "git_branch", params: #{args: ["--all"]}}]})<CR><CR>'
+autocmd FileType ddu-ff call s:ddu_ff_git_settings()
+function s:ddu_ff_git_settings() abort
+  nnoremap <buffer> p <Cmd>call ddu#ui#do_action('togglePreview')<CR>
+  if b:ddu_ui_name ==# 'git_status'
+    nnoremap <buffer> a <Cmd>call ddu#ui#do_action('itemAction', #{name: 'add'})<CR>
+    nnoremap <buffer> u <Cmd>call ddu#ui#do_action('itemAction', #{name: 'restoreStaged'})<CR>
+  elseif b:ddu_ui_name ==# 'git_log'
+  endif
+endfunction
 
-" }}}
+call ddu#custom#patch_global(#{
+      \  kindOptions: #{
+      \    git_status: #{
+      \      defaultAction: 'open',
+      \    },
+      \    git_branch: #{
+      \      defaultAction: 'switch'
+      \    },
+      \  },
+      \})
+call ddu#custom#patch_local('git_log', #{
+      \  uiParams: #{
+      \    ff: #{
+      \      autoAction: #{name: 'preview'},
+      \      startAutoAction: v:true,
+      \    },
+      \  },
+      \})

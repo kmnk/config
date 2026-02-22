@@ -1,43 +1,34 @@
 "nnoremap [ddu] <Nop>
 "nmap <Leader>. [ddu]
 
-call ddu#custom#patch_global({'ui': 'ff'})
-call ddu#custom#patch_global({
-      \   'sources': [
-      \   ]
-      \})
-call ddu#custom#patch_global({
-      \   'sourceOptions': {
-      \     '_': {
-      \       'matchers': ['matcher_substring'],
-      \     },
-      \   },
-      \})
-call ddu#custom#patch_global({
-      \   'kindOptions': {
-      \     'word': {
-      \       'defaultAction': 'append',
-      \     },
-      \     'action': {
-      \       'defaultAction': 'do',
-      \     },
-      \     'colorscheme': {
-      \       'defaultAction': 'set',
-      \     },
-      \     'git-log': {
-      \       'defaultAction': 'yank',
-      \     },
-      \     'custom-list': {
-      \       'defaultAction': 'callback',
-      \     },
-      \   },
-      \})
-call ddu#custom#patch_global({
-      \   'filterParams': {
-      \     'matcher_substring': {
-      \       'highlightMatched': 'Search',
-      \     },
-      \   },
+call ddu#custom#patch_global(#{
+      \  ui: 'ff',
+      \  sources: [
+      \  ],
+      \  sourceOptions: #{
+      \    _: #{
+      \    matchers: ['matcher_substring'],
+      \    },
+      \  },
+      \  kindOptions: #{
+      \    word: #{
+      \      defaultAction: 'append',
+      \    },
+      \    action: #{
+      \      defaultAction: 'do',
+      \    },
+      \    colorscheme: #{
+      \      defaultAction: 'set',
+      \    },
+      \    custom-list: #{
+      \      defaultAction: 'callback',
+      \    },
+      \  },
+      \  filterParams: #{
+      \    matcher_substring: #{
+      \      highlightMatched: 'Search',
+      \    },
+      \  },
       \})
 
 autocmd FileType ddu-ff call s:ddu_my_settings()

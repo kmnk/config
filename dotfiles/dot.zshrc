@@ -119,6 +119,7 @@ alias tnew="cdr task new && nvim log.md"
 alias tres="cdr task resume && nvim log.md"
 alias tdone="task done"
 alias tpend="task pend"
+alias tln="task link"
 
 source ~/.zshrc_profile
 
