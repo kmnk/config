@@ -1,16 +1,15 @@
 let s:profiles_dir_path = expand('<sfile>:h:h') . '/vim/profiles/'
 let s:profile_names = [
 \ 'base',
+\ 'develop-plugin',
 \ 'cmdwin',
-"\ 'cmdl',
+\ 'cmdl',
 \ 'color',
-\ 'denite',
 \ 'ddc',
 \ 'ddu',
 \ 'ddu-file',
 \ 'ddu-help',
 \ 'ddu-mr',
-\ 'develop-plugin',
 \ 'git',
 \ 'maps',
 \ 'phpactor',

@@ -167,8 +167,8 @@ repo = 'mxw/vim-jsx'
 # 代替 plugin を作ったら消す
 #[[plugins]]
 #repo = 'kmnk/denite-dirmark'
-#[[plugins]]
-#repo = 'kmnk/denite-cmdl'
+[[plugins]]
+repo = 'kmnk/ddu-cmdl'
 [[plugins]]
 repo = 'kmnk/ddu-source-git'
 # }}}

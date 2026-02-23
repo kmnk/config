@@ -1,5 +1,5 @@
-"nnoremap [ddu] <Nop>
-"nmap <Leader>. [ddu]
+nnoremap [ddu] <Nop>
+nmap <Leader>. [ddu]
 
 call ddu#custom#patch_global(#{
       \  ui: 'ff',

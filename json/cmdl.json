@@ -1,29 +1,14 @@
-{
-  "version": "0.1.0",
-  "cmdls": [
-    {
-      "name": "update plugins on dpp",
-      "to_execute": "call dpp#async_ext_action('installer', 'update')"
-    },
-    {
-      "name": "install plugins on dpp",
-      "to_execute": "call dpp#async_ext_action('installer', 'install')"
-    },
-    {
-      "name": "remake dpp state",
-      "to_execute": "call dpp#make_state('~/local/config/.cache/dpp/', '~/local/config/vim/configs/dpp.ts')"
-    },
-    {
-      "name": "show messages",
-      "to_execute": "messages"
-    },
-    {
-      "name": "enable copilot",
-      "to_execute": "Copilot enable"
-    },
-    {
-      "name": "disable copilot",
-      "to_execute": "Copilot disable"
-    }
-  ]
-}
+[
+  {
+    "label": "dpp installer update",
+    "command": "call dpp#async_ext_action('installer', 'update')"
+  },
+  {
+    "label": "dpp installer install",
+    "command": "call dpp#async_ext_action('installer', 'install')"
+  },
+  {
+    "label": "edit cmdl.json",
+    "command": "tabnew ~/local/config/json/cmdl.json"
+  }
+]

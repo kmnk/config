@@ -1,5 +1,5 @@
-nnoremap [ddu] <Nop>
-nmap <Leader>. [ddu]
+"nnoremap [ddu] <Nop>
+"nmap <Leader>. [ddu]
 
 "nmap [ddu]dd <SID>(dirmark)
 "nmap [ddu]dg <SID>(dirmark-groups)
