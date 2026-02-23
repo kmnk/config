@@ -168,7 +168,7 @@ repo = 'mxw/vim-jsx'
 #[[plugins]]
 #repo = 'kmnk/denite-dirmark'
 [[plugins]]
-repo = 'kmnk/ddu-cmdl'
+repo = 'kmnk/ddu-source-cmdl'
 [[plugins]]
 repo = 'kmnk/ddu-source-git'
 # }}}
