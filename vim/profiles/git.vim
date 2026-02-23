@@ -1,16 +1,15 @@
 " git
 
-nmap <Leader>gbl <SID>(fugitive-blame)
-nmap <Leader>gc <SID>(fugitive-commit)
-nmap <Leader>gg <SID>(fugitive-grep)
-nmap <Leader>gb <SID>(fugitive-branch)
+nmap <Space>ggh <SID>(go-github)
+nmap <Space>ggH <SID>(go-github-on-master)
 
+nmap <Leader>gc <SID>(fugitive-commit)
 nmap <Space>gp <SID>(fugitive-push)
 nmap <Space>gP <SID>(fugitive-pull)
 nmap <Space>gf <SID>(fugitive-fetch)
 
-nmap <Space>ggh <SID>(go-github)
-nmap <Space>ggH <SID>(go-github-on-master)
+nmap <Leader>gbl <SID>(ddu-git_blame)
+nmap <Leader>gg <SID>(ddu-git_grep)
 
 nmap [ddu]gst <SID>(ddu-git_status)
 nmap [ddu]gssh <SID>(ddu-git_stash)
@@ -21,20 +20,15 @@ nmap [ddu]gB <SID>(ddu-git_branch-all)
 nmap [ddu]gref <SID>(ddu-git_reflog)
 nmap [ddu]gremo <SID>(ddu-git_remote)
 nmap [ddu]gconf <SID>(ddu-git_config)
+nmap [ddu]gwt <SID>(ddu-git_worktree)
 
-nnoremap <silent> <SID>(fugitive-blame) :<C-u>Git blame<CR>
 nnoremap <silent> <SID>(fugitive-commit) :<C-u>Git commit<CR>
-nnoremap <SID>(fugitive-grep) :<C-u>Git grep
-nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . gitn#current_branch() . '<CR>'
+nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent> <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
 
 nnoremap <silent><expr> <SID>(go-github) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/' . gitn#get_head_hash() . '/' . substitute(expand("%"), gitn#get_toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
 nnoremap <silent><expr> <SID>(go-github-on-master) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/master/' . substitute(expand("%"), gitn#get_toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
-
-nnoremap <silent> <SID>(gitn-status) :<C-u>Denite gitn_status<CR>
-nnoremap <silent> <SID>(gitn-log) :<C-u>Denite gitn_log<CR>
-nnoremap <silent><expr> <SID>(gitn-log-this-file) ':<C-u>Denite gitn_log:' . expand('%:p') . '<CR>'
 
 nnoremap <silent><expr> <SID>(ddu-git_status) ':<C-u>
       \ call ddu#start(#{
@@ -113,6 +107,30 @@ nnoremap <silent><expr> <SID>(ddu-git_config) ':<C-u>
       \   }],
       \ })
       \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_grep) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_grep",
+      \   sources: [#{
+      \     name: "git_grep",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_worktree) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_worktree",
+      \   sources: [#{
+      \     name: "git_worktree",
+      \   }],
+      \ })
+      \ <CR><CR>'
+nnoremap <silent><expr> <SID>(ddu-git_blame) ':<C-u>
+      \ call ddu#start(#{
+      \   name: "git_blame",
+      \   sources: [#{
+      \     name: "git_blame",
+      \   }],
+      \ })
+      \ <CR><CR>'
 
 autocmd FileType ddu-ff call s:ddu_ff_git_settings()
 function s:ddu_ff_git_settings() abort
@@ -127,6 +145,12 @@ endfunction
 call ddu#custom#patch_global(#{
       \  kindOptions: #{
       \    git_status: #{
+      \      defaultAction: 'open',
+      \    },
+      \    git_grep: #{
+      \      defaultAction: 'open',
+      \    },
+      \    git_blame: #{
       \      defaultAction: 'open',
       \    },
       \    git_branch: #{
