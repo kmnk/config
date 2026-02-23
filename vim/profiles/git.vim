@@ -23,12 +23,12 @@ nmap [ddu]gconf <SID>(ddu-git_config)
 nmap [ddu]gwt <SID>(ddu-git_worktree)
 
 nnoremap <silent> <SID>(fugitive-commit) :<C-u>Git commit<CR>
-nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . gitn#current_branch() . '<CR>'
+nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . ddu_source_git#head() . '<CR>'
 nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent> <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
 
-nnoremap <silent><expr> <SID>(go-github) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/' . gitn#get_head_hash() . '/' . substitute(expand("%"), gitn#get_toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
-nnoremap <silent><expr> <SID>(go-github-on-master) ':<C-u>!open "https://github.com/' . gitn#repository_name() . '/blob/master/' . substitute(expand("%"), gitn#get_toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
+nnoremap <silent><expr> <SID>(go-github) ':<C-u>!open "https://github.com/' . ddu_source_git#remote_repo() . '/blob/' . ddu_source_git#hash() . '/' . substitute(expand("%"), ddu_source_git#toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
+nnoremap <silent><expr> <SID>(go-github-on-master) ':<C-u>!open "https://github.com/' . ddu_source_git#remote_repo() . '/blob/master/' . substitute(expand("%"), ddu_source_git#toplevel(), "", "g") . '\#L' . line('.') . '"<CR>'
 
 nnoremap <silent><expr> <SID>(ddu-git_status) ':<C-u>
       \ call ddu#start(#{

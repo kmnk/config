@@ -102,8 +102,6 @@ repo = 'Shougo/pum.vim'
 # }}}
 # }}}
 
-#[[plugins]]
-#repo = 'Shougo/denite.nvim'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
@@ -166,12 +164,11 @@ repo = 'mxw/vim-jsx'
 # }}}
 
 # kmnk {{{
-[[plugins]]
-repo = 'kmnk/denite-dirmark'
-[[plugins]]
-repo = 'kmnk/gitn'
-[[plugins]]
-repo = 'kmnk/denite-cmdl'
+# 代替 plugin を作ったら消す
+#[[plugins]]
+#repo = 'kmnk/denite-dirmark'
+#[[plugins]]
+#repo = 'kmnk/denite-cmdl'
 [[plugins]]
 repo = 'kmnk/ddu-source-git'
 # }}}
