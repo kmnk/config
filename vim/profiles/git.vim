@@ -23,7 +23,7 @@ nmap [ddu]gref <SID>(ddu-git_reflog)
 nmap [ddu]gremo <SID>(ddu-git_remote)
 nmap [ddu]gssh <SID>(ddu-git_stash)
 nmap [ddu]gst <SID>(ddu-git_status)
-nmap [ddu]gsub <SID>(ddu-git_submodule)
+nmap [ddu]gsb <SID>(ddu-git_submodule)
 nmap [ddu]gwt <SID>(ddu-git_worktree)
 
 " ddu source git maps {{{
