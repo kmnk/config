@@ -151,17 +151,20 @@ endfunction
 
 call ddu#custom#patch_global(#{
       \  kindOptions: #{
-      \    git_status: #{
-      \      defaultAction: 'open',
-      \    },
-      \    git_grep: #{
-      \      defaultAction: 'open',
-      \    },
       \    git_blame: #{
       \      defaultAction: 'open',
       \    },
       \    git_branch: #{
       \      defaultAction: 'switch'
+      \    },
+      \    git_grep: #{
+      \      defaultAction: 'open',
+      \    },
+      \    git_log_files: #{
+      \      defaultAction: 'open',
+      \    },
+      \    git_status: #{
+      \      defaultAction: 'open',
       \    },
       \  },
       \})
