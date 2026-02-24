@@ -10,6 +10,7 @@ let s:profile_names = [
 \ 'ddu-file',
 \ 'ddu-help',
 \ 'ddu-mr',
+\ 'dirmark',
 \ 'git',
 \ 'maps',
 \ 'phpactor',
