@@ -138,17 +138,20 @@ nnoremap <silent><expr> <SID>(ddu-git_worktree) ':<C-u>
       \ <CR><CR>'
 " }}}
 
-" ddu source git settings {{{
+" ddu source git buffer map {{{
 autocmd FileType ddu-ff call s:ddu_ff_git_settings()
 function s:ddu_ff_git_settings() abort
   nnoremap <buffer> p <Cmd>call ddu#ui#do_action('togglePreview')<CR>
   if b:ddu_ui_name ==# 'git_status'
     nnoremap <buffer> a <Cmd>call ddu#ui#do_action('itemAction', #{name: 'add'})<CR>
     nnoremap <buffer> u <Cmd>call ddu#ui#do_action('itemAction', #{name: 'restoreStaged'})<CR>
+    nnoremap <buffer> ci <Cmd>call ddu#ui#do_action('itemAction', #{name: 'commit'})<CR>
   elseif b:ddu_ui_name ==# 'git_log'
   endif
 endfunction
+" }}}
 
+" ddu source git custom patch global {{{
 call ddu#custom#patch_global(#{
       \  kindOptions: #{
       \    git_blame: #{
@@ -168,6 +171,9 @@ call ddu#custom#patch_global(#{
       \    },
       \  },
       \})
+" }}}
+
+" ddu source git custom patch local {{{
 call ddu#custom#patch_local('git_log', #{
       \  uiParams: #{
       \    ff: #{
