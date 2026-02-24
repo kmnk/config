@@ -145,8 +145,17 @@ function s:ddu_ff_git_settings() abort
   if b:ddu_ui_name ==# 'git_status'
     nnoremap <buffer> a <Cmd>call ddu#ui#do_action('itemAction', #{name: 'add'})<CR>
     nnoremap <buffer> u <Cmd>call ddu#ui#do_action('itemAction', #{name: 'restoreStaged'})<CR>
-    nnoremap <buffer> ci <Cmd>call ddu#ui#do_action('itemAction', #{name: 'commit'})<CR>
+    nnoremap <buffer> tt <Cmd>call ddu#ui#do_action('itemAction', #{name: 'tabopen'})<CR>
+    nnoremap <buffer> cc <Cmd>call ddu#ui#do_action('itemAction', #{name: 'commit'})<CR>
+    nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
+    nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
+    nnoremap <buffer> yy <Cmd>call ddu#ui#do_action('itemAction', #{name: 'yank'})<CR>
   elseif b:ddu_ui_name ==# 'git_log'
+  elseif b:ddu_ui_name ==# 'git_log_this_file'
+    nnoremap <buffer> tt <Cmd>call ddu#ui#do_action('itemAction', #{name: 'tabopen'})<CR>
+    nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
+    nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
+    nnoremap <buffer> yy <Cmd>call ddu#ui#do_action('itemAction', #{name: 'yank'})<CR>
   endif
 endfunction
 " }}}
