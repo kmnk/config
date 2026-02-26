@@ -151,6 +151,8 @@ function s:ddu_ff_git_settings() abort
     nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
     nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
     nnoremap <buffer> yy <Cmd>call ddu#ui#do_action('itemAction', #{name: 'yank'})<CR>
+    nnoremap <buffer> ss <Cmd>call ddu#ui#do_action('itemAction', #{name: 'split'})<CR>
+    nnoremap <buffer> vv <Cmd>call ddu#ui#do_action('itemAction', #{name: 'vsplit'})<CR>
   elseif b:ddu_ui_name ==# 'git_log'
     nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
     nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
@@ -160,6 +162,8 @@ function s:ddu_ff_git_settings() abort
     nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
     nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
     nnoremap <buffer> yy <Cmd>call ddu#ui#do_action('itemAction', #{name: 'yank'})<CR>
+    nnoremap <buffer> ss <Cmd>call ddu#ui#do_action('itemAction', #{name: 'split'})<CR>
+    nnoremap <buffer> vv <Cmd>call ddu#ui#do_action('itemAction', #{name: 'vsplit'})<CR>
   endif
 endfunction
 " }}}

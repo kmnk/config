@@ -5,3 +5,5 @@ autocmd VimrcAutoCmd BufNewFile,BufReadPost *.vim call s:set_local_runtimepath(g
 function! s:set_local_runtimepath(loc)
   let &runtimepath .= ',' . a:loc
 endfunction
+
+"let &runtimepath .= ',' . '/Users/kmnk/work/ddu-source-git/'
