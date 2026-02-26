@@ -9,10 +9,11 @@ nmap <Leader>gc <SID>(fugitive-commit)
 nmap <Space>gp <SID>(fugitive-push)
 nmap <Space>gP <SID>(fugitive-pull)
 nmap <Space>gf <SID>(fugitive-fetch)
+nmap <Leader>gg <SID>(fugitive-grep)
 
 " ddu source git maps
 nmap <Leader>gbl <SID>(ddu-git_blame)
-nmap <Leader>gg <SID>(ddu-git_grep)
+"nmap <Leader>gg <SID>(ddu-git_grep)
 
 nmap [ddu]gb <SID>(ddu-git_branch)
 nmap [ddu]gB <SID>(ddu-git_branch-all)
@@ -151,6 +152,9 @@ function s:ddu_ff_git_settings() abort
     nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
     nnoremap <buffer> yy <Cmd>call ddu#ui#do_action('itemAction', #{name: 'yank'})<CR>
   elseif b:ddu_ui_name ==# 'git_log'
+    nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
+    nnoremap <buffer> dI <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diffCached'})<CR>
+    nnoremap <buffer> yy <Cmd>call ddu#ui#do_action('itemAction', #{name: 'yank'})<CR>
   elseif b:ddu_ui_name ==# 'git_log_this_file'
     nnoremap <buffer> tt <Cmd>call ddu#ui#do_action('itemAction', #{name: 'tabopen'})<CR>
     nnoremap <buffer> di <Cmd>call ddu#ui#do_action('itemAction', #{name: 'diff'})<CR>
@@ -203,4 +207,5 @@ nnoremap <silent> <SID>(fugitive-commit) :<C-u>Git commit<CR>
 nnoremap <silent><expr> <SID>(fugitive-push) ':<C-u>Git push -u origin ' . ddu_source_git#head() . '<CR>'
 nnoremap <silent> <SID>(fugitive-pull) :<C-u>Git pull<CR>
 nnoremap <silent> <SID>(fugitive-fetch) :<C-u>Git fetch origin<CR>
+nnoremap <SID>(fugitive-grep) :<C-u>Git grep 
 " }}}
